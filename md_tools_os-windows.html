@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>zk-note: Main Page</title>
+<title>zk-note: os-windows</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -51,8 +51,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('md_tools_os-windows.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -102,10 +102,16 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">zk-note Documentation</div>  </div>
+<div class="title">os-windows </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>os-windows{#os-windows}</p>
+<h2>命令行拷贝文件夹？</h2>
+<p>例如，想要把a目录下的文件夹c拷贝到目录b下，形成b<code></code> 这种结构。 </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;xcopy d:\a\c d:\b\c\ /S /E</div></div><!-- fragment --><p>其中，第一个参数的“c”不能有反斜杠，然后第二个参数一定要把“c\”给补上，虽然现在b下并不存在c，并且一定要**加上反斜杠**，否则工具会提问c是文件还是文件夹。</p>
+<p>这里说一些Linux的拷贝文件夹，就自然很多，不需要自己补一个即将拷贝过去的目录的名字</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cp a/c b</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;#或者</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;cp a/c b/</div></div><!-- fragment --><p> 记住，第一个参数路径最后也不能有反斜杠，</p>
+<h2>命令行删除文件夹</h2>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;rd &quot;e f&quot; /s/q</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

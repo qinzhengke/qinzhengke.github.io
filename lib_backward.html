@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>zk-note: Main Page</title>
+<title>zk-note: lib_backward</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -51,8 +51,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('lib_backward.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -102,10 +102,19 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">zk-note Documentation</div>  </div>
+<div class="title">lib_backward </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>backward这个库用来定位程序crash的地方，并且以源代码行号的形式给出，特别的直观，提升debug效率。 但是这个库的用法我感觉作者说的不是很清楚，这里需要以cmake工程为例子做笔记。</p>
+<p>使用步骤</p>
+<ol type="1">
+<li>安装libdw <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo apt-get install libdw-dev</div></div><!-- fragment --></li>
+<li>add_executable指令加入启动backward库的宏 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;add_executable(exe main.cpp ${BACKWARD_ENABLE})</div></div><!-- fragment --></li>
+<li>链接dw库 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;target_link_libraries(exe dw)</div></div><!-- fragment --></li>
+<li>在包含backward头文件的时候加入DW的宏定义 <div class="fragment"><div class="line"><span class="preprocessor">#define BACKWARD_HAS_DW 1</span></div><div class="line"><span class="preprocessor">#include &lt;backward.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="comment">// 下面这段必须加，否则输出结果仍然不是行号</span></div><div class="line"><span class="keyword">namespace </span>backward</div><div class="line">{</div><div class="line">    backward::SignalHandling sh;</div><div class="line">}</div></div><!-- fragment --></li>
+</ol>
+<p>5.Debug编译方式 别忘了一定要用Debug编译方式，否则可执行文件无法对应到行。 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

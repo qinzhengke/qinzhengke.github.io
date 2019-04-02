@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>zk-note: Main Page</title>
+<title>zk-note: git</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -51,8 +51,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('md_tools_git.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -102,10 +102,12 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">zk-note Documentation</div>  </div>
+<div class="title">git </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><h2>permission too open</h2>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;chmod 700 ./private_key_file</div></div><!-- fragment --><p>## Change commit editor </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;git config --global core.editor &quot;vim&quot;</div></div><!-- fragment --><h2>设置本地分支track远程分支</h2>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;# checkout local branch</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;git checkout my_branch</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;# setup the tracked remote branch.</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;git branch --set-upstream-to=origin/my_branch</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;#或者</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;git branch -u origin/my_branch</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
