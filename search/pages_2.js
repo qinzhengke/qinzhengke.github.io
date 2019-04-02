@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['git',['git',['../md_tools_git.html',1,'']]]
+  ['lubuntu',['Lubuntu',['../os-lubuntu.html',1,'tools']]]
 ];

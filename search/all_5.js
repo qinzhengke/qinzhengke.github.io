@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['os_2dwindows',['os-windows',['../md_tools_os-windows.html',1,'']]],
-  ['opencv',['OpenCV',['../opencv.html',1,'']]]
+  ['semi_2dglobal_20blocking_20matching_28sgbm_29',['Semi-Global Blocking Matching(SGBM)',['../sgbm.html',1,'algorithm']]]
 ];
