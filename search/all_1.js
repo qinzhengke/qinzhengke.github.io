@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['c语言',['C语言',['../c.html',1,'programming']]],
-  ['cmake',['cmake',['../cmake.html',1,'programming']]]
+  ['bat',['bat',['../md_programming_bat.html',1,'']]]
 ];

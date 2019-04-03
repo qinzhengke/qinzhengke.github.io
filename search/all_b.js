@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['机器人操作系统：ros',['机器人操作系统：ROS',['../ros.html',1,'programming']]]
+  ['脚本语言：bash',['脚本语言：bash',['../bash.html',1,'programming']]],
+  ['谷歌测试框架：google_20test',['谷歌测试框架：Google Test',['../gtest.html',1,'programming']]],
+  ['软件工程',['软件工程',['../soft_engineering.html',1,'programming']]]
 ];
