@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lubuntu',['Lubuntu',['../os-lubuntu.html',1,'tools']]]
+  ['os_2dwindows',['os-windows',['../os-windows.html',1,'tools']]]
 ];

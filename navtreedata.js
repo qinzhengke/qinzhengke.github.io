@@ -1,8 +1,7 @@
 var NAVTREE =
 [
   [ "zk-note", "index.html", [
-    [ "zk-note 简介", "index.html", "index" ],
-    [ "bat", "md_programming_bat.html", null ]
+    [ "zk-note 简介", "index.html", "index" ]
   ] ]
 ];
 

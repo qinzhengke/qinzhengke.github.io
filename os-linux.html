@@ -127,8 +127,9 @@ $(document).ready(function(){initNavTree('os-linux.html','');});
 <h2>script中的source</h2>
 <p>script中的source命令是无效的！ 所以，如果想要在script中source ~/.bashrc，也是无效的。 有点奇怪，有些说法是calling bash不受callee bash的影响。 所以想要source ~/.bashrc可以这样</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;# Add something to ~/.bashrc</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;echo MY_VARIABLE &gt; ~/.bashrc</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;exec bash</div></div><!-- fragment --> <h3>/bin/sh&amp;M bad interpreter</h3>
-<p>直接原因是第一行结尾字符有问题，一般的源头是bash的脚本文件在Windows被重新编辑过，Windows和Linux下的换行是不同的字符表达的，回到Linux时就可能出错。 </p>
-</div></div><!-- contents -->
+<p>直接原因是第一行结尾字符有问题，一般的源头是bash的脚本文件在Windows被重新编辑过，Windows和Linux下的换行是不同的字符表达的，回到Linux时就可能出错。</p>
+<h3>.netrc文件注册网络账户和密码</h3>
+<p>很多web应用需要用户提供账户和密码，如果一开始没有在web端设置好，或者说没有办法在web端设置，例如gerrit上http形式的仓库URL，交互程序一般会阻塞并弹出输入账户和密码的提示。 这样的交互有2点不好。 1.有些账户密码很长，还不能够自行设置，没错，说的就是gerrit的anomynous http地址，每次都要从gerrit上复制密码，降低效率。 2.自动化脚本，无法执行交互。 那有没有办法解决这个问题呢？其实是可以的，使用Linux自带的feature：.netrc文件，文件在&lt;tt&gt;~目录下 下面就是.netrc文件的内容示例。 </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;machine github.com login qinzhengke password xxxxx</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;machine 192.168.0.5 login qinzhengke password xxxx</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

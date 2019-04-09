@@ -4,6 +4,7 @@ var programming =
     [ "编程语言：C++", "cpp.html", null ],
     [ "编程语言：Python", "python.html", null ],
     [ "脚本语言：bash", "bash.html", null ],
+    [ "脚本语言：bat", "bat.html", null ],
     [ "C++框架：Qt", "qt.html", null ],
     [ "开源计算机视觉库：OpenCV", "opencv.html", null ],
     [ "机器人操作系统：ROS", "ros.html", null ],

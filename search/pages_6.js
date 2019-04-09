@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['semi_2dglobal_20blocking_20matching_28sgbm_29',['Semi-Global Blocking Matching(SGBM)',['../sgbm.html',1,'algorithm']]]
+  ['zk_2dnote_20简介',['zk-note 简介',['../index.html',1,'']]]
 ];
