@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zk_2dnote_20简介',['zk-note 简介',['../index.html',1,'']]]
+  ['visual_20studio_20code_9',['Visual Studio Code',['../vs_code.html',1,'']]]
 ];

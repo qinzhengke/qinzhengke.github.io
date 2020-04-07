@@ -15,6 +15,9 @@ var NAVTREEINDEX0 =
 "interpolate.html":[0,0,0],
 "lib_backward.html":[0,1,9],
 "libre_office.html":[0,3,5],
+"md_algorithm_alg.html":[1],
+"md_tools_vim.html":[4],
+"online_tools.html":[3],
 "opencv.html":[0,1,6],
 "os-linux.html":[0,3,0],
 "os-lubuntu.html":[0,3,1],
@@ -30,5 +33,7 @@ var NAVTREEINDEX0 =
 "soft_engineering.html":[0,1,12],
 "technology.html":[0,2],
 "tools.html":[0,3],
-"useful_tools.html":[0,3,6]
+"useful_tools.html":[0,3,6],
+"vs_code.html":[5],
+"zk-note.html":[2]
 };
