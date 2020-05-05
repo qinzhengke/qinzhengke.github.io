@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['zk_2dnote_20简介_10',['zk-note 简介',['../index.html',1,'']]],
-  ['zk_2dnote_11',['zk-note',['../zk-note.html',1,'']]]
+  ['优化理论',['优化理论',['../optimization.html',1,'math']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['visual_20studio_20code_43',['Visual Studio Code',['../vs_code.html',1,'']]]
+  ['vim笔记',['vim笔记',['../vim.html',1,'tools']]],
+  ['visual_20studio_20code',['Visual Studio Code',['../vscode.html',1,'tools']]]
 ];
