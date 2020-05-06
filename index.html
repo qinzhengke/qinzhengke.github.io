@@ -27,6 +27,20 @@
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax:{
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [['$$','$$'],["\\[","\\]"]],
+        processEscapes: true
+    },
+    "HTML-CSS": {fonts: ["TeX"]},
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"],
+        equationNumbers: {autoNumber: "all"},
+    }
+});
 </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -95,12 +109,31 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>“覃”念"qin"，第二声。</p>
-<p>工作1： DJI Mavic双目避障。</p>
+<h3>工作2： DJI Mavic air、Mavic 2、 Mavic air 2 双目避障开发。</h3>
 <p> 
-
 <iframe src="https://player.bilibili.com/player.html?aid=32639123&bvid=BV1VW411S7o5&cid=57114943&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:640px; height:460px"> </iframe>
-
 </p>
+<h3>工作1：光学元件高精度视觉定位与引导</h3>
+<p> 
+<table>
+<tr>
+<td>
+<iframe src="https://player.bilibili.com/player.html?aid=285530034&bvid=BV1sf4y1m7Pc&cid=187912294&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:640px; height:460px"> </iframe>
+</td>
+
+<td>
+<iframe src="https://player.bilibili.com/player.html?aid=285595985&bvid=BV1yf4y1m7Kw&cid=187905340&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:640px; height:460px"> </iframe>
+</td>
+</tr>
+</table>
+</p>
+<hr/>
+ <h3>经历</h3>
+<p>2017.7~2020.6: 感知算法工程师, DJI</p>
+<p>2012.9~2017.7: PhD, 中国科学院自动化研究所</p>
+<p>2008.9~2012.7: 学士, 华中科技大学</p>
+<h3>兴趣：</h3>
+<p>CV, Robotics</p>
 <hr/>
 <p> 转到<a class="el" href="zk_note.html">学习笔记</a> </p>
 </div></div><!-- contents -->

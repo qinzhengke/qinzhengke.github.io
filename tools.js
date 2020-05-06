@@ -39,10 +39,22 @@ var tools =
       [ "pdf出现 “tuba.sty not found“", "doxygen.html#make", null ],
       [ "section用法", "doxygen.html#section_usage", null ],
       [ "dox文件语法", "doxygen.html#dox_file", null ],
-      [ "插入哔哩哔哩视频", "doxygen.html#doxygen_bilibili", null ]
+      [ "插入哔哩哔哩视频", "doxygen.html#doxygen_bilibili", null ],
+      [ "引用excel表格", "doxygen.html#ref_excel", null ],
+      [ "带编号的公式", "doxygen.html#numbered_eq", null ],
+      [ "引用公式", "doxygen.html#ref_eq", null ],
+      [ "原始格式输出", "doxygen.html#raw_format", null ]
     ] ],
     [ "开源办公软件：Libre Office", "libre_office.html", null ],
-    [ "其他有用的工具", "useful_tools.html", null ],
+    [ "其他有用的工具", "useful_tools.html", [
+      [ "图片查看工具：pqiv", "useful_tools.html#pqiv", null ],
+      [ "github page", "useful_tools.html#github_page", null ],
+      [ "SpaceSniffer: Windows下磁盘占用分析终极工具", "useful_tools.html#space_sniffer", null ],
+      [ "Baobab: Linux下磁盘占用分析工具", "useful_tools.html#baobab", null ],
+      [ "ImageMagick生成动态gif图片", "useful_tools.html#image_magick", null ],
+      [ "ffmpeg工具拼接视频", "useful_tools.html#ffmpeg_merge", null ],
+      [ "ffmpeg工具缩放视频", "useful_tools.html#ffmpeg_resize", null ]
+    ] ],
     [ "vim笔记", "vim.html", [
       [ "给变量名加上引号", "vim.html#vim_add_quote", null ],
       [ "缩进", "vim.html#vim_indent", null ],

@@ -27,6 +27,20 @@
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax:{
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [['$$','$$'],["\\[","\\]"]],
+        processEscapes: true
+    },
+    "HTML-CSS": {fonts: ["TeX"]},
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"],
+        equationNumbers: {autoNumber: "all"},
+    }
+});
 </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -117,9 +131,52 @@ dox文件语法</h1>
 <li>嵌入代码没有加入传输协议，需要手动添加“https:”</li>
 <li>doxygen 使用 \htmlonly 和 \endhtmlonly来包裹嵌入代码。</li>
 </ol>
-<p>~~~{.dox}  
-<iframe src="https://player.bilibili.com/player.html?aid=97804448&bvid=BV1fE411w7ac&cid=166959951&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
- ~~~ </p>
+<div class="fragment"><div class="line">\\htmlonly</div><div class="line">&lt;iframe src=<span class="stringliteral">&quot;https://player.bilibili.com/player.html?aid=97804448&amp;bvid=BV1fE411w7ac&amp;cid=166959951&amp;page=1&quot;</span> scrolling=<span class="stringliteral">&quot;no&quot;</span> border=<span class="stringliteral">&quot;0&quot;</span> frameborder=<span class="stringliteral">&quot;no&quot;</span> framespacing=<span class="stringliteral">&quot;0&quot;</span> allowfullscreen=<span class="stringliteral">&quot;true&quot;</span>&gt; &lt;/iframe&gt;</div><div class="line">\\endhtmlonly</div></div><!-- fragment --><h1><a class="anchor" id="ref_excel"></a>
+引用excel表格</h1>
+<p>前言：markdown表格不支持合并单元格操作，表达能力有限，我们需要表达能力更强的html表格。 然而，手打html表格是一种低效操作，有位名人说过：“手打html表格是不可能手打的，这辈子都不可能手打的”。</p>
+<p>下面介绍如何在doxygen中引用excel表格。</p>
+<p>step 1: 在excel中编辑表格</p>
+<p>step 2: 另存为-&gt;格式选择html，范围选择“已选择”-&gt;保存成html网页。</p>
+<p>step 3: 使用文本文件打开html网页，复制</p><table class="doxtable">
+</table>
+<p>部分。</p>
+<p>step 4：复制到doxygen源文件，注意：一定要使用\htmlonly 和 \endhtmlonly包裹，否则显示会出现错乱。</p>
+<hr/>
+ <h1><a class="anchor" id="numbered_eq"></a>
+带编号的公式</h1>
+<p>Doxygen使用了MathJax来渲染公式，实际上Doxygen设置编号也就是MathJax设置编号。</p>
+<p>step 1: 建立一个js文件，存放MathJax的配置，如下所示：</p>
+<pre class="fragment">// latex_support.js
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax:{
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [['$$','$$'],["\\[","\\]"]],
+        processEscapes: true
+    },
+    "HTML-CSS": {fonts: ["TeX"]},
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"],
+        equationNumbers: {autoNumber: "all"},
+    }
+});
+</pre><p>具体的原理好像是先转成latex，具体太复杂，官网讲公式编号配置的篇幅用十几次滚轮都看不完，就不去深究了。</p>
+<p>step 2: 在doxygen配置文件中引用该js文件，如下所示：</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;MATHJAX_CODEFILE = ./latex_support.js</div></div><!-- fragment --><p>然后就可以愉快的使用带编号的公式。</p>
+<hr/>
+ <h1><a class="anchor" id="ref_eq"></a>
+引用公式</h1>
+<pre class="fragment">    \f[
+        \label{eq}
+        E = mc^2
+    \f]
+    \\eqref{eq}
+</pre><p>注意是引用处使用双反斜杠。</p>
+<hr/>
+ <h1><a class="anchor" id="raw_format"></a>
+原始格式输出</h1>
+<p>使用 \verbatim 和 \endverbatim包裹。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

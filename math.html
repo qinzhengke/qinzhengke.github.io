@@ -27,6 +27,20 @@
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax:{
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [['$$','$$'],["\\[","\\]"]],
+        processEscapes: true
+    },
+    "HTML-CSS": {fonts: ["TeX"]},
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"],
+        equationNumbers: {autoNumber: "all"},
+    }
+});
 </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -94,7 +108,8 @@ $(document).ready(function(){initNavTree('math.html','');});
 <div class="title">数学基础 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="el" href="optimization.html">优化理论</a> </p>
+<div class="textblock"><p><a class="el" href="optimization.html">优化理论</a></p>
+<p><a class="el" href="kalman_filter.html">卡尔曼滤波</a> </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
