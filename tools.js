@@ -43,7 +43,8 @@ var tools =
       [ "引用excel表格", "doxygen.html#ref_excel", null ],
       [ "带编号的公式", "doxygen.html#numbered_eq", null ],
       [ "引用公式", "doxygen.html#ref_eq", null ],
-      [ "原始格式输出", "doxygen.html#raw_format", null ]
+      [ "原始格式输出", "doxygen.html#raw_format", null ],
+      [ "github page上MaJax公式没有正确渲染", "doxygen.html#majax_issue", null ]
     ] ],
     [ "开源办公软件：Libre Office", "libre_office.html", null ],
     [ "其他有用的工具", "useful_tools.html", [

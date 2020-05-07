@@ -1,6 +1,8 @@
 var math =
 [
     [ "优化理论", "optimization.html", [
+      [ "雅克比(Jacobian)矩阵", "optimization.html#jacobian", null ],
+      [ "单值函数的海森(Hessian)矩阵", "optimization.html#hessian", null ],
       [ "梯度下降", "optimization.html#opt_gradient", null ],
       [ "牛顿法", "optimization.html#opt_newton", null ],
       [ "高斯牛顿法", "optimization.html#opt_gausian_newton", null ],
