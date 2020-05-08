@@ -113,26 +113,38 @@ $(document).ready(function(){initNavTree('optimization.html','');});
 雅克比(Jacobian)矩阵</h1>
 <p>复习一下雅克比矩阵，注意雅克比矩阵中的行是函数分量，列是变量分量。</p>
 <p class="formulaDsp">
-\[ \mathbf J = \begin{bmatrix} \dfrac{\partial \mathbf{f}}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial \boldsymbol{f}}{\partial x_n} \end{bmatrix} = \begin{bmatrix} \dfrac{\partial f_1}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f_1}{\partial x_n}\\ \vdots &amp; \ddots &amp; \vdots\\ \dfrac{\partial f_m}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f_m}{\partial x_n} \end{bmatrix} \]
+\[ \boldsymbol J = \begin{bmatrix} \dfrac{\partial \boldsymbol{f}}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial \boldsymbol{f}}{\partial x_n} \end{bmatrix} = \begin{bmatrix} \dfrac{\partial f_1}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f_1}{\partial x_n}\\ \vdots &amp; \ddots &amp; \vdots\\ \dfrac{\partial f_m}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f_m}{\partial x_n} \end{bmatrix} \]
 </p>
 <p>对于单值函数，那么雅克比矩阵实际上是一个行向量，如下所示。</p>
 <p class="formulaDsp">
-\[ \mathbf J = \begin{bmatrix} \dfrac{\partial f}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_n} \end{bmatrix} \]
+\[ \boldsymbol J = \begin{bmatrix} \dfrac{\partial f}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_n} \end{bmatrix} \]
 </p>
 <h1><a class="anchor" id="hessian"></a>
 单值函数的海森(Hessian)矩阵</h1>
 <p>复习一下海森矩阵，只讨论单值函数，公式如下所示：</p>
 <p class="formulaDsp">
-\[ \mathbf{H} = \begin{bmatrix}\frac {\partial^2 f}{\partial x_1^2} &amp; \frac{\partial^2 f}{\partial x_1\,\partial x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_1\,\partial x_n} \\ \\ \frac{\partial^2 f}{\partial x_2\,\partial x_1} &amp; \frac{\partial^2 f}{\partial x_2^2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_2\,\partial x_n} \\ \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \\ \frac{\partial^2 f}{\partial x_n\,\partial x_1} &amp; \frac{\partial^2 f}{\partial x_n\,\partial x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_n^2} \end{bmatrix}\, \]
+\[ \boldsymbol{H} = \begin{bmatrix}\dfrac {\partial^2 f}{\partial x_1^2} &amp; \dfrac{\partial^2 f}{\partial x_1\,\partial x_2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_1\,\partial x_n} \\ \\ \dfrac{\partial^2 f}{\partial x_2\,\partial x_1} &amp; \dfrac{\partial^2 f}{\partial x_2^2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_2\,\partial x_n} \\ \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \\ \dfrac{\partial^2 f}{\partial x_n\,\partial x_1} &amp; \dfrac{\partial^2 f}{\partial x_n\,\partial x_2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_n^2} \end{bmatrix}\, \]
 </p>
 <h1><a class="anchor" id="opt_gradient"></a>
 梯度下降</h1>
 <p>梯度下降最简单，计算一阶导数，</p>
 <p class="formulaDsp">
-\[ \boldsymbol{x}_{k} = \boldsymbol{J}^T \boldsymbol{x}_{k-1} \]
+\[ \boldsymbol{x}_{k} = \boldsymbol{x}_{k-1} + \boldsymbol{J}^T \]
 </p>
 <h1><a class="anchor" id="opt_newton"></a>
 牛顿法</h1>
+<p class="formulaDsp">
+\[ \boldsymbol{x}_{k} = \boldsymbol{x}_{k-1} + \cdot \boldsymbol{H}^{-1} \boldsymbol{J}^T \]
+</p>
+<p>推导过程： </p><p class="formulaDsp">
+\[ f(\boldsymbol{x}+\Delta \boldsymbol{x}) = f(\boldsymbol{x}) + \boldsymbol{J}^T \Delta x + \frac{1}{2}{\Delta x}^T\boldsymbol{H}{\Delta x} \]
+</p>
+<p>对 \( \Delta x \) 求导后等于0，可以得到二次近似的最小值，即 </p><p class="formulaDsp">
+\[ \frac{df(\boldsymbol{x}+\Delta \boldsymbol{x})}{d\Delta \boldsymbol{x}} = \boldsymbol{J} + \boldsymbol{H}{\Delta \boldsymbol{x}} = \boldsymbol{0} \]
+</p>
+<p class="formulaDsp">
+\[ \Delta \boldsymbol{x} = -\boldsymbol{H}^{-1} \boldsymbol{J} \]
+</p>
 <h1><a class="anchor" id="opt_gausian_newton"></a>
 高斯牛顿法</h1>
 <h1><a class="anchor" id="opt_lm"></a>

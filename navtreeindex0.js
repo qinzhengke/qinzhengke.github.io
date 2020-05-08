@@ -68,6 +68,8 @@ var NAVTREEINDEX0 =
 "cpp.html":[0,3,1],
 "cv.html":[0,2],
 "doxygen.html":[0,5,4],
+"doxygen.html#boldsymbol_vs_mathbf":[0,5,4,11],
+"doxygen.html#dfrac_vs_frac":[0,5,4,12],
 "doxygen.html#dox_file":[0,5,4,4],
 "doxygen.html#doxygen_bilibili":[0,5,4,5],
 "doxygen.html#include和snippet":[0,5,4,0],

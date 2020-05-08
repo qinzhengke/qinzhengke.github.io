@@ -181,8 +181,20 @@ MathJax.Hub.Config({
  <h1><a class="anchor" id="majax_issue"></a>
 github page上MaJax公式没有正确渲染</h1>
 <p>明明离线版本Majax公式能够正常渲染，但是传到github page上就不行了？ 一个很重要的原因就是Doxyfile里面Majax的CDN地址使用http作为传输协议，github page上应该是禁止了http协议，导致CDN没法正常访问。</p>
-<p>解决办法很简单，只要把CDN地址中的“http”改成“https”即可。 </p>
-</div></div><!-- contents -->
+<p>解决办法很简单，只要把CDN地址中的“http”改成“https”即可。</p>
+<hr/>
+ <h1><a class="anchor" id="boldsymbol_vs_mathbf"></a>
+boldsymbol和mathbf的区别。</h1>
+<p>boldsymbol和mathbf都是latex中粗体的语法，但是boldsymbol明显要比textbf好看很多，如下图所示 </p><center> <div class="image">
+<img src="./figures/boldsymbol_vs_mathbf.png" />
+</div>
+ </center><hr/>
+ <h1><a class="anchor" id="dfrac_vs_frac"></a>
+dfrac vs frac</h1>
+<p>dfrac明显尺寸要还原得更好一些，如下图所示。 </p><div class="image">
+<img src="./figures/dfrac_vs_frac.png" />
+</div>
+ </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
