@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['算法',['算法',['../algorithm.html',1,'zk_note']]],
-  ['编程语言：c_2b_2b',['编程语言：C++',['../cpp.html',1,'programming']]],
-  ['版本管理工具：git',['版本管理工具：git',['../git.html',1,'tools']]],
-  ['编程',['编程',['../programming.html',1,'zk_note']]],
-  ['编程语言：python',['编程语言：Python',['../python.html',1,'programming']]]
+  ['有趣的cv相关的网站',['有趣的CV相关的网站',['../awsome_cv_websites.html',1,'cv']]],
+  ['文档框架：doxygen',['文档框架：doxygen',['../doxygen.html',1,'tools']]],
+  ['插值',['插值',['../interpolate.html',1,'algorithm']]],
+  ['数学基础',['数学基础',['../math.html',1,'zk_note']]],
+  ['操作系统：linux',['操作系统：Linux',['../os-linux.html',1,'tools']]],
+  ['机器人学基础',['机器人学基础',['../robotics_basic.html',1,'algorithm']]],
+  ['机器人操作系统：ros',['机器人操作系统：ROS',['../ros.html',1,'programming']]],
+  ['技术',['技术',['../technology.html',1,'zk_note']]]
 ];

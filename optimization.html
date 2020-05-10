@@ -127,17 +127,23 @@ $(document).ready(function(){initNavTree('optimization.html','');});
 </p>
 <h1><a class="anchor" id="opt_gradient"></a>
 梯度下降</h1>
-<p>梯度下降最简单，计算一阶导数，</p>
+<p>梯度下降最简单，计算一阶导数，直接向梯度负方向搜索，步长为1。</p>
 <p class="formulaDsp">
-\[ \boldsymbol{x}_{k} = \boldsymbol{x}_{k-1} + \boldsymbol{J}^T \]
+\[ \boldsymbol{x}_{k} = \boldsymbol{x}_{k-1} - \boldsymbol{J}^T \]
 </p>
+<p>显然这种搜索方法步长尺度不确定，步长太小，收敛很慢，步长太大，则来回波动，下面引入更优的牛顿法。</p>
 <h1><a class="anchor" id="opt_newton"></a>
 牛顿法</h1>
 <p class="formulaDsp">
-\[ \boldsymbol{x}_{k} = \boldsymbol{x}_{k-1} + \cdot \boldsymbol{H}^{-1} \boldsymbol{J}^T \]
+\[ \boldsymbol{x}_{k} = \boldsymbol{x}_{k-1} - \boldsymbol{H}^{-1} \boldsymbol{J}^T \]
 </p>
+<p>前提条件：</p>
+<ol type="1">
+<li>\( \boldsymbol{H} \)必须是可逆矩阵，这个条件显然必须满足，否则无法计算 \( \Delta \boldsymbol{x} \)</li>
+<li>\( \boldsymbol{H} \)必须是正定矩阵， 否则拟合出来的二次函数是是一个非凸的函数，导数为0的点可能不是最小值。</li>
+</ol>
 <p>推导过程： </p><p class="formulaDsp">
-\[ f(\boldsymbol{x}+\Delta \boldsymbol{x}) = f(\boldsymbol{x}) + \boldsymbol{J}^T \Delta x + \frac{1}{2}{\Delta x}^T\boldsymbol{H}{\Delta x} \]
+\[ f(\boldsymbol{x}+\Delta \boldsymbol{x}) \approx f(\boldsymbol{x}) + \boldsymbol{J}^T \Delta x + \frac{1}{2}{\Delta x}^T\boldsymbol{H}{\Delta x} \]
 </p>
 <p>对 \( \Delta x \) 求导后等于0，可以得到二次近似的最小值，即 </p><p class="formulaDsp">
 \[ \frac{df(\boldsymbol{x}+\Delta \boldsymbol{x})}{d\Delta \boldsymbol{x}} = \boldsymbol{J} + \boldsymbol{H}{\Delta \boldsymbol{x}} = \boldsymbol{0} \]
@@ -147,8 +153,46 @@ $(document).ready(function(){initNavTree('optimization.html','');});
 </p>
 <h1><a class="anchor" id="opt_gausian_newton"></a>
 高斯牛顿法</h1>
+<p>首先要明确一点，高斯牛顿法并不是针对任意函数的，而是专门针对 \( \|\boldsymbol{f}(\boldsymbol{x})\|^2 \)这种形式的目标函数</p>
+<p>这里的 \( \boldsymbol{f}(\boldsymbol{x}) \)可以是多值函数。</p>
+<p>首先，将 \( \boldsymbol{f}(\boldsymbol{x}) \)进行一阶的泰勒展开。</p>
+<p class="formulaDsp">
+\[ \boldsymbol{f}(\boldsymbol{x}+\Delta \boldsymbol{x}) \approx \boldsymbol{f}(\boldsymbol{x}) + \boldsymbol{J} \Delta \boldsymbol{x} \]
+</p>
+<p>\( \boldsymbol{J} \)是 \( \boldsymbol{f}(\boldsymbol{x}) \)的雅克比矩阵，维度是 \( m \times n \)。</p>
+<p>那么现在来求解最优迭代增量。 </p><p class="formulaDsp">
+\[ \Delta \boldsymbol{x} ^* = \arg \min_{\Delta \boldsymbol{x}}{\|\boldsymbol{f}(\boldsymbol{x})+\boldsymbol{J}\Delta \boldsymbol{x} \|^2} \]
+</p>
+<p class="formulaDsp">
+\[ \begin{aligned} \|\boldsymbol{f}(\boldsymbol{x})+\boldsymbol{J}\Delta \boldsymbol{x} \|^2 &amp; = (\boldsymbol{f}(\boldsymbol{x})+\boldsymbol{J} \Delta \boldsymbol{x})^T (\boldsymbol{f}(\boldsymbol{x})+\boldsymbol{J} \Delta \boldsymbol{x}) \\ &amp; = \| \boldsymbol{f}(\boldsymbol{x}) \|^2 + 2 \boldsymbol{f}(\boldsymbol{x})^T \boldsymbol{J} \Delta \boldsymbol{x} + \Delta \boldsymbol{x}^T \boldsymbol{J}^T \boldsymbol{J} \Delta \boldsymbol{x} \end{aligned} \]
+</p>
+<p>求导后等于0，可得</p>
+<p class="formulaDsp">
+\[ \boldsymbol{J}^T \boldsymbol{f}(\boldsymbol{x}) + \boldsymbol{J}^T \boldsymbol{J}\Delta \boldsymbol{x} = \boldsymbol{0} \]
+</p>
+<p class="formulaDsp">
+\[ \Delta\boldsymbol{x} = -\boldsymbol{J}^T \boldsymbol{f}(\boldsymbol{x}) (\boldsymbol{J}^T \boldsymbol{J})^{-1} \]
+</p>
+<p>高斯牛顿法的好处就是不需要计算复杂的Hessian矩阵。</p>
 <h1><a class="anchor" id="opt_lm"></a>
-列文博格-马夸尔特方法</h1>
+列文博格-马夸尔特方法（LM方法）</h1>
+<p>LM方法主要是为了限制近似带来的步长过长的现象，又被称为阻尼牛顿法。</p>
+<p class="formulaDsp">
+\[ \rho = \frac{f(\boldsymbol{x}+\Delta\boldsymbol{x})-f(\boldsymbol{x})}{\boldsymbol{J}\Delta\boldsymbol{x}} \]
+</p>
+<p>如果 \( \rho \)接近于1，则认为近似得比较好，如果 \( \rho \)很大，则实际下降要比近似下降要大，可以考虑增加信赖区域，反之，如果 \( \rho \)很小，则实际下降要比近似的小，需要减小可信赖区域。</p>
+<p>优化的步骤为：</p>
+<ol type="1">
+<li>给定的初始值 \( \boldsymbol{x}_0 \)，选取一个初始的优化半径 \( \mu \)</li>
+<li>求解： <p class="formulaDsp">
+\[ \arg\min{\| \boldsymbol{f}(\boldsymbol{x}) + \boldsymbol{J}(\boldsymbol{x}_k)\Delta\boldsymbol{x}_k \|^2}, \quad \| \boldsymbol{D} \Delta\boldsymbol{x}_k \|^2 \leq \mu \]
+</p>
+</li>
+<li>调整信赖区域，如果 \( \rho &gt; \rho _2 \)，则 \( \mu \to 2\mu \) ， 如果 \( \rho &lt; \rho _1 \)，则 \( \mu \to 0.5\mu \)，其中， \( \rho _1 \)和 \( \rho _2 \)是需要手动设置的阈值。</li>
+<li>令 \( \boldsymbol{x}_{k+1} = \boldsymbol{x}_k + \Delta\boldsymbol{x}_k \)</li>
+<li>判断是否收敛，不收敛则回到第二步。</li>
+</ol>
+<p>列文伯格优化方法中， \( \boldsymbol{D} \) 取单位阵 \( \boldsymbol{I} \)，即每一个分量维度限制尺度是相等的，我们自然会想到进一步让 \( \boldsymbol{D} \)取一个对角阵，来给每一个分量不同的尺度。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

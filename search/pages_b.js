@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['脚本语言：bash',['脚本语言：bash',['../bash.html',1,'programming']]],
-  ['脚本语言：bat',['脚本语言：bat',['../bat.html',1,'programming']]],
-  ['视觉标定_28calibration_29',['视觉标定(calibration)',['../calibration.html',1,'cv']]],
-  ['计算机视觉_28cv_29',['计算机视觉(CV)',['../cv.html',1,'zk_note']]],
-  ['谷歌测试框架：google_20test',['谷歌测试框架：Google Test',['../gtest.html',1,'programming']]],
-  ['覃政科的主页',['覃政科的主页',['../index.html',1,'']]],
-  ['软件工程',['软件工程',['../soft_engineering.html',1,'programming']]]
+  ['算法',['算法',['../algorithm.html',1,'zk_note']]],
+  ['编程语言：c_2b_2b',['编程语言：C++',['../cpp.html',1,'programming']]],
+  ['版本管理工具：git',['版本管理工具：git',['../git.html',1,'tools']]],
+  ['线性变换中的求导',['线性变换中的求导',['../matrix_analysis.html',1,'math']]],
+  ['编程',['编程',['../programming.html',1,'zk_note']]],
+  ['编程语言：python',['编程语言：Python',['../python.html',1,'programming']]]
 ];
