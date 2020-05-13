@@ -108,19 +108,37 @@ $(document).ready(function(){initNavTree('latex.html','');});
 <div class="title">LaTex语法笔记 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="等号对齐的连排公式"></a>
-等号对齐的连排公式</h1>
-<p>代码： </p><pre class="fragment">\f[
-    \begin{aligned}
-    y
-    &amp; = (x+y)(x-y) \\
-    &amp; = x^2-y^2
-    \end{aligned}
-\f]
-</pre><p>结果： </p><p class="formulaDsp">
-\[ \begin{aligned} y &amp; = (x+y)(x-y) \\ &amp; = x^2-y^2 \end{aligned} \]
-</p>
- </div></div><!-- contents -->
+<div class="textblock"><table class="doxtable">
+<tr>
+<td>\( \boldsymbol{A} = \begin{bmatrix} a_{11} &amp; a_{12}\\ a_{21} &amp; a_{22} \end{bmatrix} \) </td><td><pre class="fragment">\boldsymbol{A} = 
+\begin{bmatrix}
+    a_{11} &amp; a_{12}\\
+    a_{21} &amp; a_{22} 
+\end{bmatrix}
+</pre> <p class="endtd"></p>
+</td></tr>
+<tr>
+<td>\( \begin{aligned} y &amp; = (x+y)(x-y) \\ &amp; = x^2-y^2 \end{aligned} \) </td><td><pre class="fragment">\begin{aligned}
+y
+&amp; = (x+y)(x-y) \\
+&amp; = x^2-y^2
+\end{aligned}
+</pre> <p class="endtd"></p>
+</td></tr>
+<tr>
+<td>\( \mathbb{R} \) </td><td><pre class="fragment">\mathbb{R}
+</pre> <p class="endtd"></p>
+</td></tr>
+<tr>
+<td>\( \infty \) </td><td><pre class="fragment">\infty
+</pre> <p class="endtd"></p>
+</td></tr>
+<tr>
+<td></td><td><p class="starttd"></p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -1,5 +1,10 @@
 var math =
 [
+    [ "李群和李代数", "group.html", [
+      [ "群", "group.html#群", null ],
+      [ "矩阵指数", "group.html#矩阵指数", null ],
+      [ "李群", "group.html#李群", null ]
+    ] ],
     [ "线性变换中的求导", "matrix_analysis.html", [
       [ "一次项矩阵求导", "matrix_analysis.html#一次项矩阵求导", null ]
     ] ],

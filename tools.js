@@ -69,7 +69,5 @@ var tools =
       [ "光标回到上一个位置", "vim.html#vim_go_prev", null ]
     ] ],
     [ "Visual Studio Code", "vscode.html", "vscode" ],
-    [ "LaTex语法笔记", "latex.html", [
-      [ "等号对齐的连排公式", "latex.html#等号对齐的连排公式", null ]
-    ] ]
+    [ "LaTex语法笔记", "latex.html", null ]
 ];
