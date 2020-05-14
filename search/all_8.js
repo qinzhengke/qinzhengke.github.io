@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['优化理论',['优化理论',['../optimization.html',1,'math']]]
+  ['qt相关常见问题',['Qt相关常见问题',['../cpp_qt_faq.html',1,'cpp']]]
 ];

@@ -194,6 +194,21 @@ dfrac vs frac</h1>
 <p>dfrac明显尺寸要还原得更好一些，如下图所示。 </p><div class="image">
 <img src="./figures/dfrac_vs_frac.png" />
 </div>
+<hr/>
+ <h1><a class="anchor" id="生成参考文献"></a>
+生成参考文献</h1>
+<p>step 1: 安装texbib工具</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo apt-get install texlive-bibtex-extra</div></div><!-- fragment --><p>step 2: 在doxygen配置文件中添加要显示的bib文件</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;CITE_BIB_FILES         = cv/cv.bib</div></div><!-- fragment --><p>step 3: 在bib文件中放置参考文件引用代码，引用代码可以从各种文献搜索引擎找到，例如谷歌学术。</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;// cv/cv.lib</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;@inproceedings{rosten2006machine,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  title={Machine learning for high-speed corner detection},</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  author={Rosten, Edward and Drummond, Tom},</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  booktitle={European conference on computer vision},</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  pages={430--443},</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  year={2006},</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  organization={Springer}</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div></div><!-- fragment --><p>step 4: 在doxygen文档处使用 \cite 进行引用。</p>
+<pre class="fragment">图：FAST角点原理示意图，图像来源为 \cite rosten2006machine 。
+</pre><p>结果如图所示：</p>
+<div class="image">
+<img src="./figures/doxygen_cite_bib_01.png" />
+</div>
+<div class="image">
+<img src="./figures/doxygen_cite_bib_02.png" />
+</div>
  </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

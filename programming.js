@@ -2,7 +2,19 @@ var programming =
 [
     [ "C语言", "c.html", null ],
     [ "编程语言：C++", "cpp.html", "cpp" ],
-    [ "编程语言：Python", "python.html", null ],
+    [ "编程语言：Python", "python.html", [
+      [ "for循环中同时使用序号和值", "python.html#for循环中同时使用序号和值", null ],
+      [ "数组和常数相加", "python.html#数组和常数相加", null ],
+      [ "生成等差数列", "python.html#生成等差数列", null ],
+      [ "限制浮点数精度", "python.html#限制浮点数精度", null ],
+      [ "使用latex", "python.html#使用latex", null ],
+      [ "优雅的读取csv文件", "python.html#优雅的读取csv文件", null ]
+    ] ],
+    [ "Python画图库：matplotlib", "matplotlib.html", [
+      [ "如何设置显示范围？", "matplotlib.html#如何设置显示范围？", null ],
+      [ "如何打开网格？", "matplotlib.html#如何打开网格？", null ],
+      [ "如何设置曲线置顶？", "matplotlib.html#如何设置曲线置顶？", null ]
+    ] ],
     [ "脚本语言：bash", "bash.html", null ],
     [ "脚本语言：bat", "bat.html", null ],
     [ "C++框架：Qt", "qt.html", null ],

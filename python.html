@@ -109,9 +109,15 @@ $(document).ready(function(){initNavTree('python.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>此页面记录一些有用的标准python语法。</p>
-<h2>for循环中同时使用序号和值</h2>
+<h1><a class="anchor" id="for循环中同时使用序号和值"></a>
+for循环中同时使用序号和值</h1>
 <p>一般情况下，for循环支持使用序号（像c++一样）或者使用值来遍历数组，但是如果需要同时用值和序号的时候有没有优雅的表达呢？答案是有的，使用enumerate语句。</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;x = [1, 4, 9 16]</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keywordflow">for</span> i,x <span class="keywordflow">in</span> enumerate(x):</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    print(i, x)</div></div><!-- fragment --><h3>读取csv文件</h3>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;x = [1, 4, 9 16]</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keywordflow">for</span> i,x <span class="keywordflow">in</span> enumerate(x):</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    print(i, x)</div></div><!-- fragment --><h1><a class="anchor" id="数组和常数相加"></a>
+数组和常数相加</h1>
+<p>使用Python内置数组是做不到的，会报错，但是转换成np.array之后就可以了。</p>
+<h1><a class="anchor" id="生成等差数列"></a>
+生成等差数列</h1>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;#方法一：给定起点、终点和差</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;numpy.arange(0, 1, 0.001) # [0,1)区间，以0.01为步长</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;#方法二：给定起点、终点和点数</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;numpy.linspace(0,1,100) #[0,1)区间取100个数</div></div><!-- fragment --><h3>读取csv文件</h3>
 <p>读取csv文件的方式有很多种，标准库、numpy、panda都能提供，但是我觉得最方便的还是numpy提供的方法：</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;from numpy import genfromtxt</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;my_data = genfromtxt(&#39;my_file.csv&#39;, delimiter=&#39;,&#39;)</div></div><!-- fragment --><h3>读取csv文件</h3>
 <p>读取csv文件的方式有很多种，标准库、numpy、panda都能提供，但是我觉得最方便的还是numpy提供的方法：</p>
@@ -129,7 +135,13 @@ $(document).ready(function(){initNavTree('python.html','');});
 <p>This function always returns an object which can work as a context manager and has methods such as </p>
 </blockquote>
 <p>网上查了很久，貌似只有很少的人有这样的疑问？ 最终的方式是使用type函数现场查看，即</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;print(type(rp))</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;print(type(res))</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;print(type(rp))</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;print(type(res))</div></div><!-- fragment --><h1><a class="anchor" id="限制浮点数精度"></a>
+限制浮点数精度</h1>
+<p>前沿：在print或者matplotlib输出是，过长的小数会让人特别烦恼。 限制浮点数精度方法如下： </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;np.round(np.arange(0, 0.51, 0.1),2)</div></div><!-- fragment --><h1><a class="anchor" id="使用latex"></a>
+使用latex</h1>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;ax.set_title(r&#39;$\theta$&#39;))</div></div><!-- fragment --><h1><a class="anchor" id="优雅的读取csv文件"></a>
+优雅的读取csv文件</h1>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;# 优雅的方式</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;[x,y,z] = numpy.genfromtxt(&#39;data.csv&#39;, delimiter=&quot;,&quot;)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;#不优雅的方式</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;data = numpy.genfromtxt(&#39;data.csv&#39;, delimiter=&quot;,&quot;)</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;x = data[0]</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;y = data[1]</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;z = data[2]</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

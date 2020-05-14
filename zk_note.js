@@ -1,7 +1,7 @@
 var zk_note =
 [
     [ "数学基础", "math.html", "math" ],
-    [ "算法", "algorithm.html", "algorithm" ],
+    [ "算法", "algorithm.html", null ],
     [ "计算机视觉(CV)", "cv.html", "cv" ],
     [ "编程", "programming.html", "programming" ],
     [ "技术", "technology.html", "technology" ],

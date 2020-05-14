@@ -46,7 +46,8 @@ var tools =
       [ "原始格式输出", "doxygen.html#raw_format", null ],
       [ "github page上MaJax公式没有正确渲染", "doxygen.html#majax_issue", null ],
       [ "boldsymbol和mathbf的区别。", "doxygen.html#boldsymbol_vs_mathbf", null ],
-      [ "dfrac vs frac", "doxygen.html#dfrac_vs_frac", null ]
+      [ "dfrac vs frac", "doxygen.html#dfrac_vs_frac", null ],
+      [ "生成参考文献", "doxygen.html#生成参考文献", null ]
     ] ],
     [ "开源办公软件：Libre Office", "libre_office.html", null ],
     [ "其他有用的工具", "useful_tools.html", [
@@ -69,5 +70,6 @@ var tools =
       [ "光标回到上一个位置", "vim.html#vim_go_prev", null ]
     ] ],
     [ "Visual Studio Code", "vscode.html", "vscode" ],
-    [ "LaTex语法笔记", "latex.html", null ]
+    [ "LaTex语法笔记", "latex.html", null ],
+    [ "代码内存检测工具valgrind", "valgrind.html", null ]
 ];
