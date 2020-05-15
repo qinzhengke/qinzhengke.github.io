@@ -2,8 +2,7 @@ var feature_entry =
 [
     [ "Harris角点", "harris_corner.html", null ],
     [ "FAST角点", "fast_corner.html", [
-      [ "原理", "fast_corner.html#原理", null ],
-      [ "参考", "fast_corner.html#参考", null ]
+      [ "原理", "fast_corner.html#原理", null ]
     ] ],
     [ "BRIEF描述子", "brief_descriptor.html", [
       [ "基本方法", "brief_descriptor.html#基本方法", null ],

@@ -13,7 +13,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "algorithm.html",
-"vscode.html#markdown代码片"
+"tools.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

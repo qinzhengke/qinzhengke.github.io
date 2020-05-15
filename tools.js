@@ -1,7 +1,7 @@
 var tools =
 [
     [ "操作系统：Linux", "os-linux.html", [
-      [ "综合篇", "os-linux.html#综合篇", [
+      [ "软件篇", "os-linux.html#软件篇", [
         [ "如何非阻塞运行gui程序？", "os-linux.html#如何非阻塞运行gui程序？", null ],
         [ "如何查看目录和文件占用磁盘大小？", "os-linux.html#如何查看目录和文件占用磁盘大小？", null ],
         [ "如何查看文件的后面n行？", "os-linux.html#如何查看文件的后面n行？", null ],
@@ -18,9 +18,7 @@ var tools =
         [ "Ubuntu中的apt-get命令", "os-linux.html#Ubuntu中的apt-get命令", null ],
         [ "Ubuntu自带的任务管理器", "os-linux.html#Ubuntu自带的任务管理器", null ],
         [ "修改Linux的root密码", "os-linux.html#修改Linux的root密码", null ],
-        [ "ssh完整登录命令（账户、主机、端口都有）", "os-linux.html#ssh完整登录命令（账户、主机、端口都有）", null ]
-      ] ],
-      [ "软件篇", "os-linux.html#软件篇", [
+        [ "ssh完整登录命令（账户、主机、端口都有）", "os-linux.html#ssh完整登录命令（账户、主机、端口都有）", null ],
         [ "常用软件列表", "os-linux.html#常用软件列表", null ],
         [ "Ubuntu下安装Shadowsocks", "os-linux.html#Ubuntu下安装Shadowsocks", null ],
         [ "Ubuntu下安装Qt", "os-linux.html#Ubuntu下安装Qt", null ],

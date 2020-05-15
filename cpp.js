@@ -54,5 +54,34 @@ var cpp =
     ] ],
     [ "基于unordered_map的稀疏矩阵的实现", "sparse_matrix.html", [
       [ "unordered_map", "sparse_matrix.html#unordered_map", null ]
+    ] ],
+    [ "C++面试题", "cpp_questions.html", [
+      [ "综合篇", "cpp_questions.html#综合篇", [
+        [ "static的用处", "cpp_questions.html#static的用处", null ],
+        [ "左值和右值是什么？", "cpp_questions.html#左值和右值是什么？", null ],
+        [ "右值引用(&&)是什么？", "cpp_questions.html#cpp_right_ref", null ],
+        [ "lambda表达式是什么，怎么使用？", "cpp_questions.html#lambda表达式是什么，怎么使用？", null ]
+      ] ],
+      [ "模板篇", "cpp_questions.html#模板篇", [
+        [ "模板函数是什么，什么时候用？", "cpp_questions.html#模板函数是什么，什么时候用？", null ],
+        [ "模板函数能否在cpp文件中定义，为什么？", "cpp_questions.html#模板函数能否在cpp文件中定义，为什么？", null ],
+        [ "内存碎片如何生成，怎么处理？", "cpp_questions.html#内存碎片如何生成，怎么处理？", null ]
+      ] ],
+      [ "多态篇", "cpp_questions.html#多态篇", [
+        [ "多态如何实现？", "cpp_questions.html#多态如何实现？", null ],
+        [ "虚函数表有多少张？", "cpp_questions.html#虚函数表有多少张？", null ],
+        [ "多态模式中子类的析构函数有什么要注意的，为什么？", "cpp_questions.html#多态模式中子类的析构函数有什么要注意的，为什么？", null ]
+      ] ],
+      [ "STL篇", "cpp_questions.html#STL篇", [
+        [ "map和unordered_map如何实现？", "cpp_questions.html#map和unordered_map如何实现？", null ],
+        [ "hashmap一种实现结构？", "cpp_questions.html#hashmap一种实现结构？", null ]
+      ] ],
+      [ "其他", "cpp_questions.html#其他", [
+        [ "多线程要注意什么，要怎么做？", "cpp_questions.html#多线程要注意什么，要怎么做？", null ],
+        [ "为什么会出现死锁问题，如何避免？", "cpp_questions.html#为什么会出现死锁问题，如何避免？", null ],
+        [ "有那些智能指针，有何作用？", "cpp_questions.html#有那些智能指针，有何作用？", null ],
+        [ "智能指针如何实现？", "cpp_questions.html#智能指针如何实现？", null ],
+        [ "进程和线程的区别？", "cpp_questions.html#进程和线程的区别？", null ]
+      ] ]
     ] ]
 ];
