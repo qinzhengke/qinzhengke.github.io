@@ -19,6 +19,7 @@ var math =
       [ "列文博格-马夸尔特方法（LM方法）", "optimization.html#opt_lm", null ]
     ] ],
     [ "卡尔曼滤波", "kalman_filter.html", [
+      [ "问题建立（problem_setup)", "kalman_filter.html#kf_problem_setup", null ],
       [ "用法", "kalman_filter.html#kf_usage", null ],
       [ "推导：最大化后验概率", "kalman_filter.html#kf_origin", null ]
     ] ]
