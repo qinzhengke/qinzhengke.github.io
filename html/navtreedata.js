@@ -19,7 +19,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "algorithm.html",
-"matplotlib.html#如何打开网格？"
+"matplotlib.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

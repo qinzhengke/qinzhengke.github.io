@@ -85,7 +85,9 @@ var cpp =
       ] ]
     ] ],
     [ "C++常用库", "cpp_libraries.html", [
-      [ "evpp-奇虎360的网络库", "cpp_libraries.html#evpp", null ],
+      [ "evpp-奇虎360的网络库", "cpp_libraries.html#evpp", [
+        [ "evpp库如何在设置回调函数时输入用户参数？", "cpp_libraries.html#evpp_callback", null ]
+      ] ],
       [ "glog-google的日志库", "cpp_libraries.html#glog", null ],
       [ "gtest-google的测试框架库", "cpp_libraries.html#gtest", null ],
       [ "libevent-事件框架库", "cpp_libraries.html#libevent", null ]

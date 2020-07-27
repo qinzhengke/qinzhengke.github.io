@@ -155,6 +155,7 @@ var NAVTREEINDEX0 =
 "cpp_file_io.html#cpp_binary_file":[4,4,1,2,0],
 "cpp_libraries.html":[4,4,1,7],
 "cpp_libraries.html#evpp":[4,4,1,7,0],
+"cpp_libraries.html#evpp_callback":[4,4,1,7,0,0],
 "cpp_libraries.html#glog":[4,4,1,7,1],
 "cpp_libraries.html#gtest":[4,4,1,7,2],
 "cpp_libraries.html#libevent":[4,4,1,7,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "latex.html":[4,6,9],
 "lib_backward.html":[4,4,10],
 "libre_office.html":[4,6,5],
-"math.html":[4,0],
-"matplotlib.html":[4,4,3]
+"math.html":[4,0]
 };

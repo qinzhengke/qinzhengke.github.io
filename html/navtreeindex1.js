@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"matplotlib.html":[4,4,3],
 "matplotlib.html#如何打开网格？":[4,4,3,1],
 "matplotlib.html#如何设置显示范围？":[4,4,3,0],
 "matplotlib.html#如何设置曲线置顶？":[4,4,3,2],
