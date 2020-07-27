@@ -1,0 +1,48 @@
+var classSettings =
+[
+    [ "InputType", "classSettings.html#a5afe85d24b071973a7f248c05386f7f4", [
+      [ "INVALID", "classSettings.html#a5afe85d24b071973a7f248c05386f7f4adb44130895aedc32a119565eb6d61bed", null ],
+      [ "CAMERA", "classSettings.html#a5afe85d24b071973a7f248c05386f7f4aba4cc7726878c8913831f0ea6360fa05", null ],
+      [ "VIDEO_FILE", "classSettings.html#a5afe85d24b071973a7f248c05386f7f4ac9fd97535bc651249f9eed1fddf2d36b", null ],
+      [ "IMAGE_LIST", "classSettings.html#a5afe85d24b071973a7f248c05386f7f4a292bd2e5ba912a92ace1606e366edc4d", null ]
+    ] ],
+    [ "Pattern", "classSettings.html#a0e7117abd9427a6f8bc1d1d8d456b5c8", [
+      [ "NOT_EXISTING", "classSettings.html#a0e7117abd9427a6f8bc1d1d8d456b5c8ad2f421ce100bd7e0302b17bda1a74eb9", null ],
+      [ "CHESSBOARD", "classSettings.html#a0e7117abd9427a6f8bc1d1d8d456b5c8ae96aa2d60b4a554a215524a05b32908e", null ],
+      [ "CIRCLES_GRID", "classSettings.html#a0e7117abd9427a6f8bc1d1d8d456b5c8a79472d1c69f8ed7aa1b55f908b136f68", null ],
+      [ "ASYMMETRIC_CIRCLES_GRID", "classSettings.html#a0e7117abd9427a6f8bc1d1d8d456b5c8a2cea29ee5896f2cb4cc64df25fd2375b", null ]
+    ] ],
+    [ "Settings", "classSettings.html#ab7169a6eefce79566dd07db3b1e5e967", null ],
+    [ "nextImage", "classSettings.html#a7701462e928f2425b342440fba9973e5", null ],
+    [ "read", "classSettings.html#a2d7841f8441095032e0f3b7d20adfd3f", null ],
+    [ "validate", "classSettings.html#a29016205c90b95d6247df18365a70dd0", null ],
+    [ "write", "classSettings.html#a0785cc2055091b2a857b1dcefe291acc", null ],
+    [ "aspectRatio", "classSettings.html#af55c910308a0d773055d0b19261bb3b8", null ],
+    [ "atImageList", "classSettings.html#a1b89e85a2638e19f2d53269245d19b66", null ],
+    [ "boardSize", "classSettings.html#a5030a7164df923bb3b86dd7a0fc9af30", null ],
+    [ "calibFixPrincipalPoint", "classSettings.html#a44397eea3f08a0c78808c38bdd716594", null ],
+    [ "calibrationPattern", "classSettings.html#a94551b7ffe8ac60311b035b2905e9498", null ],
+    [ "calibZeroTangentDist", "classSettings.html#a4bc7ff147d74721a3587ce6fcb64ef32", null ],
+    [ "cameraID", "classSettings.html#af32a5ff06192bde106c934e0361bcd7e", null ],
+    [ "delay", "classSettings.html#a5fe947366441009187d633f9e4663256", null ],
+    [ "fixK1", "classSettings.html#a25242813ee2c5e111ce48fe1f7f85e7b", null ],
+    [ "fixK2", "classSettings.html#abad0b643dc5a39d493a6343d38f41578", null ],
+    [ "fixK3", "classSettings.html#a433fca3c377d42f1c7d43e35a286913f", null ],
+    [ "fixK4", "classSettings.html#ac993998a56cebe0593cb74fe39858d31", null ],
+    [ "fixK5", "classSettings.html#a4d0d37eef5f3033a8aabc3f09ee29a03", null ],
+    [ "flag", "classSettings.html#aba5691e3e76525f93ea254e654ec3717", null ],
+    [ "flipVertical", "classSettings.html#ab6304f260b315d2820f755e1c3a052b5", null ],
+    [ "goodInput", "classSettings.html#a3b9fc27b555f982bd5b9ea5198e1f7e3", null ],
+    [ "imageList", "classSettings.html#ae261128a69d1d3d2b0f5315aff8066c8", null ],
+    [ "input", "classSettings.html#a9970d51ab47b6560ab11b267637b6219", null ],
+    [ "inputCapture", "classSettings.html#abd5706146b34d3c32aef4025dcd2ec1b", null ],
+    [ "inputType", "classSettings.html#a89fb14ce9856fb642f18bb0f7c5b8868", null ],
+    [ "nrFrames", "classSettings.html#a7e6654cd0e51791ed687eaa85f8fc143", null ],
+    [ "outputFileName", "classSettings.html#a9468f1ad53e982f9541d76c8d3228900", null ],
+    [ "showUndistorsed", "classSettings.html#a935d6f27ee454e9fee63f8b662f48a06", null ],
+    [ "squareSize", "classSettings.html#a6c94708776ad1ce258fc44f2101f5941", null ],
+    [ "useFisheye", "classSettings.html#ac8f271630d54f9d0c718ea0130972d44", null ],
+    [ "writeExtrinsics", "classSettings.html#a1cee56847e08f49c90d2f7e2b0511197", null ],
+    [ "writeGrid", "classSettings.html#af531ef154f3e5d73e2f3219f7266271d", null ],
+    [ "writePoints", "classSettings.html#a53ac449815682c6bfae7e50944ba0565", null ]
+];
