@@ -46,6 +46,7 @@ var programming =
         [ "图像浏览工具", "c.html#图像浏览工具", null ],
         [ "external symbol怎么办？", "c.html#遇到unresolved", null ],
         [ "多周期算法", "c.html#多周期算法", null ],
+        [ "另一个float不够用的例子", "c.html#另一个float不够用的例子", null ],
         [ "initializer", "c.html#designated", null ],
         [ "规范打印", "c.html#规范打印", null ],
         [ "重复定义", "c.html#重复定义", null ],
@@ -92,7 +93,8 @@ var programming =
       [ "引用math.h的lib", "cmake.html#cmake_math", null ],
       [ "安装", "cmake.html#cmake_install", null ],
       [ "引用Python", "cmake.html#cmake_python", null ],
-      [ "config文件和find文件。", "cmake.html#cmake_config_find", null ]
+      [ "config文件和find文件。", "cmake.html#cmake_config_find", null ],
+      [ "额外添加源文件", "cmake.html#额外添加源文件", null ]
     ] ],
     [ "Android make", "android_make.html", null ],
     [ "软件工程", "soft_engineering.html", null ]

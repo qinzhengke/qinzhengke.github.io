@@ -166,7 +166,18 @@ symbol！</h1>
 request for member xxx in something not a structure or union</h1>
 <p>本身的含义是使用“.xxx”表达式时，“.”前面的的内容不是一个结构体或者联合。 具体可能出现的场景：</p>
 <p>1.指针错误的使用了“.”来访问成员。 2.C99中使用designated initializer时，有成员没有逗号，在git解决冲突的时候常常遇到这个问题。</p>
-<div class="fragment"><div class="line">struct A{int a, int b};</div><div class="line">A x = {</div><div class="line"> a = 10 // 解冲突时忘记了逗号，</div><div class="line"> b = 20,</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">struct A{int a, int b};</div><div class="line">A x = {</div><div class="line"> a = 10 // 解冲突时忘记了逗号，</div><div class="line"> b = 20,</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="const_issue"></a>
+passing ... as 'this' argument ...  discards qualifiers</h1>
+<p>问题：问题的全称是 </p><div class="fragment"><div class="line">error: passing ‘const Base’ as ‘this’ argument of ‘virtual void Base::test()’ discards qualifiers [-fpermissive]</div></div><!-- fragment --><p>问题的原因是函数传入的const类型的对象a，但是函数内部调用了a的非const类型成员函数，有可能会导致类内部成员被修改，编译器不允许。</p>
+<p>解决方法：</p>
+<ol type="1">
+<li>如果成员函数没有修改任何对象变量，则可以用const修饰成员函数，例如</li>
+</ol>
+<div class="fragment"><div class="line"><span class="keyword">class </span>A{</div><div class="line">    <span class="keywordtype">void</span> a()<span class="keyword"> const</span>{ </div><div class="line">        <span class="comment">// Do something</span></div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><ol type="1">
+<li>如果成员函数确实修改了对象变量，那么成员函数不能定义为const类型，则在传入a的时候，就不能用const修饰，因为你确实要修改这个对象。 </li>
+</ol>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

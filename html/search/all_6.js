@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['orb特征',['ORB特征',['../orb_feature.html',1,'feature_entry']]],
-  ['os_2dwindows',['os-windows',['../os-windows.html',1,'tools']]]
+  ['latex语法笔记',['LaTex语法笔记',['../latex.html',1,'tools']]],
+  ['lubuntu',['Lubuntu',['../os-lubuntu.html',1,'tools']]]
 ];

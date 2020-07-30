@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['优化理论',['优化理论',['../optimization.html',1,'math']]],
-  ['代码内存检测工具valgrind',['代码内存检测工具valgrind',['../valgrind.html',1,'tools']]]
+  ['vim笔记',['vim笔记',['../vim.html',1,'tools']]],
+  ['visual_20studio_20code',['Visual Studio Code',['../vscode.html',1,'tools']]],
+  ['vscode中的markdown相关的代码片',['vscode中的markdown相关的代码片',['../vscode_markdown_snippet.html',1,'vscode']]]
 ];

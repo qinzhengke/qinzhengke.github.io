@@ -16,7 +16,8 @@ var cpp =
       [ "头文件不要定义变量！", "cpp_compile_faq.html#头文件不要定义变量！", null ],
       [ "在头文件中定义函数一定要使用inline！", "cpp_compile_faq.html#在头文件中定义函数一定要使用inline！", null ],
       [ "临时变量无法引用", "cpp_compile_faq.html#临时变量无法引用", null ],
-      [ "request for member xxx in something not a structure or union", "cpp_compile_faq.html#request_for_member", null ]
+      [ "request for member xxx in something not a structure or union", "cpp_compile_faq.html#request_for_member", null ],
+      [ "passing ... as 'this' argument ...  discards qualifiers", "cpp_compile_faq.html#const_issue", null ]
     ] ],
     [ "C++运行常见问题", "cpp_run_faq.html", [
       [ "system()函数工作路径？", "cpp_run_faq.html#system_work_dir", null ],
