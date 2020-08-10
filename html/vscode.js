@@ -7,5 +7,8 @@ var vscode =
     [ "代码片的设置语法", "vscode.html#代码片的设置语法", null ],
     [ "Latex常用的代码片", "vscode.html#Latex常用的代码片", null ],
     [ "vscode如何对变量进行一改全改？", "vscode.html#vscode如何对变量进行一改全改？", null ],
+    [ "vscode如何添加包含路径？", "vscode.html#vscode如何添加包含路径？", null ],
+    [ "vscode中如何设置前后跳转？", "vscode.html#vscode中如何设置前后跳转？", null ],
+    [ "如何设置ruler?", "vscode.html#vscode", null ],
     [ "vscode中的markdown相关的代码片", "vscode_markdown_snippet.html", null ]
 ];

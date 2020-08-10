@@ -124,8 +124,9 @@ std::placeholder</h1>
 <p>当调用新的函数对象时，新函数对象会调用被调用函数，并且其参数会传递到被调用函数参数列表中持有与新函数对象中位置对应的占位符。</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> <span class="keyword">function</span>(arg1,arg2,arg3,arg4,arg5)</div><div class="line">{</div><div class="line">    <span class="comment">//do something</span></div><div class="line">}</div><div class="line"><span class="keyword">auto</span> g = bind(<span class="keyword">function</span>,a,b,_2,c,_1);</div></div><!-- fragment --><p>新的函数对象：g 被调用函数：function 当调用函数对象g时候，函数对象g会调用function函数，并把其参数传给function函数，g的第一个参数会传给function的持有占位符_1的位置，即arg5。第二个参数会传给function的持有占位符_2的位置，即arg3。</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> g(X,Y);</div><div class="line"><span class="comment">// 相对于调用下面函数</span></div><div class="line"><span class="keyword">function</span>(<span class="keyword">function</span>,a,b,Y,c,X);</div></div><!-- fragment --><p>其中的arg1,arg2,arg4已经被绑定到a,b,c上。</p>
-<p>placeholder本身是命名空间，占位符实际上是“_1”，“_2”，“_3”等等。 </p>
-</div></div><!-- contents -->
+<p>placeholder本身是命名空间，占位符实际上是“_1”，“_2”，“_3”等等。</p>
+<hr/>
+ </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

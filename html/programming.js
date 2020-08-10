@@ -22,6 +22,9 @@ var programming =
         [ "'\\r'", "c.html#utf-8文件中的行结尾", null ],
         [ "qtcreator中开启gcc的c99支持", "c.html#qtcreator中开启gcc的c99支持", null ]
       ] ],
+      [ "库函数篇", "c.html#库函数篇", [
+        [ "FLT_EPSILON宏", "c.html#FLT_EPSILON宏", null ]
+      ] ],
       [ "性能篇", "c.html#性能篇", [
         [ "一个float不够用的例子", "c.html#一个float不够用的例子", null ],
         [ "下采样拷贝时间", "c.html#下采样拷贝时间", null ],
@@ -77,7 +80,13 @@ var programming =
     [ "脚本语言：bash", "bash.html", null ],
     [ "脚本语言：bat", "bat.html", null ],
     [ "C++框架：Qt", "qt.html", null ],
-    [ "开源计算机视觉库：OpenCV", "opencv.html", null ],
+    [ "开源计算机视觉库：OpenCV", "opencv.html", [
+      [ "Linux离线环境编译opencv", "opencv.html#Linux离线环境编译opencv", null ],
+      [ "编译contrib库", "opencv.html#编译contrib库", null ],
+      [ "带Qt编译", "opencv.html#带Qt编译", null ],
+      [ "CV_EXPORT宏", "opencv.html#CV_EXPORT宏", null ],
+      [ "如何填充Mat？", "opencv.html#如何填充Mat？", null ]
+    ] ],
     [ "机器人操作系统：ROS", "ros.html", null ],
     [ "谷歌测试框架：Google Test", "gtest.html", null ],
     [ "实用库：backward", "lib_backward.html", null ],
@@ -94,8 +103,12 @@ var programming =
       [ "安装", "cmake.html#cmake_install", null ],
       [ "引用Python", "cmake.html#cmake_python", null ],
       [ "config文件和find文件。", "cmake.html#cmake_config_find", null ],
-      [ "额外添加源文件", "cmake.html#额外添加源文件", null ]
+      [ "额外添加源文件", "cmake.html#额外添加源文件", null ],
+      [ "target_link_libraries中的相对路径", "cmake.html#target_link_libraries中的相对路径", null ]
     ] ],
     [ "Android make", "android_make.html", null ],
-    [ "软件工程", "soft_engineering.html", null ]
+    [ "软件工程", "soft_engineering.html", null ],
+    [ "Coredump分析", "coredump.html", [
+      [ "方法", "coredump.html#方法", null ]
+    ] ]
 ];

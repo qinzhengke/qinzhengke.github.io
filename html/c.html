@@ -206,6 +206,13 @@ utf-8文件的bom字节</h2>
  <h2><a class="anchor" id="qtcreator中开启gcc的c99支持"></a>
 qtcreator中开启gcc的c99支持</h2>
 <div class="fragment"><div class="line">QMAKE_CFLAGS += -std=c99</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="库函数篇"></a>
+库函数篇</h1>
+<h2><a class="anchor" id="FLT_EPSILON宏"></a>
+FLT_EPSILON宏</h2>
+<p>问题：做除法的时候，我们知道分母不能为0，那么如何检查呢？ “if(a!=0.0f)”这种小学生的错误就不要犯了。</p>
+<p>解决方法：一般来说我们需要拿到一个很小的数，如果分母的绝对值小于这个数，就认为分母为零。 最适合的方法是使用&lt;float.h&gt;提供的FLT_EPSILON。</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;float.h&gt;</span></div><div class="line"><span class="keywordtype">float</span> a = 0;</div><div class="line"><span class="keywordflow">if</span>(fabs(a)&lt;FLT_EPSILON){</div><div class="line">  <span class="comment">// return error.</span></div><div class="line">}</div></div><!-- fragment --><hr/>
  <h1><a class="anchor" id="性能篇"></a>
 性能篇</h1>
 <hr/>

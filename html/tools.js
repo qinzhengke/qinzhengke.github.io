@@ -32,7 +32,9 @@ var tools =
     ] ],
     [ "Lubuntu", "os-lubuntu.html", null ],
     [ "os-windows", "os-windows.html", null ],
-    [ "版本管理工具：git", "git.html", null ],
+    [ "版本管理工具：git", "git.html", [
+      [ "如何删除submodule", "git.html#如何删除submodule", null ]
+    ] ],
     [ "文档框架：doxygen", "doxygen.html", [
       [ "include和snippet", "doxygen.html#include和snippet", null ],
       [ "生成latex输出", "doxygen.html#生成latex输出", null ],

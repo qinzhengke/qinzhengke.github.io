@@ -104,8 +104,11 @@ $(document).ready(function(){initNavTree('cpp_eigen.html','');});
 <hr/>
  <h1><a class="anchor" id="Matrix和C数组之间的转换"></a>
 Matrix和C数组之间的转换</h1>
-<p>参见： <a href="https://eigen.tuxfamily.org/dox/group__TutorialMapClass.html">https://eigen.tuxfamily.org/dox/group__TutorialMapClass.html</a> </p>
-</div></div><!-- contents -->
+<p>参见： <a href="https://eigen.tuxfamily.org/dox/group__TutorialMapClass.html">https://eigen.tuxfamily.org/dox/group__TutorialMapClass.html</a></p>
+<hr/>
+ <h1><a class="anchor" id="auto获取矩阵失效？"></a>
+auto获取矩阵失效？</h1>
+<div class="fragment"><div class="line"><span class="comment">// 编译失败</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line">Eigen::Matrix&lt;float,9,9&gt; a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix3f::Zero();</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

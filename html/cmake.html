@@ -154,7 +154,12 @@ config文件和find文件。</h1>
 <p>问题：我们都知道add_executalbe可以添加可执行文件目标，同时添加该目标需要的源文件。 有的时候我们需要add_executalbe语句之后再添加源文件，例如工程A在调试阶段需要编译可视化模块，需要可视化的源文件，但是发布出去就不需要。 所以我们会定义一个宏来区分什么时候该加入可视化模块，如果宏生效了，才额外添加源文件。</p>
 <p>那么如何操作呢？</p>
 <p>答案：</p>
-<div class="fragment"><div class="line">target_sources(my_exe PRIVATE my_src.c)</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">target_sources(my_exe PRIVATE my_src.c)</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="target_link_libraries中的相对路径"></a>
+target_link_libraries中的相对路径</h1>
+<p>在cmake的target_link_libaraies语句中，想要link到某一个库文件，如果直接输入相对路径，那么不管怎么写，cmake都无法找到对应的库文件。</p>
+<p>必须使用${CMAKE_BINARY_DIR}来指定当前路径，这个路径也就是我们通常新建的build目录。</p>
+<div class="fragment"><div class="line">target_link_libraries(my_exe</div><div class="line">        ${CMAKE_BINARY_DIR}/3rd-party/libabc.so)</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

@@ -111,7 +111,11 @@ evpp库如何在设置回调函数时输入用户参数？</h2>
 <p>下面用代码实例进行解释</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>A{</div><div class="line">    <span class="keywordtype">void</span> init(){</div><div class="line">        a = 10;</div><div class="line">        <span class="comment">//使用std::bind来封装回调函数，_1和_2表示封装后的函数有两个形参，是callback2的第2，3个参数。</span></div><div class="line">        <span class="keyword">auto</span> callback_wrap = bind(callback2, <span class="keyword">this</span>, palceholders::_1, placeholders::_2);</div><div class="line">        <span class="comment">//将封装后的参数传入回调设置。</span></div><div class="line">        s.SetMessageHandler(callback_wrap);</div><div class="line">        s.Init(1080);</div><div class="line">        s.Start();</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">// 注意回调函数要使用static进行修饰，否则编译会报错。</span></div><div class="line">    <span class="comment">// 本来SetMessagehandler函数只接收这种类型的回调，但是没有传入我们想要的数据</span></div><div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> callback1(evpp::EventLoop *l, evpp::udp::MessagePtr &amp;msg)</div><div class="line"></div><div class="line">    <span class="comment">// 我们扩展了回调，加入了想要处理的变量，直接传入SetMessageHandle会报错，必须使用bind封装后传入。</span></div><div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> callback2(A *my_obj, evpp::EventLoop *l, evpp::udp::MessagePtr &amp;msg){</div><div class="line">        cout&lt;&lt;<span class="stringliteral">&quot;a=&quot;</span>&lt;&lt;a&lt;&lt;endl;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keywordtype">int</span> a;</div><div class="line">    evpp::udp::Server s;</div><div class="line">}</div></div><!-- fragment --><p>bind特别的神奇，它可以无视函数传参规则，强行将N个参数的函数传入1～N-1个参数的函数形式，理论上可以解决任何callback传参问题。 库的设计者也不需要预留user_data给用户，非常的简便。</p>
 <p>补充：evpp的文档非常少，作者提倡看源码来学习使用方法。一开始遇到回调传参的问题，非常头大，网上资料也很少。 只能硬着头皮看源码，全局搜索SetMessageHandler参数，还真的发现了传入3个参数的调用，一看就是使用了std::bind。 研究一番后，终于成功的用上了，作者的C++11还是非常厉害的。</p>
-<hr/>
+<h2><a class="anchor" id="如何获取sockect_fd？"></a>
+如何获取sockect_fd？</h2>
+<p>问题：根据evpp源码实例，我们知道udp::SendMesssage需要提供socket_fd作为参数，然而在evpp源码所有的实例中，socket_fd都是从接收callback函数中的Message参数里拿到。 那么如果我只想发送，如何获取socket_fd呢？</p>
+<p>回答：使用createUDPSocket()函数，</p>
+<div class="fragment"><div class="line">evpp_socket_t fd = udp::sock::createUDPSocket(3030); <span class="comment">// source port</span></div><div class="line"><span class="keyword">struct </span>sockaddr_in sin;</div><div class="line">sin.sin_family = AF_INET;</div><div class="line">sin.sin_addr.s_addr = htonl(0x7f000001);    <span class="comment">// 127.0.0.1</span></div><div class="line">sin.sin_port = htons(8080);    <span class="comment">// Destination port</span></div><div class="line">evpp::udp::SendMessage(fd, (<span class="keyword">struct</span> sockaddr *)&amp;sin, buffer, buffer_size);</div></div><!-- fragment --><hr/>
  <h1><a class="anchor" id="glog"></a>
 glog-google的日志库</h1>
 <hr/>
@@ -120,6 +124,15 @@ gtest-google的测试框架库</h1>
 <hr/>
  <h1><a class="anchor" id="libevent"></a>
 libevent-事件框架库</h1>
+<hr/>
+ <h2><a class="anchor" id="基于libevent的定时器"></a>
+基于libevent的定时器</h2>
+<hr/>
+ <h1><a class="anchor" id="PcapPlusplus"></a>
+PcapPlusplus－一个解析pcap文件的库。</h1>
+<h2><a class="anchor" id="pcpp_issue1"></a>
+一个小坑</h2>
+<p>pcpp::PcappFileReaderDevice这个类的拷贝构造函数是private的，这使得std::vector在push_back的时候报错。 并且没有public的空构造函数， 很神奇，不知道为何这样做，要push到vector，只能通过new的方式新建指针,然后把指针push到vector里面。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

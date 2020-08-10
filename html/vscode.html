@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('vscode.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Visual Studio Code </div>  </div>
+<div class="title">如何设置ruler? </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="如何添加宏定义？"></a>
@@ -123,8 +123,26 @@ Latex常用的代码片</h1>
 <hr/>
  <h1><a class="anchor" id="vscode如何对变量进行一改全改？"></a>
 vscode如何对变量进行一改全改？</h1>
-<p>按F2，输入新的名称，然后在下方点击打钩图标即可。 </p>
-</div></div><!-- contents -->
+<p>按F2，输入新的名称，然后在下方点击打钩图标即可。</p>
+<h1><a class="anchor" id="vscode如何添加包含路径？"></a>
+vscode如何添加包含路径？</h1>
+<p>问题：一些库安装后的头文件路径不是最标准的/usr/include，例如Eigen的安装头文件路径为/usr/local/include/eigen3，然而vscode默认不会搜索这个路径，导致vscode无法正确解析这些头文件。</p>
+<p>解决方法：在vscode中手动添加包含目录。</p>
+<p>step 1: 菜单 File -&gt; Preference -&gt; settings -&gt; Extensions -&gt; C/C++ -&gt; Include Path，选择“Edit in settings.json”。</p>
+<p>step 2: 按照如下方式添加include path。</p>
+<div class="fragment"><div class="line">{</div><div class="line">    &quot;cmake.configureOnOpen&quot;: true,</div><div class="line">    &quot;C_Cpp.updateChannel&quot;: &quot;Insiders&quot;,</div><div class="line">    &quot;http.proxySupport&quot;: &quot;off&quot;,</div><div class="line">    &quot;[markdown]&quot;: {</div><div class="line">      &quot;editor.quickSuggestions&quot;:true</div><div class="line">    },</div><div class="line">    &quot;C_Cpp.default.includePath&quot;: [&quot;/usr/local/include/eigen3&quot;]  // 添加include path</div><div class="line">}</div></div><!-- fragment --><p>注意：由于这个设置是针对于vscode的，对于任何工程，这个路径都会自动添加。</p>
+<h1><a class="anchor" id="vscode中如何设置前后跳转？"></a>
+vscode中如何设置前后跳转？</h1>
+<p>问题：在代码浏览过程中，个人比较习惯使用QtCreator的方式进行跳转，即Alt+右为向前跳转，Alt+左为向后跳转。 vscode默认跳转方式为ctrl+alt+‘-’，这种组合对于非常常用的功能来说太复杂了。</p>
+<p>解决方法：</p>
+<p>step 1: File -&gt; Preference -&gt; Keyboard Shortcuts step 2: 搜索“Forward”找到向前跳转的设置， 搜索“Backward“找到向后跳转的设置，按照提示设置即可。</p>
+<h1><a class="anchor" id="vscode"></a>
+如何设置ruler?</h1>
+<p>问题：编写代码的时候，ruler也就是右侧的竖线，ruler可以提醒我们一行代码是否太长，需要拆行。</p>
+<p>解决方法：</p>
+<p>Step 1: File -&gt; Preference -&gt; Settings，搜索“ruler”，选择“Edit in settings.json”</p>
+<p>Step 2: 按照一下方法进行设置</p>
+<div class="fragment"><div class="line">{</div><div class="line">    &quot;cmake.configureOnOpen&quot;: true,</div><div class="line">    &quot;C_Cpp.updateChannel&quot;: &quot;Insiders&quot;,</div><div class="line">    &quot;http.proxySupport&quot;: &quot;off&quot;,</div><div class="line">    &quot;[markdown]&quot;: {</div><div class="line">      &quot;editor.quickSuggestions&quot;:true</div><div class="line">    },</div><div class="line">    &quot;editor.rulers&quot;: [80,120] // 设置2个ruler，分别在80列和120列</div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

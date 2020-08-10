@@ -8,11 +8,13 @@ var NAVTREE =
       [ "安装", "cpp_eigen.html#安装", null ],
       [ "矩阵的初始化（包括全零阵、单位阵）", "cpp_eigen.html#矩阵的初始化（包括全零阵、单位阵）", null ],
       [ "获取子矩阵", "cpp_eigen.html#获取子矩阵", null ],
-      [ "Matrix和C数组之间的转换", "cpp_eigen.html#Matrix和C数组之间的转换", null ]
+      [ "Matrix和C数组之间的转换", "cpp_eigen.html#Matrix和C数组之间的转换", null ],
+      [ "auto获取矩阵失效？", "cpp_eigen.html#auto获取矩阵失效？", null ]
     ] ],
     [ "结合Apollo源代码来理解C++的工厂模式", "cpp_factory_mode.html", [
       [ "前言", "cpp_factory_mode.html#前言", null ]
     ] ],
+    [ "vslam_intro", "md_cv_vslam_vslam_intro.html", null ],
     [ "学习笔记", "zk_note.html", "zk_note" ],
     [ "Bibliography", "citelist.html", null ],
     [ "Classes", "annotated.html", [
@@ -25,7 +27,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "algorithm.html",
-"kalman_filter.html"
+"group.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

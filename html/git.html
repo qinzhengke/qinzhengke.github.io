@@ -127,7 +127,16 @@ $(document).ready(function(){initNavTree('git.html','');});
 <h2>报错：cannot update paths and switch to branch xxx at the same time</h2>
 <p>使用git checkout -b local_branch origin/branch的时候，遇到这个错误，字面上的意思是不能同时更改路径和切换分支，实际上该问题的一个根源是orign/branch在本地没有被登记，需要git remote update 或者 git fetch origin/branch来更新，然后再checkout。</p>
 <h2>自动沿用上一次冲突解决策略</h2>
-<p>解决冲突之后，如果觉得不满意，想要重新解决，会发现再一次cherry-pick时，已经没有冲突了，并且git会提示 “Resolved xxx using previous resolution” 这就是git的自动沿用上一次冲突解决策略。 可以使用下面的命令关掉。 </p><div class="fragment"><div class="line">git config --global rerere.enabled true</div></div><!-- fragment --> </div></div><!-- contents -->
+<p>解决冲突之后，如果觉得不满意，想要重新解决，会发现再一次cherry-pick时，已经没有冲突了，并且git会提示 “Resolved xxx using previous resolution” 这就是git的自动沿用上一次冲突解决策略。 可以使用下面的命令关掉。 </p><div class="fragment"><div class="line">git config --global rerere.enabled true</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="如何删除submodule"></a>
+如何删除submodule</h1>
+<p>有的时候不知为何搞错了配置，需要删掉submodule然后再重新添加，然而git中删除submodule没有很简单，而是需要一下五步操作。</p>
+<p>Step 1: 删除.gitmodule中的submodule相关配置</p>
+<p>Step 2: 删除.git/config中的submodule相关配置</p>
+<p>Step 3: git rm &ndash;cached path_to_submodule</p>
+<p>Step 4: rm -rf path_to_submodule</p>
+<p>Step 5: rm -rf .git/modules/path_to_submodule. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

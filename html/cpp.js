@@ -87,15 +87,22 @@ var cpp =
     ] ],
     [ "C++常用库", "cpp_libraries.html", [
       [ "evpp-奇虎360的网络库", "cpp_libraries.html#evpp", [
-        [ "evpp库如何在设置回调函数时输入用户参数？", "cpp_libraries.html#evpp_callback", null ]
+        [ "evpp库如何在设置回调函数时输入用户参数？", "cpp_libraries.html#evpp_callback", null ],
+        [ "如何获取sockect_fd？", "cpp_libraries.html#如何获取sockect_fd？", null ]
       ] ],
       [ "glog-google的日志库", "cpp_libraries.html#glog", null ],
       [ "gtest-google的测试框架库", "cpp_libraries.html#gtest", null ],
-      [ "libevent-事件框架库", "cpp_libraries.html#libevent", null ]
+      [ "libevent-事件框架库", "cpp_libraries.html#libevent", [
+        [ "基于libevent的定时器", "cpp_libraries.html#基于libevent的定时器", null ]
+      ] ],
+      [ "PcapPlusplus－一个解析pcap文件的库。", "cpp_libraries.html#PcapPlusplus", [
+        [ "一个小坑", "cpp_libraries.html#pcpp_issue1", null ]
+      ] ]
     ] ],
     [ "C++11", "cpp11.html", [
       [ "std::function是什么？", "cpp11.html#std_function", null ],
       [ "std::bind是什么，有何意义？", "cpp11.html#std_bind", null ],
-      [ "std::placeholder", "cpp11.html#std_placeholder", null ]
+      [ "std::placeholder", "cpp11.html#std_placeholder", null ],
+      [ "::bind传入引用", "cpp11.html#std", null ]
     ] ]
 ];

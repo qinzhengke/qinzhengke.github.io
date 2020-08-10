@@ -95,11 +95,13 @@ $(document).ready(function(){initNavTree('lib_backward.html','');});
 <p>使用步骤</p>
 <ol type="1">
 <li>安装libdw <div class="fragment"><div class="line">sudo apt-get install libdw-dev</div></div><!-- fragment --></li>
-<li>add_executable指令加入启动backward库的宏 <div class="fragment"><div class="line">add_executable(exe main.cpp ${BACKWARD_ENABLE})</div></div><!-- fragment --></li>
 <li>链接dw库 <div class="fragment"><div class="line">target_link_libraries(exe dw)</div></div><!-- fragment --></li>
-<li>在包含backward头文件的时候加入DW的宏定义 <div class="fragment"><div class="line"><span class="preprocessor">#define BACKWARD_HAS_DW 1</span></div><div class="line"><span class="preprocessor">#include &lt;backward.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="comment">// 下面这段必须加，否则输出结果仍然不是行号</span></div><div class="line"><span class="keyword">namespace </span><a class="code" href="namespacebackward.html">backward</a></div><div class="line">{</div><div class="line">    backward::SignalHandling sh;</div><div class="line">}</div></div><!-- fragment --></li>
+<li>在main()函数所在的文件包含backward头文件，并且加入DW的宏定义，因为我文件内部会定义变量并且运行实例， 所以尽量不要在非main函数所在文件以外的地方调用，防止多次引用。</li>
 </ol>
-<p>5.Debug编译方式 别忘了一定要用Debug编译方式，否则可执行文件无法对应到行。 </p>
+<div class="fragment"><div class="line"><span class="preprocessor">#define BACKWARD_HAS_DW 1</span></div><div class="line"><span class="preprocessor">#include &lt;backward.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="comment">// 下面这段必须加，否则输出结果仍然不是行号</span></div><div class="line"><span class="keyword">namespace </span><a class="code" href="namespacebackward.html">backward</a></div><div class="line">{</div><div class="line">    backward::SignalHandling sh;</div><div class="line">}</div></div><!-- fragment --><ol type="1">
+<li>Debug编译方式 别忘了一定要用Debug编译方式，否则可执行文件无法对应到行。</li>
+</ol>
+<div class="fragment"><div class="line">set(DEFAULT_BUILD_TYPE &quot;Debug&quot;)</div><div class="line">set(CMAKE_CXX_FLAGS_DEBUG &quot;{CMAKE_CXX_FLAGS} -o0 -ggbd&quot;)  #添加语句</div><div class="line">add_compile_options(-g)   #添加语句</div></div><!-- fragment --><p>注意：目前发现同样的错误，有的时候backtrace会出现，有的时候则不会，非常地奇怪，原理还有待了解， 用的时候注意一下，多触发几次core dump，就有可能出现。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
