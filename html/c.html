@@ -595,7 +595,11 @@ definition?</h2>
 <hr/>
  <h2><a class="anchor" id="怎样printf"></a>
 size_t类型才不会报warning</h2>
-<div class="fragment"><div class="line"><span class="comment">// C89</span></div><div class="line"><span class="keywordtype">size_t</span> foo;</div><div class="line">...</div><div class="line">printf(<span class="stringliteral">&quot;foo = %lu\n&quot;</span>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>) foo);</div><div class="line"><span class="comment">// For C99 and later, use %zu:</span></div><div class="line"></div><div class="line"><span class="keywordtype">size_t</span> foo;</div><div class="line">...</div><div class="line">printf(<span class="stringliteral">&quot;foo = %zu\n&quot;</span>, foo);</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line"><span class="comment">// C89</span></div><div class="line"><span class="keywordtype">size_t</span> foo;</div><div class="line">...</div><div class="line">printf(<span class="stringliteral">&quot;foo = %lu\n&quot;</span>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>) foo);</div><div class="line"><span class="comment">// For C99 and later, use %zu:</span></div><div class="line"></div><div class="line"><span class="keywordtype">size_t</span> foo;</div><div class="line">...</div><div class="line">printf(<span class="stringliteral">&quot;foo = %zu\n&quot;</span>, foo);</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="判断数字是否是nan"></a>
+判断数字是否是nan</h1>
+<p>isnan()函数。 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

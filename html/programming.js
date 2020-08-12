@@ -61,7 +61,8 @@ var programming =
       [ "编译(链接）报错指南", "c.html#GCC", [
         [ "reference", "c.html#undefined", null ],
         [ "size_t类型才不会报warning", "c.html#怎样printf", null ]
-      ] ]
+      ] ],
+      [ "判断数字是否是nan", "c.html#判断数字是否是nan", null ]
     ] ],
     [ "编程语言：C++", "cpp.html", "cpp" ],
     [ "编程语言：Python", "python.html", [

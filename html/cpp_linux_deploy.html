@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>编程语言：C++</title>
+<title>C++可执行文件在Linux的发布</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('cpp.html','');});
+$(document).ready(function(){initNavTree('cpp_linux_deploy.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,20 +88,26 @@ $(document).ready(function(){initNavTree('cpp.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">编程语言：C++ </div>  </div>
+<div class="title">C++可执行文件在Linux的发布 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>这个页面记录使用C++遇到的问题。</p>
-<p><a class="el" href="cpp_compile_faq.html">C++构建常见问题</a></p>
-<p><a class="el" href="cpp_run_faq.html">C++运行常见问题</a></p>
-<p><a class="el" href="cpp_file_io.html">C++文件IO</a></p>
-<p><a class="el" href="cpp_suggestion.html">C++一些建议</a></p>
-<p><a class="el" href="cpp_qt_faq.html">Qt相关常见问题</a></p>
-<p><a class="el" href="sparse_matrix.html">基于unordered_map的稀疏矩阵的实现</a></p>
-<p><a class="el" href="cpp_questions.html">C++面试题</a></p>
-<p><a class="el" href="cpp_libraries.html">C++常用库</a></p>
-<p><a class="el" href="cpp11.html">C++11</a></p>
-<p><a class="el" href="cpp_linux_deploy.html">C++可执行文件在Linux的发布</a> </p>
+<div class="textblock"><h1><a class="anchor" id="方法一：笨办法"></a>
+方法一：笨办法</h1>
+<p>Step 1: 准备虚拟机</p>
+<p>准备一台目标平台虚拟机，不要装任何库，模拟用户的环境。</p>
+<p>Step 2: 拷贝可执行文件</p>
+<p>把可执行文件拷贝到虚拟机中，例如虚拟机的~/my_app/my_exe</p>
+<p>Step 3: 列出依赖的so文件</p>
+<p>使用下面的命令运行程序</p>
+<div class="fragment"><div class="line">LD_LIBRARY_PATH=$(pwd)/lib ./my_exe</div></div><!-- fragment --><p>前半句的意思是指定程序搜索so文件的额外路径，可执行文件会在对应的目录下搜索so文件，也就是my_app/lib目录，当然这个目录可以随意设置，只有里面有so文件就行。</p>
+<p>运行my_exe后，一般情况下都会报错，提示找不到对应的so库。 这时候在主机里（也就是编译程序的环境）查找对应的so文件。 推荐使用“locate”命令查找，特别快，如下面的例子。</p>
+<div class="fragment"><div class="line">locate libopencv_core.so.3</div></div><!-- fragment --><p>如果找到了多处so文件实例，（通常一些portable程序会自带so文件，正如我们要发布的那样），尽量使用系统目录下的，下面举几个例子。</p>
+<div class="fragment"><div class="line">/usr/lib</div><div class="line">/usr/local/lib</div><div class="line">/usr/lib/x86_x64-linux-gnu</div></div><!-- fragment --><p>Step 4: 拷贝so文件再运行</p>
+<p>把对应的so文件拷贝到虚拟机的~/my_app/lib/目录，并且按照step 3运行程序。</p>
+<p>这时候会发现，刚才的缺失对应so文件的提示消失了，但是大部分情况下，系统会提示缺少其他的so文件。 这时候需要重复进行Step 3 到Step 4，直到程序可以运行为止。</p>
+<p>Step 5: 建立run.sh脚本运行程序</p>
+<p>让用户记住如此特殊的运行命令是不友好的，建立一个run.sh让用户一键运行。</p>
+<div class="fragment"><div class="line">#!/bin/bash</div><div class="line">LD_LIBRARY_PATH=$(pwd)/lib ./my_exe</div></div><!-- fragment --><p>后记： 这方法的“笨”在于需要重复查找缺失的so文件，并且只能串行查找，稍微花点时间。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -109,7 +115,7 @@ $(document).ready(function(){initNavTree('cpp.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

@@ -175,8 +175,20 @@ passing ... as 'this' argument ...  discards qualifiers</h1>
 <li>如果成员函数没有修改任何对象变量，则可以用const修饰成员函数，例如</li>
 </ol>
 <div class="fragment"><div class="line"><span class="keyword">class </span>A{</div><div class="line">    <span class="keywordtype">void</span> a()<span class="keyword"> const</span>{ </div><div class="line">        <span class="comment">// Do something</span></div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><ol type="1">
-<li>如果成员函数确实修改了对象变量，那么成员函数不能定义为const类型，则在传入a的时候，就不能用const修饰，因为你确实要修改这个对象。 </li>
+<li>如果成员函数确实修改了对象变量，那么成员函数不能定义为const类型，则在传入a的时候，就不能用const修饰，因为你确实要修改这个对象。</li>
 </ol>
+<hr/>
+ <h1><a class="anchor" id="类成员函数声明和定义处同时使用static修饰"></a>
+类成员函数声明和定义处同时使用static修饰</h1>
+<p>这样的做法会编译报错，具体原因待了解。 正确的做法是只在声名处用static修饰。</p>
+<hr/>
+ <h1><a class="anchor" id="类成员函数声明和定义同时使用默认参数"></a>
+类成员函数声明和定义同时使用默认参数</h1>
+<p>这样的做法会导致编译报错，具体原因待了解。 正确的做法是只在声明处使用默认参数。</p>
+<hr/>
+ <h1><a class="anchor" id="extra_qualification"></a>
+extra qualification</h1>
+<p>qualification是指双冒号符“::”，而“extra qualification”则一般出现在类中函数定义的时候重复用“类名::函数名”进行时声明。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

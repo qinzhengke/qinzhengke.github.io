@@ -17,7 +17,10 @@ var cpp =
       [ "在头文件中定义函数一定要使用inline！", "cpp_compile_faq.html#在头文件中定义函数一定要使用inline！", null ],
       [ "临时变量无法引用", "cpp_compile_faq.html#临时变量无法引用", null ],
       [ "request for member xxx in something not a structure or union", "cpp_compile_faq.html#request_for_member", null ],
-      [ "passing ... as 'this' argument ...  discards qualifiers", "cpp_compile_faq.html#const_issue", null ]
+      [ "passing ... as 'this' argument ...  discards qualifiers", "cpp_compile_faq.html#const_issue", null ],
+      [ "类成员函数声明和定义处同时使用static修饰", "cpp_compile_faq.html#类成员函数声明和定义处同时使用static修饰", null ],
+      [ "类成员函数声明和定义同时使用默认参数", "cpp_compile_faq.html#类成员函数声明和定义同时使用默认参数", null ],
+      [ "extra qualification", "cpp_compile_faq.html#extra_qualification", null ]
     ] ],
     [ "C++运行常见问题", "cpp_run_faq.html", [
       [ "system()函数工作路径？", "cpp_run_faq.html#system_work_dir", null ],
@@ -104,5 +107,8 @@ var cpp =
       [ "std::bind是什么，有何意义？", "cpp11.html#std_bind", null ],
       [ "std::placeholder", "cpp11.html#std_placeholder", null ],
       [ "::bind传入引用", "cpp11.html#std", null ]
+    ] ],
+    [ "C++可执行文件在Linux的发布", "cpp_linux_deploy.html", [
+      [ "方法一：笨办法", "cpp_linux_deploy.html#方法一：笨办法", null ]
     ] ]
 ];
