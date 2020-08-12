@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['算法',['算法',['../algorithm.html',1,'zk_note']]],
-  ['相机和imu数据的同步',['相机和IMU数据的同步',['../cam_imu_sync.html',1,'vslam_entry']]],
-  ['编程语言：c_2b_2b',['编程语言：C++',['../cpp.html',1,'programming']]],
-  ['结合apollo源代码来理解c_2b_2b的工厂模式',['结合Apollo源代码来理解C++的工厂模式',['../cpp_factory_mode.html',1,'']]],
-  ['版本管理工具：git',['版本管理工具：git',['../git.html',1,'tools']]],
-  ['线性变换中的求导',['线性变换中的求导',['../matrix_analysis.html',1,'math']]],
-  ['编程',['编程',['../programming.html',1,'zk_note']]],
-  ['编程语言：python',['编程语言：Python',['../python.html',1,'programming']]]
+  ['有趣的cv相关的网站',['有趣的CV相关的网站',['../awsome_cv_websites.html',1,'cv']]],
+  ['文档框架：doxygen',['文档框架：doxygen',['../doxygen.html',1,'tools']]],
+  ['李群和李代数',['李群和李代数',['../group.html',1,'math']]],
+  ['插值',['插值',['../interpolate.html',1,'math']]],
+  ['数学基础',['数学基础',['../math.html',1,'zk_note']]],
+  ['机器学习',['机器学习',['../ml_entry.html',1,'zk_note']]],
+  ['机器学习简介',['机器学习简介',['../ml_intro.html',1,'ml_entry']]],
+  ['操作系统：linux',['操作系统：Linux',['../os-linux.html',1,'tools']]],
+  ['正则化',['正则化',['../regulization.html',1,'ml_entry']]],
+  ['机器人学基础',['机器人学基础',['../robotics_basic.html',1,'cv']]],
+  ['机器人操作系统：ros',['机器人操作系统：ROS',['../ros.html',1,'programming']]],
+  ['技术',['技术',['../technology.html',1,'zk_note']]]
 ];

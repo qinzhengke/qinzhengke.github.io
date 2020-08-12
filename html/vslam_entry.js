@@ -4,5 +4,6 @@ var vslam_entry =
     [ "Loop closing", "vslam_entry.html#loop_closing", null ],
     [ "相机和IMU数据的同步", "cam_imu_sync.html", [
       [ "实时估计时间差", "cam_imu_sync.html#实时估计时间差", null ]
-    ] ]
+    ] ],
+    [ "vslam简介", "vslam_intro.html", null ]
 ];

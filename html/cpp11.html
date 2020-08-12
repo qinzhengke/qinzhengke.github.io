@@ -91,7 +91,8 @@ $(document).ready(function(){initNavTree('cpp11.html','');});
 <div class="title">C++11 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><hr/>
+<div class="textblock"><p><a class="el" href="cpp11_lambda.html">C++的lambda表达式</a></p>
+<hr/>
  <h1><a class="anchor" id="std_function"></a>
 std::function是什么？</h1>
 <p>大部分网上的文章只讲了作用，但是没讲std::function存在的意义，作用其实很容易理解，无非是把函数调用封装了，最关键是能直接调用为什么要“多此一举”，再封装一次呢？ 网上有一个文章说清楚了：https://www.jianshu.com/p/e396c1aab4b0</p>
@@ -110,7 +111,7 @@ std::bind是什么，有何意义？</h1>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> g = bind(f,a,b,_2,c,_1);</div></div><!-- fragment --><p>如果现在我们调用g(3,5)，那么就相当于bind(f,a,b,5,c,3); 所以_1相当于传递的第一个参数，_2相当于传递的第二个参数...以此类推。</p>
 <p>需要注意：bind对于直接绑定的值，是以值传递的方式，对于用_1这类，是使用引用传递。bind的返回值是可以调用的实体，所以通常我们都会将它和function联合在一起使用。</p>
 <h3>bind的一个亲身应用实例</h3>
-<p>参见 <a class="el" href="cpp_libraries.html#evpp_callback">evpp库如何在设置回调函数时输入用户参数？</a></p>
+<p>参见 <a class="el" href="cpp_lib_evpp.html#evpp_callback">evpp库如何在设置回调函数时输入用户参数？</a></p>
 <h3>bind引用参数</h3>
 <p>有时候对于有些绑定的参数我们希望以引用方式传递，或者说要绑定的参数无法拷贝。 比如ostream 流对象是无法拷贝的，那么我们希望将它传递给bind而不拷贝它，就需要使用ref。 ref返回一个对象，包含给定的引用，是可以拷贝的。</p>
 <div class="fragment"><div class="line">for_each(words.begin(),words.end,bind(print,ref(os),_1,<span class="charliteral">&#39; &#39;</span>));</div></div><!-- fragment --><h3>std::bind绑定成员函数和静态成员函数</h3>

@@ -1,13 +1,11 @@
 var searchData=
 [
-  ['脚本语言：bash',['脚本语言：bash',['../bash.html',1,'programming']]],
-  ['脚本语言：bat',['脚本语言：bat',['../bat.html',1,'programming']]],
-  ['视觉标定_28calibration_29',['视觉标定(calibration)',['../calibration.html',1,'cv']]],
-  ['计算机视觉_28cv_29',['计算机视觉(CV)',['../cv.html',1,'zk_note']]],
-  ['谷歌测试框架：google_20test',['谷歌测试框架：Google Test',['../gtest.html',1,'programming']]],
-  ['覃政科的主页',['覃政科的主页',['../index.html',1,'']]],
-  ['过拟合',['过拟合',['../overfitting.html',1,'ml_entry']]],
-  ['自标定方法',['自标定方法',['../self_cali.html',1,'calibration']]],
-  ['软件工程',['软件工程',['../soft_engineering.html',1,'programming']]],
-  ['视觉slam简介',['视觉SLAM简介',['../vslam_entry.html',1,'cv']]]
+  ['算法',['算法',['../algorithm.html',1,'zk_note']]],
+  ['相机和imu数据的同步',['相机和IMU数据的同步',['../cam_imu_sync.html',1,'vslam_entry']]],
+  ['编程语言：c_2b_2b',['编程语言：C++',['../cpp.html',1,'programming']]],
+  ['结合apollo源代码来理解c_2b_2b的工厂模式',['结合Apollo源代码来理解C++的工厂模式',['../cpp_factory_mode.html',1,'cpp']]],
+  ['版本管理工具：git',['版本管理工具：git',['../git.html',1,'tools']]],
+  ['线性变换中的求导',['线性变换中的求导',['../matrix_analysis.html',1,'math']]],
+  ['编程',['编程',['../programming.html',1,'zk_note']]],
+  ['编程语言：python',['编程语言：Python',['../python.html',1,'programming']]]
 ];
