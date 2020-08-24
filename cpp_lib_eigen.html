@@ -108,7 +108,10 @@ Matrix和C数组之间的转换</h1>
 <hr/>
  <h1><a class="anchor" id="auto获取矩阵失效？"></a>
 auto获取矩阵失效？</h1>
-<div class="fragment"><div class="line"><span class="comment">// 编译失败</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line">Eigen::Matrix&lt;float,9,9&gt; a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix3f::Zero();</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line"><span class="comment">// 编译失败</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line">Eigen::Matrix&lt;float,9,9&gt; a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix3f::Zero();</div></div><!-- fragment --><h1><a class="anchor" id="传参时MatrixNd到MatrixXd的转换"></a>
+传参时MatrixNd到MatrixXd的转换</h1>
+<p>函数传参时，MatrixNd要转换成MatrixXd，（N表示具体的数字，例如3），编译器会自动转换，但是转换得到的是一个右值，是一个临时变量。 如果函数的形参是非常量引用，那么编译器就会报错。</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> func(MatrixXd &amp;a){</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line">Matrix3d x;</div><div class="line">Matrix</div><div class="line">func(x);    <span class="comment">// x传入之后自动cast，变成右值。</span></div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

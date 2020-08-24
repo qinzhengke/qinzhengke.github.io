@@ -14,10 +14,14 @@ var cpp_libraries =
       [ "矩阵的初始化（包括全零阵、单位阵）", "cpp_lib_eigen.html#矩阵的初始化（包括全零阵、单位阵）", null ],
       [ "获取子矩阵", "cpp_lib_eigen.html#获取子矩阵", null ],
       [ "Matrix和C数组之间的转换", "cpp_lib_eigen.html#Matrix和C数组之间的转换", null ],
-      [ "auto获取矩阵失效？", "cpp_lib_eigen.html#auto获取矩阵失效？", null ]
+      [ "auto获取矩阵失效？", "cpp_lib_eigen.html#auto获取矩阵失效？", null ],
+      [ "传参时MatrixNd到MatrixXd的转换", "cpp_lib_eigen.html#传参时MatrixNd到MatrixXd的转换", null ]
     ] ],
     [ "evpp：奇虎360大神的网络库", "cpp_lib_evpp.html", null ],
-    [ "libevent：经典的异步事件框架库", "cpp_lib_libevent.html", null ],
+    [ "libevent：经典的异步事件框架库", "cpp_lib_libevent.html", [
+      [ "基于libevent的定时器", "cpp_lib_libevent.html#基于libevent的定时器", null ],
+      [ "注意event_dispatch函数的阻塞性", "cpp_lib_libevent.html#注意event_dispatch函数的阻塞性", null ]
+    ] ],
     [ "PcapPlusplus：还不错的pcap文件读写库", "cpp_lib_pcapplusplus.html", [
       [ "一个小坑", "cpp_lib_pcapplusplus.html#一个小坑", null ]
     ] ],

@@ -51,6 +51,7 @@ var cpp =
     [ "C++文件IO", "cpp_file_io.html", [
       [ "C++中的二进制文件读取", "cpp_file_io.html#cpp_binary_file", null ]
     ] ],
+    [ "C++中的STL库", "cpp_stl.html", "cpp_stl" ],
     [ "C++一些建议", "cpp_suggestion.html", [
       [ "少用全局变量。", "cpp_suggestion.html#少用全局变量。", null ],
       [ "传参的时候变量名不要频繁换马甲", "cpp_suggestion.html#传参的时候变量名不要频繁换马甲", null ],
@@ -58,7 +59,10 @@ var cpp =
       [ "header only模式开发效率低！", "cpp_suggestion.html#header_only", null ]
     ] ],
     [ "C++ debug教训", "cpp_debug.html", [
-      [ "企图通过memcpy对象进行拷贝操作。", "cpp_debug.html#企图通过memcpy对象进行拷贝操作。", null ]
+      [ "企图通过memcpy对象进行拷贝操作。", "cpp_debug.html#企图通过memcpy对象进行拷贝操作。", null ],
+      [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
+      [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],
+      [ "dynamic_pointer_cast模板类要正确", "cpp_debug.html#dynamic_poiner_cast_debug", null ]
     ] ],
     [ "Qt相关常见问题", "cpp_qt_faq.html", [
       [ "使用Creator创建的控制台程序无任何输出？", "cpp_qt_faq.html#使用Creator创建的控制台程序无任何输出？", null ]
@@ -103,5 +107,8 @@ var cpp =
     [ "结合Apollo源代码来理解C++的工厂模式", "cpp_factory_mode.html", [
       [ "前言", "cpp_factory_mode.html#前言", null ]
     ] ],
-    [ "C++中的单例设计模式", "cpp_singleton.html", null ]
+    [ "C++中的单例设计模式", "cpp_singleton.html", [
+      [ "单例的作用", "cpp_singleton.html#单例的作用", null ],
+      [ "++单例的实现", "cpp_singleton.html#C", null ]
+    ] ]
 ];

@@ -63,6 +63,8 @@ var c =
     ] ],
     [ "判断数字是否是nan", "c.html#判断数字是否是nan", null ],
     [ "C语言Debug教训", "c_debug_lesson.html", [
-      [ "printf打印64位整型", "c_debug_lesson.html#printf打印64位整型", null ]
+      [ "printf打印64位整型", "c_debug_lesson.html#printf打印64位整型", null ],
+      [ "函数对象（指针）作为实参的的时候一定要其形参是否正确。", "c_debug_lesson.html#函数对象（指针）作为实参的的时候一定要其形参是否正确。", null ],
+      [ "头文件循环引用", "c_debug_lesson.html#头文件循环引用", null ]
     ] ]
 ];

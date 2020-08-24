@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libevent：经典的异步事件框架库</title>
+<title>OpenCV调试问题</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('cpp_lib_libevent.html','');});
+$(document).ready(function(){initNavTree('opencv_debug.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,24 +88,34 @@ $(document).ready(function(){initNavTree('cpp_lib_libevent.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">libevent：经典的异步事件框架库 </div>  </div>
+<div class="title">OpenCV调试问题 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><hr/>
- <h1><a class="anchor" id="基于libevent的定时器"></a>
-基于libevent的定时器</h1>
+<div class="textblock"><h1><a class="anchor" id="imshow_crash"></a>
+imshow导致crash</h1>
+<p>问题：非常简单的imshow代码都会导致crash，就crash在imshow的位置。</p>
+<div class="fragment"><div class="line">Mat img(500,500,CV_8UC3);</div><div class="line">img.setTo(Scalar(0xff,0xff,0xff));</div><div class="line">imshow(<span class="stringliteral">&quot;window&quot;</span>, img);</div><div class="line">waitKey(0);</div></div><!-- fragment --><p>可能的原因是opencv的依赖没有装好，有的时候不装依赖也能完成opencv的编译，但是运行的时候还是会出错，所以还是得按照教程一步一步走。</p>
+<p>下面展示了opencv的必要的依赖项，从官网拷贝下来的。</p>
+<div class="fragment"><div class="line">sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev</div></div><!-- fragment --><p>安装完这些依赖，然后重新编译安装opencv，再编译应用程序，就没有问题了。</p>
 <hr/>
- <h1><a class="anchor" id="注意event_dispatch函数的阻塞性"></a>
-注意event_dispatch函数的阻塞性</h1>
-<p>如题libevent中的event_dispatch是阻塞的，所以要注意同一个线程，后面就不要放代码了。</p>
-<div class="fragment"><div class="line">printf(<span class="stringliteral">&quot;before\n&quot;</span>); <span class="comment">// 会被打印</span></div><div class="line">event_dispatch();</div><div class="line">printf(<span class="stringliteral">&quot;afetr\n&quot;</span>);  <span class="comment">// 不会被打印</span></div></div><!-- fragment --> </div></div><!-- contents -->
+ <h1><a class="anchor" id="VideoWriter无法打开文件"></a>
+VideoWriter无法打开文件</h1>
+<p>VideoWriter无法打开文件，一些常规原因：</p>
+<ol type="1">
+<li>目录没有写的权限</li>
+<li>磁盘满了</li>
+<li>目录不存在</li>
+</ol>
+<p>这些原因不值得用专门记下来，这里记录另外一个不寻常的原因：OpenCV的依赖没有安装好。</p>
+<p>解决方法参考 <a class="el" href="opencv_debug.html#imshow_crash">imshow导致crash</a> </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li><li class="navelem"><a class="el" href="cpp_libraries.html">C++常用库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="programming_debug.html">编程中的debug记录</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

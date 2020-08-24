@@ -93,8 +93,19 @@ $(document).ready(function(){initNavTree('cpp_debug.html','');});
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="企图通过memcpy对象进行拷贝操作。"></a>
 企图通过memcpy对象进行拷贝操作。</h1>
-<p>类成员对象里面如果有容器类型，就会出现coredump，具体原因待研究。 </p>
-</div></div><!-- contents -->
+<p>类成员对象里面如果有容器类型，就会出现coredump，具体原因待研究。</p>
+<h1><a class="anchor" id="模板定义中的typename和int不要搞混"></a>
+模板定义中的typename和int不要搞混</h1>
+<p>模板定义中，有类型模板，也有大小模板，两者不要搞混了，在多重模板调用的时候，如果一个typename类型给了int类型，是无法编译通过的。</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N&gt;</div><div class="line"><span class="keyword">class </span>A{</div><div class="line"></div><div class="line">}</div></div><!-- fragment --><h1><a class="anchor" id="lvalue_bind_rvalue"></a>
+cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.</h1>
+<p>非常量引用一般是为了修改输入变量，但是如果输入进来的是临时变量（rvalue），那么函数结束后，临时变量会消失，这种改动就会毫无意义，编译器为了避免程序员犯错，会友好的报出编译错误。</p>
+<h1><a class="anchor" id="dynamic_poiner_cast_debug"></a>
+dynamic_pointer_cast模板类要正确</h1>
+<div class="fragment"><div class="line"><span class="keyword">class </span>Base {</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Base (){};</div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    <span class="keyword">inline</span> <span class="keyword">virtual</span> <span class="keywordtype">int</span> getInt () { <span class="keywordflow">return</span> 0; }</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">class </span>Derived : <span class="keyword">public</span> Base {</div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    <span class="keyword">inline</span> <span class="keywordtype">int</span> getInt ( )<span class="keyword"> override </span>{ <span class="keywordflow">return</span> 1; }</div><div class="line"></div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">typedef</span> std::shared_ptr&lt;Base&gt; spBase;</div><div class="line"><span class="keyword">typedef</span> std::shared_ptr&lt;Derived&gt; spDerived;</div></div><!-- fragment --><p>这时候如果这样操作，则会报错</p>
+<div class="fragment"><div class="line">spDerived derived = static_pointer_cast &lt; spDerived &gt; ( base );</div></div><!-- fragment --><p>这里要注意的是，模板参数是派生类，而不是派生类的shared_ptr，千万别搞错了！</p>
+<p>这样才是正确的</p>
+<div class="fragment"><div class="line">spDerived derived = static_pointer_cast &lt;Derived&gt; ( base );</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

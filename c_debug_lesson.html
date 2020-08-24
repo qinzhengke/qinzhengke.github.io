@@ -96,15 +96,29 @@ $(document).ready(function(){initNavTree('c_debug_lesson.html','');});
 printf打印64位整型</h1>
 <p>不要使用"%d"或者"%u"，这会使得printf只输出变量的低位。</p>
 <p>一定要使用"%lu"和"%ld"进行打印。</p>
-<p>别看这错误很小，但是可能让你很长一段时间以为自己的数据来源错了。 </p>
-</div></div><!-- contents -->
+<p>别看这错误很小，但是可能让你很长一段时间以为自己的数据来源错了。</p>
+<hr/>
+ <h1><a class="anchor" id="函数对象（指针）作为实参的的时候一定要其形参是否正确。"></a>
+函数对象（指针）作为实参的的时候一定要其形参是否正确。</h1>
+<p>libevent库中的evtimer_set宏接收3个参数，如下所示，第一个参数是struct event 对象，第2个参数是回调函数，第三个是万能参数。</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#define evtimer_set(ev, cb, arg)    event_set((ev), -1, 0, (cb), (arg))</span></div></div><!-- fragment --><p>这里要注意两点，本身宏的参数要正确传递，同时回调函数的形参本身也要定义正确，因为这个evtimer_set宏对回调函数是有要求的，回调函数一定要有这样的形式，如下所示。</p>
+<div class="fragment"><div class="line">void (*)(evutil_socket_t, short, <span class="keywordtype">void</span> *)</div></div><!-- fragment --><p>总结：函数对象（指针）作为实参时，一定要注意函数对象（指针）的形参是否正确。</p>
+<p>另外要认真看错误提示，看看提示的是外函数参数不正确，还是函数对象本身参数不正确。</p>
+<p>要多多使用函数对象，或者函数指针。</p>
+<hr/>
+ <h1><a class="anchor" id="头文件循环引用"></a>
+头文件循环引用</h1>
+<p>如果存在头文件循环引用，A.h用了类型B.h的B，而B也用了A.h的类型A，那么将会导致的问题：有一个类型将会未定义。 如下代码所示，引用的链为A.h-&gt;B.h-&gt;A.h...，实际上，由于头文件一开始定义了ifndef，导致头文件在一次.o编译中只会被展开一次。 所以实际的链为A.h-&gt;B.h，在B.h中类型A是没有定义的，因为A.h的第一句话就是展开B.h。</p>
+<div class="fragment"><div class="line"><span class="comment">// A.h</span></div><div class="line"><span class="preprocessor">#include &quot;B.h&quot;</span></div><div class="line"><span class="keyword">struct </span>A{<span class="keywordtype">int</span> a;}</div><div class="line">B getB();</div><div class="line"></div><div class="line"><span class="comment">// B.h</span></div><div class="line"><span class="preprocessor">#include &quot;A.h&quot;</span></div><div class="line"><span class="keyword">struct </span>B{<span class="keywordtype">int</span> b;}</div><div class="line">A getA();</div></div><!-- fragment --><p>解决方法一：在一个公共头文件中定义类型A和类型B，</p>
+<p>解决方法二：在A.h中声明class B，在B.h中声明class A，当然这种方式是不能引用成员变量的。</p>
+<div class="fragment"><div class="line"><span class="comment">// A.h</span></div><div class="line"><span class="preprocessor">#include &quot;B.h&quot;</span></div><div class="line"><span class="keyword">struct </span>A{<span class="keywordtype">int</span> a;}</div><div class="line">B getB();</div><div class="line"></div><div class="line"><span class="comment">// B.h</span></div><div class="line"><span class="preprocessor">#include &quot;A.h&quot;</span></div><div class="line"><span class="keyword">struct </span>B{<span class="keywordtype">int</span> b;}</div><div class="line">A getA();</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="c.html">C语言</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="programming_debug.html">编程中的debug记录</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次
