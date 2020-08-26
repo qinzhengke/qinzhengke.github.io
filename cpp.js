@@ -51,6 +51,15 @@ var cpp =
     [ "C++文件IO", "cpp_file_io.html", [
       [ "C++中的二进制文件读取", "cpp_file_io.html#cpp_binary_file", null ]
     ] ],
+    [ "C++模板", "cpp_template.html", [
+      [ "定义模板函数", "cpp_template.html#定义模板函数", null ],
+      [ "定义模板类", "cpp_template.html#定义模板类", null ],
+      [ "模板类的继承", "cpp_template.html#模板类的继承", null ]
+    ] ],
+    [ "C++中的多态", "cpp_polymorphism.html", [
+      [ "如何优雅地定义没有成员函数的类型为虚类？", "cpp_polymorphism.html#如何优雅地定义没有成员函数的类型为虚类？", null ],
+      [ "如何优雅的拷贝虚类对象？", "cpp_polymorphism.html#如何优雅的拷贝虚类对象？", null ]
+    ] ],
     [ "C++中的STL库", "cpp_stl.html", "cpp_stl" ],
     [ "C++一些建议", "cpp_suggestion.html", [
       [ "少用全局变量。", "cpp_suggestion.html#少用全局变量。", null ],

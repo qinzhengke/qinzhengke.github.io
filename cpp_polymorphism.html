@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Eigen：强大的纯头文件线性运算库</title>
+<title>C++中的多态</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('cpp_lib_eigen.html','');});
+$(document).ready(function(){initNavTree('cpp_polymorphism.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,40 +88,24 @@ $(document).ready(function(){initNavTree('cpp_lib_eigen.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Eigen：强大的纯头文件线性运算库 </div>  </div>
+<div class="title">C++中的多态 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><hr/>
- <h1><a class="anchor" id="安装"></a>
-安装</h1>
-<div class="fragment"><div class="line">cd &lt;eigen_dir&gt;</div><div class="line">mdkir build</div><div class="line">cd build</div><div class="line">cmake ..</div><div class="line">sudo make install</div><div class="line"># 没错，中间没有make，因为eigen是纯头文件组成的，不需要预先编译成库。</div><div class="line"># 安装好后，默认的头文件地址在 /usr/local/include/eigen3</div></div><!-- fragment --><hr/>
- <h1><a class="anchor" id="矩阵的初始化（包括全零阵、单位阵）"></a>
-矩阵的初始化（包括全零阵、单位阵）</h1>
+<div class="textblock"><h1><a class="anchor" id="如何优雅地定义没有成员函数的类型为虚类？"></a>
+如何优雅地定义没有成员函数的类型为虚类？</h1>
+<div class="fragment"><div class="line"><span class="comment">// base.hh</span></div><div class="line"><span class="keyword">class </span>Base</div><div class="line">{</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">virtual</span> ~Base() = 0;</div><div class="line">    ...</div><div class="line">};</div><div class="line"></div><div class="line"><span class="comment">// base.cc</span></div><div class="line">Base::~Base() {}</div></div><!-- fragment --><p>注意，析构函数不要定义在头文件中，否则链接的时候会报redefinition错误。</p>
 <hr/>
- <h1><a class="anchor" id="获取子矩阵"></a>
-获取子矩阵</h1>
-<p>参见： <a href="https://eigen.tuxfamily.org/dox/group__TutorialBlockOperations.html">https://eigen.tuxfamily.org/dox/group__TutorialBlockOperations.html</a></p>
-<hr/>
- <h1><a class="anchor" id="Matrix和C数组之间的转换"></a>
-Matrix和C数组之间的转换</h1>
-<p>参见： <a href="https://eigen.tuxfamily.org/dox/group__TutorialMapClass.html">https://eigen.tuxfamily.org/dox/group__TutorialMapClass.html</a></p>
-<hr/>
- <h1><a class="anchor" id="auto获取矩阵失效？"></a>
-auto获取矩阵失效？</h1>
-<div class="fragment"><div class="line"><span class="comment">// 编译失败</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line">Eigen::Matrix&lt;float,9,9&gt; a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix3f::Zero();</div></div><!-- fragment --><h1><a class="anchor" id="传参时MatrixNd到MatrixXd的转换"></a>
-传参时MatrixNd到MatrixXd的转换</h1>
-<p>函数传参时，MatrixNd要转换成MatrixXd，（N表示具体的数字，例如3），编译器会自动转换，但是转换得到的是一个右值，是一个临时变量。 如果函数的形参是非常量引用，那么编译器就会报错。</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> func(MatrixXd &amp;a){</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line">Matrix3d x;</div><div class="line">Matrix</div><div class="line">func(x);    <span class="comment">// x传入之后自动cast，变成右值。</span></div></div><!-- fragment --><hr/>
- <h1><a class="anchor" id="四元数与欧拉角的转换"></a>
-四元数与欧拉角的转换</h1>
-<div class="fragment"><div class="line"><span class="comment">// 从欧拉角到四元数</span></div><div class="line">Quaternionf q = AngleAxisf(roll, Vector3f::UnitX())</div><div class="line">    * AngleAxisf(pitch, Vector3f::UnitY())</div><div class="line">    * AngleAxisf(yaw, Vector3f::UnitZ());</div><div class="line"></div><div class="line"><span class="comment">// 从四元数到欧拉角</span></div><div class="line"><span class="keyword">auto</span> euler = q.toRotationMatrix().eulerAngles(0, 1, 2);</div></div><!-- fragment --> </div></div><!-- contents -->
+ <h1><a class="anchor" id="如何优雅的拷贝虚类对象？"></a>
+如何优雅的拷贝虚类对象？</h1>
+<p>往往我们拿到的对象指针是虚类，要拷贝虚类对象，直接调用虚类的拷贝构造函数是不行的，优雅的方法是在虚类中定义一个clone()函数，让派生类去实现这个函数。</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>Base {</div><div class="line"><span class="keyword">public</span>:</div><div class="line">  <span class="keyword">virtual</span> Base* Clone() = 0;</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">class </span>Derivedn : <span class="keyword">public</span> Base {</div><div class="line"><span class="keyword">public</span>:</div><div class="line">  <span class="comment">//This is OK, its called covariant return type.</span></div><div class="line">  Derivedn* Clone() {</div><div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> Derivedn(*<span class="keyword">this</span>);</div><div class="line">  }</div><div class="line"><span class="keyword">private</span>:</div><div class="line">  Derivedn(<span class="keyword">const</span> Derivedn) : ... {}</div><div class="line">};</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li><li class="navelem"><a class="el" href="cpp_libraries.html">C++常用库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

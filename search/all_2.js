@@ -16,10 +16,11 @@ var searchData=
   ['c_2b_2b文件io',['C++文件IO',['../cpp_file_io.html',1,'cpp']]],
   ['c_2b_2b常用库',['C++常用库',['../cpp_libraries.html',1,'cpp']]],
   ['c_2b_2b可执行文件在linux的发布',['C++可执行文件在Linux的发布',['../cpp_linux_deploy.html',1,'cpp']]],
+  ['c_2b_2b中的多态',['C++中的多态',['../cpp_polymorphism.html',1,'cpp']]],
   ['c_2b_2b面试题',['C++面试题',['../cpp_questions.html',1,'cpp']]],
   ['c_2b_2b运行常见问题',['C++运行常见问题',['../cpp_run_faq.html',1,'cpp']]],
   ['c_2b_2b中的单例设计模式',['C++中的单例设计模式',['../cpp_singleton.html',1,'cpp']]],
   ['c_2b_2b中的stl库',['C++中的STL库',['../cpp_stl.html',1,'cpp']]],
   ['c_2b_2b一些建议',['C++一些建议',['../cpp_suggestion.html',1,'cpp']]],
-  ['c_2b_2b模板_7bcpp_5ftemplate_7d',['C++模板{cpp_template}',['../md_programming_cpp_cpp_template.html',1,'']]]
+  ['c_2b_2b模板',['C++模板',['../cpp_template.html',1,'cpp']]]
 ];

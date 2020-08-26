@@ -15,7 +15,8 @@ var cpp_libraries =
       [ "获取子矩阵", "cpp_lib_eigen.html#获取子矩阵", null ],
       [ "Matrix和C数组之间的转换", "cpp_lib_eigen.html#Matrix和C数组之间的转换", null ],
       [ "auto获取矩阵失效？", "cpp_lib_eigen.html#auto获取矩阵失效？", null ],
-      [ "传参时MatrixNd到MatrixXd的转换", "cpp_lib_eigen.html#传参时MatrixNd到MatrixXd的转换", null ]
+      [ "传参时MatrixNd到MatrixXd的转换", "cpp_lib_eigen.html#传参时MatrixNd到MatrixXd的转换", null ],
+      [ "四元数与欧拉角的转换", "cpp_lib_eigen.html#四元数与欧拉角的转换", null ]
     ] ],
     [ "evpp：奇虎360大神的网络库", "cpp_lib_evpp.html", null ],
     [ "libevent：经典的异步事件框架库", "cpp_lib_libevent.html", [

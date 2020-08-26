@@ -38,7 +38,9 @@ var programming =
     [ "优秀的项目源码阅读", "awesome_projects.html", "awesome_projects" ],
     [ "软件工程", "soft_engineering.html", null ],
     [ "Coredump分析", "coredump.html", [
-      [ "方法", "coredump.html#方法", null ]
+      [ "方法", "coredump.html#方法", null ],
+      [ "问题定位到库文件中", "coredump.html#问题定位到库文件中", null ],
+      [ "coredump的几大主要原因", "coredump.html#coredump的几大主要原因", null ]
     ] ],
     [ "编程中的debug记录", "programming_debug.html", "programming_debug" ]
 ];

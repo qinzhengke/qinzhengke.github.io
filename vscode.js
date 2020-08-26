@@ -2,6 +2,7 @@ var vscode =
 [
     [ "如何添加宏定义？", "vscode.html#如何添加宏定义？", null ],
     [ "在vscode中单步调试", "vscode.html#在vscode中单步调试", null ],
+    [ "vscode单步调试会先自动跳到末尾", "vscode.html#vscode单步调试会先自动跳到末尾", null ],
     [ "如何使用clang-format进行代码格式化？", "vscode.html#如何使用clang-format进行代码格式化？", null ],
     [ "markdown代码片", "vscode.html#markdown代码片", null ],
     [ "代码片的设置语法", "vscode.html#代码片的设置语法", null ],
