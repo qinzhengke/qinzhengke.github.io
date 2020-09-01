@@ -16,7 +16,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "algorithm.html",
-"cpp_questions.html#智能指针如何实现？"
+"cpp_questions.html#map和unordered_map如何实现？"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

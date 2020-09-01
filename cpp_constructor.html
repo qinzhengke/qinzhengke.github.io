@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C++中的多态</title>
+<title>C++中的构造函数与析构函数</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('cpp_polymorphism.html','');});
+$(document).ready(function(){initNavTree('cpp_constructor.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,21 +88,15 @@ $(document).ready(function(){initNavTree('cpp_polymorphism.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">C++中的多态 </div>  </div>
+<div class="title">C++中的构造函数与析构函数 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="如何优雅地定义没有成员函数的类型为虚类？"></a>
-如何优雅地定义没有成员函数的类型为虚类？</h1>
-<div class="fragment"><div class="line"><span class="comment">// base.hh</span></div><div class="line"><span class="keyword">class </span>Base</div><div class="line">{</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">virtual</span> ~Base() = 0;</div><div class="line">    ...</div><div class="line">};</div><div class="line"></div><div class="line"><span class="comment">// base.cc</span></div><div class="line">Base::~Base() {}</div></div><!-- fragment --><p>注意，析构函数不要定义在头文件中，否则链接的时候会报redefinition错误。</p>
-<hr/>
- <h1><a class="anchor" id="如何优雅的拷贝虚类对象？"></a>
-如何优雅的拷贝虚类对象？</h1>
-<p>往往我们拿到的对象指针是虚类，要拷贝虚类对象，直接调用虚类的拷贝构造函数是不行的，优雅的方法是在虚类中定义一个clone()函数，让派生类去实现这个函数。</p>
-<div class="fragment"><div class="line"><span class="keyword">class </span>Base {</div><div class="line"><span class="keyword">public</span>:</div><div class="line">  <span class="keyword">virtual</span> Base* Clone() = 0;</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">class </span>Derivedn : <span class="keyword">public</span> Base {</div><div class="line"><span class="keyword">public</span>:</div><div class="line">  <span class="comment">//This is OK, its called covariant return type.</span></div><div class="line">  Derivedn* Clone() {</div><div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> Derivedn(*<span class="keyword">this</span>);</div><div class="line">  }</div><div class="line"><span class="keyword">private</span>:</div><div class="line">  Derivedn(<span class="keyword">const</span> Derivedn) : ... {}</div><div class="line">};</div></div><!-- fragment --><hr/>
- <h1><a class="anchor" id="抽象类的构造函数不能运行成员虚成员函数"></a>
-抽象类的构造函数不能运行成员虚成员函数</h1>
-<p>其实原因很简单，当派生类在构造过程中，自己到底是什么类型是不知道的，从而不知道要调用那种类型的成员函数。 只有构造完毕才能知道，实际上虚函数表指针也是在构造函数中进行赋值的。</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span>Abstract {</div><div class="line">    <span class="keyword">virtual</span> <span class="keywordtype">void</span> pure() = 0;</div><div class="line">    <span class="keyword">virtual</span> <span class="keywordtype">void</span> foo() {</div><div class="line">        pure();</div><div class="line">    }</div><div class="line">    Abstract() {</div><div class="line">        foo();</div><div class="line">    }</div><div class="line">    ~Abstract() {</div><div class="line">        foo();</div><div class="line">    }</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">struct </span>X : <span class="keyword">public</span> Abstract {</div><div class="line">    <span class="keyword">virtual</span> <span class="keywordtype">void</span> pure() { cout &lt;&lt; <span class="stringliteral">&quot; X :: pure() &quot;</span> &lt;&lt; endl; }</div><div class="line">    <span class="keyword">virtual</span> <span class="keywordtype">void</span> impure() { cout &lt;&lt; <span class="stringliteral">&quot; X :: impure() &quot;</span> &lt;&lt; endl; }</div><div class="line">};</div><div class="line"><span class="keywordtype">int</span> main() {</div><div class="line">    X x;</div><div class="line">}</div><div class="line">\endcpp </div></div><!-- fragment --></div></div><!-- contents -->
+<div class="textblock"><hr/>
+ <h1><a class="anchor" id="容器成员变量是否会随着父类的析构而清空？"></a>
+容器成员变量是否会随着父类的析构而清空？</h1>
+<p>回答：是的，如下代码所示</p>
+<div class="fragment"><div class="line"><span class="comment">// swap queues</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span>       <span class="comment">// std::cout</span></div><div class="line"><span class="preprocessor">#include &lt;queue&gt;</span>          <span class="comment">// std::queue, std::swap(queue)</span></div><div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keyword">class </span>A {</div><div class="line">    <span class="keyword">public</span>:</div><div class="line">    ~A(){cout&lt;&lt;<span class="stringliteral">&quot;A deconst&quot;</span>&lt;&lt;endl;}</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">class </span>B{</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    B(){</div><div class="line">        qa.push(shared_ptr&lt;A&gt;(<span class="keyword">new</span> A));</div><div class="line">        qa.push(shared_ptr&lt;A&gt;(<span class="keyword">new</span> A));</div><div class="line">    }</div><div class="line">    ~B(){ cout&lt;&lt;<span class="stringliteral">&quot;B deconst&quot;</span>&lt;&lt;endl; }</div><div class="line">    queue&lt;shared_ptr&lt;A&gt;&gt; qa;</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main ()</div><div class="line">{</div><div class="line">  vector&lt;shared_ptr&lt;B&gt;&gt; q;</div><div class="line">  q.push_back(shared_ptr&lt;B&gt;(<span class="keyword">new</span> B));</div><div class="line">  q.erase(q.begin());</div><div class="line">  </div><div class="line">  cout&lt;&lt;<span class="stringliteral">&quot;-----------------&quot;</span>&lt;&lt;endl;</div><div class="line">  </div><div class="line">  q.push_back(shared_ptr&lt;B&gt;(<span class="keyword">new</span> B));</div><div class="line">  q.clear();</div><div class="line"></div><div class="line">  <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --><p>运行结果：</p>
+<div class="fragment"><div class="line">B deconst</div><div class="line">A deconst</div><div class="line">A deconst</div><div class="line">-----------------</div><div class="line">B deconst</div><div class="line">A deconst</div><div class="line">A deconst</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

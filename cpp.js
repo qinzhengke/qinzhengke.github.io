@@ -1,5 +1,6 @@
 var cpp =
 [
+    [ "一些关于C++的优秀文章", "cpp_articles.html", null ],
     [ "C++构建常见问题", "cpp_compile_faq.html", [
       [ "static相关问题", "cpp_compile_faq.html#static相关问题", [
         [ "static类成员变量未定义", "cpp_compile_faq.html#static类成员变量未定义", null ]
@@ -24,6 +25,9 @@ var cpp =
       [ "类成员函数声明和定义处同时使用static修饰", "cpp_compile_faq.html#类成员函数声明和定义处同时使用static修饰", null ],
       [ "类成员函数声明和定义同时使用默认参数", "cpp_compile_faq.html#类成员函数声明和定义同时使用默认参数", null ],
       [ "extra qualification", "cpp_compile_faq.html#extra_qualification", null ]
+    ] ],
+    [ "C++中的构造函数与析构函数", "cpp_constructor.html", [
+      [ "容器成员变量是否会随着父类的析构而清空？", "cpp_constructor.html#容器成员变量是否会随着父类的析构而清空？", null ]
     ] ],
     [ "C++运行常见问题", "cpp_run_faq.html", [
       [ "::push_back函数中会执行析构函数", "cpp_run_faq.html#vector", null ],
@@ -56,9 +60,11 @@ var cpp =
       [ "定义模板类", "cpp_template.html#定义模板类", null ],
       [ "模板类的继承", "cpp_template.html#模板类的继承", null ]
     ] ],
+    [ "C++容器", "cpp_container.html", null ],
     [ "C++中的多态", "cpp_polymorphism.html", [
       [ "如何优雅地定义没有成员函数的类型为虚类？", "cpp_polymorphism.html#如何优雅地定义没有成员函数的类型为虚类？", null ],
-      [ "如何优雅的拷贝虚类对象？", "cpp_polymorphism.html#如何优雅的拷贝虚类对象？", null ]
+      [ "如何优雅的拷贝虚类对象？", "cpp_polymorphism.html#如何优雅的拷贝虚类对象？", null ],
+      [ "抽象类的构造函数不能运行成员虚成员函数", "cpp_polymorphism.html#抽象类的构造函数不能运行成员虚成员函数", null ]
     ] ],
     [ "C++中的STL库", "cpp_stl.html", "cpp_stl" ],
     [ "C++一些建议", "cpp_suggestion.html", [
@@ -71,7 +77,8 @@ var cpp =
       [ "企图通过memcpy对象进行拷贝操作。", "cpp_debug.html#企图通过memcpy对象进行拷贝操作。", null ],
       [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
       [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],
-      [ "dynamic_pointer_cast模板类要正确", "cpp_debug.html#dynamic_poiner_cast_debug", null ]
+      [ "dynamic_pointer_cast模板类要正确", "cpp_debug.html#dynamic_poiner_cast_debug", null ],
+      [ "　初始化的重要性", "cpp_debug.html#　初始化的重要性", null ]
     ] ],
     [ "Qt相关常见问题", "cpp_qt_faq.html", [
       [ "使用Creator创建的控制台程序无任何输出？", "cpp_qt_faq.html#使用Creator创建的控制台程序无任何输出？", null ]

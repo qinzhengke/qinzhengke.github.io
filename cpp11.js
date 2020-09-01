@@ -16,7 +16,8 @@ var cpp11 =
     [ "C++11的智能指针", "cpp11_smart_pointer.html", [
       [ "share_ptr简单用法", "cpp11_smart_pointer.html#share_ptr简单用法", null ],
       [ "基于share_ptr的多态", "cpp11_smart_pointer.html#基于share_ptr的多态", null ],
-      [ "dynamic_pointer_cast", "cpp11_smart_pointer.html#dynamic_pointer_cast", null ]
+      [ "dynamic_pointer_cast", "cpp11_smart_pointer.html#dynamic_pointer_cast", null ],
+      [ "shared_ptr不能指向this指针", "cpp11_smart_pointer.html#shared_ptr不能指向this指针", null ]
     ] ],
     [ "C++11中的其他有用特性", "cpp11_others.html", [
       [ "代替 typedef", "cpp11_others.html#using", null ]
