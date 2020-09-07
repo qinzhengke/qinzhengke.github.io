@@ -67,5 +67,8 @@ var c =
       [ "函数对象（指针）作为实参的的时候一定要其形参是否正确。", "c_debug_lesson.html#函数对象（指针）作为实参的的时候一定要其形参是否正确。", null ],
       [ "头文件循环引用", "c_debug_lesson.html#头文件循环引用", null ],
       [ "操作符优先级导致的bug", "c_debug_lesson.html#操作符优先级导致的bug", null ]
+    ] ],
+    [ "C语言中的宏", "c_macro.html", [
+      [ "获取宏的参数个数", "c_macro.html#获取宏的参数个数", null ]
     ] ]
 ];

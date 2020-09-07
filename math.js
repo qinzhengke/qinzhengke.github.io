@@ -1,7 +1,9 @@
 var math =
 [
     [ "插值", "interpolate.html", null ],
-    [ "四元数", "quaternion.html", null ],
+    [ "四元数", "quaternion.html", [
+      [ "一个在线的四元数可视化网站", "quaternion.html#一个在线的四元数可视化网站", null ]
+    ] ],
     [ "李群和李代数", "group.html", [
       [ "群", "group.html#群", null ],
       [ "矩阵指数", "group.html#矩阵指数", null ],

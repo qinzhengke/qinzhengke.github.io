@@ -16,7 +16,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "algorithm.html",
-"cpp_questions.html#map和unordered_map如何实现？"
+"cpp_list.html#revserse_iterator的base"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C++容器</title>
+<title>C语言中的宏</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('cpp_container.html','');});
+$(document).ready(function(){initNavTree('c_macro.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,24 +88,14 @@ $(document).ready(function(){initNavTree('cpp_container.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">C++容器 </div>  </div>
+<div class="title">C语言中的宏 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>各种容器的区别</p>
-<table class="doxtable">
-<tr>
-<th></th><th>vector </th><th>queue </th><th>deque </th><th>list </th><th>map </th><th>unordered_map  </th></tr>
-<tr>
-<td>随机访问 </td><td>完美 </td><td></td><td>完美 </td><td></td><td></td><td></td></tr>
-<tr>
-<td>随机插入/删除 </td><td>低效 </td><td></td><td>低效 </td><td>完美 </td><td></td><td></td></tr>
-</table>
-<p><a class="el" href="cpp_vector.html">std::vector</a></p>
-<p><a class="el" href="cpp_deque.html">std::deque</a></p>
-<p><a class="el" href="cpp_queue.html">std::queue</a></p>
-<p><a class="el" href="cpp_list.html">std::list</a></p>
-<p><a class="el" href="cpp_map.html">std::map</a></p>
-<p><a class="el" href="cpp_unordered_map.html">std::map</a> </p>
+<div class="textblock"><hr/>
+ <h1><a class="anchor" id="获取宏的参数个数"></a>
+获取宏的参数个数</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div><div class="line"></div><div class="line"><span class="preprocessor">#define GET_NTH_ARG(                                                                        \</span></div><div class="line"><span class="preprocessor">    _1,  _2,  _3,  _4,  _5,  _6,  _7,  _8,  _9,  _10, _11, _12, _13, _14, _15, _16,         \</span></div><div class="line"><span class="preprocessor">    _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32,         \</span></div><div class="line"><span class="preprocessor">    _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47, _48,         \</span></div><div class="line"><span class="preprocessor">    _49, _50, _51, _52, _53, _54, _55, _56, _57, _58, _59, _60, _61, _62, _63, _64, n, ...) n</span></div><div class="line"></div><div class="line"><span class="preprocessor">#define GET_ARG_COUNT(...) GET_NTH_ARG(__VA_ARGS__,                     \</span></div><div class="line"><span class="preprocessor">        64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, \</span></div><div class="line"><span class="preprocessor">        48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, \</span></div><div class="line"><span class="preprocessor">        32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, \</span></div><div class="line"><span class="preprocessor">        16, 15, 14, 13, 12, 11, 10, 9,  8,  7,  6,  5,  4,  3,  2,  1)</span></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    <span class="keywordtype">int</span> a=1,b=2,c=3;</div><div class="line">    cout&lt;&lt;GET_ARG_COUNT(a,b,c);</div><div class="line">}</div></div><!-- fragment --><p>解释一下，GET_ARG_COUNT(a,b,c)被展开为GET_NTH_ARG(a,b,c,64,63 ... 3,2,1)，其中3刚好被推到了GET_NTH_ARG()宏的参数"n"的位置。 从而输出了宏参数的个数。</p>
+<p>一般来说，这样的宏没什么用处，但是有的时候可以用于C++的静态反射，可以参考 <a href="https://netcan.github.io/2020/08/01/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%AE%9E%E7%8E%B0C-%E7%BC%96%E8%AF%91%E6%9C%9F%E9%9D%99%E6%80%81%E5%8F%8D%E5%B0%84/">如何优雅的实现 C++ 编译期静态反射</a> </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -113,7 +103,7 @@ $(document).ready(function(){initNavTree('cpp_container.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li><li class="navelem"><a class="el" href="cpp_stl.html">C++中的STL库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="c.html">C语言</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

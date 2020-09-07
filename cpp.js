@@ -60,11 +60,12 @@ var cpp =
       [ "定义模板类", "cpp_template.html#定义模板类", null ],
       [ "模板类的继承", "cpp_template.html#模板类的继承", null ]
     ] ],
-    [ "C++容器", "cpp_container.html", null ],
     [ "C++中的多态", "cpp_polymorphism.html", [
       [ "如何优雅地定义没有成员函数的类型为虚类？", "cpp_polymorphism.html#如何优雅地定义没有成员函数的类型为虚类？", null ],
       [ "如何优雅的拷贝虚类对象？", "cpp_polymorphism.html#如何优雅的拷贝虚类对象？", null ],
-      [ "抽象类的构造函数不能运行成员虚成员函数", "cpp_polymorphism.html#抽象类的构造函数不能运行成员虚成员函数", null ]
+      [ "抽象类的构造函数不能运行成员虚成员函数", "cpp_polymorphism.html#抽象类的构造函数不能运行成员虚成员函数", null ],
+      [ "(override)父类的重载(overload)函数", "cpp_polymorphism.html#重写", null ],
+      [ "重写函数可以子类型", "cpp_polymorphism.html#重写函数可以子类型", null ]
     ] ],
     [ "C++中的STL库", "cpp_stl.html", "cpp_stl" ],
     [ "C++一些建议", "cpp_suggestion.html", [

@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('c.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="el" href="c_debug_lesson.html">C语言Debug教训</a></p>
+<p><a class="el" href="c_macro.html">C语言中的宏</a></p>
 <hr/>
  <h1><a class="anchor" id="预编译篇"></a>
 预编译篇</h1>
@@ -599,8 +600,10 @@ size_t类型才不会报warning</h2>
 <div class="fragment"><div class="line"><span class="comment">// C89</span></div><div class="line"><span class="keywordtype">size_t</span> foo;</div><div class="line">...</div><div class="line">printf(<span class="stringliteral">&quot;foo = %lu\n&quot;</span>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>) foo);</div><div class="line"><span class="comment">// For C99 and later, use %zu:</span></div><div class="line"></div><div class="line"><span class="keywordtype">size_t</span> foo;</div><div class="line">...</div><div class="line">printf(<span class="stringliteral">&quot;foo = %zu\n&quot;</span>, foo);</div></div><!-- fragment --><hr/>
  <h1><a class="anchor" id="判断数字是否是nan"></a>
 判断数字是否是nan</h1>
-<p>isnan()函数。 </p>
-</div></div><!-- contents -->
+<p>isnan()函数。</p>
+<hr/>
+<p> &lt;section&gt; 角度归一化</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">double</span> normAngle2pi(<span class="keywordtype">double</span> x){</div><div class="line">    x = fmod(x,360);</div><div class="line">    <span class="keywordflow">return</span> (x&lt;0) ? x+360 : x;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">double</span> normAnglepp(<span class="keywordtype">double</span> x){</div><div class="line">    x = fmod(x + 180,360);</div><div class="line">    <span class="keywordflow">return</span> (x&lt;0) ? x+180 : x-180; </div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    cout&lt;&lt;normAngle2pi(-30)&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;normAngle2pi(370)&lt;&lt;endl;</div><div class="line">    cout&lt;&lt;normAnglepp(-30)&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;normAnglepp(370)&lt;&lt;endl;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    cout&lt;&lt;normAngle2pi(-30)&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;normAngle2pi(370)&lt;&lt;endl;</div><div class="line">    cout&lt;&lt;normAnglepp(-30)&lt;&lt;<span class="stringliteral">&quot;,&quot;</span>&lt;&lt;normAnglepp(370)&lt;&lt;endl;</div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

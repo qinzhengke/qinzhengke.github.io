@@ -16,12 +16,15 @@ var cpp_libraries =
       [ "Matrix和C数组之间的转换", "cpp_lib_eigen.html#Matrix和C数组之间的转换", null ],
       [ "auto获取矩阵失效？", "cpp_lib_eigen.html#auto获取矩阵失效？", null ],
       [ "传参时MatrixNd到MatrixXd的转换", "cpp_lib_eigen.html#传参时MatrixNd到MatrixXd的转换", null ],
-      [ "四元数与欧拉角的转换", "cpp_lib_eigen.html#四元数与欧拉角的转换", null ]
+      [ "四元数与欧拉角的转换", "cpp_lib_eigen.html#四元数与欧拉角的转换", null ],
+      [ "Eigen中四元数到欧拉角的一个一定要注意的问题", "cpp_lib_eigen.html#Eigen中四元数到欧拉角的一个一定要注意的问题", null ],
+      [ "eigen中各种旋转表达之间的转换", "cpp_lib_eigen.html#eigen中各种旋转表达之间的转换", null ]
     ] ],
     [ "evpp：奇虎360大神的网络库", "cpp_lib_evpp.html", null ],
     [ "libevent：经典的异步事件框架库", "cpp_lib_libevent.html", [
       [ "基于libevent的定时器", "cpp_lib_libevent.html#基于libevent的定时器", null ],
-      [ "注意event_dispatch函数的阻塞性", "cpp_lib_libevent.html#注意event_dispatch函数的阻塞性", null ]
+      [ "注意event_dispatch函数的阻塞性", "cpp_lib_libevent.html#注意event_dispatch函数的阻塞性", null ],
+      [ "()函数在调用函数结束之后才会开始计时", "cpp_lib_libevent.html#event_add", null ]
     ] ],
     [ "PcapPlusplus：还不错的pcap文件读写库", "cpp_lib_pcapplusplus.html", [
       [ "一个小坑", "cpp_lib_pcapplusplus.html#一个小坑", null ]

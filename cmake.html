@@ -92,6 +92,9 @@ $(document).ready(function(){initNavTree('cmake.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><hr/>
+ <h1><a class="anchor" id="添加目录里所有源文件"></a>
+添加目录里所有源文件</h1>
+<div class="fragment"><div class="line">cmake_minimum_required(VERSION 2.8)</div><div class="line">file(GLOB helloworld_SRC</div><div class="line">    &quot;*.h&quot;</div><div class="line">    &quot;*.cpp&quot;</div><div class="line">)</div><div class="line">add_executable(helloworld ${helloworld_SRC})</div></div><!-- fragment --><hr/>
  <h1><a class="anchor" id="cmake_cpp11"></a>
 C++11标准的引用</h1>
 <p>方法一（3.11之后，现代写法，推荐）： </p><div class="fragment"><div class="line">target_compile_features(my_exe PRIVATE cxx_std_11)</div></div><!-- fragment --><p>方法二（3.11以前，不推荐）： </p><div class="fragment"><div class="line">set(CMAKE_CXX_FLAGS &quot;${CMAKE_CXX_FLAGS} -std=c++11&quot;)</div></div><!-- fragment --><hr/>

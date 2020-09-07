@@ -19,6 +19,7 @@ var programming =
     [ "脚本语言：bat", "bat.html", null ],
     [ "机器人操作系统：ROS", "ros.html", null ],
     [ "cmake", "cmake.html", [
+      [ "添加目录里所有源文件", "cmake.html#添加目录里所有源文件", null ],
       [ "C++11标准的引用", "cmake.html#cmake_cpp11", null ],
       [ "库文件的一般基本引用方法", "cmake.html#库文件的一般基本引用方法", null ],
       [ "链接OpenCV的库", "cmake.html#链接OpenCV的库", null ],

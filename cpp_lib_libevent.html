@@ -98,7 +98,8 @@ $(document).ready(function(){initNavTree('cpp_lib_libevent.html','');});
  <h1><a class="anchor" id="注意event_dispatch函数的阻塞性"></a>
 注意event_dispatch函数的阻塞性</h1>
 <p>如题libevent中的event_dispatch是阻塞的，所以要注意同一个线程，后面就不要放代码了。</p>
-<div class="fragment"><div class="line">printf(<span class="stringliteral">&quot;before\n&quot;</span>); <span class="comment">// 会被打印</span></div><div class="line">event_dispatch();</div><div class="line">printf(<span class="stringliteral">&quot;afetr\n&quot;</span>);  <span class="comment">// 不会被打印</span></div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">printf(<span class="stringliteral">&quot;before\n&quot;</span>); <span class="comment">// 会被打印</span></div><div class="line">event_dispatch();</div><div class="line">printf(<span class="stringliteral">&quot;afetr\n&quot;</span>);  <span class="comment">// 不会被打印</span></div></div><!-- fragment --><hr/>
+ </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
