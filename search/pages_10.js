@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['内参标定',['内参标定',['../cali_intrinsic.html',1,'calibration']]],
-  ['图像特征点',['图像特征点',['../feature_entry.html',1,'cv']]],
-  ['卡尔曼滤波',['卡尔曼滤波',['../kalman_filter.html',1,'math']]],
-  ['开源办公软件：libre_20office',['开源办公软件：Libre Office',['../libre_office.html',1,'tools']]],
-  ['在线工具',['在线工具',['../online_tools.html',1,'zk_note']]],
-  ['四元数',['四元数',['../quaternion.html',1,'math']]],
-  ['基于unordered_5fmap的稀疏矩阵的实现',['基于unordered_map的稀疏矩阵的实现',['../sparse_matrix.html',1,'cpp']]],
-  ['工具',['工具',['../tools.html',1,'zk_note']]],
-  ['其他有用的工具',['其他有用的工具',['../useful_tools.html',1,'tools']]],
-  ['学习笔记',['学习笔记',['../zk_note.html',1,'']]]
+  ['优秀的项目源码阅读',['优秀的项目源码阅读',['../awesome_projects.html',1,'programming']]],
+  ['从百度apollo项目看算法软件架构',['从百度Apollo项目看算法软件架构',['../cpp_apollo_arch.html',1,'awesome_projects']]],
+  ['一些关于c_2b_2b的优秀文章',['一些关于C++的优秀文章',['../cpp_articles.html',1,'cpp']]],
+  ['从json到struct',['从json到struct',['../cpp_json2struct.html',1,'']]],
+  ['优化理论',['优化理论',['../optimization.html',1,'math']]],
+  ['代码内存检测工具valgrind',['代码内存检测工具valgrind',['../valgrind.html',1,'tools']]]
 ];

@@ -107,7 +107,19 @@ $(document).ready(function(){initNavTree('cpp_linux_deploy.html','');});
 <p>这时候会发现，刚才的缺失对应so文件的提示消失了，但是大部分情况下，系统会提示缺少其他的so文件。 这时候需要重复进行Step 3 到Step 4，直到程序可以运行为止。</p>
 <p>Step 5: 建立run.sh脚本运行程序</p>
 <p>让用户记住如此特殊的运行命令是不友好的，建立一个run.sh让用户一键运行。</p>
-<div class="fragment"><div class="line">#!/bin/bash</div><div class="line">LD_LIBRARY_PATH=$(pwd)/lib ./my_exe</div></div><!-- fragment --><p>后记： 这方法的“笨”在于需要重复查找缺失的so文件，并且只能串行查找，稍微花点时间。 </p>
+<div class="fragment"><div class="line">#!/bin/bash</div><div class="line">LD_LIBRARY_PATH=$(pwd)/lib ./my_exe</div></div><!-- fragment --><p>后记： 这方法的“笨”在于需要重复查找缺失的so文件，并且只能串行查找，稍微花点时间。</p>
+<hr/>
+ <h1><a class="anchor" id="聪明一点的方法"></a>
+聪明一点的方法</h1>
+<p>Step 1: 使用ldd工具查出所有需要的so文件</p>
+<div class="fragment"><div class="line">ldd /bin/ls</div><div class="line">linux-vdso.so.1 =&gt;  (0x00007fff87ffe000)</div><div class="line">libselinux.so.1 =&gt; /lib/x86_64-linux-gnu/libselinux.so.1 (0x00007ff0510c1000)</div><div class="line">librt.so.1 =&gt; /lib/x86_64-linux-gnu/librt.so.1 (0x00007ff050eb9000)</div><div class="line">libacl.so.1 =&gt; /lib/x86_64-linux-gnu/libacl.so.1 (0x00007ff050cb0000)</div><div class="line">libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007ff0508f0000)</div><div class="line">libdl.so.2 =&gt; /lib/x86_64-linux-gnu/libdl.so.2 (0x00007ff0506ec000)</div><div class="line">/lib64/ld-linux-x86-64.so.2 (0x00007ff0512f7000)</div><div class="line">libpthread.so.0 =&gt; /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007ff0504ce000)</div><div class="line">libattr.so.1 =&gt; /lib/x86_64-linux-gnu/libattr.so.1 (0x00007ff0502c9000)</div></div><!-- fragment --><p>Step2: 剩下的步骤和上一节方法一致。</p>
+<hr/>
+ <h1><a class="anchor" id="更聪明的办法"></a>
+更聪明的办法</h1>
+<p>通过sed工具，可以过滤出我们想要的文件名列表。</p>
+<div class="fragment"><div class="line">ldd /bin/ls | sed -e &#39;s/\t//&#39; | sed -e &#39;s/.*=..//&#39; | sed -e &#39;s/ (0.*)//&#39;</div></div><!-- fragment --><p>sed -e 's///' 意思是把制表符给删除（替换成无），语法和vim的替换是一样的。 sed -e 's/.*=..//' 意思是把“=”前面的所有字符和“=”后面的两个字符删除掉（替换成无）。 sed -e 's/ (0.*)//' 意思是" (0x-----)"都给删除掉。</p>
+<p>输出 </p><div class="fragment"><div class="line">linux-vdso.so.1</div><div class="line">/lib/x86_64-linux-gnu/libselinux.so.1</div><div class="line">/lib/x86_64-linux-gnu/libc.so.6</div><div class="line">/lib/x86_64-linux-gnu/libpcre.so.3</div><div class="line">/lib/x86_64-linux-gnu/libdl.so.2</div><div class="line">/lib64/ld-linux-x86-64.so.2</div><div class="line">/lib/x86_64-linux-gnu/libpthread.so.0</div></div><!-- fragment --><p>Step2: 批量拷贝 </p><div class="fragment"><div class="line">ldd /bin/ls | sed -e &#39;s/\t//&#39; | sed -e &#39;s/.*=..//&#39; | sed -e &#39;s/ (0.*)//&#39; | xargs -I {} cp {} ~/softs/cc/lib/</div></div><!-- fragment --><p>xargs是linux的一个工具，可以通过管道"|"获取文件列表，然后批量执行cp操作，其中“xarg -I {}”表示使用列表中的内容替换后面实际执行命令的{}的内容，类似于编程语言中的参数传递。</p>
+<p>注意：拷贝的过程中会报出linux-vdso.so.1文件找不到，不用去管他，一般的linux系统都会有这个文件，不需要拷贝。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

@@ -68,7 +68,8 @@ var tools =
       [ "ffmpeg工具拼接视频", "useful_tools.html#ffmpeg_merge", null ],
       [ "ffmpeg工具缩放视频", "useful_tools.html#ffmpeg_resize", null ],
       [ "flameshot:超强的Ubuntu截图工具", "useful_tools.html#flameshot", null ],
-      [ "tar工具使用示例", "useful_tools.html#tar_example", null ]
+      [ "tar工具使用示例", "useful_tools.html#tar_example", null ],
+      [ "ubuntu下的录屏工具 simple screen recorder", "useful_tools.html#ssr", null ]
     ] ],
     [ "vim笔记", "vim.html", [
       [ "给变量名加上引号", "vim.html#vim_add_quote", null ],
@@ -80,7 +81,7 @@ var tools =
       [ "替换中的正则表达式", "vim.html#vim_regular", null ],
       [ "光标回到上一个位置", "vim.html#vim_go_prev", null ]
     ] ],
-    [ "Visual Studio Code", "vscode.html", "vscode" ],
+    [ "强大的代码编辑器：Visual Studio Code", "vscode.html", "vscode" ],
     [ "LaTex语法笔记", "latex.html", null ],
     [ "代码内存检测工具valgrind", "valgrind.html", null ]
 ];

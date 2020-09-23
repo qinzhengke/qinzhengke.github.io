@@ -29,5 +29,8 @@ var cpp_libraries =
     [ "PcapPlusplus：还不错的pcap文件读写库", "cpp_lib_pcapplusplus.html", [
       [ "一个小坑", "cpp_lib_pcapplusplus.html#一个小坑", null ]
     ] ],
-    [ "gtest：谷歌测试框架", "gtest.html", null ]
+    [ "gtest：谷歌测试框架", "gtest.html", null ],
+    [ "C++ json序列化库：iguana", "cpp_lib_iguana.html", [
+      [ "REFLECTION的宏定义必须紧接着结构体", "cpp_lib_iguana.html#REFLECTION的宏定义必须紧接着结构体", null ]
+    ] ]
 ];

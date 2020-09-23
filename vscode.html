@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Visual Studio Code</title>
+<title>强大的代码编辑器：Visual Studio Code</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,67 +88,93 @@ $(document).ready(function(){initNavTree('vscode.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">如何设置ruler? </div>  </div>
+<div class="title">强大的代码编辑器：Visual Studio Code </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="如何添加宏定义？"></a>
-如何添加宏定义？</h1>
-<p>step 1: ctrl+shift+p，选择"C/C++ Edit configurations..."，或者直接“ctrl+p”，输入“c_cpp_properties.json”，来到，C/C++配置页面。 step 2: 在"configurations"项目下的"defines"插入宏定义即可。</p>
-<p>举例： </p><div class="fragment"><div class="line">{</div><div class="line">  &quot;configurations&quot;: [</div><div class="line">    {</div><div class="line">      &quot;name&quot;: &quot;Win32&quot;,</div><div class="line">      &quot;defines&quot;: [&quot;_DEBUG&quot;, &quot;UNICODE&quot;, &quot;_UNICODE&quot;],</div><div class="line">      &quot;compilerPath&quot;: &quot;C:/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe&quot;,</div><div class="line">      &quot;windowsSdkVersion&quot;: &quot;10.0.17763.0&quot;,</div><div class="line">      &quot;intelliSenseMode&quot;: &quot;msvc-x64&quot;,</div><div class="line">      &quot;cStandard&quot;: &quot;c11&quot;,</div><div class="line">      &quot;cppStandard&quot;: &quot;c++17&quot;</div><div class="line">    }</div><div class="line">  ],</div><div class="line">  &quot;version&quot;: 4</div><div class="line">}</div></div><!-- fragment --><hr/>
- <h1><a class="anchor" id="在vscode中单步调试"></a>
-在vscode中单步调试</h1>
-<p>Step 1: 在CMakeLists.txt中添加以下debug设置</p>
-<div class="fragment"><div class="line">set(DEFAULT_BUILD_TYPE &quot;Debug&quot;)</div><div class="line">set(CMAKE_CXX_FLAGS_DEBUG &quot;{CMAKE_CXX_FLAGS} -o0 -ggbd&quot;)</div><div class="line">add_compile_options(-g)</div></div><!-- fragment --><p>Step 2: 在.vscode目录中按照如下设置</p>
-<div class="fragment"><div class="line">{</div><div class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</div><div class="line">    &quot;configurations&quot;: [</div><div class="line"></div><div class="line">        {</div><div class="line">            &quot;name&quot;: &quot;(gdb) Launch&quot;,</div><div class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;program&quot;: &quot;${workspaceFolder}/build/msft&quot;,</div><div class="line">            &quot;args&quot;: [],</div><div class="line">            &quot;stopAtEntry&quot;: false,</div><div class="line">            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,</div><div class="line">            &quot;environment&quot;: [],</div><div class="line">            &quot;externalConsole&quot;: false,</div><div class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,</div><div class="line">            &quot;setupCommands&quot;: [</div><div class="line">                {</div><div class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</div><div class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</div><div class="line">                    &quot;ignoreFailures&quot;: true</div><div class="line">                }</div><div class="line">            ]</div><div class="line">        },</div><div class="line">        {</div><div class="line">            &quot;name&quot;: &quot;test_intersection&quot;,</div><div class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;program&quot;: &quot;${workspaceFolder}/3rd-party/ha_math/unit_test/build/test_intersection&quot;,</div><div class="line">            &quot;args&quot;: [],</div><div class="line">            &quot;stopAtEntry&quot;: false,</div><div class="line">            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,</div><div class="line">            &quot;environment&quot;: [],</div><div class="line">            &quot;externalConsole&quot;: false,</div><div class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,</div><div class="line">            &quot;setupCommands&quot;: [</div><div class="line">                {</div><div class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</div><div class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</div><div class="line">                    &quot;ignoreFailures&quot;: true</div><div class="line">                }</div><div class="line">            ]</div><div class="line">        },</div><div class="line">    ]</div><div class="line">}</div></div><!-- fragment --><p>其中，program设置为目标可执行文件。</p>
-<p>Step 3: 按F5进行调试，F10单步（跳过函数），F11单步（跳入函数）。</p>
+<div class="textblock"><hr/>
+ <h1><a class="anchor" id="基础篇"></a>
+基础篇</h1>
 <hr/>
- <h1><a class="anchor" id="vscode单步调试会先自动跳到末尾"></a>
-vscode单步调试会先自动跳到末尾</h1>
-<p>如题，vscode单步调试的时候，不知为何会自动先跳到末尾，这时候不要惆怅，只需要再按一次F5，程序就会自动运行下去，并且可以正常的调试。</p>
-<p>很奇怪，原因还未知道。</p>
+ <h2><a class="anchor" id="代码片的设置语法"></a>
+代码片的设置语法</h2>
+<div class="fragment"><div class="line">  // Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and </div><div class="line">  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:</div><div class="line">  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the </div><div class="line">  // same ids are connected.</div><div class="line">  // Example:</div><div class="line">  // &quot;Print to console&quot;: {</div><div class="line">  //  &quot;prefix&quot;: &quot;log&quot;,</div><div class="line">  //  &quot;body&quot;: [</div><div class="line">  //      &quot;console.log(&#39;$1&#39;);&quot;,</div><div class="line">  //      &quot;$2&quot;</div><div class="line">  //  ],</div><div class="line">  //  &quot;description&quot;: &quot;Log output to console&quot;</div><div class="line">  // }</div><div class="line">  &quot;Inline function&quot;: {</div><div class="line">      &quot;prefix&quot;: &quot;if&quot;,</div><div class="line">      &quot;body&quot;: [</div><div class="line">          &quot;\\f$ $0 \\f$&quot;</div><div class="line">      ],</div><div class="line">      &quot;description&quot;: &quot;inline formula&quot;</div><div class="line">},</div></div><!-- fragment --><p>其实按照前面的注释非常容易看懂，$1和$2是tab跳转位置，代码片出来后，光标会自动跳转到$1位置，然后输入字符，按tab键跳到$2。 问题是，光标$1和$2的编辑模式很奇怪，仍然处于当前代码片编辑模式下，这种模式下无法嵌套地触发其他代码片。</p>
+<p>$x参数是可以出现相同的，例如好几个$1同时出现，在编辑的时候，vscode会同时用同一个词填充多处代码，非常高效，规模较大的时候很震撼。 例如我们常常用到的头文件防重定义。</p>
+<div class="fragment"><div class="line"><span class="comment">// header.hh</span></div><div class="line"><span class="preprocessor">#ifdef __XX_HH__ </span></div><div class="line"><span class="preprocessor">#define __XX_HH__</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="preprocessor">#endif // __XX_HH__</span></div></div><!-- fragment --><p>{.cpp}</p>
+<p>然而我们通常要在光标处触发其他代码片，这就需要使用到$0，它表示，光标最终的位置，即如果没有$x，代码片自动输出时就退出了代码片模式，自然就可以触发其他的代码片。</p>
 <hr/>
- <h1><a class="anchor" id="如何使用clang-format进行代码格式化？"></a>
-如何使用clang-format进行代码格式化？</h1>
-<p>步骤1：<code>File</code>-&gt;<code>Preference</code>-&gt;<code><a class="el" href="classSettings.html">Settings</a></code>-&gt;搜索“format”，选择“Editor:Format On Save”。</p>
-<p>步骤2：同样在<code><a class="el" href="classSettings.html">Settings</a></code>界面，搜索“C_Cpp”，在“C_Cpp:Clang_format_style”下方的编辑框中填入“file”，即使用工作空间的“.clang-format”文件作为style，工作空间就是vscode打开的目录，例如打开目录的时候使用“code .”，那么工作空间就是“.”，记住不是.vscode目录！</p>
-<h1><a class="anchor" id="markdown代码片"></a>
-markdown代码片</h1>
+ <h2><a class="anchor" id="markdown代码片"></a>
+markdown代码片</h2>
 <ol type="1">
 <li>“File”-&gt;“Preference”-&gt;“User snippets”，然后在下拉列表中选择“markdown.json”</li>
 <li>按照模板来编辑，简单的例子如下：</li>
 <li>markdown格式是默认没有打开intellsense功能的，需要手动打开，在“ctrl+p”-&gt;“输入&gt;”-&gt;“输入language”-&gt;“选择markdown”-&gt;“edit in settings.json” 按照如下方式添加：</li>
 </ol>
-<div class="fragment"><div class="line">{</div><div class="line">    &quot;cmake.configureOnOpen&quot;: true,</div><div class="line">    &quot;C_Cpp.updateChannel&quot;: &quot;Insiders&quot;,</div><div class="line">    &quot;http.proxySupport&quot;: &quot;off&quot;,</div><div class="line">    &quot;[markdown]&quot;: {</div><div class="line">      &quot;editor.quickSuggestions&quot;:true</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><h1><a class="anchor" id="代码片的设置语法"></a>
-代码片的设置语法</h1>
-<div class="fragment"><div class="line">  // Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and </div><div class="line">  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:</div><div class="line">  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the </div><div class="line">  // same ids are connected.</div><div class="line">  // Example:</div><div class="line">  // &quot;Print to console&quot;: {</div><div class="line">  //  &quot;prefix&quot;: &quot;log&quot;,</div><div class="line">  //  &quot;body&quot;: [</div><div class="line">  //      &quot;console.log(&#39;$1&#39;);&quot;,</div><div class="line">  //      &quot;$2&quot;</div><div class="line">  //  ],</div><div class="line">  //  &quot;description&quot;: &quot;Log output to console&quot;</div><div class="line">  // }</div><div class="line">  &quot;Inline function&quot;: {</div><div class="line">      &quot;prefix&quot;: &quot;if&quot;,</div><div class="line">      &quot;body&quot;: [</div><div class="line">          &quot;\\f$ $0 \\f$&quot;</div><div class="line">      ],</div><div class="line">      &quot;description&quot;: &quot;inline formula&quot;</div><div class="line">},</div></div><!-- fragment --><p>其实按照前面的注释非常容易看懂，$1和$2是tab跳转位置，代码片出来后，光标会自动跳转到$1位置，然后输入字符，按tab键跳到$2。 问题是，光标$1和$2的编辑模式很奇怪，仍然处于当前代码片编辑模式下，这种模式下无法嵌套地触发其他代码片。</p>
-<p>然而我们通常要在光标处触发其他代码片，这就需要使用到$0，它表示，光标最终的位置，即如果没有$x，代码片自动输出时就退出了代码片模式，自然就可以触发其他的代码片。</p>
-<hr/>
- <h1><a class="anchor" id="Latex常用的代码片"></a>
-Latex常用的代码片</h1>
+<div class="fragment"><div class="line">{</div><div class="line">    &quot;cmake.configureOnOpen&quot;: true,</div><div class="line">    &quot;C_Cpp.updateChannel&quot;: &quot;Insiders&quot;,</div><div class="line">    &quot;http.proxySupport&quot;: &quot;off&quot;,</div><div class="line">    &quot;[markdown]&quot;: {</div><div class="line">      &quot;editor.quickSuggestions&quot;:true</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><hr/>
+ <h2><a class="anchor" id="Latex常用的代码片"></a>
+Latex常用的代码片</h2>
 <p>参见 <a class="el" href="vscode_markdown_snippet.html">vscode中的markdown相关的代码片</a></p>
 <hr/>
- <h1><a class="anchor" id="vscode如何对变量进行一改全改？"></a>
-vscode如何对变量进行一改全改？</h1>
+ <h2><a class="anchor" id="vscode如何对变量进行一改全改？"></a>
+vscode如何对变量进行一改全改？</h2>
 <p>按F2，输入新的名称，然后在下方点击打钩图标即可。</p>
-<h1><a class="anchor" id="vscode如何添加包含路径？"></a>
-vscode如何添加包含路径？</h1>
-<p>问题：一些库安装后的头文件路径不是最标准的/usr/include，例如Eigen的安装头文件路径为/usr/local/include/eigen3，然而vscode默认不会搜索这个路径，导致vscode无法正确解析这些头文件。</p>
-<p>解决方法：在vscode中手动添加包含目录。</p>
-<p>step 1: 菜单 File -&gt; Preference -&gt; settings -&gt; Extensions -&gt; C/C++ -&gt; Include Path，选择“Edit in settings.json”。</p>
-<p>step 2: 按照如下方式添加include path。</p>
-<div class="fragment"><div class="line">{</div><div class="line">    &quot;cmake.configureOnOpen&quot;: true,</div><div class="line">    &quot;C_Cpp.updateChannel&quot;: &quot;Insiders&quot;,</div><div class="line">    &quot;http.proxySupport&quot;: &quot;off&quot;,</div><div class="line">    &quot;[markdown]&quot;: {</div><div class="line">      &quot;editor.quickSuggestions&quot;:true</div><div class="line">    },</div><div class="line">    &quot;C_Cpp.default.includePath&quot;: [&quot;/usr/local/include/eigen3&quot;]  // 添加include path</div><div class="line">}</div></div><!-- fragment --><p>注意：由于这个设置是针对于vscode的，对于任何工程，这个路径都会自动添加。</p>
-<h1><a class="anchor" id="vscode中如何设置前后跳转？"></a>
-vscode中如何设置前后跳转？</h1>
+<hr/>
+ <h2><a class="anchor" id="vscode中如何设置前后跳转？"></a>
+vscode中如何设置前后跳转？</h2>
 <p>问题：在代码浏览过程中，个人比较习惯使用QtCreator的方式进行跳转，即Alt+右为向前跳转，Alt+左为向后跳转。 vscode默认跳转方式为ctrl+alt+‘-’，这种组合对于非常常用的功能来说太复杂了。</p>
 <p>解决方法：</p>
 <p>step 1: File -&gt; Preference -&gt; Keyboard Shortcuts step 2: 搜索“Forward”找到向前跳转的设置， 搜索“Backward“找到向后跳转的设置，按照提示设置即可。</p>
-<h1><a class="anchor" id="vscode"></a>
-如何设置ruler?</h1>
+<hr/>
+ <h2><a class="anchor" id="vscode_rulek"></a>
+如何设置ruler?</h2>
 <p>问题：编写代码的时候，ruler也就是右侧的竖线，ruler可以提醒我们一行代码是否太长，需要拆行。</p>
 <p>解决方法：</p>
 <p>Step 1: File -&gt; Preference -&gt; Settings，搜索“ruler”，选择“Edit in settings.json”</p>
 <p>Step 2: 按照一下方法进行设置</p>
-<div class="fragment"><div class="line">{</div><div class="line">    &quot;cmake.configureOnOpen&quot;: true,</div><div class="line">    &quot;C_Cpp.updateChannel&quot;: &quot;Insiders&quot;,</div><div class="line">    &quot;http.proxySupport&quot;: &quot;off&quot;,</div><div class="line">    &quot;[markdown]&quot;: {</div><div class="line">      &quot;editor.quickSuggestions&quot;:true</div><div class="line">    },</div><div class="line">    &quot;editor.rulers&quot;: [80,120] // 设置2个ruler，分别在80列和120列</div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">{</div><div class="line">    &quot;cmake.configureOnOpen&quot;: true,</div><div class="line">    &quot;C_Cpp.updateChannel&quot;: &quot;Insiders&quot;,</div><div class="line">    &quot;http.proxySupport&quot;: &quot;off&quot;,</div><div class="line">    &quot;[markdown]&quot;: {</div><div class="line">      &quot;editor.quickSuggestions&quot;:true</div><div class="line">    },</div><div class="line">    &quot;editor.rulers&quot;: [80,120] // 设置2个ruler，分别在80列和120列</div><div class="line">}</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="vscode_c_cpp"></a>
+C\C++篇</h1>
+<hr/>
+ <h2><a class="anchor" id="c_cpp_properties"></a>
+c_cpp_properties.json</h2>
+<p>c_cpp_properties.json文件是vscode关于C++配置的核心文件，默认情况下是不会生成的，可以使用下面两种方法生成：</p>
+<p>(1) ctrl+shift+p，选择"C/C++ Edit configurations..."。 (2) 在'.vscode'目录下直接手动建立'c_cpp_properties'文件，然后‘ctrl+p'搜索对应文件并且编辑。</p>
+<p>这两种方式生成的c_cpp_properties文件放在.vscode目录下。</p>
+<hr/>
+ <h2><a class="anchor" id="如何添加宏定义？"></a>
+如何添加宏定义？</h2>
+<p>在'c_cpp_properties.json'文件中的"configurations"项目下的"defines"插入宏定义即可。</p>
+<p>c_cpp_properties.json文件请参考 <a class="el" href="vscode.html#c_cpp_properties">c_cpp_properties.json</a> 。</p>
+<p>举例： </p><div class="fragment"><div class="line">{</div><div class="line">  &quot;configurations&quot;: [</div><div class="line">    {</div><div class="line">      &quot;name&quot;: &quot;Win32&quot;,</div><div class="line">      &quot;defines&quot;: [&quot;_DEBUG&quot;, &quot;UNICODE&quot;, &quot;_UNICODE&quot;],</div><div class="line">      &quot;compilerPath&quot;: &quot;C:/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe&quot;,</div><div class="line">      &quot;windowsSdkVersion&quot;: &quot;10.0.17763.0&quot;,</div><div class="line">      &quot;intelliSenseMode&quot;: &quot;msvc-x64&quot;,</div><div class="line">      &quot;cStandard&quot;: &quot;c11&quot;,</div><div class="line">      &quot;cppStandard&quot;: &quot;c++17&quot;</div><div class="line">    }</div><div class="line">  ],</div><div class="line">  &quot;version&quot;: 4</div><div class="line">}</div></div><!-- fragment --><hr/>
+ <h2><a class="anchor" id="在vscode中单步调试"></a>
+在vscode中单步调试</h2>
+<p>Step 1: 在CMakeLists.txt中添加以下debug设置</p>
+<div class="fragment"><div class="line">set(DEFAULT_BUILD_TYPE &quot;Debug&quot;)</div><div class="line">set(CMAKE_CXX_FLAGS_DEBUG &quot;{CMAKE_CXX_FLAGS} -o0 -ggbd&quot;)</div><div class="line">add_compile_options(-g)</div></div><!-- fragment --><p>Step 2: 在.vscode目录中按照如下设置</p>
+<div class="fragment"><div class="line">{</div><div class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</div><div class="line">    &quot;configurations&quot;: [</div><div class="line"></div><div class="line">        {</div><div class="line">            &quot;name&quot;: &quot;(gdb) Launch&quot;,</div><div class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;program&quot;: &quot;${workspaceFolder}/build/msft&quot;,</div><div class="line">            &quot;args&quot;: [],</div><div class="line">            &quot;stopAtEntry&quot;: false,</div><div class="line">            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,</div><div class="line">            &quot;environment&quot;: [],</div><div class="line">            &quot;externalConsole&quot;: false,</div><div class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,</div><div class="line">            &quot;setupCommands&quot;: [</div><div class="line">                {</div><div class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</div><div class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</div><div class="line">                    &quot;ignoreFailures&quot;: true</div><div class="line">                }</div><div class="line">            ]</div><div class="line">        },</div><div class="line">        {</div><div class="line">            &quot;name&quot;: &quot;test_intersection&quot;,</div><div class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;program&quot;: &quot;${workspaceFolder}/3rd-party/ha_math/unit_test/build/test_intersection&quot;,</div><div class="line">            &quot;args&quot;: [],</div><div class="line">            &quot;stopAtEntry&quot;: false,</div><div class="line">            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,</div><div class="line">            &quot;environment&quot;: [],</div><div class="line">            &quot;externalConsole&quot;: false,</div><div class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,</div><div class="line">            &quot;setupCommands&quot;: [</div><div class="line">                {</div><div class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</div><div class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</div><div class="line">                    &quot;ignoreFailures&quot;: true</div><div class="line">                }</div><div class="line">            ]</div><div class="line">        },</div><div class="line">    ]</div><div class="line">}</div></div><!-- fragment --><p>其中，program设置为目标可执行文件。</p>
+<p>Step 3: 按F5进行调试，F10单步（跳过函数），F11单步（跳入函数）。</p>
+<hr/>
+ <h2><a class="anchor" id="vscode单步调试会先自动跳到末尾"></a>
+vscode单步调试会先自动跳到末尾</h2>
+<p>如题，vscode单步调试的时候，不知为何会自动先跳到末尾，这时候不要惆怅，只需要再按一次F5，程序就会自动运行下去，并且可以正常的调试。</p>
+<p>很奇怪，原因还未知道。</p>
+<hr/>
+ <h2><a class="anchor" id="如何使用clang-format进行代码格式化？"></a>
+如何使用clang-format进行代码格式化？</h2>
+<p>步骤1：<code>File</code>-&gt;<code>Preference</code>-&gt;<code><a class="el" href="classSettings.html">Settings</a></code>-&gt;搜索“format”，选择“Editor:Format On Save”。</p>
+<p>步骤2：同样在<code><a class="el" href="classSettings.html">Settings</a></code>界面，搜索“C_Cpp”，在“C_Cpp:Clang_format_style”下方的编辑框中填入“file”，即使用工作空间的“.clang-format”文件作为style，工作空间就是vscode打开的目录，例如打开目录的时候使用“code .”，那么工作空间就是“.”，记住不是.vscode目录！</p>
+<hr/>
+ <h2><a class="anchor" id="vscode如何给当前project添加包含路径？"></a>
+vscode如何给当前project添加包含路径？</h2>
+<p>在c_cpp_properties.json中按照如下方法添加。</p>
+<p>c_cpp_properties.json相关信息可以在 <a class="el" href="vscode.html#c_cpp_properties">c_cpp_properties.json</a> 找到。</p>
+<div class="fragment"><div class="line">{</div><div class="line">    &quot;configurations&quot;: [</div><div class="line">        {</div><div class="line">            &quot;includePath&quot;: [</div><div class="line">                &quot;${workspaceFolder}/3rd-party/rapidjson/include&quot;,</div><div class="line">                &quot;${workspaceFolder}/3rd-party/iguana&quot;</div><div class="line">            ],</div><div class="line">            &quot;intelliSenseMode&quot;: &quot;gcc-x64&quot;,</div><div class="line">            &quot;compilerPath&quot;: &quot;/usr/bin/gcc&quot;,</div><div class="line">            &quot;cStandard&quot;: &quot;gnu11&quot;,</div><div class="line">            &quot;cppStandard&quot;: &quot;gnu++14&quot;</div><div class="line">        }</div><div class="line">    ],</div><div class="line">    &quot;version&quot;: 4</div><div class="line">}</div></div><!-- fragment --><hr/>
+ <h2><a class="anchor" id="vscode如何在系统级别添加包含路径？"></a>
+vscode如何在系统级别添加包含路径？</h2>
+<p>问题：一些库安装后的头文件路径不是最标准的/usr/include，例如Eigen的安装头文件路径为/usr/local/include/eigen3，然而vscode默认不会搜索这个路径，导致vscode无法正确解析这些头文件。</p>
+<p>解决方法：在vscode中手动添加包含目录。</p>
+<p>step 1: 菜单 File -&gt; Preference -&gt; settings -&gt; Extensions -&gt; C/C++ -&gt; Include Path，选择“Edit in settings.json”。</p>
+<p>step 2: 按照如下方式添加include path。</p>
+<div class="fragment"><div class="line">{</div><div class="line">    &quot;cmake.configureOnOpen&quot;: true,</div><div class="line">    &quot;C_Cpp.updateChannel&quot;: &quot;Insiders&quot;,</div><div class="line">    &quot;http.proxySupport&quot;: &quot;off&quot;,</div><div class="line">    &quot;[markdown]&quot;: {</div><div class="line">      &quot;editor.quickSuggestions&quot;:true</div><div class="line">    },</div><div class="line">    &quot;C_Cpp.default.includePath&quot;: [&quot;/usr/local/include/eigen3&quot;]  // 添加include path</div><div class="line">}</div></div><!-- fragment --><p>注意：由于这个设置是针对于vscode的，对于任何工程，这个路径都会自动添加。 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

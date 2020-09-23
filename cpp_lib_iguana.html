@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>vscode中的markdown相关的代码片</title>
+<title>C++ json序列化库：iguana</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('vscode_markdown_snippet.html','');});
+$(document).ready(function(){initNavTree('cpp_lib_iguana.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,128 +88,21 @@ $(document).ready(function(){initNavTree('vscode_markdown_snippet.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">vscode中的markdown相关的代码片 </div>  </div>
+<div class="title">C++ json序列化库：iguana </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><pre class="fragment">//  ~/.config/Code/User/snippets/markdown.json
-{
-    // Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and 
-    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-    // same ids are connected.
-    // Example:
-    // "Print to console": {
-    //  "prefix": "log",
-    //  "body": [
-    //      "console.log('$1');",
-    //      "$2"
-    //  ],
-    //  "description": "Log output to console"
-    // }
-    "Inline function": {
-        "prefix": "if",
-        "body": [
-            "\\f$ $0 \\f$"
-        ],
-        "description": "inline formula"
-    },
-    "new line function": {
-        "prefix": "nf",
-        "body": [
-            "\\f[",
-            "$0",
-            "\\f]"
-        ],
-        "description": "new line formula"
-    },
-    "algin": {
-        "prefix": "algined",
-        "body": [
-            "\\begin{aligned}",
-            "$0",
-            "\\end{aligned}"
-        ],
-        "description": "new line formula"
-    },
-    "boldsymbol x": {
-        "prefix": "bx",
-        "body": [
-            "\\boldsymbol{x}",
-        ],
-        "description": "boldsymbol{x}"
-    },
-    "boldsymbol y": {
-        "prefix": "by",
-        "body": [
-            "\\boldsymbol{y}",
-        ],
-        "description": "boldsymbol{y}"
-    },
-    "boldsymbol A": {
-        "prefix": "ba",
-        "body": [
-            "\\boldsymbol{A}",
-        ],
-        "description": "boldsymbol{A}"
-    },
-    "boldsymbol H": {
-        "prefix": "bh",
-        "body": [
-            "\\boldsymbol{H}",
-        ],
-        "description": "boldsymbol{H}"
-    },
-    "boldsymbol J": {
-        "prefix": "bj",
-        "body": [
-            "\\boldsymbol{J}",
-        ],
-        "description": "boldsymbol{J}"
-    },
-    "boldsymbol f": {
-        "prefix": "bf",
-        "body": [
-            "\\boldsymbol{f}",
-        ],
-        "description": "boldsymbol{H}"
-    },
-    "boldsymbol D": {
-        "prefix": "bd",
-        "body": [
-            "\\boldsymbol{D}",
-        ],
-        "description": "boldsymbol{D}"
-    },
-    "boldsymbol I": {
-        "prefix": "bi",
-        "body": [
-            "\\boldsymbol{I}",
-        ],
-        "description": "boldsymbol{I}"
-    },
-    "boldsymbol 0": {
-        "prefix": "b0",
-        "body": [
-            "\\boldsymbol{0}",
-        ],
-        "description": "boldsymbol{0}"
-    },
-    "delta boldsymbol x": {
-        "prefix": "dbx",
-        "body": [
-            "\\Delta\\boldsymbol{x}",
-        ],
-        "description": "delta boldsymbol{x}"
-    }
-}
-</pre> </div></div><!-- contents -->
+<div class="textblock"><p>iguana的意思是变色龙</p>
+<h1><a class="anchor" id="REFLECTION的宏定义必须紧接着结构体"></a>
+REFLECTION的宏定义必须紧接着结构体</h1>
+<p>如题，REFLECTION的宏定义必须紧接着结构体，否则编译是会报错的，所以这仍然不是完美的非入侵式反射，结构体定义的地方必须依赖iguana。 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="tools.html">工具</a></li><li class="navelem"><a class="el" href="vscode.html">强大的代码编辑器：Visual Studio Code</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li><li class="navelem"><a class="el" href="cpp_libraries.html">C++常用库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次
