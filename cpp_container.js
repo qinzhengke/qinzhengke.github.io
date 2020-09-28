@@ -1,6 +1,8 @@
 var cpp_container =
 [
-    [ "std::vector", "cpp_vector.html", null ],
+    [ "std::vector", "cpp_vector.html", [
+      [ "能否以数组为元素？", "cpp_vector.html#能否以数组为元素？", null ]
+    ] ],
     [ "std::deque", "cpp_deque.html", null ],
     [ "std::queue", "cpp_queue.html", null ],
     [ "std::list", "cpp_list.html", [

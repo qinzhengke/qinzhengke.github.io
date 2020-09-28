@@ -4,6 +4,8 @@ var tools =
       [ "软件篇", "os-linux.html#软件篇", [
         [ "如何非阻塞运行gui程序？", "os-linux.html#如何非阻塞运行gui程序？", null ],
         [ "如何查看目录和文件占用磁盘大小？", "os-linux.html#如何查看目录和文件占用磁盘大小？", null ],
+        [ "如何查看哪些端口号被监听？", "os-linux.html#如何查看哪些端口号被监听？", null ],
+        [ "ls工具如何显示文件的全路径？", "os-linux.html#ls工具如何显示文件的全路径？", null ],
         [ "如何查看文件的后面n行？", "os-linux.html#如何查看文件的后面n行？", null ],
         [ "如何循环执行某个命令？", "os-linux.html#如何循环执行某个命令？", null ],
         [ "-s 命令无效？", "os-linux.html#ln", null ],

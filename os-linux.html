@@ -101,7 +101,24 @@ $(document).ready(function(){initNavTree('os-linux.html','');});
 如何查看目录和文件占用磁盘大小？</h2>
 <div class="fragment"><div class="line">du -h -d 1 ./</div></div><!-- fragment --><p>du表示disk usage，-h参数表示使用人类可读的单位，即KB,MB,GB为单位，如果不设置这个参数，得到的数字很奇怪，也不是以byte为单位的。-d表示递归的深度，如果只看当前目录，选择1，后面./就是目录位置。</p>
 <p>这样的方式只会显示文件夹的大小，如果要显示文件的大小，用下面这个命令。</p>
-<div class="fragment"><div class="line">du -h -d 1 ./*</div></div><!-- fragment --><h2><a class="anchor" id="如何查看文件的后面n行？"></a>
+<div class="fragment"><div class="line">du -h -d 1 ./*</div></div><!-- fragment --><hr/>
+<p>  如何拷贝符号链接文件本身？</p>
+<p>如果使用cp工具来拷贝符号链接(symbolic link)，那么最终拷贝的是符号链接指向的文件，有的时候我们只想拷贝符号链接文件本身。</p>
+<p>例如使用cmake&amp;make工具链来构建的库文件，一般会得到符号链接a.so和真正的库文件a.so.1.0.0，在打包的时候，我们仍然想要保持符号链接＋文件本身的使用方式。</p>
+<p>如何实现呢？</p>
+<p>很简单：cp -P</p>
+<hr/>
+ <h2><a class="anchor" id="如何查看哪些端口号被监听？"></a>
+如何查看哪些端口号被监听？</h2>
+<p>基于网络socket通信的时候，一个端口只能被一个应用程序监听，（实际上，端口的内在定义就是应用程序的标识）。</p>
+<p>所以，在监听一个端口之前，如果这个端口已经被监听，那么再次监听会失败。</p>
+<p>我们通常会想查看当前端口被那个应用程序监听，如何实现呢？</p>
+<p>一种方式如下所示： </p><div class="fragment"><div class="line">sudo lsof -i -P -n | grep LISTEN</div></div><!-- fragment --><hr/>
+ <h2><a class="anchor" id="ls工具如何显示文件的全路径？"></a>
+ls工具如何显示文件的全路径？</h2>
+<p>众所周知，ls工具会输出文件列表，但是有的时候我们想要的是文件的全路径，如何实现呢？</p>
+<div class="fragment"><div class="line">$ ls -d $PWD/*</div></div><!-- fragment --><hr/>
+ <h2><a class="anchor" id="如何查看文件的后面n行？"></a>
 如何查看文件的后面n行？</h2>
 <div class="fragment"><div class="line">tail -n 5 ./filename.txt</div></div><!-- fragment --><h2><a class="anchor" id="如何循环执行某个命令？"></a>
 如何循环执行某个命令？</h2>
@@ -120,7 +137,7 @@ find命令</h2>
 <div class="fragment"><div class="line">#第一遍先看看会删除哪些文件</div><div class="line">find . -name xxx</div><div class="line">#确认没问题后，第二遍删除</div><div class="line">find . -name xxx | xargs rm</div></div><!-- fragment --><h2><a class="anchor" id="几种Linux发送网络包的命令"></a>
 几种Linux发送网络包的命令</h2>
 <p>UDP包： </p><div class="fragment"><div class="line">echo &quot;This is my data&quot; &gt; /dev/udp/127.0.0.1/1053</div><div class="line">\# 其中127.0.0.1就是IP地址，1053就是端口</div></div><!-- fragment --><p>http包 </p><div class="fragment"><div class="line">curl &quot;http://127.0.0.1:9009/echo&quot; -d &quot;Hello, world&quot;</div><div class="line">\# 其中127.0.0.1是IP地址，9090是端口</div></div><!-- fragment --><hr/>
-<h2><a class="anchor" id="Linux上环境变量的配置"></a>
+ <h2><a class="anchor" id="Linux上环境变量的配置"></a>
 Linux上环境变量的配置</h2>
 <p>Linux操作系统下三种配置环境变量的方法　　</p>
 <p>现在使用linux的朋友越来越多了，在linux下做开发首先就是需要配置环境变量，下面以配置java环境变量为例介绍三种配置环境变量的方法。</p>
@@ -278,7 +295,7 @@ Linux上软件源码编译通用方法</h2>
 <li>注销后重新登录即可，另外Gnome里默认的切换输入法的快捷键是super+space而不是ctrl+space。</li>
 </ol>
 <hr/>
-<h2><a class="anchor" id="Ubuntu中的Apt-get命令"></a>
+ <h2><a class="anchor" id="Ubuntu中的Apt-get命令"></a>
 Ubuntu中的Apt-get命令</h2>
 <p>apt-get是Debian系列操作系统的软件安装工具，这个工具可以连接网络已有的软件库，下载并安装所有的开源软件包，下面记录常用的命令和选项。</p><ol type="1">
 <li>install是最常用的，直接下载安装软件包并且下载安装依赖的所有其他软件包。</li>

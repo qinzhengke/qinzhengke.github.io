@@ -1,6 +1,8 @@
 var searchData=
 [
   ['有趣的cv相关的网站',['有趣的CV相关的网站',['../awsome_cv_websites.html',1,'cv']]],
+  ['浏览器里调用udp接口',['浏览器里调用udp接口',['../browser_udp.html',1,'']]],
+  ['标准库的后备军：boost',['标准库的后备军：Boost',['../cpp_boost.html',1,'']]],
   ['文档框架：doxygen',['文档框架：doxygen',['../doxygen.html',1,'tools']]],
   ['李群和李代数',['李群和李代数',['../group.html',1,'math']]],
   ['插值',['插值',['../interpolate.html',1,'math']]],

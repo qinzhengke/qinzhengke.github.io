@@ -120,8 +120,8 @@ var cpp =
     [ "C++11", "cpp11.html", "cpp11" ],
     [ "C++可执行文件在Linux的发布", "cpp_linux_deploy.html", [
       [ "方法一：笨办法", "cpp_linux_deploy.html#方法一：笨办法", null ],
-      [ "聪明一点的方法", "cpp_linux_deploy.html#聪明一点的方法", null ],
-      [ "更聪明的办法", "cpp_linux_deploy.html#更聪明的办法", null ]
+      [ "方法二：聪明一点的方法", "cpp_linux_deploy.html#方法二：聪明一点的方法", null ],
+      [ "方法三：更聪明的办法", "cpp_linux_deploy.html#方法三：更聪明的办法", null ]
     ] ],
     [ "结合Apollo源代码来理解C++的工厂模式", "cpp_factory_mode.html", [
       [ "前言", "cpp_factory_mode.html#前言", null ]

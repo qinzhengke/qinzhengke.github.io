@@ -15,7 +15,9 @@ var programming =
       [ "如何打开网格？", "matplotlib.html#如何打开网格？", null ],
       [ "如何设置曲线置顶？", "matplotlib.html#如何设置曲线置顶？", null ]
     ] ],
-    [ "脚本语言：bash", "bash.html", null ],
+    [ "脚本语言：bash", "bash.html", [
+      [ "如何把运行结果赋值给变量？", "bash.html#如何把运行结果赋值给变量？", null ]
+    ] ],
     [ "脚本语言：bat", "bat.html", null ],
     [ "机器人操作系统：ROS", "ros.html", null ],
     [ "cmake", "cmake.html", [
@@ -33,7 +35,9 @@ var programming =
       [ "引用Python", "cmake.html#cmake_python", null ],
       [ "config文件和find文件。", "cmake.html#cmake_config_find", null ],
       [ "额外添加源文件", "cmake.html#额外添加源文件", null ],
-      [ "target_link_libraries中的相对路径", "cmake.html#target_link_libraries中的相对路径", null ]
+      [ "target_link_libraries中的相对路径", "cmake.html#target_link_libraries中的相对路径", null ],
+      [ "如何在cmake中设置程序版本？", "cmake.html#如何在cmake中设置程序版本？", null ],
+      [ "模块重复编译怎么办？", "cmake.html#模块重复编译怎么办？", null ]
     ] ],
     [ "Android make", "android_make.html", null ],
     [ "优秀的项目源码阅读", "awesome_projects.html", "awesome_projects" ],
