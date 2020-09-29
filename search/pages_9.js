@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['opencv：经典开源计算机视觉库',['OpenCV：经典开源计算机视觉库',['../cpp_lib_opencv.html',1,'cpp_libraries']]],
-  ['opencv调试问题',['OpenCV调试问题',['../opencv_debug.html',1,'programming_debug']]],
-  ['orb特征',['ORB特征',['../orb_feature.html',1,'feature_entry']]],
-  ['os_2dwindows',['os-windows',['../os-windows.html',1,'tools']]]
+  ['libevent：经典的异步事件框架库',['libevent：经典的异步事件框架库',['../cpp_lib_libevent.html',1,'cpp_libraries']]],
+  ['latex语法笔记',['LaTex语法笔记',['../latex.html',1,'tools']]],
+  ['lubuntu',['Lubuntu',['../os-lubuntu.html',1,'tools']]]
 ];

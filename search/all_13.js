@@ -1,13 +1,17 @@
 var searchData=
 [
-  ['算法',['算法',['../algorithm.html',1,'zk_note']]],
-  ['相机和imu数据的同步',['相机和IMU数据的同步',['../cam_imu_sync.html',1,'vslam_entry']]],
-  ['编程语言：c_2b_2b',['编程语言：C++',['../cpp.html',1,'programming']]],
-  ['结合apollo源代码来理解c_2b_2b的工厂模式',['结合Apollo源代码来理解C++的工厂模式',['../cpp_factory_mode.html',1,'cpp']]],
-  ['版本管理工具：git',['版本管理工具：git',['../git.html',1,'tools']]],
-  ['线性变换中的求导',['线性变换中的求导',['../matrix_analysis.html',1,'math']]],
-  ['网络地址转换（nat）',['网络地址转换（NAT）',['../network_nat.html',1,'technology']]],
-  ['编程',['编程',['../programming.html',1,'zk_note']]],
-  ['编程中的debug记录',['编程中的debug记录',['../programming_debug.html',1,'programming']]],
-  ['编程语言：python',['编程语言：Python',['../python.html',1,'programming']]]
+  ['天文与航天',['天文与航天',['../astronomy_entry.html',1,'zk_note']]],
+  ['内参标定',['内参标定',['../cali_intrinsic.html',1,'calibration']]],
+  ['图像特征点',['图像特征点',['../feature_entry.html',1,'cv']]],
+  ['卡尔曼滤波_28kalman_20filter_29',['卡尔曼滤波(Kalman Filter)',['../kalman_filter.html',1,'estimation_theory_entry']]],
+  ['开源办公软件：libre_20office',['开源办公软件：Libre Office',['../libre_office.html',1,'tools']]],
+  ['基本数学概念',['基本数学概念',['../math_fundarmental.html',1,'math']]],
+  ['多传感器信息融合（msif）',['多传感器信息融合（MSIF）',['../msif_intro.html',1,'zk_note']]],
+  ['在线工具',['在线工具',['../online_tools.html',1,'zk_note']]],
+  ['四元数_28quaternion_29',['四元数(Quaternion)',['../quaternion.html',1,'geometry3d_entry']]],
+  ['基于unordered_5fmap的稀疏矩阵的实现',['基于unordered_map的稀疏矩阵的实现',['../sparse_matrix.html',1,'cpp']]],
+  ['工具',['工具',['../tools.html',1,'zk_note']]],
+  ['其他有用的工具',['其他有用的工具',['../useful_tools.html',1,'tools']]],
+  ['强大的代码编辑器：visual_20studio_20code',['强大的代码编辑器：Visual Studio Code',['../vscode.html',1,'tools']]],
+  ['学习笔记',['学习笔记',['../zk_note.html',1,'']]]
 ];

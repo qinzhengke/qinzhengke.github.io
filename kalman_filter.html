@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>卡尔曼滤波</title>
+<title>卡尔曼滤波(Kalman Filter)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,13 +88,13 @@ $(document).ready(function(){initNavTree('kalman_filter.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">卡尔曼滤波 </div>  </div>
+<div class="title">卡尔曼滤波(Kalman Filter) </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><hr/>
  <h1><a class="anchor" id="kf_problem_setup"></a>
 问题建立（problem_setup)</h1>
-<p>市面上存在很多对卡尔曼滤波不同的符号表达，有点混乱，我们在这里参考文献《State Estimation for Robotics》 <b>[barfoot2017state]</b> 的写法。 对比过维基百科、《概率机器人》、《视觉SLAM十四讲》 ，个人认为这本书是说的最清晰的。</p>
+<p>市面上存在很多对卡尔曼滤波不同的符号表达，有点混乱，我们在这里参考文献《State Estimation for Robotics》 <a class="el" href="citelist.html#CITEREF_barfoot2017state">[1]</a> 的写法。 对比过维基百科、《概率机器人》、《视觉SLAM十四讲》 ，个人认为这本书是说的最清晰的。</p>
 <p>维基百科太片段，没讲来龙去脉，也没有推导，并且双下标表示方法不够简洁。</p>
 <p>《概率机器人》时间比较早，表达方式和当代主流表达不太一样，而且有点搞不清重点。</p>
 <p>《视觉SLAM十四讲》其实非常好，但毕竟关于卡尔曼滤波的篇幅有限。</p>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('kalman_filter.html','');});
 <center> <div class="image">
 <img src="./figures/kalman_filter_01.png"/>
 </div>
- 图：卡尔曼滤波中的相关高斯分布，图片来自于文献 <b>[barfoot2017state]</b> 。 </center><hr/>
+ 图：卡尔曼滤波中的相关高斯分布，图片来自于文献 <a class="el" href="citelist.html#CITEREF_barfoot2017state">[1]</a> 。 </center><hr/>
  <h1><a class="anchor" id="kf_origin"></a>
 推导：最大化后验概率</h1>
 <p>思路：根据贝叶斯规则展开后验概率，可以得到后验概率关于似然和先验的表达。</p>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('kalman_filter.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="math.html">数学基础</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="estimation_theory_entry.html">估计理论(Estimation Theory)</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

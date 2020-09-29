@@ -1,17 +1,10 @@
 var searchData=
 [
-  ['有趣的cv相关的网站',['有趣的CV相关的网站',['../awsome_cv_websites.html',1,'cv']]],
-  ['浏览器里调用udp接口',['浏览器里调用udp接口',['../browser_udp.html',1,'']]],
-  ['标准库的后备军：boost',['标准库的后备军：Boost',['../cpp_boost.html',1,'']]],
-  ['文档框架：doxygen',['文档框架：doxygen',['../doxygen.html',1,'tools']]],
-  ['李群和李代数',['李群和李代数',['../group.html',1,'math']]],
-  ['插值',['插值',['../interpolate.html',1,'math']]],
-  ['数学基础',['数学基础',['../math.html',1,'zk_note']]],
-  ['机器学习',['机器学习',['../ml_entry.html',1,'zk_note']]],
-  ['机器学习简介',['机器学习简介',['../ml_intro.html',1,'ml_entry']]],
-  ['操作系统：linux',['操作系统：Linux',['../os-linux.html',1,'tools']]],
-  ['正则化',['正则化',['../regulization.html',1,'ml_entry']]],
-  ['机器人学基础',['机器人学基础',['../robotics_basic.html',1,'cv']]],
-  ['机器人操作系统：ros',['机器人操作系统：ROS',['../ros.html',1,'programming']]],
-  ['技术',['技术',['../technology.html',1,'zk_note']]]
+  ['优秀的项目源码阅读',['优秀的项目源码阅读',['../awesome_projects.html',1,'programming']]],
+  ['从百度apollo项目看算法软件架构',['从百度Apollo项目看算法软件架构',['../cpp_apollo_arch.html',1,'awesome_projects']]],
+  ['一些关于c_2b_2b的优秀文章',['一些关于C++的优秀文章',['../cpp_articles.html',1,'cpp']]],
+  ['估计理论_28estimation_20theory_29',['估计理论(Estimation Theory)',['../estimation_theory_entry.html',1,'zk_note']]],
+  ['三维几何_283d_20geometry_29',['三维几何(3D Geometry)',['../geometry3d_entry.html',1,'math']]],
+  ['优化理论',['优化理论',['../optimization.html',1,'math']]],
+  ['代码内存检测工具valgrind',['代码内存检测工具valgrind',['../valgrind.html',1,'tools']]]
 ];

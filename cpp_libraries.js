@@ -1,5 +1,9 @@
 var cpp_libraries =
 [
+    [ "标准库的后备军：Boost", "cpp_boost.html", [
+      [ "安装方法", "cpp_boost.html#安装方法", null ],
+      [ "cmake中的使用方法", "cpp_boost.html#cmake中的使用方法", null ]
+    ] ],
     [ "OpenCV：经典开源计算机视觉库", "cpp_lib_opencv.html", [
       [ "Linux离线环境编译opencv", "cpp_lib_opencv.html#Linux离线环境编译opencv", null ],
       [ "编译contrib库", "cpp_lib_opencv.html#编译contrib库", null ],

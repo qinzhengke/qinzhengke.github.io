@@ -1,16 +1,10 @@
 var math =
 [
-    [ "插值", "interpolate.html", null ],
-    [ "四元数", "quaternion.html", [
-      [ "一个在线的四元数可视化网站", "quaternion.html#一个在线的四元数可视化网站", null ]
-    ] ],
-    [ "李群和李代数", "group.html", [
-      [ "群", "group.html#群", null ],
-      [ "矩阵指数", "group.html#矩阵指数", null ],
-      [ "李群", "group.html#李群", null ]
-    ] ],
-    [ "线性变换中的求导", "matrix_analysis.html", [
-      [ "一次项矩阵求导", "matrix_analysis.html#一次项矩阵求导", null ]
+    [ "基本数学概念", "math_fundarmental.html", "math_fundarmental" ],
+    [ "概率论基础", "probability_entry.html", "probability_entry" ],
+    [ "三维几何(3D Geometry)", "geometry3d_entry.html", "geometry3d_entry" ],
+    [ "矩阵论基础", "matrix_entry.html", [
+      [ "一次项矩阵求导", "matrix_entry.html#一次项矩阵求导", null ]
     ] ],
     [ "优化理论", "optimization.html", [
       [ "雅克比(Jacobian)矩阵", "optimization.html#jacobian", null ],
@@ -20,9 +14,6 @@ var math =
       [ "高斯牛顿法", "optimization.html#opt_gausian_newton", null ],
       [ "列文博格-马夸尔特方法（LM方法）", "optimization.html#opt_lm", null ]
     ] ],
-    [ "卡尔曼滤波", "kalman_filter.html", [
-      [ "问题建立（problem_setup)", "kalman_filter.html#kf_problem_setup", null ],
-      [ "用法", "kalman_filter.html#kf_usage", null ],
-      [ "推导：最大化后验概率", "kalman_filter.html#kf_origin", null ]
-    ] ]
+    [ "数值分析（Numerical Analysis）", "numerical_entry.html", "numerical_entry" ],
+    [ "拓扑学(topology)", "topology_entry.html", "topology_entry" ]
 ];
