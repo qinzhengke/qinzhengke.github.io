@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"cpp_lib_libevent.html#event_add":[3,6,1,13,6,2],
 "cpp_lib_libevent.html#基于libevent的定时器":[3,6,1,13,6,0],
 "cpp_lib_libevent.html#注意event_dispatch函数的阻塞性":[3,6,1,13,6,1],
 "cpp_lib_opencv.html":[3,6,1,13,1],
@@ -196,12 +197,14 @@ var NAVTREEINDEX1 =
 "os-linux.html#中文输入法安装":[3,8,0,0,25],
 "os-linux.html#修改Linux的root密码":[18],
 "os-linux.html#几种Linux发送网络包的命令":[9],
+"os-linux.html#启用ssh服务":[3,8,0,2],
 "os-linux.html#如何循环执行某个命令？":[5],
 "os-linux.html#如何查看哪些端口号被监听？":[2],
 "os-linux.html#如何查看文件的后面n行？":[4],
 "os-linux.html#如何查看目录和文件占用磁盘大小？":[1],
 "os-linux.html#如何非阻塞运行gui程序？":[0],
 "os-linux.html#常用软件列表":[3,8,0,0,20],
+"os-linux.html#搜狗输入法切换全角半角以及中英标点符号":[3,8,0,1],
 "os-linux.html#无法delete到回收站":[15],
 "os-linux.html#查看滚动的log文件":[11],
 "os-linux.html#磁盘挂载问题":[14],
@@ -225,6 +228,9 @@ var NAVTREEINDEX1 =
 "python.html#限制浮点数精度":[3,6,2,3],
 "quaternion.html":[3,0,2,1],
 "quaternion.html#一个在线的四元数可视化网站":[3,0,2,1,0],
+"regex_entry.html":[3,8,12],
+"regex_entry.html#正则表达式全集":[3,8,12,1],
+"regex_entry.html#正则表达式的定义":[3,8,12,0],
 "regulization.html":[3,5,2],
 "regulization.html#L1范数正则化和L2范数正则化":[3,5,2,0,0],
 "regulization.html#正则化原理":[3,5,2,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX1 =
 "sparse_matrix.html":[3,6,1,11],
 "sparse_matrix.html#unordered_map":[3,6,1,11,0],
 "surf_feature.html":[3,2,0,5],
-"technology.html":[3,7],
-"tools.html":[3,8],
-"topology_entry.html":[3,0,6],
-"topology_space.html":[3,0,6,0],
-"topology_space.html#topology_structure":[3,0,6,0,0],
-"topology_space.html#拓扑空间　":[3,0,6,0,1],
-"useful_tools.html":[3,8,8]
+"technology.html":[3,7]
 };

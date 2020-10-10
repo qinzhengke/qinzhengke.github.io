@@ -16,8 +16,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "aerospace_probe.html",
-"cpp_lib_libevent.html#基于libevent的定时器",
-"useful_tools.html#baobab"
+"cpp_lib_libevent.html#event_add",
+"tools.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

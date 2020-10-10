@@ -13,6 +13,7 @@ var NAVTREEINDEX0 =
 "awsome_cv_websites.html":[3,2,5],
 "awsome_cv_websites.html#cv_forum":[3,2,5,0],
 "bash.html":[3,6,5],
+"bash.html#bash_var":[3,6,5,1],
 "bash.html#如何把运行结果赋值给变量？":[3,6,5,0],
 "bat.html":[3,6,6],
 "bayes_theorem.html":[3,0,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "cpp_lib_evpp.html":[3,6,1,13,5],
 "cpp_lib_iguana.html":[3,6,1,13,9],
 "cpp_lib_iguana.html#REFLECTION的宏定义必须紧接着结构体":[3,6,1,13,9,0],
-"cpp_lib_libevent.html":[3,6,1,13,6],
-"cpp_lib_libevent.html#event_add":[3,6,1,13,6,2]
+"cpp_lib_libevent.html":[3,6,1,13,6]
 };

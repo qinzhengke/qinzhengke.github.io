@@ -100,7 +100,13 @@ $(document).ready(function(){initNavTree('bash.html','');});
 <div class="fragment"><div class="line">if [ $# -gt 0 ] </div><div class="line">then</div><div class="line"></div><div class="line">  if[ $1 == &#39;target1&#39; ]</div><div class="line">  then</div><div class="line">    do_somthing.</div><div class="line">  else if [ $1 == &#39;target2&#39; ]</div><div class="line">  then</div><div class="line">    do_other_things</div><div class="line"></div><div class="line">  fi</div><div class="line"></div><div class="line">else</div><div class="line">fi</div></div><!-- fragment --><hr/>
  <h1><a class="anchor" id="如何把运行结果赋值给变量？"></a>
 如何把运行结果赋值给变量？</h1>
-<div class="fragment"><div class="line">var = $(ls | grep aaa)</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">var = $(ls | grep aaa)</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="bash_var"></a>
+$()和${}的区别</h1>
+<p>$()里面必需接命令，不能接受变量</p>
+<p>${}里面必需接受变量，不能接受命令</p>
+<p>两者不能混用 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

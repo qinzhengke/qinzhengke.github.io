@@ -309,9 +309,20 @@ flameshot-Ubuntu下一个超强截图工具</h2>
 <p>安装 </p><div class="fragment"><div class="line">sudo apt-get install flameshot</div></div><!-- fragment --><p>使用：</p><ol type="1">
 <li>windows键，输入keyboard，进入键盘设置</li>
 <li>将print(print screen)键解绑，然后添加新的print键快捷操作“flameshot gui”</li>
-<li>按print键，享受截图、涂鸦、注释的快感吧。 </li>
+<li>按print键，享受截图、涂鸦、注释的快感吧。</li>
 </ol>
-</div></div><!-- contents -->
+<hr/>
+ <h1><a class="anchor" id="搜狗输入法切换全角半角以及中英标点符号"></a>
+搜狗输入法切换全角半角以及中英标点符号</h1>
+<p>在linux上，一般输入法会默认全角，打出来的英文字符很大，而且不是普通的英文字符，无法被匹配到，这时候需要切换为半角，不太懂全角的意义是什么。</p>
+<p>全角半角切换方法：shift+space</p>
+<p>切换中英标点符号方法：ctrl+.</p>
+<hr/>
+ <h1><a class="anchor" id="启用ssh服务"></a>
+启用ssh服务</h1>
+<p>前言：为了安全，一般桌面版的linux操作系统是默认不安装ssh服务的，如果要基于ssh连接到某台桌面linux电脑，需要手动设置。</p>
+<p>方法：</p>
+<div class="fragment"><div class="line">sudo apt update</div><div class="line"># 安装ssh-server</div><div class="line">sudo apt install openssh-server</div><div class="line"># 自启动ssh服务</div><div class="line">sudo systemctl status ssh</div><div class="line"># 设置防火墙白名单，否则无法连接</div><div class="line">sudo ufw allow ssh</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

@@ -17,7 +17,8 @@ var programming =
     ] ],
     [ "Web前端开发", "front_end.html", "front_end" ],
     [ "脚本语言：bash", "bash.html", [
-      [ "如何把运行结果赋值给变量？", "bash.html#如何把运行结果赋值给变量？", null ]
+      [ "如何把运行结果赋值给变量？", "bash.html#如何把运行结果赋值给变量？", null ],
+      [ "$()和${}的区别", "bash.html#bash_var", null ]
     ] ],
     [ "脚本语言：bat", "bat.html", null ],
     [ "机器人操作系统：ROS", "ros.html", null ],

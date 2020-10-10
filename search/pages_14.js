@@ -14,6 +14,7 @@ var searchData=
   ['数值分析（numerical_20analysis）',['数值分析（Numerical Analysis）',['../numerical_entry.html',1,'math']]],
   ['操作系统：linux',['操作系统：Linux',['../os-linux.html',1,'tools']]],
   ['概率论基础',['概率论基础',['../probability_entry.html',1,'math']]],
+  ['正则表达式_28regex_29',['正则表达式(Regex)',['../regex_entry.html',1,'tools']]],
   ['正则化',['正则化',['../regulization.html',1,'ml_entry']]],
   ['机器人学基础',['机器人学基础',['../robotics_basic.html',1,'cv']]],
   ['机器人操作系统：ros',['机器人操作系统：ROS',['../ros.html',1,'programming']]],

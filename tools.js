@@ -30,7 +30,9 @@ var tools =
         [ "中文输入法安装", "os-linux.html#中文输入法安装", null ],
         [ "Ubuntu中的Apt-get命令", "os-linux.html#Ubuntu中的Apt-get命令", null ],
         [ "flameshot-Ubuntu下一个超强截图工具", "os-linux.html#flameshot-Ubuntu下一个超强截图工具", null ]
-      ] ]
+      ] ],
+      [ "搜狗输入法切换全角半角以及中英标点符号", "os-linux.html#搜狗输入法切换全角半角以及中英标点符号", null ],
+      [ "启用ssh服务", "os-linux.html#启用ssh服务", null ]
     ] ],
     [ "Ubuntu操作系统", "os_ubuntu.html", [
       [ "快捷键", "os_ubuntu.html#快捷键", null ]
@@ -85,5 +87,9 @@ var tools =
     ] ],
     [ "强大的代码编辑器：Visual Studio Code", "vscode.html", "vscode" ],
     [ "LaTex语法笔记", "latex.html", null ],
+    [ "正则表达式(Regex)", "regex_entry.html", [
+      [ "正则表达式的定义", "regex_entry.html#正则表达式的定义", null ],
+      [ "正则表达式全集", "regex_entry.html#正则表达式全集", null ]
+    ] ],
     [ "代码内存检测工具valgrind", "valgrind.html", null ]
 ];
