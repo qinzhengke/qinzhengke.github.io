@@ -2,8 +2,11 @@ var searchData=
 [
   ['有趣的cv相关的网站',['有趣的CV相关的网站',['../awsome_cv_websites.html',1,'cv']]],
   ['浏览器里调用udp接口',['浏览器里调用udp接口',['../browser_udp.html',1,'front_end']]],
+  ['标准库time_2eh',['标准库time.h',['../c_time.html',1,'c']]],
+  ['标准库chrono',['标准库chrono',['../cpp11_chrono.html',1,'cpp11']]],
   ['标准库的后备军：boost',['标准库的后备军：Boost',['../cpp_boost.html',1,'cpp_libraries']]],
   ['文档框架：doxygen',['文档框架：doxygen',['../doxygen.html',1,'tools']]],
+  ['扩展卡尔曼滤波_28extended_20kalman_20filter_29',['扩展卡尔曼滤波(Extended Kalman Filter)',['../ekf_entry.html',1,'estimation_theory_entry']]],
   ['欧拉角_28euler_20angle_29',['欧拉角(Euler Angle)',['../euler_angle.html',1,'geometry3d_entry']]],
   ['插值',['插值',['../interpolation.html',1,'numerical_entry']]],
   ['数学基础',['数学基础',['../math.html',1,'zk_note']]],
@@ -20,5 +23,6 @@ var searchData=
   ['机器人操作系统：ros',['机器人操作系统：ROS',['../ros.html',1,'programming']]],
   ['技术',['技术',['../technology.html',1,'zk_note']]],
   ['拓扑学_28topology_29',['拓扑学(topology)',['../topology_entry.html',1,'math']]],
-  ['拓扑空间',['拓扑空间',['../topology_space.html',1,'topology_entry']]]
+  ['拓扑空间',['拓扑空间',['../topology_space.html',1,'topology_entry']]],
+  ['无迹卡尔曼滤波_28unscented_20kalman_20filter_29',['无迹卡尔曼滤波(Unscented Kalman Filter)',['../ukf_entry.html',1,'estimation_theory_entry']]]
 ];

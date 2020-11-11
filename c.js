@@ -62,6 +62,9 @@ var c =
       [ "size_t类型才不会报warning", "c.html#怎样printf", null ]
     ] ],
     [ "判断数字是否是nan", "c.html#判断数字是否是nan", null ],
+    [ "+”号", "c.html#指针中的“", null ],
+    [ "一个uint64_t无法满足需求的实际例子。", "c.html#uin64_overflow", null ],
+    [ "字面常量整型表达式溢出", "c.html#字面常量整型表达式溢出", null ],
     [ "C语言Debug教训", "c_debug_lesson.html", [
       [ "printf打印64位整型", "c_debug_lesson.html#printf打印64位整型", null ],
       [ "函数对象（指针）作为实参的的时候一定要其形参是否正确。", "c_debug_lesson.html#函数对象（指针）作为实参的的时候一定要其形参是否正确。", null ],
@@ -70,5 +73,8 @@ var c =
     ] ],
     [ "C语言中的宏", "c_macro.html", [
       [ "获取宏的参数个数", "c_macro.html#获取宏的参数个数", null ]
+    ] ],
+    [ "标准库time.h", "c_time.html", [
+      [ "tm类型与make_time()函数", "c_time.html#tm_make_time", null ]
     ] ]
 ];

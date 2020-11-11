@@ -6,6 +6,9 @@ var cv =
     [ "视觉SLAM简介", "vslam_entry.html", "vslam_entry" ],
     [ "机器人学基础", "robotics_basic.html", null ],
     [ "有趣的CV相关的网站", "awsome_cv_websites.html", [
-      [ "论坛", "awsome_cv_websites.html#cv_forum", null ]
+      [ "论坛", "awsome_cv_websites.html#cv_forum", null ],
+      [ "一些电子图书：", "awsome_cv_websites.html#一些电子图书：", null ],
+      [ "pdf课件", "awsome_cv_websites.html#pdf课件", null ],
+      [ "一些网站", "awsome_cv_websites.html#一些网站", null ]
     ] ]
 ];

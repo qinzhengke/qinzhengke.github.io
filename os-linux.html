@@ -92,12 +92,15 @@ $(document).ready(function(){initNavTree('os-linux.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>这个页面主要记录一些Linux操作系统的知识</p>
-<h1><a class="anchor" id="综合篇"></a>
+<hr/>
+ <h1><a class="anchor" id="综合篇"></a>
 综合篇</h1>
-<h2><a class="anchor" id="如何非阻塞运行gui程序？"></a>
+<hr/>
+ <h2><a class="anchor" id="如何非阻塞运行gui程序？"></a>
 如何非阻塞运行gui程序？</h2>
 <p>问题：如果直接在终端运行某个gui程序，终端会阻塞直到gui关闭，例如运行gitk。 那么如何运行程序，并且不阻塞终端呢？ 解法：</p>
-<div class="fragment"><div class="line">gitk &amp;</div></div><!-- fragment --><h2><a class="anchor" id="如何查看目录和文件占用磁盘大小？"></a>
+<div class="fragment"><div class="line">gitk &amp;</div></div><!-- fragment --><hr/>
+ <h2><a class="anchor" id="如何查看目录和文件占用磁盘大小？"></a>
 如何查看目录和文件占用磁盘大小？</h2>
 <div class="fragment"><div class="line">du -h -d 1 ./</div></div><!-- fragment --><p>du表示disk usage，-h参数表示使用人类可读的单位，即KB,MB,GB为单位，如果不设置这个参数，得到的数字很奇怪，也不是以byte为单位的。-d表示递归的深度，如果只看当前目录，选择1，后面./就是目录位置。</p>
 <p>这样的方式只会显示文件夹的大小，如果要显示文件的大小，用下面这个命令。</p>
@@ -134,7 +137,14 @@ find命令</h2>
 <h2><a class="anchor" id="find"></a>
 + rm 命令</h2>
 <p>使用find + rm 命令可以轻松删除特定文件，而且先find一遍，可以看看是否会误删其他文件，确认没问题之后再使用rm，即安全也高效。</p>
-<div class="fragment"><div class="line">#第一遍先看看会删除哪些文件</div><div class="line">find . -name xxx</div><div class="line">#确认没问题后，第二遍删除</div><div class="line">find . -name xxx | xargs rm</div></div><!-- fragment --><h2><a class="anchor" id="几种Linux发送网络包的命令"></a>
+<div class="fragment"><div class="line">#第一遍先看看会删除哪些文件</div><div class="line">find . -name xxx</div><div class="line">#确认没问题后，第二遍删除</div><div class="line">find . -name xxx | xargs rm</div></div><!-- fragment --><hr/>
+<p> 压缩文件夹与解压文件</p>
+<p>打包并压缩一个文件夹：</p>
+<div class="fragment"><div class="line">tar -zcf ${folder}.tar.gz ${folder}</div></div><!-- fragment --><p>{.sh}</p>
+<p>解压一个tar.gz压缩包到当前目录：</p>
+<div class="fragment"><div class="line">tar -xf myfile.tar.gz</div></div><!-- fragment --><p>如果压缩的时候是一个文件夹压缩的，那么解压出来的也是一个文件夹。</p>
+<hr/>
+ <h2><a class="anchor" id="几种Linux发送网络包的命令"></a>
 几种Linux发送网络包的命令</h2>
 <p>UDP包： </p><div class="fragment"><div class="line">echo &quot;This is my data&quot; &gt; /dev/udp/127.0.0.1/1053</div><div class="line">\# 其中127.0.0.1就是IP地址，1053就是端口</div></div><!-- fragment --><p>http包 </p><div class="fragment"><div class="line">curl &quot;http://127.0.0.1:9009/echo&quot; -d &quot;Hello, world&quot;</div><div class="line">\# 其中127.0.0.1是IP地址，9090是端口</div></div><!-- fragment --><hr/>
  <h2><a class="anchor" id="Linux上环境变量的配置"></a>
@@ -322,7 +332,18 @@ flameshot-Ubuntu下一个超强截图工具</h2>
 启用ssh服务</h1>
 <p>前言：为了安全，一般桌面版的linux操作系统是默认不安装ssh服务的，如果要基于ssh连接到某台桌面linux电脑，需要手动设置。</p>
 <p>方法：</p>
-<div class="fragment"><div class="line">sudo apt update</div><div class="line"># 安装ssh-server</div><div class="line">sudo apt install openssh-server</div><div class="line"># 自启动ssh服务</div><div class="line">sudo systemctl status ssh</div><div class="line"># 设置防火墙白名单，否则无法连接</div><div class="line">sudo ufw allow ssh</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">sudo apt update</div><div class="line"># 安装ssh-server</div><div class="line">sudo apt install openssh-server</div><div class="line"># 自启动ssh服务</div><div class="line">sudo systemctl status ssh</div><div class="line"># 设置防火墙白名单，否则无法连接</div><div class="line">sudo ufw allow ssh</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="使用scp发送文件"></a>
+使用scp发送文件</h1>
+<div class="fragment"><div class="line">scp my_file username@192.168.1.101:~/Downloads</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="根据进程的名称来kill"></a>
+根据进程的名称来kill</h1>
+<p>前言：kill命令没有根据进程的名字来杀死进程的方法，需要自行写几句脚本根据进程名称找出PID，然后在杀死，具体方法如下所示。</p>
+<div class="fragment"><div class="line">pid=$(top -n 1 -b | grep -e &#39;node&#39; | grep -e &#39;[0-9]*&#39; -o | head -1)</div><div class="line">if [ ! -z &quot;$pid&quot; ]</div><div class="line">then</div><div class="line">kill $pid</div><div class="line">echo &quot;node stopped&quot;</div><div class="line">fi</div></div><!-- fragment --><p>其中：</p>
+<p>(1) <code>top -n 1 -b</code> 表示显示所有进程，并且不进入交互界面，直接printf所有进程。</p>
+<p>(2) <code>grep -o</code> 表示把所有匹配出来的结果列出来，列出时每一个match的内容会占一行。</p>
+<p>(3) <code>head -1</code> 表示取第一行的内容。 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

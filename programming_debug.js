@@ -11,7 +11,8 @@ var programming_debug =
       [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
       [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],
       [ "dynamic_pointer_cast模板类要正确", "cpp_debug.html#dynamic_poiner_cast_debug", null ],
-      [ "　初始化的重要性", "cpp_debug.html#　初始化的重要性", null ]
+      [ "　初始化的重要性", "cpp_debug.html#　初始化的重要性", null ],
+      [ "定义函数时命名空间使用", "cpp_debug.html#定义函数时命名空间使用", null ]
     ] ],
     [ "OpenCV调试问题", "opencv_debug.html", [
       [ "imshow导致crash", "opencv_debug.html#imshow_crash", null ],

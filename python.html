@@ -124,7 +124,15 @@ for循环中同时使用序号和值</h1>
 使用latex</h1>
 <div class="fragment"><div class="line">ax.set_title(r&#39;$\theta$&#39;))</div></div><!-- fragment --><h1><a class="anchor" id="优雅的读取csv文件"></a>
 优雅的读取csv文件</h1>
-<div class="fragment"><div class="line"># 优雅的方式</div><div class="line">[x,y,z] = numpy.genfromtxt(&#39;data.csv&#39;, delimiter=&quot;,&quot;)</div><div class="line"></div><div class="line">#不优雅的方式</div><div class="line">data = numpy.genfromtxt(&#39;data.csv&#39;, delimiter=&quot;,&quot;)</div><div class="line">x = data[0]</div><div class="line">y = data[1]</div><div class="line">z = data[2]</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line"># 优雅的方式</div><div class="line">[x,y,z] = numpy.genfromtxt(&#39;data.csv&#39;, delimiter=&quot;,&quot;)</div><div class="line"></div><div class="line">#不优雅的方式</div><div class="line">data = numpy.genfromtxt(&#39;data.csv&#39;, delimiter=&quot;,&quot;)</div><div class="line">x = data[0]</div><div class="line">y = data[1]</div><div class="line">z = data[2]</div></div><!-- fragment --><h1><a class="anchor" id="文件名冲突"></a>
+文件名冲突</h1>
+<p>使用python时，源文件名称不要和第三方库的名称相同，否则会出现冲突现象，python是使用文件名来构建模块。 例如定义一个numpy.py，那么这个本地的numpy会顶替掉python的numpy。</p>
+<hr/>
+ <h1><a class="anchor" id="module的导入"></a>
+module的导入</h1>
+<p>想要import相对路径的模块，一种比较简单的方法是在sys.path尾部添加对应的相对路径，如下代码所示，这种修改不是永久的，只在当前执行过程中有效，不用担心修改环境变量。</p>
+<div class="fragment"><div class="line">import sys</div><div class="line">sys.path.insert(0,&quot;..&quot;)</div><div class="line">from a import A</div></div><!-- fragment --><p>注：关于python模块相对导入的标准方法，挺混乱的，网上各种“教程”，依赖package，依赖运行的地方，非常的不优雅。</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

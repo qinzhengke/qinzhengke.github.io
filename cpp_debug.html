@@ -109,8 +109,14 @@ dynamic_pointer_cast模板类要正确</h1>
  <h1><a class="anchor" id="　初始化的重要性"></a>
 　初始化的重要性</h1>
 <p>一个未初始化的变量，可能导致算法的不正确，要debug很久。</p>
-<p>debug方法论，一定要全体打印，不要先入为主地认定某些东西一定正确！ </p>
-</div></div><!-- contents -->
+<p>debug方法论，一定要全体打印，不要先入为主地认定某些东西一定正确！</p>
+<hr/>
+ <h1><a class="anchor" id="定义函数时命名空间使用"></a>
+定义函数时命名空间使用</h1>
+<p>定义函数时，即使一开始使用了using namespace，在函数定义处仍然需要使用命名空间+"::"形式进行修饰。 实际上“using namespace”只是在使用类型时缺省命名空间，和定义是毫无关系的。</p>
+<p>下面的代码会让系统无法区分到底要调用哪一个目标函数。</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">namespace </span>n1{</div><div class="line"><span class="keywordtype">void</span> func();</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> func(){</div><div class="line">    printf(<span class="stringliteral">&quot;This is func\n&quot;</span>);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> n1::func(){</div><div class="line">    printf(<span class="stringliteral">&quot;This is func in n1\n&quot;</span>);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">using namespace </span>n1;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    func(); <span class="comment">// </span></div><div class="line">    n1::func();</div><div class="line">}</div></div><!-- fragment --><p>运行结果：</p>
+<div class="fragment"><div class="line"> In function &#39;int main()&#39;:</div><div class="line">20:10: error: call of overloaded &#39;func()&#39; is ambiguous</div><div class="line">20:10: note: candidates are:</div><div class="line">8:6: note: void func()</div><div class="line">12:6: note: void n1::func()</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

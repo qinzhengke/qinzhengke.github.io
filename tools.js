@@ -32,10 +32,13 @@ var tools =
         [ "flameshot-Ubuntu下一个超强截图工具", "os-linux.html#flameshot-Ubuntu下一个超强截图工具", null ]
       ] ],
       [ "搜狗输入法切换全角半角以及中英标点符号", "os-linux.html#搜狗输入法切换全角半角以及中英标点符号", null ],
-      [ "启用ssh服务", "os-linux.html#启用ssh服务", null ]
+      [ "启用ssh服务", "os-linux.html#启用ssh服务", null ],
+      [ "使用scp发送文件", "os-linux.html#使用scp发送文件", null ],
+      [ "根据进程的名称来kill", "os-linux.html#根据进程的名称来kill", null ]
     ] ],
     [ "Ubuntu操作系统", "os_ubuntu.html", [
-      [ "快捷键", "os_ubuntu.html#快捷键", null ]
+      [ "快捷键", "os_ubuntu.html#快捷键", null ],
+      [ "设置自启动", "os_ubuntu.html#设置自启动", null ]
     ] ],
     [ "GNOME桌面", "gnome.html", [
       [ "查看gonme版本", "gnome.html#查看gonme版本", null ],

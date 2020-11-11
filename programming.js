@@ -8,7 +8,10 @@ var programming =
       [ "生成等差数列", "python.html#生成等差数列", null ],
       [ "限制浮点数精度", "python.html#限制浮点数精度", null ],
       [ "使用latex", "python.html#使用latex", null ],
-      [ "优雅的读取csv文件", "python.html#优雅的读取csv文件", null ]
+      [ "优雅的读取csv文件", "python.html#优雅的读取csv文件", null ],
+      [ "文件名冲突", "python.html#文件名冲突", null ],
+      [ "module的导入", "python.html#module的导入", null ],
+      [ ".append和numpy.delete", "python.html#numpy", null ]
     ] ],
     [ "Python画图库：matplotlib", "matplotlib.html", [
       [ "如何设置显示范围？", "matplotlib.html#如何设置显示范围？", null ],

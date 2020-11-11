@@ -24,7 +24,8 @@ var cpp =
       [ "passing ... as 'this' argument ...  discards qualifiers", "cpp_compile_faq.html#const_issue", null ],
       [ "类成员函数声明和定义处同时使用static修饰", "cpp_compile_faq.html#类成员函数声明和定义处同时使用static修饰", null ],
       [ "类成员函数声明和定义同时使用默认参数", "cpp_compile_faq.html#类成员函数声明和定义同时使用默认参数", null ],
-      [ "extra qualification", "cpp_compile_faq.html#extra_qualification", null ]
+      [ "extra qualification", "cpp_compile_faq.html#extra_qualification", null ],
+      [ "passing const as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#cpp_compile_issue10", null ]
     ] ],
     [ "C++中的构造函数与析构函数", "cpp_constructor.html", [
       [ "容器成员变量是否会随着父类的析构而清空？", "cpp_constructor.html#容器成员变量是否会随着父类的析构而清空？", null ]
@@ -55,17 +56,17 @@ var cpp =
     [ "C++文件IO", "cpp_file_io.html", [
       [ "C++中的二进制文件读取", "cpp_file_io.html#cpp_binary_file", null ]
     ] ],
-    [ "C++模板", "cpp_template.html", [
-      [ "定义模板函数", "cpp_template.html#定义模板函数", null ],
-      [ "定义模板类", "cpp_template.html#定义模板类", null ],
-      [ "模板类的继承", "cpp_template.html#模板类的继承", null ]
-    ] ],
+    [ "C++模板", "cpp_template.html", "cpp_template" ],
     [ "C++中的多态", "cpp_polymorphism.html", [
       [ "如何优雅地定义没有成员函数的类型为虚类？", "cpp_polymorphism.html#如何优雅地定义没有成员函数的类型为虚类？", null ],
       [ "如何优雅的拷贝虚类对象？", "cpp_polymorphism.html#如何优雅的拷贝虚类对象？", null ],
       [ "抽象类的构造函数不能运行成员虚成员函数", "cpp_polymorphism.html#抽象类的构造函数不能运行成员虚成员函数", null ],
       [ "(override)父类的重载(overload)函数", "cpp_polymorphism.html#重写", null ],
-      [ "重写函数可以子类型", "cpp_polymorphism.html#重写函数可以子类型", null ]
+      [ "重写函数可以子类型", "cpp_polymorphism.html#重写函数可以子类型", null ],
+      [ "基于基类指针获取子类的size？", "cpp_polymorphism.html#基于基类指针获取子类的size？", null ]
+    ] ],
+    [ "std::string", "cpp_string.html", [
+      [ "<<”和std::to_string的一个区别", "cpp_string.html#stringstream中的“", null ]
     ] ],
     [ "C++中的STL库", "cpp_stl.html", "cpp_stl" ],
     [ "C++一些建议", "cpp_suggestion.html", [
@@ -79,7 +80,8 @@ var cpp =
       [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
       [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],
       [ "dynamic_pointer_cast模板类要正确", "cpp_debug.html#dynamic_poiner_cast_debug", null ],
-      [ "　初始化的重要性", "cpp_debug.html#　初始化的重要性", null ]
+      [ "　初始化的重要性", "cpp_debug.html#　初始化的重要性", null ],
+      [ "定义函数时命名空间使用", "cpp_debug.html#定义函数时命名空间使用", null ]
     ] ],
     [ "Qt相关常见问题", "cpp_qt_faq.html", [
       [ "使用Creator创建的控制台程序无任何输出？", "cpp_qt_faq.html#使用Creator创建的控制台程序无任何输出？", null ]
@@ -106,9 +108,7 @@ var cpp =
       ] ],
       [ "STL篇", "cpp_questions.html#STL篇", [
         [ "map和unordered_map如何实现？", "cpp_questions.html#map和unordered_map如何实现？", null ],
-        [ "hashmap一种实现结构？", "cpp_questions.html#hashmap一种实现结构？", null ]
-      ] ],
-      [ "其他", "cpp_questions.html#其他", [
+        [ "hashmap一种实现结构？", "cpp_questions.html#hashmap一种实现结构？", null ],
         [ "多线程要注意什么，要怎么做？", "cpp_questions.html#多线程要注意什么，要怎么做？", null ],
         [ "为什么会出现死锁问题，如何避免？", "cpp_questions.html#为什么会出现死锁问题，如何避免？", null ],
         [ "有那些智能指针，有何作用？", "cpp_questions.html#有那些智能指针，有何作用？", null ],
