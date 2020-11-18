@@ -94,5 +94,8 @@ var tools =
       [ "正则表达式的定义", "regex_entry.html#正则表达式的定义", null ],
       [ "正则表达式全集", "regex_entry.html#正则表达式全集", null ]
     ] ],
-    [ "代码内存检测工具valgrind", "valgrind.html", null ]
+    [ "代码内存检测工具valgrind", "valgrind.html", null ],
+    [ "文本流编辑器：sed", "sed.html", [
+      [ "查找并删除包含特定单词的行", "sed.html#查找并删除包含特定单词的行", null ]
+    ] ]
 ];

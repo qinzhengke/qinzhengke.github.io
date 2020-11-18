@@ -21,6 +21,7 @@ var searchData=
   ['正则化',['正则化',['../regulization.html',1,'ml_entry']]],
   ['机器人学基础',['机器人学基础',['../robotics_basic.html',1,'cv']]],
   ['机器人操作系统：ros',['机器人操作系统：ROS',['../ros.html',1,'programming']]],
+  ['文本流编辑器：sed',['文本流编辑器：sed',['../sed.html',1,'tools']]],
   ['技术',['技术',['../technology.html',1,'zk_note']]],
   ['拓扑学_28topology_29',['拓扑学(topology)',['../topology_entry.html',1,'math']]],
   ['拓扑空间',['拓扑空间',['../topology_space.html',1,'topology_entry']]],

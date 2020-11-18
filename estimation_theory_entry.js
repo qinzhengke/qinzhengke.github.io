@@ -8,9 +8,7 @@ var estimation_theory_entry =
       [ "用法", "kalman_filter.html#kf_usage", null ],
       [ "推导：最大化后验概率", "kalman_filter.html#kf_origin", null ]
     ] ],
-    [ "扩展卡尔曼滤波(Extended Kalman Filter)", "ekf_entry.html", [
-      [ "介绍", "ekf_entry.html#介绍", null ]
-    ] ],
+    [ "扩展卡尔曼滤波(Extended Kalman Filter)", "ekf_entry.html", null ],
     [ "无迹卡尔曼滤波(Unscented Kalman Filter)", "ukf_entry.html", null ],
     [ "粒子滤波(Particle Filter)", "particle_filter.html", null ]
 ];

@@ -7,6 +7,7 @@ var searchData=
   ['贝叶斯估计_28bayesian_20estimation_29',['贝叶斯估计(Bayesian Estimation)',['../bayesian_estimation.html',1,'estimation_theory_entry']]],
   ['贝叶斯滤波_28bayesian_20filter_29',['贝叶斯滤波(Bayesian Filter)',['../bayesian_filter.html',1,'estimation_theory_entry']]],
   ['视觉标定_28calibration_29',['视觉标定(calibration)',['../calibration.html',1,'cv']]],
+  ['视频库vireo',['视频库Vireo',['../cpp_lib_vireo.html',1,'cpp_libraries']]],
   ['计算机视觉_28cv_29',['计算机视觉(CV)',['../cv.html',1,'zk_note']]],
   ['覃政科的文件柜',['覃政科的文件柜',['../index.html',1,'']]],
   ['过拟合',['过拟合',['../overfitting.html',1,'ml_entry']]],
