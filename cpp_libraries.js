@@ -11,7 +11,6 @@ var cpp_libraries =
       [ "CV_EXPORT宏", "cpp_lib_opencv.html#CV_EXPORT宏", null ],
       [ "如何填充Mat？", "cpp_lib_opencv.html#如何填充Mat？", null ]
     ] ],
-    [ "Qt：强大的C++GUI应用程序框架", "cpp_lib_qt.html", null ],
     [ "backward：程序崩溃调试神器", "cpp_lib_backward.html", null ],
     [ "Eigen：强大的纯头文件线性运算库", "cpp_lib_eigen.html", [
       [ "安装", "cpp_lib_eigen.html#安装", null ],
@@ -39,6 +38,8 @@ var cpp_libraries =
     ] ],
     [ "视频库Vireo", "cpp_lib_vireo.html", [
       [ "介绍", "cpp_lib_vireo.html#介绍", null ],
-      [ "基本概念", "cpp_lib_vireo.html#基本概念", null ]
+      [ "基本概念", "cpp_lib_vireo.html#基本概念", null ],
+      [ "编译问题", "cpp_lib_vireo.html#编译问题", null ],
+      [ "放弃", "cpp_lib_vireo.html#放弃", null ]
     ] ]
 ];

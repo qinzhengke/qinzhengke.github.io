@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['harris角点',['Harris角点',['../harris_corner.html',1,'feature_entry']]]
+  ['interacting_20multiple_20model_20_28imm_29_20filter',['Interacting Multiple Model (IMM) filter',['../imm_filter.html',1,'msif_intro']]]
 ];

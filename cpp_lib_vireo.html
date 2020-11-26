@@ -101,7 +101,17 @@ $(document).ready(function(){initNavTree('cpp_lib_vireo.html','');});
 <p>OpenCV读视频那完全不是主业，只是为了方便自身处理以视频作为来源的数据。 视频格式支持是较少的，而且不支持音频等。 并且OpenCV还是太重了，用起来不够短小精悍。</p>
 <h1><a class="anchor" id="基本概念"></a>
 基本概念</h1>
-<p><b>demuxing</b> demuxing是demultiplexing的缩写，是指把包含多部分的视频给读取出来。 注意，一个movie文件包含了视频、音频、字幕等等。 不能先入为主的认为moive就只包含图像，movie的读取函数就应该直接得到图像。 </p>
+<p><b>demuxing</b> demuxing是demultiplexing的缩写，是指把包含多部分的视频给读取出来。 注意，一个movie文件包含了视频、音频、字幕等等。 不能先入为主的认为moive就只包含图像，movie的读取函数就应该直接得到图像。</p>
+<h1><a class="anchor" id="编译问题"></a>
+编译问题</h1>
+<p>依赖lsmash库，lsmash库本身configure时需要加入参数“&ndash;enable-shared”，如下代码所示</p>
+<div class="fragment"><div class="line">cd lsmash</div><div class="line">./configure --enable-shared</div></div><!-- fragment --><p>否则编译会出现以下问题， </p><div class="fragment"><div class="line">/usr/bin/ld: //usr/local/lib/liblsmash.a(dts.o): relocation R_X86_64_PC32 against symbol `lsmash_remove_dts_reserved_box&#39; can not be used when making a shared object; recompile with -fPIC</div></div><!-- fragment --><p>【问题】</p>
+<div class="fragment"><div class="line">./.libs/libvireo.so: undefined reference to `mp4a_export_AudioSpecificConfig&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_setup_parser&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_cleanup_parser&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_parse_sps&#39;</div></div><!-- fragment --><h1><a class="anchor" id="放弃"></a>
+放弃</h1>
+<p>真 - 从入门到放弃</p>
+<p>vireo和它的依赖lsmash都使用autoconf这些linux平台特有的构建工具，而且高度依赖gcc版本和linux发行版。</p>
+<p>想要解决问题2，需要特定的gcc和linux发行版。</p>
+<p>跨linux版本都出现问题，更别说跨平台了，放弃。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -109,7 +119,7 @@ $(document).ready(function(){initNavTree('cpp_lib_vireo.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li><li class="navelem"><a class="el" href="cpp_libraries.html">C++常用库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp_awesome_lib.html">C++常用库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

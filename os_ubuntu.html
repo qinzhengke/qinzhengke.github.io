@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('os_ubuntu.html','');});
  <h1><a class="anchor" id="设置自启动"></a>
 设置自启动</h1>
 <p>本方法只对ubuntu18.04以及以上的版本。</p>
-<p>步骤1： 新建一个脚本设置为可执行，然后添加以下内容 </p><div class="fragment"><div class="line">#!/bin/bash&#39; </div><div class="line">### BEGIN INIT INFO&#39; </div><div class="line"># Required-Start: $local_fs $network $remote_fs&#39; </div><div class="line"># Required-Stop: $local_fs $network $remote_fs&#39; </div><div class="line"># Default-Start:  2 3 4 5&#39; </div><div class="line"># Default-Stop: 0 1 6&#39; </div><div class="line">### END INIT INFO&#39; </div><div class="line">cd somewhere</div><div class="line">./pm_msft.sh&quot;</div></div><!-- fragment --><p>注意，其中注释部分是不能少的，cd到somewhere目录后，这个目录就是workding directory，直接运行该目录下的程序即可，和我们在终端操作是一样的。</p>
+<p>步骤1： 新建一个脚本设置为可执行，然后添加以下内容 </p><div class="fragment"><div class="line">#!/bin/bash&#39; </div><div class="line">\subsection BEGIN INIT INFO&#39; </div><div class="line"># Required-Start: $local_fs $network $remote_fs&#39; </div><div class="line"># Required-Stop: $local_fs $network $remote_fs&#39; </div><div class="line"># Default-Start:  2 3 4 5&#39; </div><div class="line"># Default-Stop: 0 1 6&#39; </div><div class="line">\subsection END INIT INFO&#39; </div><div class="line">cd somewhere</div><div class="line">./pm_msft.sh&quot;</div></div><!-- fragment --><p>注意，其中注释部分是不能少的，cd到somewhere目录后，这个目录就是workding directory，直接运行该目录下的程序即可，和我们在终端操作是一样的。</p>
 <p>步骤2：拷贝脚本到<code>/etc/init.d</code>目录下 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

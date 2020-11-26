@@ -95,7 +95,8 @@ $(document).ready(function(){initNavTree('cpp_lib_opencv.html','');});
 <hr/>
  <h1><a class="anchor" id="Linux离线环境编译opencv"></a>
 Linux离线环境编译opencv</h1>
-<p>cmake会在编译opencv时下载ippicv和ffmpeg库，这会导致离线环境编译opencv被卡在下述语句。 </p><div class="fragment"><div class="line">IPPICV:Download:ippicv_2017u3_lnx_intel64_general_20180518.tgz</div></div><!-- fragment --><p>解法： setp1:在github上搜索opencv/opencv_3rdparty，然后在文件分支下拉框中选择“ippicv/xxx”，否则默认分支是不会显示任何文件的（这个很坑）。 step2:下载对应版本的包，然后打开opencv/3rdparty/ippicv/ippicv.cmake，替换其中的下载路径，然后重新运行cmake即可</p>
+<p>cmake会在编译opencv时下载ippicv和ffmpeg库，这会导致离线环境编译opencv被卡在下述语句。 {bash} IPPICV:Download:ippicv_2017u3_lnx_intel64_general_20180518.tgz </p>
+<p>解法： setp1:在github上搜索opencv/opencv_3rdparty，然后在文件分支下拉框中选择“ippicv/xxx”，否则默认分支是不会显示任何文件的（这个很坑）。 step2:下载对应版本的包，然后打开opencv/3rdparty/ippicv/ippicv.cmake，替换其中的下载路径，然后重新运行cmake即可</p>
 <div class="fragment"><div class="line">&quot;https://raw.githubusercontent.com/opencv/opencv_3rdparty/${IPPICV_COMMIT}/ippicv/&quot;</div><div class="line">#改成</div><div class="line">&quot;file:///home/zrinker/.../ippicv....tar.gz&quot;</div></div><!-- fragment --><hr/>
  <h1><a class="anchor" id="编译contrib库"></a>
 编译contrib库</h1>
@@ -120,7 +121,7 @@ CV_EXPORT宏</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li><li class="navelem"><a class="el" href="cpp_libraries.html">C++常用库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp_awesome_lib.html">C++常用库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

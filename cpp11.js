@@ -6,9 +6,16 @@ var cpp11 =
     ] ],
     [ "C++11中的std::function和std::bind", "cpp11_bind.html", [
       [ "std::function是什么？", "cpp11_bind.html#std_function", null ],
-      [ "std::bind是什么，有何意义？", "cpp11_bind.html#std_bind", null ],
-      [ "std::placeholder", "cpp11_bind.html#std_placeholder", null ],
-      [ "::bind传入引用", "cpp11_bind.html#std", null ]
+      [ "std::bind是什么，有何意义？", "cpp11_bind.html#std_bind", [
+        [ "bind的使用方法", "cpp11_bind.html#bind的使用方法", null ],
+        [ "bind的传参问题", "cpp11_bind.html#bind的传参问题", null ],
+        [ "bind的一个亲身应用实例", "cpp11_bind.html#bind的一个亲身应用实例", null ],
+        [ "bind引用参数", "cpp11_bind.html#bind引用参数", null ]
+      ] ],
+      [ "::bind绑定成员函数和静态成员函数", "cpp11_bind.html#std", [
+        [ "bind与function搭配", "cpp11_bind.html#bind与function搭配", null ]
+      ] ],
+      [ "std::placeholder", "cpp11_bind.html#std_placeholder", null ]
     ] ],
     [ "C++11中的多线程", "cpp11_thread.html", [
       [ "init阶段和start阶段", "cpp11_thread.html#init阶段和start阶段", null ]
@@ -22,8 +29,6 @@ var cpp11 =
     ] ],
     [ "标准库chrono", "cpp11_chrono.html", [
       [ "认识clock", "cpp11_chrono.html#认识clock", [
-        [ "evpp库如何在设置回调函数时输入用户参数？", "cpp_lib_evpp.html#evpp_callback", null ],
-        [ "如何获取sockect_fd？", "cpp_lib_evpp.html#如何获取sockect_fd？", null ],
         [ "steady_clock", "cpp11_chrono.html#steady_clock", null ],
         [ "system_clock", "cpp11_chrono.html#system_clock", null ],
         [ "steady_clock和system_clock的对比", "cpp11_chrono.html#steady_clock和system_clock的对比", null ]

@@ -1,31 +1,10 @@
 var programming =
 [
-    [ "C语言", "c.html", "c" ],
-    [ "编程语言：C++", "cpp.html", "cpp" ],
-    [ "编程语言：Python", "python.html", [
-      [ "for循环中同时使用序号和值", "python.html#for循环中同时使用序号和值", null ],
-      [ "数组和常数相加", "python.html#数组和常数相加", null ],
-      [ "生成等差数列", "python.html#生成等差数列", null ],
-      [ "限制浮点数精度", "python.html#限制浮点数精度", null ],
-      [ "使用latex", "python.html#使用latex", null ],
-      [ "优雅的读取csv文件", "python.html#优雅的读取csv文件", null ],
-      [ "文件名冲突", "python.html#文件名冲突", null ],
-      [ "module的导入", "python.html#module的导入", null ],
-      [ ".append和numpy.delete", "python.html#numpy", null ]
-    ] ],
-    [ "Python画图库：matplotlib", "matplotlib.html", [
-      [ "如何设置显示范围？", "matplotlib.html#如何设置显示范围？", null ],
-      [ "如何打开网格？", "matplotlib.html#如何打开网格？", null ],
-      [ "如何设置曲线置顶？", "matplotlib.html#如何设置曲线置顶？", null ]
-    ] ],
-    [ "Web前端开发", "front_end.html", "front_end" ],
-    [ "脚本语言：bash", "bash.html", [
-      [ "如何把运行结果赋值给变量？", "bash.html#如何把运行结果赋值给变量？", null ],
-      [ "$()和${}的区别", "bash.html#bash_var", null ]
-    ] ],
-    [ "脚本语言：bat", "bat.html", null ],
-    [ "机器人操作系统：ROS", "ros.html", null ],
-    [ "cmake", "cmake.html", [
+    [ "目录", "programming.html#目录", null ],
+    [ "C语言：经典老牌计算机编程语言", "c.html", "c" ],
+    [ "C++：青出于蓝，我斑愿称之为最强！", "cpp.html", "cpp" ],
+    [ "cmake：C和C++的跨平台构建工具", "cmake.html", [
+      [ ".txt模板", "cmake.html#我的CMakeLists", null ],
       [ "添加目录里所有源文件", "cmake.html#添加目录里所有源文件", null ],
       [ "C++11标准的引用", "cmake.html#cmake_cpp11", null ],
       [ "库文件的一般基本引用方法", "cmake.html#库文件的一般基本引用方法", null ],
@@ -42,15 +21,28 @@ var programming =
       [ "额外添加源文件", "cmake.html#额外添加源文件", null ],
       [ "target_link_libraries中的相对路径", "cmake.html#target_link_libraries中的相对路径", null ],
       [ "如何在cmake中设置程序版本？", "cmake.html#如何在cmake中设置程序版本？", null ],
-      [ "模块重复编译怎么办？", "cmake.html#模块重复编译怎么办？", null ]
+      [ "模块重复编译怎么办？", "cmake.html#模块重复编译怎么办？", null ],
+      [ "静态库", "cmake.html#静态库", null ]
     ] ],
-    [ "Android make", "android_make.html", null ],
+    [ "Qt：个强大的C++应用程序框架", "qt.html", "qt" ],
+    [ "Python：人生苦短，我用Pyhton！", "python.html", "python" ],
+    [ "Rust：超严格静态类型语言（精神小伙）", "rust.html", [
+      [ "文档", "rust.html#文档", null ],
+      [ "playground", "rust.html#playground", null ],
+      [ "rust安全性解决的问题", "rust.html#rust安全性解决的问题", null ],
+      [ "mut", "rust.html#mut", null ],
+      [ "showdow", "rust.html#showdow", null ],
+      [ "编译期间的溢出检查", "rust.html#编译期间的溢出检查", null ],
+      [ "整型字面量无法给浮点变量赋值", "rust.html#整型字面量无法给浮点变量赋值", null ],
+      [ "ownership三个原则", "rust.html#ownership三个原则", null ]
+    ] ],
+    [ "Web前端：UI的开发趋势", "front_end.html", "front_end" ],
+    [ "Bash：Linux上的脚本语言", "bash.html", [
+      [ "如何把运行结果赋值给变量？", "bash.html#如何把运行结果赋值给变量？", null ],
+      [ "$()和${}的区别", "bash.html#bash_var", null ]
+    ] ],
+    [ "Bat：Windows上的脚本语言", "bat.html", null ],
+    [ "ROS：机器人操作系统", "ros.html", null ],
     [ "优秀的项目源码阅读", "awesome_projects.html", "awesome_projects" ],
-    [ "软件工程", "soft_engineering.html", null ],
-    [ "Coredump分析", "coredump.html", [
-      [ "方法", "coredump.html#方法", null ],
-      [ "问题定位到库文件中", "coredump.html#问题定位到库文件中", null ],
-      [ "coredump的几大主要原因", "coredump.html#coredump的几大主要原因", null ]
-    ] ],
-    [ "编程中的debug记录", "programming_debug.html", "programming_debug" ]
+    [ "编程debug：吃一堑长一智", "programming_debug.html", "programming_debug" ]
 ];

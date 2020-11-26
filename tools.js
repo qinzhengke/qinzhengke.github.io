@@ -2,6 +2,7 @@ var tools =
 [
     [ "操作系统：Linux", "os-linux.html", [
       [ "软件篇", "os-linux.html#软件篇", [
+        [ "学习资料", "rfid.html#学习资料", null ],
         [ "如何非阻塞运行gui程序？", "os-linux.html#如何非阻塞运行gui程序？", null ],
         [ "如何查看目录和文件占用磁盘大小？", "os-linux.html#如何查看目录和文件占用磁盘大小？", null ],
         [ "如何查看哪些端口号被监听？", "os-linux.html#如何查看哪些端口号被监听？", null ],

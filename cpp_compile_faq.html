@@ -172,7 +172,8 @@ symbol！</h1>
 request for member xxx in something not a structure or union</h1>
 <p>本身的含义是使用“.xxx”表达式时，“.”前面的的内容不是一个结构体或者联合。 具体可能出现的场景：</p>
 <p>1.指针错误的使用了“.”来访问成员。 2.C99中使用designated initializer时，有成员没有逗号，在git解决冲突的时候常常遇到这个问题。</p>
-<div class="fragment"><div class="line">struct A{int a, int b};</div><div class="line">A x = {</div><div class="line"> a = 10 // 解冲突时忘记了逗号，</div><div class="line"> b = 20,</div></div><!-- fragment --><hr/>
+<p>struct A{int a, int b}; A x = { a = 10 // 解冲突时忘记了逗号， b = 20, </p>
+<hr/>
  <h1><a class="anchor" id="const_issue"></a>
 passing ... as 'this' argument ...  discards qualifiers</h1>
 <p>问题：问题的全称是 </p><div class="fragment"><div class="line">error: passing ‘const Base’ as ‘this’ argument of ‘virtual void Base::test()’ discards qualifiers [-fpermissive]</div></div><!-- fragment --><p>问题的原因是函数传入的const类型的对象a，但是函数内部调用了a的非const类型成员函数，有可能会导致类内部成员被修改，编译器不允许。</p>
@@ -208,7 +209,7 @@ passing const as ‘this’ argument discards qualifiers</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

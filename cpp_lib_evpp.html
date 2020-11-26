@@ -92,13 +92,11 @@ $(document).ready(function(){initNavTree('cpp_lib_evpp.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><hr/>
- <h3>问题：</h3>
-<p>我们都知道可以对数据接收事件设置回调函数，当数据来临的时候自动触发。 在面向对象编程的代码中，通常是在类的成员函数里进行设置回调函数，同样，我们也希望能够在回调函数中能够处理对象中的数据。 然而，回调函数的参数形式是库定好的，并且是库自行调用，我们用户是无法传入参数的。 那么怎么处理对象中的数据呢？</p>
+ <p>我们都知道可以对数据接收事件设置回调函数，当数据来临的时候自动触发。 在面向对象编程的代码中，通常是在类的成员函数里进行设置回调函数，同样，我们也希望能够在回调函数中能够处理对象中的数据。 然而，回调函数的参数形式是库定好的，并且是库自行调用，我们用户是无法传入参数的。 那么怎么处理对象中的数据呢？</p>
 <p>首先，只有静态成员函数能够被当做回调，因为非静态成员函数一定需要一个对象来调用，这是库函数设计回调函数时不支持的。</p>
 <p>一种很丑陋的方法就是全局变量传递，定义全局变量来穿透回调函数的作用域，当然这种方法实在太让人难以接受，毕竟极大地破坏了封装特性。</p>
 <p>在C语言中，如果库设计得好，就会在设置回调函数的时候，加上一个user_data指针，这个user_data会在回调被库调用的时候按照约定传入，这样以来就可在回调函数中使用指定的变量。</p>
 <p>然而，evpp设计上非常的C++11，没有使用C语言的这种方式，没有给用户留下user_data，那么我们要如何在回调函数中传入变量呢？</p>
-<h3>解决方法：</h3>
 <p>这里要引出C++11非常厉害的一个特性：std::bind，详细内容参考 <a class="el" href="cpp11_bind.html#std_bind">std::bind是什么，有何意义？</a> 。</p>
 <p>std::bind是对函数的一种封装，它的厉害之处在于可以更改参数的个数，本来库要求回调函数形式必须是A(a,b)，如果直接传入一个B(a,b,c)，肯定是会报错的。</p>
 <p>但是如果用bind封装就不一样了，传入std::bind(B, _1, _2, 99)，那么库拿到的回调函数仍然是(a,b)的形式！</p>
@@ -115,7 +113,7 @@ $(document).ready(function(){initNavTree('cpp_lib_evpp.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程</a></li><li class="navelem"><a class="el" href="cpp.html">编程语言：C++</a></li><li class="navelem"><a class="el" href="cpp_libraries.html">C++常用库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp_awesome_lib.html">C++常用库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

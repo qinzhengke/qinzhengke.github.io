@@ -1,9 +1,12 @@
 var cpp =
 [
-    [ "一些关于C++的优秀文章", "cpp_articles.html", null ],
-    [ "C++中的类和对象", "cpp_class.html", [
-      [ "基类和派生类的构造与析构函数执行顺序是什么？", "cpp_class.html#基类和派生类的构造与析构函数执行顺序是什么？", null ]
-    ] ],
+    [ "面向对象编程（OOP）", "cpp_oop.html", "cpp_oop" ],
+    [ "C++的标准库", "cpp_std.html", "cpp_std" ],
+    [ "C++模板", "cpp_template.html", "cpp_template" ],
+    [ "C++中的STL库", "cpp_stl.html", "cpp_stl" ],
+    [ "C++11", "cpp11.html", "cpp11" ],
+    [ "设计模式（Design Pattern）", "cpp_design_pattern.html", "cpp_design_pattern" ],
+    [ "C++常用库", "cpp_awesome_lib.html", "cpp_awesome_lib" ],
     [ "C++构建常见问题", "cpp_compile_faq.html", [
       [ "static相关问题", "cpp_compile_faq.html#static相关问题", [
         [ "static类成员变量未定义", "cpp_compile_faq.html#static类成员变量未定义", null ]
@@ -30,9 +33,6 @@ var cpp =
       [ "extra qualification", "cpp_compile_faq.html#extra_qualification", null ],
       [ "passing const as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#cpp_compile_issue10", null ]
     ] ],
-    [ "C++中的构造函数与析构函数", "cpp_constructor.html", [
-      [ "容器成员变量是否会随着父类的析构而清空？", "cpp_constructor.html#容器成员变量是否会随着父类的析构而清空？", null ]
-    ] ],
     [ "C++运行常见问题", "cpp_run_faq.html", [
       [ "::push_back函数中会执行析构函数", "cpp_run_faq.html#vector", null ],
       [ "system()函数工作路径？", "cpp_run_faq.html#system_work_dir", null ],
@@ -56,40 +56,19 @@ var cpp =
       [ "eof函数", "cpp_run_faq.html#ifstream", null ],
       [ "引用不能重新改变对象。", "cpp_run_faq.html#引用不能重新改变对象。", null ]
     ] ],
-    [ "C++文件IO", "cpp_file_io.html", [
-      [ "C++中的二进制文件读取", "cpp_file_io.html#cpp_binary_file", null ]
-    ] ],
-    [ "C++模板", "cpp_template.html", "cpp_template" ],
-    [ "C++中的多态", "cpp_polymorphism.html", [
-      [ "C++中的override关键字有什么作用？", "cpp_polymorphism.html#keyword_override", null ],
-      [ "多态中为何需要将析构函数设置为virtual类型？", "cpp_polymorphism.html#virtual_deconstructor", null ],
-      [ "如何优雅地定义没有成员函数的类型为虚类？", "cpp_polymorphism.html#如何优雅地定义没有成员函数的类型为虚类？", null ],
-      [ "如何优雅的拷贝虚类对象？", "cpp_polymorphism.html#如何优雅的拷贝虚类对象？", null ],
-      [ "抽象类的构造函数不能运行成员虚成员函数", "cpp_polymorphism.html#抽象类的构造函数不能运行成员虚成员函数", null ],
-      [ "重写(override)父类的重载(overload)函数", "cpp_polymorphism.html#override_overload", null ],
-      [ "重写函数可以子类型", "cpp_polymorphism.html#重写函数可以子类型", null ],
-      [ "基于基类指针获取子类的size？", "cpp_polymorphism.html#基于基类指针获取子类的size？", null ]
-    ] ],
-    [ "std::string", "cpp_string.html", [
-      [ "<<”和std::to_string的一个区别", "cpp_string.html#stringstream中的“", null ]
-    ] ],
-    [ "C++中的STL库", "cpp_stl.html", "cpp_stl" ],
     [ "C++一些建议", "cpp_suggestion.html", [
       [ "少用全局变量。", "cpp_suggestion.html#少用全局变量。", null ],
       [ "传参的时候变量名不要频繁换马甲", "cpp_suggestion.html#传参的时候变量名不要频繁换马甲", null ],
       [ "如何用驼峰命名法命名大写缩写？", "cpp_suggestion.html#如何用驼峰命名法命名大写缩写？", null ],
       [ "header only模式开发效率低！", "cpp_suggestion.html#header_only", null ]
     ] ],
-    [ "C++ debug教训", "cpp_debug.html", [
+    [ "C++调试问题", "cpp_debug.html", [
       [ "企图通过memcpy对象进行拷贝操作。", "cpp_debug.html#企图通过memcpy对象进行拷贝操作。", null ],
       [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
       [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],
       [ "dynamic_pointer_cast模板类要正确", "cpp_debug.html#dynamic_poiner_cast_debug", null ],
       [ "　初始化的重要性", "cpp_debug.html#　初始化的重要性", null ],
       [ "定义函数时命名空间使用", "cpp_debug.html#定义函数时命名空间使用", null ]
-    ] ],
-    [ "Qt相关常见问题", "cpp_qt_faq.html", [
-      [ "使用Creator创建的控制台程序无任何输出？", "cpp_qt_faq.html#使用Creator创建的控制台程序无任何输出？", null ]
     ] ],
     [ "基于unordered_map的稀疏矩阵的实现", "sparse_matrix.html", [
       [ "unordered_map", "sparse_matrix.html#unordered_map", null ]
@@ -121,18 +100,10 @@ var cpp =
         [ "进程和线程的区别？", "cpp_questions.html#进程和线程的区别？", null ]
       ] ]
     ] ],
-    [ "C++常用库", "cpp_libraries.html", "cpp_libraries" ],
-    [ "C++11", "cpp11.html", "cpp11" ],
     [ "C++可执行文件在Linux的发布", "cpp_linux_deploy.html", [
       [ "方法一：笨办法", "cpp_linux_deploy.html#方法一：笨办法", null ],
       [ "方法二：聪明一点的方法", "cpp_linux_deploy.html#方法二：聪明一点的方法", null ],
       [ "方法三：更聪明的办法", "cpp_linux_deploy.html#方法三：更聪明的办法", null ]
     ] ],
-    [ "结合Apollo源代码来理解C++的工厂模式", "cpp_factory_mode.html", [
-      [ "前言", "cpp_factory_mode.html#前言", null ]
-    ] ],
-    [ "C++中的单例设计模式", "cpp_singleton.html", [
-      [ "单例的作用", "cpp_singleton.html#单例的作用", null ],
-      [ "++单例的实现", "cpp_singleton.html#C", null ]
-    ] ]
+    [ "一些关于C++的优秀文章", "cpp_articles.html", null ]
 ];

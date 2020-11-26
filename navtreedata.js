@@ -16,8 +16,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "aerospace_probe.html",
-"cpp_debug.html#　初始化的重要性",
-"os-windows.html"
+"cpp_compile_faq.html#memcpy_overflow",
+"js_debug.html#如何打印输出？"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

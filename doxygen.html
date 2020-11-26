@@ -114,7 +114,8 @@ dox文件语法</h1>
 <li>嵌入代码没有加入传输协议，需要手动添加“https:”</li>
 <li>doxygen 使用 \htmlonly 和 \endhtmlonly来包裹嵌入代码。</li>
 </ol>
-<div class="fragment"><div class="line">\\htmlonly</div><div class="line">&lt;iframe src=<span class="stringliteral">&quot;https://player.bilibili.com/player.html?aid=97804448&amp;bvid=BV1fE411w7ac&amp;cid=166959951&amp;page=1&quot;</span> scrolling=<span class="stringliteral">&quot;no&quot;</span> border=<span class="stringliteral">&quot;0&quot;</span> frameborder=<span class="stringliteral">&quot;no&quot;</span> framespacing=<span class="stringliteral">&quot;0&quot;</span> allowfullscreen=<span class="stringliteral">&quot;true&quot;</span>&gt; &lt;/iframe&gt;</div><div class="line">\\endhtmlonly</div></div><!-- fragment --><h1><a class="anchor" id="ref_excel"></a>
+<p>code{dox} \htmlonly &lt;iframe src="https://player.bilibili.com/player.html?aid=97804448&amp;bvid=BV1fE411w7ac&amp;cid=166959951&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"&gt; &lt;/iframe&gt; \endhtmlonly </p>
+<h1><a class="anchor" id="ref_excel"></a>
 引用excel表格</h1>
 <p>前言：markdown表格不支持合并单元格操作，表达能力有限，我们需要表达能力更强的html表格。 然而，手打html表格是一种低效操作，有位名人说过：“手打html表格是不可能手打的，这辈子都不可能手打的”。</p>
 <p>下面介绍如何在doxygen中引用excel表格。</p>
@@ -181,9 +182,13 @@ dfrac vs frac</h1>
  <h1><a class="anchor" id="生成参考文献"></a>
 生成参考文献</h1>
 <p>step 1: 安装texbib工具</p>
-<div class="fragment"><div class="line">sudo apt-get install texlive-bibtex-extra</div></div><!-- fragment --><p>step 2: 在doxygen配置文件中添加要显示的bib文件</p>
-<div class="fragment"><div class="line">CITE_BIB_FILES         = cv/cv.bib</div></div><!-- fragment --><p>step 3: 在bib文件中放置参考文件引用代码，引用代码可以从各种文献搜索引擎找到，例如谷歌学术。</p>
-<div class="fragment"><div class="line">// cv/cv.lib</div><div class="line"></div><div class="line">@inproceedings{rosten2006machine,</div><div class="line">  title={Machine learning for high-speed corner detection},</div><div class="line">  author={Rosten, Edward and Drummond, Tom},</div><div class="line">  booktitle={European conference on computer vision},</div><div class="line">  pages={430--443},</div><div class="line">  year={2006},</div><div class="line">  organization={Springer}</div><div class="line">}</div></div><!-- fragment --><p>step 4: 在doxygen文档处使用 \cite 进行引用。</p>
+<p>sudo apt-get install texlive-bibtex-extra </p>
+<p>step 2: 在doxygen配置文件中添加要显示的bib文件</p>
+<p>CITE_BIB_FILES = cv/cv.bib </p>
+<p>step 3: 在bib文件中放置参考文件引用代码，引用代码可以从各种文献搜索引擎找到，例如谷歌学术。</p>
+<p>// cv/cv.lib</p>
+<p>{rosten2006machine, title={Machine learning for high-speed corner detection}, author={Rosten, Edward and Drummond, Tom}, booktitle={European conference on computer vision}, pages={430&ndash;443}, year={2006}, organization={Springer} } </p>
+<p>step 4: 在doxygen文档处使用 \cite 进行引用。</p>
 <pre class="fragment">图：FAST角点原理示意图，图像来源为 \cite rosten2006machine 。
 </pre><p>结果如图所示：</p>
 <div class="image">

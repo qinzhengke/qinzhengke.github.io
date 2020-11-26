@@ -1,6 +1,5 @@
 var front_end =
 [
-    [ "目录", "front_end.html#目录", null ],
     [ "Javascript调试常见问题", "js_debug.html", [
       [ "如何打印输出？", "js_debug.html#如何打印输出？", null ],
       [ "动态html内容如何查看？", "js_debug.html#动态html内容如何查看？", null ],

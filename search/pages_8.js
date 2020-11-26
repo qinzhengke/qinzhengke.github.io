@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['javascript调试常见问题',['Javascript调试常见问题',['../js_debug.html',1,'front_end']]]
+  ['libevent：经典的异步事件框架库',['libevent：经典的异步事件框架库',['../cpp_lib_libevent.html',1,'cpp_awesome_lib']]],
+  ['latex语法笔记',['LaTex语法笔记',['../latex.html',1,'tools']]],
+  ['lubuntu',['Lubuntu',['../os-lubuntu.html',1,'tools']]]
 ];

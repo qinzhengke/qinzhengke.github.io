@@ -91,7 +91,8 @@ $(document).ready(function(){initNavTree('valgrind.html','');});
 <div class="title">代码内存检测工具valgrind </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>使用方法： </p><div class="fragment"><div class="line">valgrind --tool=memcheck --leak-check=yes --log-file=result.log ./my_exe</div></div><!-- fragment --><p>log中要注意两点：</p><ol type="1">
+<div class="textblock"><p>使用方法：  valgrind &ndash;tool=memcheck &ndash;leak-check=yes &ndash;log-file=result.log ./my_exe </p>
+<p>log中要注意两点：</p><ol type="1">
 <li>内存泄漏，关键字：definitely lost in loss record</li>
 <li>写非法地址，关键字：Invalid write </li>
 </ol>

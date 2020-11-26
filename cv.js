@@ -9,6 +9,10 @@ var cv =
       [ "论坛", "awsome_cv_websites.html#cv_forum", null ],
       [ "一些电子图书：", "awsome_cv_websites.html#一些电子图书：", null ],
       [ "pdf课件", "awsome_cv_websites.html#pdf课件", null ],
-      [ "一些网站", "awsome_cv_websites.html#一些网站", null ]
+      [ "一些网站", "awsome_cv_websites.html#一些网站", [
+        [ "欧拉角", "robotics_basic.html#欧拉角", null ],
+        [ "一些paper", "awsome_cv_websites.html#一些paper", null ],
+        [ "一些基础名词", "awsome_cv_websites.html#一些基础名词", null ]
+      ] ]
     ] ]
 ];
