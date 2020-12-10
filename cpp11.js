@@ -41,7 +41,11 @@ var cpp11 =
         [ "两个time_point相减得到duartion", "cpp11_chrono.html#两个time_point相减得到duartion", null ]
       ] ]
     ] ],
+    [ "关键字constexpr", "cpp11_constexpr.html", [
+      [ "如何在类中声明constexpr常量？", "cpp11_constexpr.html#如何在类中声明constexpr常量？", null ]
+    ] ],
     [ "C++11中的其他有用特性", "cpp11_others.html", [
-      [ "代替 typedef", "cpp11_others.html#using", null ]
+      [ "代替 typedef", "cpp11_others.html#using", null ],
+      [ "使用constexpr作为类的成员变量", "cpp11_others.html#使用constexpr作为类的成员变量", null ]
     ] ]
 ];

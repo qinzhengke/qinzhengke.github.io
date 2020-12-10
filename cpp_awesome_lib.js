@@ -34,7 +34,8 @@ var cpp_awesome_lib =
     ] ],
     [ "gtest：谷歌测试框架", "gtest.html", null ],
     [ "C++ json序列化库：iguana", "cpp_lib_iguana.html", [
-      [ "REFLECTION的宏定义必须紧接着结构体", "cpp_lib_iguana.html#REFLECTION的宏定义必须紧接着结构体", null ]
+      [ "REFLECTION的宏定义必须紧接着结构体", "cpp_lib_iguana.html#REFLECTION的宏定义必须紧接着结构体", null ],
+      [ "数组", "cpp_lib_iguana.html#数组", null ]
     ] ],
     [ "视频库Vireo", "cpp_lib_vireo.html", [
       [ "介绍", "cpp_lib_vireo.html#介绍", null ],

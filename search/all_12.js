@@ -1,17 +1,10 @@
 var searchData=
 [
-  ['天文与航天',['天文与航天',['../astronomy_entry.html',1,'zk_note']]],
-  ['内参标定',['内参标定',['../cali_intrinsic.html',1,'calibration']]],
-  ['图像特征点',['图像特征点',['../feature_entry.html',1,'cv']]],
-  ['卡尔曼滤波_28kalman_20filter_29',['卡尔曼滤波(Kalman Filter)',['../kalman_filter.html',1,'estimation_theory_entry']]],
-  ['开源办公软件：libre_20office',['开源办公软件：Libre Office',['../libre_office.html',1,'tools']]],
-  ['基本数学概念',['基本数学概念',['../math_fundarmental.html',1,'math']]],
-  ['多传感器信息融合（msif）',['多传感器信息融合（MSIF）',['../msif_intro.html',1,'zk_note']]],
-  ['在线工具',['在线工具',['../online_tools.html',1,'zk_note']]],
-  ['四元数_28quaternion_29',['四元数(Quaternion)',['../quaternion.html',1,'geometry3d_entry']]],
-  ['基于unordered_5fmap的稀疏矩阵的实现',['基于unordered_map的稀疏矩阵的实现',['../sparse_matrix.html',1,'cpp']]],
-  ['工具',['工具',['../tools.html',1,'zk_note']]],
-  ['其他有用的工具',['其他有用的工具',['../useful_tools.html',1,'tools']]],
-  ['强大的代码编辑器：visual_20studio_20code',['强大的代码编辑器：Visual Studio Code',['../vscode.html',1,'tools']]],
-  ['学习笔记',['学习笔记',['../zk_note.html',1,'']]]
+  ['优秀的项目源码阅读',['优秀的项目源码阅读',['../awesome_projects.html',1,'programming']]],
+  ['从百度apollo项目看算法软件架构',['从百度Apollo项目看算法软件架构',['../cpp_apollo_arch.html',1,'awesome_projects']]],
+  ['一些关于c_2b_2b的优秀文章',['一些关于C++的优秀文章',['../cpp_articles.html',1,'cpp']]],
+  ['估计理论_28estimation_20theory_29',['估计理论(Estimation Theory)',['../estimation_theory_entry.html',1,'zk_note']]],
+  ['三维几何_283d_20geometry_29',['三维几何(3D Geometry)',['../geometry3d_entry.html',1,'math']]],
+  ['优化理论',['优化理论',['../optimization.html',1,'math']]],
+  ['代码内存检测工具valgrind',['代码内存检测工具valgrind',['../valgrind.html',1,'tools']]]
 ];

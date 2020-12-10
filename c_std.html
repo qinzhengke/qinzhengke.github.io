@@ -91,14 +91,42 @@ $(document).ready(function(){initNavTree('c_std.html','');});
 <div class="title">C语言标准库 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>C语言标准库也只是一群大佬定义的一种标准，并没有要求谁或者限制谁来实现，自然和编译器一样，也会有许多的版本。</p>
+<div class="textblock"><hr/>
+ <h1><a class="anchor" id="标准库的实现版本"></a>
+标准库的实现版本</h1>
+<p>C语言标准库也只是一群大佬定义的一种标准，并没有要求谁或者限制谁来实现，自然和编译器一样，也会有许多的版本。</p>
 <p>让我们来看看标准库有哪一些版本。</p>
 <ul>
 <li>glibc：GNU提供的C标准库</li>
 <li>BSD libc：BSD提供的C标准库</li>
 <li>Microsoft C run-time library：微软提供的标准库属于Visual C++的一部分。</li>
-<li>Bionic：谷歌为Android操作系统开发的标准库。 </li>
+<li>Bionic：谷歌为Android操作系统开发的标准库。</li>
 </ul>
+<hr/>
+ <h1><a class="anchor" id="stdio"></a>
+stdio.h</h1>
+<hr/>
+ <h2><a class="anchor" id="printf"></a>
+中的uint64整数</h2>
+<p>使用printf过程中，一定要写对字符串，之前遇到过一个问题，使用d来打印一个int64的数是错误的，例如下列代码</p>
+<div class="fragment"><div class="line">uint64_t a = 1000;</div><div class="line">printf(<span class="stringliteral">&quot;%d\n&quot;</span>,a); <span class="comment">// 错误</span></div></div><!-- fragment --><p>实际上，u，ld，lu都不对，在曾经一个ARM平台编译器上，正确的结果是llu，因为在该平台上，sizeof(long)=sizeof(int)=4，而uint64_t真正的类型是long long，在不同平台时，要注意类型字节数可能不一样。</p>
+<hr/>
+ <h2><a class="anchor" id="怎样printf"></a>
+size_t类型才不会报warning</h2>
+<div class="fragment"><div class="line"><span class="comment">// C89</span></div><div class="line"><span class="keywordtype">size_t</span> foo;</div><div class="line">...</div><div class="line">printf(<span class="stringliteral">&quot;foo = %lu\n&quot;</span>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>) foo);</div><div class="line"><span class="comment">// For C99 and later, use %zu:</span></div><div class="line"></div><div class="line"><span class="keywordtype">size_t</span> foo;</div><div class="line">...</div><div class="line">printf(<span class="stringliteral">&quot;foo = %zu\n&quot;</span>, foo);</div></div><!-- fragment --><hr/>
+ <h2><a class="anchor" id="彩色规范打印"></a>
+彩色规范打印</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#indef PRINT_ERROR</span></div><div class="line"><span class="preprocessor">#define PRINT_ERROR(...)    \</span></div><div class="line"><span class="preprocessor">  do{                       \</span></div><div class="line"><span class="preprocessor">    printf(&quot;\x1B[41;37m&quot;);  \</span></div><div class="line"><span class="preprocessor">    printf(&quot;[ERROR]&quot;);      \</span></div><div class="line"><span class="preprocessor">    printf(&quot;\x1B[0m&quot;);      \</span></div><div class="line"><span class="preprocessor">    printf(__VA_ARGS__);    \</span></div><div class="line"><span class="preprocessor">    }                       \</span></div><div class="line"><span class="preprocessor">  while(0)</span></div><div class="line"><span class="preprocessor">#endif</span></div><div class="line">  </div><div class="line"><span class="preprocessor">#ifndef PRINT_INFO</span></div><div class="line"><span class="preprocessor">#define PRINT_INFO(...)     \</span></div><div class="line"><span class="preprocessor">  do{                       \</span></div><div class="line"><span class="preprocessor">    printf(&quot;\1xB[42;37m&quot;);  \</span></div><div class="line"><span class="preprocessor">    printf(&quot;[INFO] &quot;);      \</span></div><div class="line"><span class="preprocessor">    printf(__VA_ARGS__);    \</span></div><div class="line"><span class="preprocessor">    }                       \</span></div><div class="line"><span class="preprocessor">  while(0)</span></div><div class="line"><span class="preprocessor">#endif</span></div></div><!-- fragment --><h1><a class="anchor" id="c_float"></a>
+float.h</h1>
+<h2><a class="anchor" id="FLT_EPSILON宏和DBL_EPSILON"></a>
+FLT_EPSILON宏和DBL_EPSILON</h2>
+<p>问题：做除法的时候，我们知道分母不能为0，那么如何检查呢？ “if(a!=0.0f)”这种小学生的错误就不要犯了。</p>
+<p>解决方法：一般来说我们需要拿到一个很小的数，如果分母的绝对值小于这个数，就认为分母为零。 最适合的方法是使用&lt;float.h&gt;提供的FLT_EPSILON和DBL_EPSILON。</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;float.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]){</div><div class="line">    printf(<span class="stringliteral">&quot;FLT_EPSILON=%.20f\n&quot;</span>, FLT_EPSILON);</div><div class="line">    printf(<span class="stringliteral">&quot;DBL_EPSILON=%.20f\n&quot;</span>, DBL_EPSILON);</div><div class="line">}</div></div><!-- fragment --><p>运行结果为：</p>
+<div class="fragment"><div class="line">FLT_EPSILON=0.00000011920928955078</div><div class="line">DBL_EPSILON=0.00000000000000022204</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="判断数字是否是nan"></a>
+判断数字是否是nan</h1>
+<p>isnan()函数。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

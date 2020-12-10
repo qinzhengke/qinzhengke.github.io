@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['harris角点',['Harris角点',['../harris_corner.html',1,'feature_entry']]]
+  ['gnome桌面',['GNOME桌面',['../gnome.html',1,'tools']]],
+  ['gtest：谷歌测试框架',['gtest：谷歌测试框架',['../gtest.html',1,'cpp_awesome_lib']]]
 ];

@@ -103,8 +103,19 @@ $(document).ready(function(){initNavTree('os_ubuntu.html','');});
 设置自启动</h1>
 <p>本方法只对ubuntu18.04以及以上的版本。</p>
 <p>步骤1： 新建一个脚本设置为可执行，然后添加以下内容 </p><div class="fragment"><div class="line">#!/bin/bash&#39; </div><div class="line">\subsection BEGIN INIT INFO&#39; </div><div class="line"># Required-Start: $local_fs $network $remote_fs&#39; </div><div class="line"># Required-Stop: $local_fs $network $remote_fs&#39; </div><div class="line"># Default-Start:  2 3 4 5&#39; </div><div class="line"># Default-Stop: 0 1 6&#39; </div><div class="line">\subsection END INIT INFO&#39; </div><div class="line">cd somewhere</div><div class="line">./pm_msft.sh&quot;</div></div><!-- fragment --><p>注意，其中注释部分是不能少的，cd到somewhere目录后，这个目录就是workding directory，直接运行该目录下的程序即可，和我们在终端操作是一样的。</p>
-<p>步骤2：拷贝脚本到<code>/etc/init.d</code>目录下 </p>
-</div></div><!-- contents -->
+<p>步骤2：拷贝脚本到<code>/etc/init.d</code>目录下</p>
+<h2><a class="anchor" id="磁盘开机自动挂"></a>
+磁盘开机自动挂</h2>
+<p>磁盘开机挂载问题，Linux开机后，除了“/”目录和swap，其他的分区是不会自动挂载的，就像如果开机后第一次点击原Windows下的D盘，那么打开的时间会稍微久一些，而且文档管理的图标上会有一个小三角（Ubuntu）表示已经挂载。 我将log和stuffs分别做了快捷链接，但是由于这两个文件处于我的Work分区，开机没有挂载，所以开机后直接在terminal里输入快捷链接，还不能打开log和sutffs文件，所以现在必须试试开机挂载了。打开etc/fstab这个文件</p>
+<p>Step 1: 查看磁盘的UUID</p>
+<p>方法一：Ubuntu下使用“Disks”工具，Windows键+“disks”，可以查看某个磁盘的UUID</p>
+<p>方法二：使用gparted查看磁盘UUID</p>
+<p>Step 2: 编辑fstab文件</p>
+<div class="fragment"><div class="line">sudo vim /etc/fstab</div></div><!-- fragment --><p>在最后一行加入如下配置：</p>
+<div class="fragment"><div class="line">UUID=xxxxxxx       /media/Work/    auto    defaults 0       2</div></div><!-- fragment --><p>【注意】“defaults”值不要拼错了，有“s”，最后一个参数要填“2”，表示普通分区，并非Linux启动分区，这两设置不对，有可能无法开机。</p>
+<p>【注意】如果错误设置无法开，不用惊慌，只要在Ubuntu启动界面，进入recovery模式，然后进入root模式，使用vim编辑/etc/fstab文件即可。</p>
+<hr/>
+ </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

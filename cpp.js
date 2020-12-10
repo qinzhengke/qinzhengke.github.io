@@ -1,11 +1,18 @@
 var cpp =
 [
+    [ "C++中的修饰符(qualifier)", "cpp_qualifier.html", [
+      [ "关键字", "cpp_qualifier.html#extern", [
+        [ "引用另外一个文件的变量或者函数", "cpp_qualifier.html#引用另外一个文件的变量或者函数", null ],
+        [ "导出C语言模式的函数名", "cpp_qualifier.html#导出C语言模式的函数名", null ]
+      ] ]
+    ] ],
     [ "面向对象编程（OOP）", "cpp_oop.html", "cpp_oop" ],
     [ "C++的标准库", "cpp_std.html", "cpp_std" ],
     [ "C++模板", "cpp_template.html", "cpp_template" ],
     [ "C++中的STL库", "cpp_stl.html", "cpp_stl" ],
     [ "C++11", "cpp11.html", "cpp11" ],
     [ "设计模式（Design Pattern）", "cpp_design_pattern.html", "cpp_design_pattern" ],
+    [ "C++的一些技巧（Idioms）", "cpp_idioms.html", "cpp_idioms" ],
     [ "C++常用库", "cpp_awesome_lib.html", "cpp_awesome_lib" ],
     [ "C++构建常见问题", "cpp_compile_faq.html", [
       [ "static相关问题", "cpp_compile_faq.html#static相关问题", [
@@ -33,6 +40,7 @@ var cpp =
       [ "extra qualification", "cpp_compile_faq.html#extra_qualification", null ],
       [ "passing const as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#cpp_compile_issue10", null ]
     ] ],
+    [ "C++与C语言混合编程", "cpp_mix_with_c.html", null ],
     [ "C++运行常见问题", "cpp_run_faq.html", [
       [ "::push_back函数中会执行析构函数", "cpp_run_faq.html#vector", null ],
       [ "system()函数工作路径？", "cpp_run_faq.html#system_work_dir", null ],
@@ -75,6 +83,7 @@ var cpp =
     ] ],
     [ "C++面试题", "cpp_questions.html", [
       [ "综合篇", "cpp_questions.html#综合篇", [
+        [ "++模块", "cpp_mix_with_c.html#C语言调用C", null ],
         [ "static的用处", "cpp_questions.html#static的用处", null ],
         [ "左值和右值是什么？", "cpp_questions.html#左值和右值是什么？", null ],
         [ "右值引用(&&)是什么？", "cpp_questions.html#cpp_right_ref", null ],

@@ -29,7 +29,9 @@ var python =
         [ "统一修改局部变量", "cpp_lib_qt.html#QtCreator", null ],
         [ "Windows下qt程序打包", "cpp_lib_qt.html#Windows下qt程序打包", null ],
         [ "linux下qt程序打包", "cpp_lib_qt.html#linux下qt程序打包", null ],
+        [ "工程内外的头文件区别？", "cpp_lib_qt.html#工程内外的头文件区别？", null ],
         [ "读取csv文件", "python_syntax.html#读取csv文件", null ],
+        [ "module name \"xxx\"", "python_syntax.html#No", null ],
         [ "++简单grep工具", "python_syntax.html#notepad", null ],
         [ "一个很蠢的问题", "python_syntax.html#一个很蠢的问题", null ],
         [ "python 变量类型", "python_syntax.html#python_type", null ]

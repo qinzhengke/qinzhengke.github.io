@@ -1,6 +1,5 @@
 var programming =
 [
-    [ "目录", "programming.html#目录", null ],
     [ "C语言：经典老牌计算机编程语言", "c.html", "c" ],
     [ "C++：青出于蓝，我斑愿称之为最强！", "cpp.html", "cpp" ],
     [ "cmake：C和C++的跨平台构建工具", "cmake.html", [
@@ -22,7 +21,8 @@ var programming =
       [ "target_link_libraries中的相对路径", "cmake.html#target_link_libraries中的相对路径", null ],
       [ "如何在cmake中设置程序版本？", "cmake.html#如何在cmake中设置程序版本？", null ],
       [ "模块重复编译怎么办？", "cmake.html#模块重复编译怎么办？", null ],
-      [ "静态库", "cmake.html#静态库", null ]
+      [ "静态库", "cmake.html#静态库", null ],
+      [ "IDE能编，terminal却找不到头文件？", "cmake.html#IDE能编，terminal却找不到头文件？", null ]
     ] ],
     [ "Qt：个强大的C++应用程序框架", "qt.html", "qt" ],
     [ "Python：人生苦短，我用Pyhton！", "python.html", "python" ],
@@ -44,5 +44,11 @@ var programming =
     [ "Bat：Windows上的脚本语言", "bat.html", null ],
     [ "ROS：机器人操作系统", "ros.html", null ],
     [ "优秀的项目源码阅读", "awesome_projects.html", "awesome_projects" ],
-    [ "编程debug：吃一堑长一智", "programming_debug.html", "programming_debug" ]
+    [ "编程debug：吃一堑长一智", "programming_debug.html", "programming_debug" ],
+    [ "utf-8编码", "utf8.html", [
+      [ "utf-8编码的文件", "utf8.html#utf-8编码的文件", [
+        [ "utf-8文件的bom字节", "utf8.html#utf-8文件的bom字节", null ],
+        [ "'\\r'", "utf8.html#utf-8文件中的行结尾", null ]
+      ] ]
+    ] ]
 ];

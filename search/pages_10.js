@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['web前端：ui的开发趋势',['Web前端：UI的开发趋势',['../front_end.html',1,'programming']]]
+  ['vim笔记',['vim笔记',['../vim.html',1,'tools']]],
+  ['vscode中的markdown相关的代码片',['vscode中的markdown相关的代码片',['../vscode_markdown_snippet.html',1,'vscode']]],
+  ['vslam简介',['vslam简介',['../vslam_intro.html',1,'vslam_entry']]]
 ];

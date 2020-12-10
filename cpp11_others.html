@@ -95,7 +95,13 @@ $(document).ready(function(){initNavTree('cpp11_others.html','');});
  <h1><a class="anchor" id="using"></a>
 代替 typedef</h1>
 <p>using代替typedef的好处是可以支持模板。</p>
-<div class="fragment"><div class="line"><span class="comment">// C++11写法</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> N&gt;</div><div class="line"><span class="keyword">using</span> Vector = Matrix&lt;N, 1&gt;;</div><div class="line"></div><div class="line"><span class="comment">// C++03写法</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> N&gt;</div><div class="line"><span class="keyword">struct </span>Vector</div><div class="line">{</div><div class="line">    <span class="keyword">typedef</span> Matrix&lt;N, 1&gt; type;</div><div class="line">};</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line"><span class="comment">// C++11写法</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> N&gt;</div><div class="line"><span class="keyword">using</span> Vector = Matrix&lt;N, 1&gt;;</div><div class="line"></div><div class="line"><span class="comment">// C++03写法</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> N&gt;</div><div class="line"><span class="keyword">struct </span>Vector</div><div class="line">{</div><div class="line">    <span class="keyword">typedef</span> Matrix&lt;N, 1&gt; type;</div><div class="line">};</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="使用constexpr作为类的成员变量"></a>
+使用constexpr作为类的成员变量</h1>
+<p>没有什么困难，就是要注意constexpr修饰类成员变量时，类成员变量必须是static的，否则编译器会报错。</p>
+<p>我的理解是既然是编译期常量，那么每个实例对应该常量的值应该是相同的，实际上等效成一个static类型，如果每个实例都存储相同的值，必然会造成空间浪费。 所以直接constexpr成员变量为static类型。</p>
+<p>【例】如下代码所示：</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="keyword">class </span>A{</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> X = 10; <span class="comment">// 去掉static，编译报错。</span></div><div class="line">    <span class="keywordtype">void</span> print(){ std::cout&lt;&lt;<span class="stringliteral">&quot;X=&quot;</span>&lt;&lt;X&lt;&lt;std::endl;}</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]){</div><div class="line">    A a;</div><div class="line">    a.print();</div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

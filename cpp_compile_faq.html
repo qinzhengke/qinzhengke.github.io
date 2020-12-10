@@ -201,7 +201,18 @@ extra qualification</h1>
 passing const as ‘this’ argument discards qualifiers</h1>
 <p>尝试在const引用模式下调用非const函数，编译器为了阻止传入引用对象的改变。</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">class </span>A{</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    A(){}</div><div class="line">    <span class="keywordtype">void</span> func(){</div><div class="line">        printf(<span class="stringliteral">&quot;A.func()\n&quot;</span>);</div><div class="line">        x++;</div><div class="line">    }</div><div class="line">    <span class="keywordtype">void</span> func_const()<span class="keyword"> const </span>{</div><div class="line">        printf(<span class="stringliteral">&quot;A.func_const()\n&quot;</span>);</div><div class="line">    }</div><div class="line">    <span class="keywordtype">void</span> func_const2() <span class="keyword">const</span>;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keywordtype">int</span> x = 0;</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> A::func_const2()<span class="keyword"> const </span>{</div><div class="line">    printf(<span class="stringliteral">&quot;A.func_const2()\n&quot;</span>);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> top_func(<span class="keyword">const</span> A&amp; a){</div><div class="line">     a.func();  <span class="comment">//  编译报错</span></div><div class="line">    a.func_const(); <span class="comment">// 编译成功</span></div><div class="line">    a.func_const2(); <span class="comment">// 编译成功</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    A a;</div><div class="line">    top_func(a);</div><div class="line">}</div></div><!-- fragment --><p>编译结果如下：</p>
-<div class="fragment"><div class="line"> In function &#39;void top_func(const A&amp;)&#39;:</div><div class="line">19:12: error: passing &#39;const A&#39; as &#39;this&#39; argument of &#39;void A::func()&#39; discards qualifiers [-fpermissive]</div></div><!-- fragment --><p>这里顺便提一下，如果成员函数声明和定义分离，那么声明和定义处都需要在"()"后面加入const，这点和static修饰符不一样，static修饰符只能在声明的地方使用。 </p>
+<div class="fragment"><div class="line"> In function &#39;void top_func(const A&amp;)&#39;:</div><div class="line">19:12: error: passing &#39;const A&#39; as &#39;this&#39; argument of &#39;void A::func()&#39; discards qualifiers [-fpermissive]</div></div><!-- fragment --><p>这里顺便提一下，如果成员函数声明和定义分离，那么声明和定义处都需要在"()"后面加入const，这点和static修饰符不一样，static修饰符只能在声明的地方使用。</p>
+<hr/>
+ <h2><a class="anchor" id="unresolved_external_symbol"></a>
+unresolved external symbol？</h2>
+<p>如果这个symbol在源文件里：</p><ul>
+<li>看看这个源文件有没有被加到工程中。</li>
+<li>symbol在源文件中，并且已经添加到了工程，还会报这个错？</li>
+<li>是否使用了看看是不是调用了.c文件，记得用EXTERN C封装，即在c文件函数声明的地方使用</li>
+<li>都是cpp文件或者c文件，或者已经用EXTERN C封装了，还会出错？看看是不是不同源文件字符编码的问题。</li>
+<li>库已经添加到工程，但是仍然报这个错？那就将库的版本和当前编译器版本保持一致，包括平台（x86或者x64）和版本（vc08，vc10，vc12，vc14）以及是否调试（debug和release）。</li>
+<li>以上条件都满足，但在qtcreator中刚添加的函数还是报这个错？那就试着显式地qmake一下，然后再rebuild。 </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

@@ -1,5 +1,6 @@
 var tools =
 [
+    [ "常用工具列表", "tool_list.html", null ],
     [ "操作系统：Linux", "os-linux.html", [
       [ "软件篇", "os-linux.html#软件篇", [
         [ "学习资料", "rfid.html#学习资料", null ],
@@ -17,7 +18,6 @@ var tools =
         [ "查看滚动的log文件", "os-linux.html#查看滚动的log文件", null ],
         [ "busybox", "os-linux.html#busybox", null ],
         [ "script中的source", "os-linux.html#script中的source", null ],
-        [ "磁盘挂载问题", "os-linux.html#磁盘挂载问题", null ],
         [ "无法delete到回收站", "os-linux.html#无法delete到回收站", null ],
         [ "Ubuntu中的apt-get命令", "os-linux.html#Ubuntu中的apt-get命令", null ],
         [ "Ubuntu自带的任务管理器", "os-linux.html#Ubuntu自带的任务管理器", null ],
@@ -39,7 +39,14 @@ var tools =
     ] ],
     [ "Ubuntu操作系统", "os_ubuntu.html", [
       [ "快捷键", "os_ubuntu.html#快捷键", null ],
-      [ "设置自启动", "os_ubuntu.html#设置自启动", null ]
+      [ "设置自启动", "os_ubuntu.html#设置自启动", [
+        [ "磁盘开机自动挂", "os_ubuntu.html#磁盘开机自动挂", null ]
+      ] ]
+    ] ],
+    [ "Docker：开源容器工具", "docker.html", [
+      [ "基于Docker的开发", "docker.html#基于Docker的开发", [
+        [ "Docker容器和宿主机之间共享文件", "docker.html#Docker容器和宿主机之间共享文件", null ]
+      ] ]
     ] ],
     [ "GNOME桌面", "gnome.html", [
       [ "查看gonme版本", "gnome.html#查看gonme版本", null ],
