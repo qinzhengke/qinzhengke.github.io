@@ -71,7 +71,36 @@ var tools =
       [ "github page上MaJax公式没有正确渲染", "doxygen.html#majax_issue", null ],
       [ "boldsymbol和mathbf的区别。", "doxygen.html#boldsymbol_vs_mathbf", null ],
       [ "dfrac vs frac", "doxygen.html#dfrac_vs_frac", null ],
-      [ "生成参考文献", "doxygen.html#生成参考文献", null ]
+      [ "生成参考文献", "doxygen.html#生成参考文献", null ],
+      [ "灵活使用自定义css文件调整细节", "doxygen.html#灵活使用自定义css文件调整细节", [
+        [ "安装Lubuntu注意事项", "os-lubuntu.html#安装Lubuntu注意事项", null ],
+        [ "命令行拷贝文件夹？", "os-windows.html#命令行拷贝文件夹？", null ],
+        [ "命令行删除文件夹", "os-windows.html#命令行删除文件夹", null ],
+        [ "too open", "git.html#permission", null ],
+        [ "commit editor", "git.html#Change", null ],
+        [ "设置本地分支track远程分支", "git.html#设置本地分支track远程分支", null ],
+        [ "git加载私钥", "git.html#git加载私钥", null ],
+        [ "fetch和pull的区别", "git.html#fetch和pull的区别", null ],
+        [ "查看某个文件修改历史", "git.html#git", null ],
+        [ "rejected *** change *** closed", "git.html#git报错：remote", null ],
+        [ "git创建分支后记得尽快commit：", "git.html#git创建分支后记得尽快commit：", null ],
+        [ "推送到远程分支", "git.html#推送到远程分支", null ],
+        [ "删除远程分支", "git.html#删除远程分支", null ],
+        [ "files.", "git.html#untracked", null ],
+        [ "某一个文件到某个commit", "git.html#reset", null ],
+        [ "sync", "git.html#repo", null ],
+        [ "commit", "git.html#cherry-pick一个merge", null ],
+        [ "使用rebase进行分支合并", "git.html#使用rebase进行分支合并", null ],
+        [ "对某个文件撤销改动", "git.html#对某个文件撤销改动", null ],
+        [ "a merge commit", "git.html#cherry-pick", null ],
+        [ "commit", "git.html#向gerrit推送一个merge", null ],
+        [ "update paths and switch to branch xxx at the same time", "git.html#报错：cannot", null ],
+        [ "自动沿用上一次冲突解决策略", "git.html#自动沿用上一次冲突解决策略", null ],
+        [ "调整title的尺寸", "doxygen.html#调整title的尺寸", null ]
+      ] ]
+    ] ],
+    [ "MathJax：公式渲染工具", "mathjax.html", [
+      [ "Doxygen的MathJax本地化", "mathjax.html#Doxygen的MathJax本地化", null ]
     ] ],
     [ "开源办公软件：Libre Office", "libre_office.html", null ],
     [ "其他有用的工具", "useful_tools.html", [
@@ -105,5 +134,8 @@ var tools =
     [ "代码内存检测工具valgrind", "valgrind.html", null ],
     [ "文本流编辑器：sed", "sed.html", [
       [ "查找并删除包含特定单词的行", "sed.html#查找并删除包含特定单词的行", null ]
+    ] ],
+    [ "VMware：目前最好的虚拟机软件", "vmware.html", [
+      [ "Linux虚拟机浏览器如何连接主机proxy服务？", "vmware.html#Linux虚拟机浏览器如何连接主机proxy服务？", null ]
     ] ]
 ];

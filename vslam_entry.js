@@ -5,5 +5,7 @@ var vslam_entry =
     [ "相机和IMU数据的同步", "cam_imu_sync.html", [
       [ "实时估计时间差", "cam_imu_sync.html#实时估计时间差", null ]
     ] ],
+    [ "MSCFK", "msckf.html", null ],
+    [ "MSCFK扩展阅读", "msckf_ext_reading.html", null ],
     [ "vslam简介", "vslam_intro.html", null ]
 ];

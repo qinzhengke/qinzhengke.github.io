@@ -1,29 +1,6 @@
 var vscode =
 [
     [ "基础篇", "vscode.html#基础篇", [
-      [ "安装Lubuntu注意事项", "os-lubuntu.html#安装Lubuntu注意事项", null ],
-      [ "命令行拷贝文件夹？", "os-windows.html#命令行拷贝文件夹？", null ],
-      [ "命令行删除文件夹", "os-windows.html#命令行删除文件夹", null ],
-      [ "too open", "git.html#permission", null ],
-      [ "commit editor", "git.html#Change", null ],
-      [ "设置本地分支track远程分支", "git.html#设置本地分支track远程分支", null ],
-      [ "git加载私钥", "git.html#git加载私钥", null ],
-      [ "fetch和pull的区别", "git.html#fetch和pull的区别", null ],
-      [ "查看某个文件修改历史", "git.html#git", null ],
-      [ "rejected *** change *** closed", "git.html#git报错：remote", null ],
-      [ "git创建分支后记得尽快commit：", "git.html#git创建分支后记得尽快commit：", null ],
-      [ "推送到远程分支", "git.html#推送到远程分支", null ],
-      [ "删除远程分支", "git.html#删除远程分支", null ],
-      [ "files.", "git.html#untracked", null ],
-      [ "某一个文件到某个commit", "git.html#reset", null ],
-      [ "sync", "git.html#repo", null ],
-      [ "commit", "git.html#cherry-pick一个merge", null ],
-      [ "使用rebase进行分支合并", "git.html#使用rebase进行分支合并", null ],
-      [ "对某个文件撤销改动", "git.html#对某个文件撤销改动", null ],
-      [ "a merge commit", "git.html#cherry-pick", null ],
-      [ "commit", "git.html#向gerrit推送一个merge", null ],
-      [ "update paths and switch to branch xxx at the same time", "git.html#报错：cannot", null ],
-      [ "自动沿用上一次冲突解决策略", "git.html#自动沿用上一次冲突解决策略", null ],
       [ "LibreOffice可以插入Latex公式吗？", "libre_office.html#LibreOffice可以插入Latex公式吗？", null ],
       [ ".46版本慢", "libre_office.html#TexMath插件0", null ],
       [ "打开TexMath编辑器报错", "libre_office.html#打开TexMath编辑器报错", null ],
@@ -44,7 +21,8 @@ var vscode =
       [ "vscode单步调试会先自动跳到末尾", "vscode.html#vscode单步调试会先自动跳到末尾", null ],
       [ "如何使用clang-format进行代码格式化？", "vscode.html#如何使用clang-format进行代码格式化？", null ],
       [ "vscode如何给当前project添加包含路径？", "vscode.html#vscode如何给当前project添加包含路径？", null ],
-      [ "vscode如何在系统级别添加包含路径？", "vscode.html#vscode如何在系统级别添加包含路径？", null ]
+      [ "vscode如何在系统级别添加包含路径？", "vscode.html#vscode如何在系统级别添加包含路径？", null ],
+      [ "python调试设置", "vscode.html#python调试设置", null ]
     ] ],
     [ "vscode中的markdown相关的代码片", "vscode_markdown_snippet.html", null ]
 ];

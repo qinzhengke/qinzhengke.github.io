@@ -6,7 +6,7 @@ var programming_debug =
       [ "头文件循环引用", "c_debug_lesson.html#头文件循环引用", null ],
       [ "操作符优先级导致的bug", "c_debug_lesson.html#操作符优先级导致的bug", null ]
     ] ],
-    [ "C++调试问题", "cpp_debug.html", [
+    [ "C++ debug教训", "cpp_debug.html", [
       [ "企图通过memcpy对象进行拷贝操作。", "cpp_debug.html#企图通过memcpy对象进行拷贝操作。", null ],
       [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
       [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],

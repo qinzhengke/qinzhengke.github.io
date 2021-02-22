@@ -18,10 +18,13 @@ var cpp_awesome_lib =
       [ "获取子矩阵", "cpp_lib_eigen.html#获取子矩阵", null ],
       [ "Matrix和C数组之间的转换", "cpp_lib_eigen.html#Matrix和C数组之间的转换", null ],
       [ "auto获取矩阵失效？", "cpp_lib_eigen.html#auto获取矩阵失效？", null ],
+      [ "AngleAxis用于初始化注意事项", "cpp_lib_eigen.html#AngleAxis用于初始化注意事项", null ],
       [ "传参时MatrixNd到MatrixXd的转换", "cpp_lib_eigen.html#传参时MatrixNd到MatrixXd的转换", null ],
       [ "四元数与欧拉角的转换", "cpp_lib_eigen.html#四元数与欧拉角的转换", null ],
       [ "Eigen中四元数到欧拉角的一个一定要注意的问题", "cpp_lib_eigen.html#Eigen中四元数到欧拉角的一个一定要注意的问题", null ],
-      [ "eigen中各种旋转表达之间的转换", "cpp_lib_eigen.html#eigen中各种旋转表达之间的转换", null ]
+      [ "eigen中各种旋转表达之间的转换", "cpp_lib_eigen.html#eigen中各种旋转表达之间的转换", null ],
+      [ "编译报错： no type named Return Type", "cpp_lib_eigen.html#eigen_issue_01", null ],
+      [ "Mat::block()与模板类的组合使用方法", "cpp_lib_eigen.html#block_with_template", null ]
     ] ],
     [ "evpp：奇虎360大神的网络库", "cpp_lib_evpp.html", null ],
     [ "libevent：经典的异步事件框架库", "cpp_lib_libevent.html", [
@@ -42,5 +45,10 @@ var cpp_awesome_lib =
       [ "基本概念", "cpp_lib_vireo.html#基本概念", null ],
       [ "编译问题", "cpp_lib_vireo.html#编译问题", null ],
       [ "放弃", "cpp_lib_vireo.html#放弃", null ]
-    ] ]
+    ] ],
+    [ "VTK：3D可视化库", "cpp_lib_vtk.html", [
+      [ "一个有用的第三方Example网站", "cpp_lib_vtk.html#vtk_useful_example", null ],
+      [ "无用的Example", "cpp_lib_vtk.html#vtk_useless_example", null ]
+    ] ],
+    [ "Date：一个基于chrono的日历库", "cpp_lib_date.html", null ]
 ];

@@ -1,5 +1,8 @@
 var cpp11 =
 [
+    [ "C++11增加初始化方式", "cpp11_initializer.html", [
+      [ "花括号初始化列表", "cpp11_initializer.html#花括号初始化列表", null ]
+    ] ],
     [ "C++的lambda表达式", "cpp11_lambda.html", [
       [ "lambda表达式在什么地方使用？", "cpp11_lambda.html#lambda表达式在什么地方使用？", null ],
       [ "如何将lambda表达式传入template函数？", "cpp11_lambda.html#如何将lambda表达式传入template函数？", null ]
@@ -39,7 +42,8 @@ var cpp11 =
       [ "std::duration", "cpp11_chrono.html#std_duration", null ],
       [ "time_point", "cpp11_chrono.html#time_point", [
         [ "两个time_point相减得到duartion", "cpp11_chrono.html#两个time_point相减得到duartion", null ]
-      ] ]
+      ] ],
+      [ "chrono中的数值字面量（numeric literal）", "cpp11_chrono.html#chrono_numeric_literal", null ]
     ] ],
     [ "关键字constexpr", "cpp11_constexpr.html", [
       [ "如何在类中声明constexpr常量？", "cpp11_constexpr.html#如何在类中声明constexpr常量？", null ]
@@ -47,5 +51,6 @@ var cpp11 =
     [ "C++11中的其他有用特性", "cpp11_others.html", [
       [ "代替 typedef", "cpp11_others.html#using", null ],
       [ "使用constexpr作为类的成员变量", "cpp11_others.html#使用constexpr作为类的成员变量", null ]
-    ] ]
+    ] ],
+    [ "std::ref()函数", "cpp11_std_ref.html", null ]
 ];

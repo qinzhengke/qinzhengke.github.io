@@ -3,10 +3,11 @@ var programming =
     [ "C语言：经典老牌计算机编程语言", "c.html", "c" ],
     [ "C++：青出于蓝，我斑愿称之为最强！", "cpp.html", "cpp" ],
     [ "cmake：C和C++的跨平台构建工具", "cmake.html", [
-      [ ".txt模板", "cmake.html#我的CMakeLists", null ],
+      [ "我的CMakeLists.txt模板", "cmake.html#cmake_template", null ],
       [ "添加目录里所有源文件", "cmake.html#添加目录里所有源文件", null ],
       [ "C++11标准的引用", "cmake.html#cmake_cpp11", null ],
       [ "库文件的一般基本引用方法", "cmake.html#库文件的一般基本引用方法", null ],
+      [ "find_package引用Eigen3", "cmake.html#find_package引用Eigen3", null ],
       [ "链接OpenCV的库", "cmake.html#链接OpenCV的库", null ],
       [ "引用Qt库", "cmake.html#cmake_qt", null ],
       [ "静态链接标准库", "cmake.html#cmake_static_std_lib", null ],

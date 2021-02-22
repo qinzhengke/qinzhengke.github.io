@@ -29,6 +29,7 @@ var c =
     [ "C语言中的修饰符（qualifier）", "c_qualifier.html", [
       [ "const修饰符", "c_qualifier.html#const修饰符", [
         [ "const的常见用法", "c_qualifier.html#const的常见用法", null ],
+        [ "const函数不能返回引用", "c_qualifier.html#const_member_fucntion_return_ref", null ],
         [ "const常量和字面常量（Literal）的区别", "c_qualifier.html#const常量和字面常量（Literal）的区别", null ]
       ] ],
       [ "extern修饰符", "c_qualifier.html#extern修饰符", [
@@ -60,7 +61,9 @@ var c =
       [ "常见链接问题", "c_compile_faq.html#常见链接问题", [
         [ "multiple definition?", "c_compile_faq.html#c_mul_def", null ],
         [ "unresolved external symbol？", "c_compile_faq.html#unresolved_external_symbol", null ],
-        [ "动态库链接静态库报错", "c_compile_faq.html#动态库链接静态库报错", null ]
+        [ "动态库链接静态库报错", "c_compile_faq.html#动态库链接静态库报错", null ],
+        [ "undefined reference to symbol 'pthread_create@GLIBC_2.2.5'", "c_compile_faq.html#cpp_issue_pthread", null ],
+        [ "DSO missing from command line", "c_compile_faq.html#cpp_issue_dso_missing", null ]
       ] ]
     ] ],
     [ "C语言标准库", "c_std.html", [
@@ -89,7 +92,10 @@ var c =
       [ "获取宏的参数个数", "c_macro.html#获取宏的参数个数", null ]
     ] ],
     [ "标准库time.h", "c_time.html", [
-      [ "tm类型与make_time()函数", "c_time.html#tm_make_time", null ]
+      [ "几个概念", "c_time.html#几个概念", null ],
+      [ "tm类型与make_time()函数", "c_time.html#tm_make_time", null ],
+      [ "日期加上秒数得到新的日期", "c_time.html#日期加上秒数得到新的日期", null ],
+      [ "计算两个日期之间的秒数", "c_time.html#计算两个日期之间的秒数", null ]
     ] ],
     [ "Coredump分析", "coredump.html", [
       [ "方法", "coredump.html#方法", null ],

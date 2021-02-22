@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['opencv：经典开源计算机视觉库',['OpenCV：经典开源计算机视觉库',['../cpp_lib_opencv.html',1,'cpp_awesome_lib']]],
-  ['opencv调试问题',['OpenCV调试问题',['../opencv_debug.html',1,'programming_debug']]],
-  ['orb特征',['ORB特征',['../orb_feature.html',1,'feature_entry']]],
-  ['os_2dwindows',['os-windows',['../os-windows.html',1,'tools']]]
+  ['mathjax：公式渲染工具',['MathJax：公式渲染工具',['../mathjax.html',1,'tools']]],
+  ['mscfk',['MSCFK',['../msckf.html',1,'vslam_entry']]],
+  ['mscfk扩展阅读',['MSCFK扩展阅读',['../msckf_ext_reading.html',1,'vslam_entry']]]
 ];

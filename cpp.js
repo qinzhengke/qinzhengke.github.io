@@ -15,6 +15,8 @@ var cpp =
     [ "C++的一些技巧（Idioms）", "cpp_idioms.html", "cpp_idioms" ],
     [ "C++常用库", "cpp_awesome_lib.html", "cpp_awesome_lib" ],
     [ "C++构建常见问题", "cpp_compile_faq.html", [
+      [ "passing ‘const xxx’ as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#discards_qualifiers", null ],
+      [ "No rule to make xxx.cpp 或者 xxx.so", "cpp_compile_faq.html#no_rule_to_make", null ],
       [ "static相关问题", "cpp_compile_faq.html#static相关问题", [
         [ "static类成员变量未定义", "cpp_compile_faq.html#static类成员变量未定义", null ]
       ] ],
@@ -38,7 +40,11 @@ var cpp =
       [ "类成员函数声明和定义处同时使用static修饰", "cpp_compile_faq.html#类成员函数声明和定义处同时使用static修饰", null ],
       [ "类成员函数声明和定义同时使用默认参数", "cpp_compile_faq.html#类成员函数声明和定义同时使用默认参数", null ],
       [ "extra qualification", "cpp_compile_faq.html#extra_qualification", null ],
-      [ "passing const as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#cpp_compile_issue10", null ]
+      [ "passing const as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#cpp_compile_issue10", [
+        [ "error: new types may not be defined in a return type", "cpp_compile_faq.html#cpp_comp_issue_01", null ]
+      ] ],
+      [ "libpthread.so.0: error adding symbols: DSO missing from command line", "cpp_compile_faq.html#pthread_dso_missing", null ],
+      [ "error 'thread' is not a member of 'boost'", "cpp_compile_faq.html#thread_not_member_boost", null ]
     ] ],
     [ "C++与C语言混合编程", "cpp_mix_with_c.html", null ],
     [ "C++运行常见问题", "cpp_run_faq.html", [
@@ -70,7 +76,7 @@ var cpp =
       [ "如何用驼峰命名法命名大写缩写？", "cpp_suggestion.html#如何用驼峰命名法命名大写缩写？", null ],
       [ "header only模式开发效率低！", "cpp_suggestion.html#header_only", null ]
     ] ],
-    [ "C++调试问题", "cpp_debug.html", [
+    [ "C++ debug教训", "cpp_debug.html", [
       [ "企图通过memcpy对象进行拷贝操作。", "cpp_debug.html#企图通过memcpy对象进行拷贝操作。", null ],
       [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
       [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],

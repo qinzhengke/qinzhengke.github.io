@@ -2,7 +2,8 @@ var cpp_oop =
 [
     [ "C++中的类和对象", "cpp_class.html", [
       [ "基类和派生类的构造与析构函数执行顺序是什么？", "cpp_class.html#基类和派生类的构造与析构函数执行顺序是什么？", null ],
-      [ "引用作为类的成员变量", "cpp_class.html#引用作为类的成员变量", null ]
+      [ "引用作为类的成员变量", "cpp_class.html#引用作为类的成员变量", null ],
+      [ "匿名struct和匿名union", "cpp_class.html#匿名struct和匿名union", null ]
     ] ],
     [ "C++中的构造函数与析构函数", "cpp_constructor.html", [
       [ "容器成员变量是否会随着父类的析构而清空？", "cpp_constructor.html#容器成员变量是否会随着父类的析构而清空？", null ]
