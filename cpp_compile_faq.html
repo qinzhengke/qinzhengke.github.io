@@ -219,7 +219,11 @@ libpthread.so.0: error adding symbols: DSO missing from command line</h1>
 error 'thread' is not a member of 'boost'</h1>
 <p>CMakeLists.txt中添加</p>
 <div class="fragment"><div class="line">target_link_library(exe</div><div class="line">        boost_thread</div><div class="line">    )</div></div><!-- fragment --><p>源代码中添加</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;boost/thread.hpp&gt;</span></div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;boost/thread.hpp&gt;</span></div></div><!-- fragment --><h1><a class="anchor" id="error_jump_to_case_label"></a>
+Error: Jump to case label.</h1>
+<p>报错提示：</p>
+<div class="fragment"><div class="line">Error: Jump to case label, crosses initialization of xxx</div></div><!-- fragment --><p>原因，不同的case之间定义相同名称的变量。 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

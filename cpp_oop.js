@@ -6,7 +6,8 @@ var cpp_oop =
       [ "匿名struct和匿名union", "cpp_class.html#匿名struct和匿名union", null ]
     ] ],
     [ "C++中的构造函数与析构函数", "cpp_constructor.html", [
-      [ "容器成员变量是否会随着父类的析构而清空？", "cpp_constructor.html#容器成员变量是否会随着父类的析构而清空？", null ]
+      [ "容器成员变量是否会随着父类的析构而清空？", "cpp_constructor.html#容器成员变量是否会随着父类的析构而清空？", null ],
+      [ "构造函数的参数隐式转换为对象", "cpp_constructor.html#构造函数的参数隐式转换为对象", null ]
     ] ],
     [ "C++中的多态", "cpp_polymorphism.html", [
       [ "C++中的override关键字有什么作用？", "cpp_polymorphism.html#keyword_override", null ],

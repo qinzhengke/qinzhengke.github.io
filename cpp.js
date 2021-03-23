@@ -44,7 +44,8 @@ var cpp =
         [ "error: new types may not be defined in a return type", "cpp_compile_faq.html#cpp_comp_issue_01", null ]
       ] ],
       [ "libpthread.so.0: error adding symbols: DSO missing from command line", "cpp_compile_faq.html#pthread_dso_missing", null ],
-      [ "error 'thread' is not a member of 'boost'", "cpp_compile_faq.html#thread_not_member_boost", null ]
+      [ "error 'thread' is not a member of 'boost'", "cpp_compile_faq.html#thread_not_member_boost", null ],
+      [ "Error: Jump to case label.", "cpp_compile_faq.html#error_jump_to_case_label", null ]
     ] ],
     [ "C++与C语言混合编程", "cpp_mix_with_c.html", null ],
     [ "C++运行常见问题", "cpp_run_faq.html", [
@@ -68,7 +69,8 @@ var cpp =
       [ "非4整数倍尺寸图像存成bmp文件出错？", "cpp_run_faq.html#非4整数倍尺寸图像存成bmp文件出错？", null ],
       [ "多线程启动函数注意局部变量的使用", "cpp_run_faq.html#多线程启动函数注意局部变量的使用", null ],
       [ "eof函数", "cpp_run_faq.html#ifstream", null ],
-      [ "引用不能重新改变对象。", "cpp_run_faq.html#引用不能重新改变对象。", null ]
+      [ "引用不能重新改变对象。", "cpp_run_faq.html#引用不能重新改变对象。", null ],
+      [ "运行时出现链接错误？", "cpp_run_faq.html#运行时出现链接错误？", null ]
     ] ],
     [ "C++一些建议", "cpp_suggestion.html", [
       [ "少用全局变量。", "cpp_suggestion.html#少用全局变量。", null ],

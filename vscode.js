@@ -22,7 +22,8 @@ var vscode =
       [ "如何使用clang-format进行代码格式化？", "vscode.html#如何使用clang-format进行代码格式化？", null ],
       [ "vscode如何给当前project添加包含路径？", "vscode.html#vscode如何给当前project添加包含路径？", null ],
       [ "vscode如何在系统级别添加包含路径？", "vscode.html#vscode如何在系统级别添加包含路径？", null ],
-      [ "python调试设置", "vscode.html#python调试设置", null ]
+      [ "python调试设置", "vscode.html#python调试设置", null ],
+      [ "如何生成c_cpp_properties.json文件？", "vscode.html#vscode_create_c_cpp_prop", null ]
     ] ],
     [ "vscode中的markdown相关的代码片", "vscode_markdown_snippet.html", null ]
 ];

@@ -18,7 +18,8 @@ var cpp11 =
       [ "::bind绑定成员函数和静态成员函数", "cpp11_bind.html#std", [
         [ "bind与function搭配", "cpp11_bind.html#bind与function搭配", null ]
       ] ],
-      [ "std::placeholder", "cpp11_bind.html#std_placeholder", null ]
+      [ "std::placeholder", "cpp11_bind.html#std_placeholder", null ],
+      [ "【坑点】std::bind传入引用“&”失效", "cpp11_bind.html#std_bind_ref", null ]
     ] ],
     [ "C++11中的多线程", "cpp11_thread.html", [
       [ "init阶段和start阶段", "cpp11_thread.html#init阶段和start阶段", null ]

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: 异常（Exception）</title>
+<title>一个普通的笔记本: Protobuf</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('python_exception.html','');});
+$(document).ready(function(){initNavTree('protobuf.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,19 +88,24 @@ $(document).ready(function(){initNavTree('python_exception.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">异常（Exception） </div>  </div>
+<div class="title">Protobuf </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="如何打印更多的异常信息"></a>
-如何打印更多的异常信息</h1>
-<p>使用try-except语句时，默认没有太多的调试信息，这会给代码的调试带来困难，通常我们只能知道某个函数出错了，但是该函数内容很多，问题无从查起。</p>
-<p>为了解决这个问题，我们需要打印更多的信息，直接输出traceback信息是最好的方法。示例代码如下所示，经过a()-&gt;b()-&gt;c()的深层调用，最深层的c()抛出了异常，在最外面接住了，但是从接住的地方看，虽然有一些错误类型的相关信息，但是仍然很难找到抛出错误的地点。</p>
-<div class="fragment"><div class="line">import sys,traceback</div><div class="line"></div><div class="line">def a():</div><div class="line">    return b()</div><div class="line"></div><div class="line">def b():</div><div class="line">    return c()</div><div class="line">    </div><div class="line">def c():</div><div class="line">    return 1/0</div><div class="line">    </div><div class="line">try:</div><div class="line">    print(a())</div><div class="line">except Exception as err:</div><div class="line">    print(&#39;Error:&#39;, err)   # 打印默认信息</div><div class="line">    traceback.print_exc(file=sys.stdout)    # 打印traceback</div></div><!-- fragment --><p>如果不加如打印traceback语句，结果如下：</p>
-<div class="fragment"><div class="line">(&#39;Error:&#39;, ZeroDivisionError(&#39;integer division or modulo by zero&#39;,))</div></div><!-- fragment --><p>如果加入打印traceback语句，则结果变得很漂亮：</p>
-<div class="fragment"><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;app.py&quot;, line 13, in &lt;module&gt;</div><div class="line">    print(a())</div><div class="line">  File &quot;app.py&quot;, line 4, in a</div><div class="line">    return b()</div><div class="line">  File &quot;app.py&quot;, line 7, in b</div><div class="line">    return c()</div><div class="line">  File &quot;app.py&quot;, line 10, in c</div><div class="line">    return 1/0</div><div class="line">ZeroDivisionError: integer division or modulo by zero</div></div><!-- fragment --><h1><a class="anchor" id="try-except块会不会建立新的scope？"></a>
-try-except块会不会建立新的scope？</h1>
-<p>答案是不会的，try-except块中新建的变量都可以在块外部访问。</p>
-<div class="fragment"><div class="line">try:</div><div class="line">    a = 0</div><div class="line">    b = 1/0</div><div class="line">except:</div><div class="line">    print(&#39;Error:&#39;)</div><div class="line">    </div><div class="line">print(a)</div><div class="line">print(b)</div></div><!-- fragment --><p>运行结果 </p><div class="fragment"><div class="line">Error:</div><div class="line">0</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;app.py&quot;, line 8, in &lt;module&gt;</div><div class="line">    print(b)</div><div class="line">NameError: name &#39;b&#39; is not defined</div></div><!-- fragment --><p>如果出现了变量未定义，那是因为程序抛出异常的时候提前退出，有可能变量还没有定义，如上代码所示，b没有定义并不是因为scope的原因，而是“b=1/0”这条语句没有成功执行，b自然也就没有定义。 </p>
+<div class="textblock"><h1><a class="anchor" id="常见问题"></a>
+常见问题</h1>
+<h2><a class="anchor" id="multi_proto_input"></a>
+如何输入多个proto文件？</h2>
+<div class="fragment"><div class="line">protoc --cpp_out=../../protoc --proto_path=./ *.proto</div></div><!-- fragment --><h2><a class="anchor" id="如何读写将基于protobuf描述的streaming文件？"></a>
+如何读写将基于protobuf描述的streaming文件？</h2>
+<p>protobuf本身没有定义数据的边界，如果想要把多块protobuf数据存到同一个文件，则用户必须自行定义一种文件格式，描述每一个protobuf数据的起点和长度。</p>
+<p>参见protobuf官方文档：</p>
+<div class="fragment"><div class="line">Streaming Multiple Messages</div><div class="line"></div><div class="line">If you want to write multiple messages to a single file or stream, it is up to you to keep track of where one message ends and the next begins. The Protocol Buffer wire format is not self-delimiting, so protocol buffer parsers cannot determine where a message ends on their own. The easiest way to solve this problem is to write the size of each message before you write the message itself. When you read the messages back in, you read the size, then read the bytes into a separate buffer, then parse from that buffer. (If you want to avoid copying bytes to a separate buffer, check out the CodedInputStream class (in both C++ and Java) which can be told to limit reads to a certain number of bytes.)</div></div><!-- fragment --><blockquote class="doxtable">
+<p><a href="https://developers.google.com/protocol-buffers/docs/techniques">https://developers.google.com/protocol-buffers/docs/techniques</a> </p>
+</blockquote>
+<p>基于protobuf的streaming类型文件的相关设计有一个专门的词汇来描述：“length-delimiting messages”，或者“delimited streaming format”</p>
+<blockquote class="doxtable">
+<p><a href="https://medium.com/@seb.nyberg/length-delimited-protobuf-streams-a39ebc4a4565">https://medium.com/@seb.nyberg/length-delimited-protobuf-streams-a39ebc4a4565</a> </p>
+</blockquote>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -108,7 +113,7 @@ try-except块会不会建立新的scope？</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="python.html">Python：人生苦短，我用Pyhton！</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

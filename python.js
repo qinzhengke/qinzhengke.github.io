@@ -26,6 +26,10 @@ var python =
     ] ],
     [ "JSON", "python_json.html", null ],
     [ "异常（Exception）", "python_exception.html", [
-      [ "如何打印更多的异常信息", "python_exception.html#如何打印更多的异常信息", null ]
+      [ "如何打印更多的异常信息", "python_exception.html#如何打印更多的异常信息", null ],
+      [ "try-except块会不会建立新的scope？", "python_exception.html#try-except块会不会建立新的scope？", null ]
+    ] ],
+    [ "反射（reflection）", "python_reflection.html", [
+      [ "如何遍历类中的成员变量？", "python_reflection.html#如何遍历类中的成员变量？", null ]
     ] ]
 ];

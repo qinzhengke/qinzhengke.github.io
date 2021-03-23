@@ -1,7 +1,6 @@
 var cpp_idioms =
 [
     [ "简介", "cpp_idioms.html#简介", null ],
-    [ "目录", "cpp_idioms.html#目录", null ],
     [ "技巧：Pointer to Implementation", "cpp_pimpl.html", [
       [ "实现", "cpp_pimpl.html#实现", null ],
       [ "实现PImpl细节", "cpp_pimpl.html#实现PImpl细节", null ]

@@ -16,6 +16,7 @@ var searchData=
   ['c语言中的类型',['C语言中的类型',['../c_types.html',1,'c']]],
   ['cmake：c和c_2b_2b的跨平台构建工具',['cmake：C和C++的跨平台构建工具',['../cmake.html',1,'programming']]],
   ['cmake调试问题',['cmake调试问题',['../cmake_debug.html',1,'programming_debug']]],
+  ['cmakelists_2etxt模板',['CMakeLists.txt模板',['../cmake_template.html',1,'cmake']]],
   ['coredump分析',['Coredump分析',['../coredump.html',1,'c']]],
   ['c_2b_2b：青出于蓝，我斑愿称之为最强！',['C++：青出于蓝，我斑愿称之为最强！',['../cpp.html',1,'programming']]],
   ['c_2b_2b11',['C++11',['../cpp11.html',1,'cpp']]],
