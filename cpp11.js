@@ -1,7 +1,8 @@
 var cpp11 =
 [
     [ "C++11增加初始化方式", "cpp11_initializer.html", [
-      [ "花括号初始化列表", "cpp11_initializer.html#花括号初始化列表", null ]
+      [ "花括号初始化列表", "cpp11_initializer.html#花括号初始化列表", null ],
+      [ "List Initialization", "cpp11_initializer.html#list_init_narrow", null ]
     ] ],
     [ "C++的lambda表达式", "cpp11_lambda.html", [
       [ "lambda表达式在什么地方使用？", "cpp11_lambda.html#lambda表达式在什么地方使用？", null ],

@@ -1,4 +1,4 @@
-var cv =
+var computer_vision =
 [
     [ "图像特征点", "feature_entry.html", "feature_entry" ],
     [ "视觉标定(calibration)", "calibration.html", "calibration" ],

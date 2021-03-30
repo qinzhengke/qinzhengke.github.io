@@ -34,6 +34,7 @@ var programming =
       [ "常见问题", "protobuf.html#常见问题", [
         [ "如何输入多个proto文件？", "protobuf.html#multi_proto_input", null ],
         [ "如何读写将基于protobuf描述的streaming文件？", "protobuf.html#如何读写将基于protobuf描述的streaming文件？", null ]
-      ] ]
+      ] ],
+      [ ".h和pb.cc", "protobuf.html#如何在cmake中自动执行protoc生成pb", null ]
     ] ]
 ];

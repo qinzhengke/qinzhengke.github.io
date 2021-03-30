@@ -86,6 +86,13 @@ var cpp =
       [ "　初始化的重要性", "cpp_debug.html#　初始化的重要性", null ],
       [ "定义函数时命名空间使用", "cpp_debug.html#定义函数时命名空间使用", null ]
     ] ],
+    [ "Symbol（符号）", "cpp_symbol.html", [
+      [ "什么是符号？", "cpp_symbol.html#什么是符号？", null ],
+      [ "为什么要了解符号？", "cpp_symbol.html#为什么要了解符号？", null ],
+      [ "用什么工具查看符号？", "cpp_symbol.html#用什么工具查看符号？", null ],
+      [ "一个空的cc文件对应的symbol", "cpp_symbol.html#一个空的cc文件对应的symbol", null ],
+      [ "类成员函数的实现和声明放到一起", "cpp_symbol.html#类成员函数的实现和声明放到一起", null ]
+    ] ],
     [ "基于unordered_map的稀疏矩阵的实现", "sparse_matrix.html", [
       [ "unordered_map", "sparse_matrix.html#unordered_map", null ]
     ] ],

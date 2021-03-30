@@ -1,59 +1,10 @@
 var tools =
 [
     [ "常用工具列表", "tool_list.html", null ],
-    [ "操作系统：Linux", "os-linux.html", [
-      [ "软件篇", "os-linux.html#软件篇", [
-        [ "学习资料", "rfid.html#学习资料", null ],
-        [ "如何非阻塞运行gui程序？", "os-linux.html#如何非阻塞运行gui程序？", null ],
-        [ "如何查看目录和文件占用磁盘大小？", "os-linux.html#如何查看目录和文件占用磁盘大小？", null ],
-        [ "如何查看哪些端口号被监听？", "os-linux.html#如何查看哪些端口号被监听？", null ],
-        [ "ls工具如何显示文件的全路径？", "os-linux.html#ls工具如何显示文件的全路径？", null ],
-        [ "如何查看文件的后面n行？", "os-linux.html#如何查看文件的后面n行？", null ],
-        [ "如何循环执行某个命令？", "os-linux.html#如何循环执行某个命令？", null ],
-        [ "-s 命令无效？", "os-linux.html#ln", null ],
-        [ "find命令", "os-linux.html#find命令", null ],
-        [ "+ rm 命令", "os-linux.html#find", null ],
-        [ "几种Linux发送网络包的命令", "os-linux.html#几种Linux发送网络包的命令", null ],
-        [ "Linux上环境变量的配置", "os-linux.html#Linux上环境变量的配置", null ],
-        [ "查看滚动的log文件", "os-linux.html#查看滚动的log文件", null ],
-        [ "busybox", "os-linux.html#busybox", null ],
-        [ "script中的source", "os-linux.html#script中的source", null ],
-        [ "无法delete到回收站", "os-linux.html#无法delete到回收站", null ],
-        [ "Ubuntu中的apt-get命令", "os-linux.html#Ubuntu中的apt-get命令", null ],
-        [ "Ubuntu自带的任务管理器", "os-linux.html#Ubuntu自带的任务管理器", null ],
-        [ "修改Linux的root密码", "os-linux.html#修改Linux的root密码", null ],
-        [ "ssh完整登录命令（账户、主机、端口都有）", "os-linux.html#ssh完整登录命令（账户、主机、端口都有）", null ],
-        [ "常用软件列表", "os-linux.html#常用软件列表", null ],
-        [ "Ubuntu下安装Shadowsocks", "os-linux.html#Ubuntu下安装Shadowsocks", null ],
-        [ "Ubuntu下安装Qt", "os-linux.html#Ubuntu下安装Qt", null ],
-        [ "Linux上软件源码编译通用方法", "os-linux.html#Linux上软件源码编译通用方法", null ],
-        [ "给Ubuntu系统安装宋体字体", "os-linux.html#给Ubuntu系统安装宋体字体", null ],
-        [ "中文输入法安装", "os-linux.html#中文输入法安装", null ],
-        [ "Ubuntu中的Apt-get命令", "os-linux.html#Ubuntu中的Apt-get命令", null ],
-        [ "flameshot-Ubuntu下一个超强截图工具", "os-linux.html#flameshot-Ubuntu下一个超强截图工具", null ]
-      ] ],
-      [ "搜狗输入法切换全角半角以及中英标点符号", "os-linux.html#搜狗输入法切换全角半角以及中英标点符号", null ],
-      [ "启用ssh服务", "os-linux.html#启用ssh服务", null ],
-      [ "使用scp发送文件", "os-linux.html#使用scp发送文件", null ],
-      [ "根据进程的名称来kill", "os-linux.html#根据进程的名称来kill", null ]
-    ] ],
-    [ "Ubuntu操作系统", "os_ubuntu.html", [
-      [ "快捷键", "os_ubuntu.html#快捷键", null ],
-      [ "设置自启动", "os_ubuntu.html#设置自启动", [
-        [ "磁盘开机自动挂", "os_ubuntu.html#磁盘开机自动挂", null ]
-      ] ]
-    ] ],
-    [ "Docker：开源容器工具", "docker.html", [
-      [ "基于Docker的开发", "docker.html#基于Docker的开发", [
-        [ "Docker容器和宿主机之间共享文件", "docker.html#Docker容器和宿主机之间共享文件", null ]
-      ] ]
-    ] ],
     [ "GNOME桌面", "gnome.html", [
       [ "查看gonme版本", "gnome.html#查看gonme版本", null ],
       [ "安装gnome插件", "gnome.html#安装gnome插件", null ]
     ] ],
-    [ "Lubuntu", "os-lubuntu.html", null ],
-    [ "os-windows", "os-windows.html", null ],
     [ "版本管理工具：git", "git.html", [
       [ "如何删除submodule", "git.html#如何删除submodule", null ]
     ] ],
@@ -73,9 +24,7 @@ var tools =
       [ "dfrac vs frac", "doxygen.html#dfrac_vs_frac", null ],
       [ "生成参考文献", "doxygen.html#生成参考文献", null ],
       [ "灵活使用自定义css文件调整细节", "doxygen.html#灵活使用自定义css文件调整细节", [
-        [ "安装Lubuntu注意事项", "os-lubuntu.html#安装Lubuntu注意事项", null ],
-        [ "命令行拷贝文件夹？", "os-windows.html#命令行拷贝文件夹？", null ],
-        [ "命令行删除文件夹", "os-windows.html#命令行删除文件夹", null ],
+        [ "学习资料", "rfid.html#学习资料", null ],
         [ "too open", "git.html#permission", null ],
         [ "commit editor", "git.html#Change", null ],
         [ "设置本地分支track远程分支", "git.html#设置本地分支track远程分支", null ],
@@ -135,7 +84,9 @@ var tools =
     [ "文本流编辑器：sed", "sed.html", [
       [ "查找并删除包含特定单词的行", "sed.html#查找并删除包含特定单词的行", null ]
     ] ],
-    [ "VMware：目前最好的虚拟机软件", "vmware.html", [
-      [ "Linux虚拟机浏览器如何连接主机proxy服务？", "vmware.html#Linux虚拟机浏览器如何连接主机proxy服务？", null ]
+    [ "谷歌表格（Google Sheets）", "google_sheets.html", [
+      [ "使用GOOGLEFINANCE", "google_sheets.html#使用GOOGLEFINANCE", null ],
+      [ "使用CRYPTOFINANCE", "google_sheets.html#使用CRYPTOFINANCE", null ],
+      [ "在html中引入谷歌表格", "google_sheets.html#在html中引入谷歌表格", null ]
     ] ]
 ];
