@@ -4,6 +4,7 @@ var os_ubuntu =
     [ "设置自启动", "os_ubuntu.html#设置自启动", [
       [ "磁盘开机自动挂", "os_ubuntu.html#磁盘开机自动挂", null ]
     ] ],
+    [ "ubuntu18.04卡在登录界面，鼠标动不了", "os_ubuntu.html#ubuntu_issue_stuck", null ],
     [ "Linux", "os_linux.html", [
       [ "软件篇", "os_linux.html#软件篇", [
         [ "如何非阻塞运行gui程序？", "os_linux.html#如何非阻塞运行gui程序？", null ],

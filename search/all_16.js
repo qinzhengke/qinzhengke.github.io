@@ -1,6 +1,7 @@
 var searchData=
 [
   ['相机和imu数据的同步',['相机和IMU数据的同步',['../cam_imu_sync.html',1,'vslam_entry']]],
+  ['现代cmake',['现代cmake',['../cmake_others.html',1,'cmake']]],
   ['结合apollo源代码来理解c_2b_2b的工厂模式',['结合Apollo源代码来理解C++的工厂模式',['../cpp_factory_mode.html',1,'cpp_design_pattern']]],
   ['版本管理工具：git',['版本管理工具：git',['../git.html',1,'tools']]],
   ['矩阵论基础',['矩阵论基础',['../matrix_entry.html',1,'math']]],

@@ -19,6 +19,7 @@ var programming_debug =
       [ "VideoWriter无法打开文件", "opencv_debug.html#VideoWriter无法打开文件", null ]
     ] ],
     [ "cmake调试问题", "cmake_debug.html", [
+      [ "CMakeLists.txt误定义了宏", "cmake_debug.html#cmake_define", null ],
       [ "单步调试自动调到程序结束", "cmake_debug.html#单步调试自动调到程序结束", null ]
     ] ]
 ];

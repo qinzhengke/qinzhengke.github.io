@@ -3,6 +3,7 @@ var zk_note =
     [ "数学基础（Mathematics Fundamental）", "math.html", "math" ],
     [ "数据结构与算法（Data Structures and Algorightms）", "ds_algorithm.html", null ],
     [ "估计理论（Estimation Theory）", "estimation_theory_entry.html", "estimation_theory_entry" ],
+    [ "数据关联（Data Association）", "data_association.html", "data_association" ],
     [ "计算机视觉（Computer Vision）", "computer_vision.html", "computer_vision" ],
     [ "点云相关算法（Point Cloud based Algorithms）", "point_cloud.html", "point_cloud" ],
     [ "多传感器信息融合（Multiple Sensor Information Fusion）", "msif_intro.html", "msif_intro" ],

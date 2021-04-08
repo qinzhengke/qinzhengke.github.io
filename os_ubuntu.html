@@ -112,8 +112,18 @@ $(document).ready(function(){initNavTree('os_ubuntu.html','');});
 <p>Step 2: 编辑fstab文件</p>
 <div class="fragment"><div class="line">sudo vim /etc/fstab</div></div><!-- fragment --><p>在最后一行加入如下配置：</p>
 <div class="fragment"><div class="line">UUID=xxxxxxx       /media/Work/    auto    defaults 0       2</div></div><!-- fragment --><p>【注意】“defaults”值不要拼错了，有“s”，最后一个参数要填“2”，表示普通分区，并非Linux启动分区，这两设置不对，有可能无法开机。</p>
-<p>【注意】如果错误设置无法开，不用惊慌，只要在Ubuntu启动界面，进入recovery模式，然后进入root模式，使用vim编辑/etc/fstab文件即可。 </p>
-</div></div><!-- contents -->
+<p>【注意】如果错误设置无法开，不用惊慌，只要在Ubuntu启动界面，进入recovery模式，然后进入root模式，使用vim编辑/etc/fstab文件即可。</p>
+<h1><a class="anchor" id="ubuntu_issue_stuck"></a>
+ubuntu18.04卡在登录界面，鼠标动不了</h1>
+<p>又遇到一个坑点，重启后卡在登录界面，鼠标和键盘没有响应，界面本身是没有卡死的，因为界面上的时间会发生变化。</p>
+<p>网上的一个解决方法，也不知道原理，不想探究了。</p>
+<ol type="1">
+<li>先回到操作系统选择界面，选择recovery模式登录</li>
+<li>recovery模式默认不开网络，需要在recovery界面选择“enable network”</li>
+<li>选择“root”，进入系统。</li>
+<li>输入以下命令</li>
+</ol>
+<div class="fragment"><div class="line">sudo apt install xserver-xorg-input-all</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

@@ -18,9 +18,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "aerospace_probe.html",
-"cpp11_lambda.html#如何将lambda表达式传入template函数？",
-"cpp_run_faq.html#system_work_dir",
-"os_ubuntu.html#磁盘开机自动挂"
+"cpp11_initializer.html#花括号初始化列表",
+"cpp_run_faq.html#fabs出错？",
+"os_linux.html#根据进程的名称来kill"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
