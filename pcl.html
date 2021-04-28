@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: 视频库Vireo</title>
+<title>一个普通的笔记本: Point Cloud Library（PCL）</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('cpp_lib_vireo.html','');});
+$(document).ready(function(){initNavTree('pcl.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,29 +88,39 @@ $(document).ready(function(){initNavTree('cpp_lib_vireo.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">视频库Vireo </div>  </div>
+<div class="title">Point Cloud Library（PCL） </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="介绍"></a>
-介绍</h1>
-<p>Vireo是Twitter团队开发维护的一个轻量级的、通用的视频处理库，基于C++11提供API接口。</p>
-<p>【问题】为什么不使用ffmpeg？</p>
-<p>ffmpeg确实是一个经典的代码库，而且支持的视频格式种类很多。 但是ffmpeg只提供C语言的API，而且在示例代码中使用goto，这让我不太喜欢。 相比之下，vireo提供了基于C++11的API和示例程序，更morden一些，一边使用vireo一边实战C++11，岂不美哉？ 另外，vireo是Twitter团队开发维护的，同时被Github Awesome C++ project收录，质量应该是有保障的。</p>
-<p>【问题】为什么不用OpenCV？</p>
-<p>OpenCV读视频那完全不是主业，只是为了方便自身处理以视频作为来源的数据。 视频格式支持是较少的，而且不支持音频等。 并且OpenCV还是太重了，用起来不够短小精悍。</p>
-<h1><a class="anchor" id="基本概念"></a>
-基本概念</h1>
-<p><b>demuxing</b> demuxing是demultiplexing的缩写，是指把包含多部分的视频给读取出来。 注意，一个movie文件包含了视频、音频、字幕等等。 不能先入为主的认为moive就只包含图像，movie的读取函数就应该直接得到图像。</p>
-<h1><a class="anchor" id="编译问题"></a>
-编译问题</h1>
-<p>依赖lsmash库，lsmash库本身configure时需要加入参数“&ndash;enable-shared”，如下代码所示</p>
-<div class="fragment"><div class="line">cd lsmash</div><div class="line">./configure --enable-shared</div></div><!-- fragment --><p>否则编译会出现以下问题， </p><div class="fragment"><div class="line">/usr/bin/ld: //usr/local/lib/liblsmash.a(dts.o): relocation R_X86_64_PC32 against symbol `lsmash_remove_dts_reserved_box&#39; can not be used when making a shared object; recompile with -fPIC</div></div><!-- fragment --><p>【问题】</p>
-<div class="fragment"><div class="line">./.libs/libvireo.so: undefined reference to `mp4a_export_AudioSpecificConfig&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_setup_parser&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_cleanup_parser&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_parse_sps&#39;</div></div><!-- fragment --><h1><a class="anchor" id="放弃"></a>
-放弃</h1>
-<p>真 - 从入门到放弃</p>
-<p>vireo和它的依赖lsmash都使用autoconf这些linux平台特有的构建工具，而且高度依赖gcc版本和linux发行版。</p>
-<p>想要解决问题2，需要特定的gcc和linux发行版。</p>
-<p>跨linux版本都出现问题，更别说跨平台了，放弃。 </p>
+<div class="textblock"><h1><a class="anchor" id="pcl_trouble_shooting"></a>
+Trouble Shooting</h1>
+<h2><a class="anchor" id=""></a>
+</h2>
+<p>编译PCL的时候，其依赖项必须指定特定版本，太旧或者太新都会导致编译报错。显然PCL代码兼容性不是很好。</p>
+<p>可用的PCL与VTK版本组合：</p>
+<ul>
+<li>PCL v1.8.1 + VTK v7.1.1 + boost 1.64</li>
+</ul>
+<p>失败的PCL与VTK版本组合：</p>
+<ul>
+<li>PCL v1.8.1 + VTK v8.2，缺少vtkMapper::ImmediateModeRenderingOn()方法。</li>
+<li>PCL v1.9 + VTK v9.0.1，ContextRenderingOpenGL not found。</li>
+</ul>
+<h2><a class="anchor" id="pcl_context_render"></a>
+1.11编译出现ContextRenderingOpenGL not found</h2>
+<p>v1.11不能依赖太新的VTK，截止此笔记写下的时间，VTK有两大最新版本，9.0和8.2，其中9.0对接口做了较多改动，PCL1.11并未兼容，建议仍然使用VTK8.2。</p>
+<h2><a class="anchor" id="vtkMapper"></a>
+‘class vtkMapper’ has no member named ‘ImmediateModeRenderingOn’</h2>
+<p>vtk 8.2版本移除了ImmediateModeRenderingOn接口</p>
+<h2><a class="anchor" id="pcl_random_gen"></a>
+编译1.8版本 no matching function for call to random_generator_pure</h2>
+<p>octree_disk_container.hpp:77:36: error: no matching function for call to ‘boost::uuids::random_generator_pure::random_generator_pure(boost::random::mt19937*)</p>
+<p>boost版本降级到1.64</p>
+<h2><a class="anchor" id="内存溢出导致编译报错"></a>
+内存溢出导致编译报错</h2>
+<p>平行编译的时候，job数不要定义得太多，否则内存溢出会导致编译失败，“make -j4”就很容易让内存占用达到16G。</p>
+<h2><a class="anchor" id="pcl_cmake_location"></a>
+编译好后的PCLConfig.cmake在哪里？</h2>
+<p>和其他库不太一样，“make install”后cmake安装默认路径在“/usr/local/share” </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

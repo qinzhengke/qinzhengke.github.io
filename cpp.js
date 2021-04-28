@@ -1,5 +1,42 @@
 var cpp =
 [
+    [ "C++构建报错合集", "cpp_build_errors.html", [
+      [ "编译篇", "cpp_build_errors.html#编译篇", [
+        [ "No rule to make xxx.cpp 或者 xxx.so", "cpp_build_errors.html#no_rule_to_make", null ],
+        [ "passing ‘const xxx’ as ‘this’ argument discards qualifiers", "cpp_build_errors.html#discards_qualifiers", null ]
+      ] ],
+      [ "will always overflow destination buffer.", "cpp_build_errors.html#memcpy_overflow", null ],
+      [ "Attempting to refer a deleted function", "cpp_build_errors.html#ref_deleted_func", [
+        [ "Template with C linkage", "cpp_build_errors.html#template_c_linkage", null ]
+      ] ],
+      [ "request for member xxx in something not a structure or union", "cpp_build_errors.html#request_for_member", null ],
+      [ "extra qualification", "cpp_build_errors.html#extra_qualification", null ],
+      [ "Error: Jump to case label.", "cpp_build_errors.html#error_jump_to_case_label", [
+        [ "error: new types may not be defined in a return type", "cpp_build_errors.html#cpp_comp_issue_01", null ],
+        [ "undefined reference to `vtable for xxx'", "cpp_build_errors.html#undefined_vtable", null ],
+        [ "'xxx' does not name a type", "cpp_build_errors.html#does_not_name_type", null ],
+        [ "error: expected class-name before ‘{’ token", "cpp_build_errors.html#expect_class_name", null ],
+        [ "error: invalid new-expression of abstract class type ‘xxx’", "cpp_build_errors.html#invalid_new_abstract", null ],
+        [ "error: invalid operands of types ‘<unresolved overloaded function type>’ and ‘int’ to binary ‘operator<’", "cpp_build_errors.html#invalid_operand", null ],
+        [ "error: request for member ‘x’ in ‘yyy’, which is of non-class type ‘zzz’", "cpp_build_errors.html#non_class_type", null ],
+        [ "error: lvalue required as left operand of assignment", "cpp_build_errors.html#lvalue_operand", null ],
+        [ "cannot bind non-const lvalue reference of type ‘int&’ to an rvalue of type ‘int’", "cpp_build_errors.html#lvalue_bind", null ],
+        [ "error: ‘setX’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]", "cpp_build_errors.html#no_declar", null ],
+        [ "capture of non-variable <name>", "cpp_build_errors.html#cap_non_var", null ]
+      ] ],
+      [ "链接篇", "cpp_build_errors.html#链接篇", [
+        [ "undefined reference to `xxx'", "cpp_build_errors.html#cpp_undefined_reference", null ],
+        [ "error LNK2019: unresolved external symbol \"xxx\"", "cpp_build_errors.html#unresolved_symbol", null ],
+        [ "multiple definition of `xxx'", "cpp_build_errors.html#cpp_multiple_def", null ]
+      ] ],
+      [ "libpthread.so.0: error adding symbols: DSO missing from command line", "cpp_build_errors.html#pthread_dso_missing", null ],
+      [ "error 'thread' is not a member of 'boost'", "cpp_build_errors.html#thread_not_member_boost", [
+        [ "undefined reference to `类名::count'", "cpp_build_errors.html#undefined_static", null ]
+      ] ],
+      [ "运行篇", "cpp_build_errors.html#运行篇", [
+        [ "terminate called after throwing an instance of 'std::bad_alloc'", "cpp_build_errors.html#bad_alloc", null ]
+      ] ]
+    ] ],
     [ "C++中的修饰符(qualifier)", "cpp_qualifier.html", [
       [ "关键字", "cpp_qualifier.html#extern", [
         [ "引用另外一个文件的变量或者函数", "cpp_qualifier.html#引用另外一个文件的变量或者函数", null ],
@@ -13,39 +50,22 @@ var cpp =
     [ "C++11", "cpp11.html", "cpp11" ],
     [ "设计模式（Design Pattern）", "cpp_design_pattern.html", "cpp_design_pattern" ],
     [ "C++的一些技巧（Idioms）", "cpp_idioms.html", "cpp_idioms" ],
-    [ "C++常用库", "cpp_awesome_lib.html", "cpp_awesome_lib" ],
     [ "C++构建常见问题", "cpp_compile_faq.html", [
-      [ "passing ‘const xxx’ as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#discards_qualifiers", null ],
-      [ "No rule to make xxx.cpp 或者 xxx.so", "cpp_compile_faq.html#no_rule_to_make", null ],
-      [ "static相关问题", "cpp_compile_faq.html#static相关问题", [
-        [ "static类成员变量未定义", "cpp_compile_faq.html#static类成员变量未定义", null ]
-      ] ],
-      [ "链接的时候重复定义", "cpp_compile_faq.html#链接的时候重复定义", null ],
       [ "系统limit文件报错？", "cpp_compile_faq.html#系统limit文件报错？", null ],
       [ "添加标准头文件就会报错？", "cpp_compile_faq.html#添加标准头文件就会报错？", null ],
       [ "namespace语法错误？", "cpp_compile_faq.html#namespace语法错误？", null ],
-      [ "memcpy报出 will always overflow destination buffer.", "cpp_compile_faq.html#memcpy_overflow", null ],
       [ "枚举变量++操作不支持？", "cpp_compile_faq.html#enum_plusplus", null ],
-      [ "const对象不能调用非const方法？", "cpp_compile_faq.html#const对象不能调用非const方法？", null ],
       [ "_Bool类型不能用？", "cpp_compile_faq.html#_Bool类型不能用？", null ],
       [ "C语言和C++混用的常见问题？", "cpp_compile_faq.html#c_with_cpp", null ],
-      [ "编译错误: Attempting to refer a deleted function", "cpp_compile_faq.html#ref_deleted_func", null ],
       [ "TCHAR问题？", "cpp_compile_faq.html#cpp_TCHAR", null ],
       [ "symbol！", "cpp_compile_faq.html#函数明明存在却报unresolved", null ],
       [ "头文件不要定义变量！", "cpp_compile_faq.html#头文件不要定义变量！", null ],
       [ "在头文件中定义函数一定要使用inline！", "cpp_compile_faq.html#在头文件中定义函数一定要使用inline！", null ],
       [ "临时变量无法引用", "cpp_compile_faq.html#临时变量无法引用", null ],
-      [ "request for member xxx in something not a structure or union", "cpp_compile_faq.html#request_for_member", null ],
       [ "passing ... as 'this' argument ...  discards qualifiers", "cpp_compile_faq.html#const_issue", null ],
       [ "类成员函数声明和定义处同时使用static修饰", "cpp_compile_faq.html#类成员函数声明和定义处同时使用static修饰", null ],
       [ "类成员函数声明和定义同时使用默认参数", "cpp_compile_faq.html#类成员函数声明和定义同时使用默认参数", null ],
-      [ "extra qualification", "cpp_compile_faq.html#extra_qualification", null ],
-      [ "passing const as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#cpp_compile_issue10", [
-        [ "error: new types may not be defined in a return type", "cpp_compile_faq.html#cpp_comp_issue_01", null ]
-      ] ],
-      [ "libpthread.so.0: error adding symbols: DSO missing from command line", "cpp_compile_faq.html#pthread_dso_missing", null ],
-      [ "error 'thread' is not a member of 'boost'", "cpp_compile_faq.html#thread_not_member_boost", null ],
-      [ "Error: Jump to case label.", "cpp_compile_faq.html#error_jump_to_case_label", null ]
+      [ "passing const as ‘this’ argument discards qualifiers", "cpp_compile_faq.html#cpp_compile_issue10", null ]
     ] ],
     [ "C++与C语言混合编程", "cpp_mix_with_c.html", null ],
     [ "C++运行常见问题", "cpp_run_faq.html", [

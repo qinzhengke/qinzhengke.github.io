@@ -91,7 +91,11 @@ $(document).ready(function(){initNavTree('cpp_file_io.html','');});
 <div class="title">C++文件IO </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="cpp_fstream_transistion"></a>
+<div class="textblock"><h1><a class="anchor" id="使用stream来输出浮点数值"></a>
+使用stream来输出浮点数值</h1>
+<p>默认只输出前6位有效数字，在数值较大且精度要求较高的场景，会出现问题，要记住。</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="keywordtype">int</span> main(){</div><div class="line">    <span class="keywordtype">double</span> x = 12345678.1234;</div><div class="line">    printf(<span class="stringliteral">&quot;printf(x)=%f\n&quot;</span>, x);</div><div class="line">    std::cout&lt;&lt;<span class="stringliteral">&quot;cout(x)&quot;</span>&lt;&lt;x&lt;&lt;std::endl;</div><div class="line">}</div></div><!-- fragment --><p>运行结果：</p>
+<div class="fragment"><div class="line">printf(x)=12345678.123400</div><div class="line">cout(x)1.23457e+07</div></div><!-- fragment --><h1><a class="anchor" id="cpp_fstream_transistion"></a>
 fstream的传参</h1>
 <p>如果以值传递的方式传递fstream对象，编译器会报错，这是因为fstream没有拷贝构造函数，无法对其进行复制。 是不是有点熟悉？这就是传说中的单例模式么？</p>
 <p>可以使用引用的方式传递fstream。</p>

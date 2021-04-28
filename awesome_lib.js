@@ -1,7 +1,8 @@
-var cpp_awesome_lib =
+var awesome_lib =
 [
     [ "标准库的后备军：Boost", "cpp_boost.html", [
       [ "安装方法", "cpp_boost.html#安装方法", null ],
+      [ "编译方法", "cpp_boost.html#编译方法", null ],
       [ "cmake中的使用方法", "cpp_boost.html#cmake中的使用方法", null ]
     ] ],
     [ "OpenCV：经典开源计算机视觉库", "cpp_lib_opencv.html", [
@@ -17,7 +18,7 @@ var cpp_awesome_lib =
       [ "矩阵的初始化（包括全零阵、单位阵）", "cpp_lib_eigen.html#矩阵的初始化（包括全零阵、单位阵）", null ],
       [ "获取子矩阵", "cpp_lib_eigen.html#获取子矩阵", null ],
       [ "Matrix和C数组之间的转换", "cpp_lib_eigen.html#Matrix和C数组之间的转换", null ],
-      [ "auto获取矩阵失效？", "cpp_lib_eigen.html#auto获取矩阵失效？", null ],
+      [ "使用auto定义Eigen相关的变量得到右值？", "cpp_lib_eigen.html#eigen_auto", null ],
       [ "AngleAxis用于初始化注意事项", "cpp_lib_eigen.html#AngleAxis用于初始化注意事项", null ],
       [ "传参时MatrixNd到MatrixXd的转换", "cpp_lib_eigen.html#传参时MatrixNd到MatrixXd的转换", null ],
       [ "四元数与欧拉角的转换", "cpp_lib_eigen.html#四元数与欧拉角的转换", null ],
@@ -48,7 +49,24 @@ var cpp_awesome_lib =
     ] ],
     [ "VTK：3D可视化库", "cpp_lib_vtk.html", [
       [ "一个有用的第三方Example网站", "cpp_lib_vtk.html#vtk_useful_example", null ],
-      [ "无用的Example", "cpp_lib_vtk.html#vtk_useless_example", null ]
+      [ "无用的Example", "cpp_lib_vtk.html#vtk_useless_example", null ],
+      [ "Trouble Shooting", "cpp_lib_vtk.html#vtk_trouble_shooting", [
+        [ "evpp库如何在设置回调函数时输入用户参数？", "cpp_lib_evpp.html#evpp_callback", null ],
+        [ "问题：", "cpp_lib_evpp.html#问题：", null ],
+        [ "解决方法：", "cpp_lib_evpp.html#解决方法：", null ],
+        [ "如何获取sockect_fd？", "cpp_lib_evpp.html#如何获取sockect_fd？", null ],
+        [ "find_package寻找gtest", "gtest.html#find_package寻找gtest", null ],
+        [ "X11_Xt_LIB could not be found.", "cpp_lib_vtk.html#vtk_x11_not_found", null ]
+      ] ]
     ] ],
-    [ "Date：一个基于chrono的日历库", "cpp_lib_date.html", null ]
+    [ "Date：一个基于chrono的日历库", "cpp_lib_date.html", null ],
+    [ "Point Cloud Library（PCL）", "pcl.html", [
+      [ "Trouble Shooting", "pcl.html#pcl_trouble_shooting", [
+        [ "1.11编译出现ContextRenderingOpenGL not found", "pcl.html#pcl_context_render", null ],
+        [ "‘class vtkMapper’ has no member named ‘ImmediateModeRenderingOn’", "pcl.html#vtkMapper", null ],
+        [ "编译1.8版本 no matching function for call to random_generator_pure", "pcl.html#pcl_random_gen", null ],
+        [ "内存溢出导致编译报错", "pcl.html#内存溢出导致编译报错", null ],
+        [ "编译好后的PCLConfig.cmake在哪里？", "pcl.html#pcl_cmake_location", null ]
+      ] ]
+    ] ]
 ];

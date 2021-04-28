@@ -1,6 +1,7 @@
 var searchData=
 [
   ['天文与航天（astronomy_20and_20aerospace）',['天文与航天（Astronomy and Aerospace）',['../astronomy_entry.html',1,'zk_note']]],
+  ['常用代码库',['常用代码库',['../awesome_lib.html',1,'programming']]],
   ['带有偏差矫正的卡尔曼滤波',['带有偏差矫正的卡尔曼滤波',['../biased_kmf.html',1,'estimation_theory_entry']]],
   ['区块链（block_20chain）',['区块链（Block Chain）',['../block_chain.html',1,'zk_note']]],
   ['关于c语言的一些提问',['关于C语言的一些提问',['../c_questions.html',1,'c']]],

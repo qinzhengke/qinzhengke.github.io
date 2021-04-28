@@ -93,8 +93,14 @@ $(document).ready(function(){initNavTree('cpp_vector.html','');});
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="能否以数组为元素？"></a>
 能否以数组为元素？</h1>
-<p>答案是不能，但是可以使用std::array作为元素。 </p>
-</div></div><!-- contents -->
+<p>答案是不能，但是可以使用std::array作为元素。</p>
+<h1><a class="anchor" id="初始化"></a>
+初始化</h1>
+<h2><a class="anchor" id="返回对象的函数只执行一次"></a>
+返回对象的函数只执行一次</h2>
+<p>我们通常使用vector&lt;xxx&gt;a(n,b)来初始化vector，但是如果b是一个函数的时候，它只计算一次，然后把结果赋值给所有成员。 而不是运行多次，这里的逻辑千万不要理解错了。</p>
+<p>如下代码所示，运行结果并不是“0,1,2...”，而是全0。 </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> create(){</div><div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> x = 0;</div><div class="line">    <span class="keywordflow">return</span> x++;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    vector&lt;int&gt; x(10,create());</div><div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> xx : x){</div><div class="line">        cout&lt;&lt;xx&lt;&lt;endl;</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><p>运行结果：</p>
+<div class="fragment"><div class="line">0</div><div class="line">0</div><div class="line">0</div><div class="line">0</div><div class="line">0</div><div class="line">0</div><div class="line">0</div><div class="line">0</div><div class="line">0</div><div class="line">0</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

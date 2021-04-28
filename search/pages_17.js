@@ -7,7 +7,7 @@ var searchData=
   ['视觉标定_28calibration_29',['视觉标定(calibration)',['../calibration.html',1,'computer_vision']]],
   ['计算机视觉（computer_20vision）',['计算机视觉（Computer Vision）',['../computer_vision.html',1,'zk_note']]],
   ['设计模式（design_20pattern）',['设计模式（Design Pattern）',['../cpp_design_pattern.html',1,'cpp']]],
-  ['视频库vireo',['视频库Vireo',['../cpp_lib_vireo.html',1,'cpp_awesome_lib']]],
+  ['视频库vireo',['视频库Vireo',['../cpp_lib_vireo.html',1,'awesome_lib']]],
   ['谷歌表格（google_20sheets）',['谷歌表格（Google Sheets）',['../google_sheets.html',1,'tools']]],
   ['覃政科的文件柜',['覃政科的文件柜',['../index.html',1,'']]],
   ['过拟合',['过拟合',['../overfitting.html',1,'ml_entry']]],

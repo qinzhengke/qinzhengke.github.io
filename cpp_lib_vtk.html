@@ -98,15 +98,20 @@ $(document).ready(function(){initNavTree('cpp_lib_vtk.html','');});
 <h1><a class="anchor" id="vtk_useless_example"></a>
 无用的Example</h1>
 <p>VTK的Example没什么用处，甚至存在误导，不要参考。</p>
-<p>VTK源码下存在Example目录，但是即使给cmake加上“-DVTK_BUILD_EXAMPLES=ON”参数，仍然没有编译出example。 一探究竟，发现库的作者已经不怎么维护Example了： (1)Example使用add_test方式编译，但不知道最后的可执行文件在哪。 (2)Example的CMakeLists.txt存在大量注释掉的Example (3)Example的相关cmake配置存在不用的接口，主要是8.x版本的接口，已经和9.x版本不适配。例如：只有调用但是没有定义的vtk_module_config（当时还找了半天定义）。 </p>
-</div></div><!-- contents -->
+<p>VTK源码下存在Example目录，但是即使给cmake加上“-DVTK_BUILD_EXAMPLES=ON”参数，仍然没有编译出example。 一探究竟，发现库的作者已经不怎么维护Example了： (1)Example使用add_test方式编译，但不知道最后的可执行文件在哪。 (2)Example的CMakeLists.txt存在大量注释掉的Example (3)Example的相关cmake配置存在不用的接口，主要是8.x版本的接口，已经和9.x版本不适配。例如：只有调用但是没有定义的vtk_module_config（当时还找了半天定义）。</p>
+<h1><a class="anchor" id="vtk_trouble_shooting"></a>
+Trouble Shooting</h1>
+<h2><a class="anchor" id="vtk_x11_not_found"></a>
+X11_Xt_LIB could not be found.</h2>
+<p>完整的问题： </p><div class="fragment"><div class="line">CMake Error at Rendering/OpenGL/CMakeLists.txt:304 (message):</div><div class="line">   X11_Xt_LIB could not be found.  Required for VTK X lib.</div></div><!-- fragment --><p>解决方法：</p>
+<div class="fragment"><div class="line">sudo apt install libxt-dev</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp_awesome_lib.html">C++常用库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="awesome_lib.html">常用代码库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

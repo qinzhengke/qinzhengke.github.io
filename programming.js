@@ -23,6 +23,7 @@ var programming =
     [ "Bat：Windows上的脚本语言", "bat.html", null ],
     [ "ROS：机器人操作系统", "ros.html", null ],
     [ "优秀的项目源码阅读", "awesome_projects.html", "awesome_projects" ],
+    [ "常用代码库", "awesome_lib.html", "awesome_lib" ],
     [ "编程debug：吃一堑长一智", "programming_debug.html", "programming_debug" ],
     [ "utf-8编码", "utf8.html", [
       [ "utf-8编码的文件", "utf8.html#utf-8编码的文件", [

@@ -1,6 +1,8 @@
 var cpp_oop =
 [
     [ "C++中的类和对象", "cpp_class.html", [
+      [ "类中的静态成员变量的定义", "cpp_class.html#cpp_class_static_member", null ],
+      [ "派生类构造函数中不能调用基类成员函数", "cpp_class.html#base_member_in_constructor", null ],
       [ "基类和派生类的构造与析构函数执行顺序是什么？", "cpp_class.html#基类和派生类的构造与析构函数执行顺序是什么？", null ],
       [ "引用作为类的成员变量", "cpp_class.html#引用作为类的成员变量", null ],
       [ "匿名struct和匿名union", "cpp_class.html#匿名struct和匿名union", null ]

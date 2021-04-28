@@ -6,7 +6,7 @@ var searchData=
   ['标准库time_2eh',['标准库time.h',['../c_time.html',1,'c']]],
   ['构造函数（constructor）_20vs_20初始化函数（initialization）',['构造函数（constructor） vs 初始化函数（initialization）',['../constructor_vs_initialization.html',1,'cpp_idioms']]],
   ['标准库chrono',['标准库chrono',['../cpp11_chrono.html',1,'cpp11']]],
-  ['标准库的后备军：boost',['标准库的后备军：Boost',['../cpp_boost.html',1,'cpp_awesome_lib']]],
+  ['标准库的后备军：boost',['标准库的后备军：Boost',['../cpp_boost.html',1,'awesome_lib']]],
   ['技巧：pointer_20to_20implementation',['技巧：Pointer to Implementation',['../cpp_pimpl.html',1,'cpp_idioms']]],
   ['数据关联（data_20association）',['数据关联（Data Association）',['../data_association.html',1,'zk_note']]],
   ['文档框架：doxygen',['文档框架：doxygen',['../doxygen.html',1,'tools']]],

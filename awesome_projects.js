@@ -6,6 +6,7 @@ var awesome_projects =
       [ "循环", "bash.html#循环", null ],
       [ "if表达式", "bash.html#if表达式", null ],
       [ "命名空间", "bat.html#命名空间", null ],
+      [ "+cmake工程+ROS", "ros.html#QtCreator", null ],
       [ "系统设置与工作目录设置冲突？", "ros.html#系统设置与工作目录设置冲突？", null ],
       [ "QtCreator工程为空？", "ros.html#QtCreator工程为空？", null ],
       [ "skew detected. Your build may be incomplete.", "ros.html#Clock", null ],

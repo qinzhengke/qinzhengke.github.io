@@ -1,7 +1,10 @@
 var cpp_container =
 [
     [ "std::vector", "cpp_vector.html", [
-      [ "能否以数组为元素？", "cpp_vector.html#能否以数组为元素？", null ]
+      [ "能否以数组为元素？", "cpp_vector.html#能否以数组为元素？", null ],
+      [ "初始化", "cpp_vector.html#初始化", [
+        [ "返回对象的函数只执行一次", "cpp_vector.html#返回对象的函数只执行一次", null ]
+      ] ]
     ] ],
     [ "std::deque", "cpp_deque.html", null ],
     [ "std::queue", "cpp_queue.html", null ],

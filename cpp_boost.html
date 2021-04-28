@@ -93,7 +93,11 @@ $(document).ready(function(){initNavTree('cpp_boost.html','');});
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="安装方法"></a>
 安装方法</h1>
-<div class="fragment"><div class="line">sudo apt install libboost-all-dev</div></div><!-- fragment --><h1><a class="anchor" id="cmake中的使用方法"></a>
+<div class="fragment"><div class="line">sudo apt install libboost-all-dev</div></div><!-- fragment --><h1><a class="anchor" id="编译方法"></a>
+编译方法</h1>
+<p>截止版本1.7.6（以后大概率也一样），boost不使用cmake构建，而是使用bootstrap和b2方式构建，这种方式在开源代码领域已经比较少见，具体方法如下：</p>
+<div class="fragment"><div class="line">./bootstrap.sh --prefix=path/to/installation/prefix</div><div class="line">./b2</div><div class="line">sudo ./b2 install</div></div><!-- fragment --><p>默认安装在“/usr/local”目录，即头文件放在“/usr/local/include”，库文件和cmake文件放在“/usr/local/lib”。</p>
+<h1><a class="anchor" id="cmake中的使用方法"></a>
 cmake中的使用方法</h1>
 <div class="fragment"><div class="line">find_package(Boost REQUIRED COMPONENTS system thread regex)</div><div class="line"></div><div class="line">add_executable(my_exe main.cc)</div><div class="line"></div><div class="line">target_link_libraries(my_exe ${Boost_SYSTEM_LIBRARY} ${Boost_THREAD_LIBRARY} ${Boost_REGEX_LIBRARY})</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
@@ -102,7 +106,7 @@ cmake中的使用方法</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp_awesome_lib.html">C++常用库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="awesome_lib.html">常用代码库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

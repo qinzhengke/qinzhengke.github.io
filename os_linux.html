@@ -94,6 +94,18 @@ $(document).ready(function(){initNavTree('os_linux.html','');});
 <div class="textblock"><p>这个页面主要记录一些Linux操作系统的知识</p>
 <h1><a class="anchor" id="综合篇"></a>
 综合篇</h1>
+<h2><a class="anchor" id="文件权限"></a>
+文件权限</h2>
+<p>参考下图： </p><div class="image">
+<img src="./figures/../../../figures/file-llls22.jpg"/>
+</div>
+<p>补充：对于文件来说，“x”表示是否可执行，但是对于文件夹来说，“x”代表是否可以进入。如果发现了“cd”到某个目录失败提示无权限，那就是这个原因。</p>
+<h2><a class="anchor" id="ls输出的绿色背景文件是什么意思？"></a>
+ls输出的绿色背景文件是什么意思？</h2>
+<div class="image">
+<img src="./figures/../../../figures/linux_ls_green.png"/>
+</div>
+<p>表示除了owner和group之外，其他人员也拥有写的权限，是不合理的，保持其他人仅可读是多用户共享文件的合理设置。</p>
 <h2><a class="anchor" id="如何非阻塞运行gui程序？"></a>
 如何非阻塞运行gui程序？</h2>
 <p>问题：如果直接在终端运行某个gui程序，终端会阻塞直到gui关闭，例如运行gitk。 那么如何运行程序，并且不阻塞终端呢？ 解法：</p>

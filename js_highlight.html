@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: 视频库Vireo</title>
+<title>一个普通的笔记本: highlight.js：一个代码高亮库</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('cpp_lib_vireo.html','');});
+$(document).ready(function(){initNavTree('js_highlight.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,29 +88,37 @@ $(document).ready(function(){initNavTree('cpp_lib_vireo.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">视频库Vireo </div>  </div>
+<div class="title">highlight.js：一个代码高亮库 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="介绍"></a>
-介绍</h1>
-<p>Vireo是Twitter团队开发维护的一个轻量级的、通用的视频处理库，基于C++11提供API接口。</p>
-<p>【问题】为什么不使用ffmpeg？</p>
-<p>ffmpeg确实是一个经典的代码库，而且支持的视频格式种类很多。 但是ffmpeg只提供C语言的API，而且在示例代码中使用goto，这让我不太喜欢。 相比之下，vireo提供了基于C++11的API和示例程序，更morden一些，一边使用vireo一边实战C++11，岂不美哉？ 另外，vireo是Twitter团队开发维护的，同时被Github Awesome C++ project收录，质量应该是有保障的。</p>
-<p>【问题】为什么不用OpenCV？</p>
-<p>OpenCV读视频那完全不是主业，只是为了方便自身处理以视频作为来源的数据。 视频格式支持是较少的，而且不支持音频等。 并且OpenCV还是太重了，用起来不够短小精悍。</p>
-<h1><a class="anchor" id="基本概念"></a>
-基本概念</h1>
-<p><b>demuxing</b> demuxing是demultiplexing的缩写，是指把包含多部分的视频给读取出来。 注意，一个movie文件包含了视频、音频、字幕等等。 不能先入为主的认为moive就只包含图像，movie的读取函数就应该直接得到图像。</p>
-<h1><a class="anchor" id="编译问题"></a>
-编译问题</h1>
-<p>依赖lsmash库，lsmash库本身configure时需要加入参数“&ndash;enable-shared”，如下代码所示</p>
-<div class="fragment"><div class="line">cd lsmash</div><div class="line">./configure --enable-shared</div></div><!-- fragment --><p>否则编译会出现以下问题， </p><div class="fragment"><div class="line">/usr/bin/ld: //usr/local/lib/liblsmash.a(dts.o): relocation R_X86_64_PC32 against symbol `lsmash_remove_dts_reserved_box&#39; can not be used when making a shared object; recompile with -fPIC</div></div><!-- fragment --><p>【问题】</p>
-<div class="fragment"><div class="line">./.libs/libvireo.so: undefined reference to `mp4a_export_AudioSpecificConfig&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_setup_parser&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_cleanup_parser&#39;</div><div class="line">./.libs/libvireo.so: undefined reference to `h264_parse_sps&#39;</div></div><!-- fragment --><h1><a class="anchor" id="放弃"></a>
-放弃</h1>
-<p>真 - 从入门到放弃</p>
-<p>vireo和它的依赖lsmash都使用autoconf这些linux平台特有的构建工具，而且高度依赖gcc版本和linux发行版。</p>
-<p>想要解决问题2，需要特定的gcc和linux发行版。</p>
-<p>跨linux版本都出现问题，更别说跨平台了，放弃。 </p>
+<div class="textblock"><h1><a class="anchor" id="前言"></a>
+前言</h1>
+<p>这里的代码高亮不是指软件开发时编辑器或者IDE的语法高亮，而是写文档时，把代码显示到html文档中能够高亮阅览。</p>
+<p>使用Doxygen写文档时，发现Doxygen对语言高亮的支持很有限，只有C++能比较正常的显示出来，其他的语言例如Python，Javascript，json，cmake等等都没法高亮。 所以需要一种代码高亮工具，能够嵌入Doxygen。</p>
+<p>其实能够嵌入Doxygen的要求很低，只要能在hmtl中使用，那么在就可以在Doxygen的 宏中使用。
+
+\section 引入highlight.js
+
+highlight.js是一个好用的代码高亮工具，地址：https://highlightjs.org/，使用方法，
+
+1. 根据网页提示，下载highlight.js。
+
+2. 根据以下方式来使用
+
+
+<script src="highlight/highlight.pack.js"></script>
+<link rel="stylesheet" href="highlight/styles/github.css">
+<script>hljs.highlightAll();</script>
+<pre><code class="html">
+&ltscript src="highlight/highlight.pack.js"&gt&lt/script&gt
+&ltlink rel="stylesheet" href="highlight/styles/github.css"&gt
+&ltscript&gthljs.highlightall();&lt/script&gt
+&ltpre&gt&ltcode class="python"&gt
+...
+&lt/code&gt&lt/pre&gt
+&lt/code&gt
+</code></pre> 
+</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -118,7 +126,7 @@ $(document).ready(function(){initNavTree('cpp_lib_vireo.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="awesome_lib.html">常用代码库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="front_end.html">Web前端：UI的开发趋势</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

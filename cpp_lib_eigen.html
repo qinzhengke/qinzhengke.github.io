@@ -101,9 +101,11 @@ $(document).ready(function(){initNavTree('cpp_lib_eigen.html','');});
 <h1><a class="anchor" id="Matrix和C数组之间的转换"></a>
 Matrix和C数组之间的转换</h1>
 <p>参见： <a href="https://eigen.tuxfamily.org/dox/group__TutorialMapClass.html">https://eigen.tuxfamily.org/dox/group__TutorialMapClass.html</a></p>
-<h1><a class="anchor" id="auto获取矩阵失效？"></a>
-auto获取矩阵失效？</h1>
-<div class="fragment"><div class="line"><span class="comment">// 编译失败</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line">Eigen::Matrix&lt;float,9,9&gt; a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix3f::Zero();</div></div><!-- fragment --><h1><a class="anchor" id="AngleAxis用于初始化注意事项"></a>
+<h1><a class="anchor" id="eigen_auto"></a>
+使用auto定义Eigen相关的变量得到右值？</h1>
+<p>使用auto定义Eigen相关的变量时候，有时候会得到右值，这些右值无法被赋值，但是使用类型来定义就成了左值。</p>
+<div class="fragment"><div class="line"><span class="comment">// 编译失败</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line">Eigen::Matrix&lt;float,9,9&gt; a = Eigen::Matrix&lt;float,9,9&gt;::Zero();</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line"><span class="keyword">auto</span> a = Eigen::Matrix3f::Zero();</div></div><!-- fragment --><p>再例如，</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> mat1 = Eigen::Matrix&lt;T,4,4&gt;::Identity();</div><div class="line"><span class="comment">// 下面语句报错：lvalue_operand error: lvalue required as left operand of assignment</span></div><div class="line">mat1(0,3) = 1;</div><div class="line"></div><div class="line">Eigen::Matrix&lt;T,4,4&gt; mat2 = Eigen::Matrix&lt;T,4,4&gt;::Identity();</div><div class="line">mat2(0,3) = 1; <span class="comment">// 编译通过</span></div></div><!-- fragment --><h1><a class="anchor" id="AngleAxis用于初始化注意事项"></a>
 AngleAxis用于初始化注意事项</h1>
 <div class="fragment"><div class="line"><span class="comment">// 编译错误</span></div><div class="line">Matrix3d rot = AngleAxisd(0, Vector3d::UnitZ()) *</div><div class="line">    AngleAxisd(0, Vector3d::UnitY()) *</div><div class="line">    AngleAxisd(0, Vector3d::UnitX());</div><div class="line"></div><div class="line"><span class="comment">// 编译成功</span></div><div class="line">Matrix3d rot;</div><div class="line">rot = AngleAxisd(param.view_euler[2], Vector3d::UnitZ()) *</div><div class="line">    AngleAxisd(param.view_euler[1], Vector3d::UnitY()) *</div><div class="line">    AngleAxisd(param.view_euler[0], Vector3d::UnitX());</div></div><!-- fragment --><h1><a class="anchor" id="传参时MatrixNd到MatrixXd的转换"></a>
 传参时MatrixNd到MatrixXd的转换</h1>
@@ -129,7 +131,7 @@ Mat::block()与模板类的组合使用方法</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp_awesome_lib.html">C++常用库</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="awesome_lib.html">常用代码库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

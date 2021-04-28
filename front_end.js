@@ -11,5 +11,6 @@ var front_end =
     ] ],
     [ "浏览器里调用udp接口", "browser_udp.html", [
       [ "浏览器不能发送udp包的原因", "browser_udp.html#浏览器不能发送udp包的原因", null ]
-    ] ]
+    ] ],
+    [ "highlight.js：一个代码高亮库", "js_highlight.html", null ]
 ];

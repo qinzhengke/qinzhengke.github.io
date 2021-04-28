@@ -91,7 +91,12 @@ $(document).ready(function(){initNavTree('cpp_class.html','');});
 <div class="title">C++中的类和对象 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="基类和派生类的构造与析构函数执行顺序是什么？"></a>
+<div class="textblock"><h1><a class="anchor" id="cpp_class_static_member"></a>
+类中的静态成员变量的定义</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">class </span>A{</div><div class="line">    <span class="keyword">public</span>:</div><div class="line">    A(){}</div><div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> count;</div><div class="line">};</div><div class="line"><span class="keywordtype">int</span> A::count = 0;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>){</div><div class="line">    A a;</div><div class="line">    printf(<span class="stringliteral">&quot;%d\n&quot;</span>,a.count);</div><div class="line">    <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --><h1><a class="anchor" id="base_member_in_constructor"></a>
+派生类构造函数中不能调用基类成员函数</h1>
+<div class="fragment"><div class="line"><span class="comment">// Example program</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">class </span>Base{</div><div class="line">    <span class="keywordtype">void</span> print(){</div><div class="line">        printf(<span class="stringliteral">&quot;Base::print()\n&quot;</span>);</div><div class="line">    }</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">class </span>Derived{</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Derived(){</div><div class="line">        print();</div><div class="line">    }</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    Derived a;</div><div class="line">}</div></div><!-- fragment --><p>运行结果：</p>
+<div class="fragment"><div class="line"> In constructor &#39;Derived::Derived()&#39;:</div><div class="line">14:15: error: &#39;print&#39; was not declared in this scope</div></div><!-- fragment --><h1><a class="anchor" id="基类和派生类的构造与析构函数执行顺序是什么？"></a>
 基类和派生类的构造与析构函数执行顺序是什么？</h1>
 <p>情况一：在普通情况，即非多态方式销毁对象下，</p>
 <p>构造函数：先执行基类的构造函数，后执行派生类的构造函数。</p>
