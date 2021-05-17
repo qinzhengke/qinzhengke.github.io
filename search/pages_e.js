@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['raii：资源获取即初始化',['RAII：资源获取即初始化',['../cpp_raii.html',1,'cpp_idioms']]],
-  ['rfid',['RFID',['../rfid.html',1,'other_technologies']]],
-  ['ros：机器人操作系统',['ROS：机器人操作系统',['../ros.html',1,'programming']]],
-  ['rust：超严格静态类型语言（精神小伙）',['Rust：超严格静态类型语言（精神小伙）',['../rust.html',1,'programming']]]
+  ['qt相关常见问题',['Qt相关常见问题',['../cpp_qt_faq.html',1,'qt']]],
+  ['qt：个强大的c_2b_2b应用程序框架',['Qt：个强大的C++应用程序框架',['../qt.html',1,'programming']]],
+  ['qt提供的c_2b_2b反射',['Qt提供的C++反射',['../qt_reflection.html',1,'qt']]]
 ];

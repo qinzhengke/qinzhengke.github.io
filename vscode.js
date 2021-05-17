@@ -1,6 +1,6 @@
 var vscode =
 [
-    [ "基础篇", "vscode.html#基础篇", [
+    [ "各语言通用部分", "vscode.html#各语言通用部分", [
       [ "LibreOffice可以插入Latex公式吗？", "libre_office.html#LibreOffice可以插入Latex公式吗？", null ],
       [ ".46版本慢", "libre_office.html#TexMath插件0", null ],
       [ "打开TexMath编辑器报错", "libre_office.html#打开TexMath编辑器报错", null ],
@@ -21,7 +21,9 @@ var vscode =
       [ "vscode单步调试会先自动跳到末尾", "vscode.html#vscode单步调试会先自动跳到末尾", null ],
       [ "如何使用clang-format进行代码格式化？", "vscode.html#如何使用clang-format进行代码格式化？", null ],
       [ "vscode如何给当前project添加包含路径？", "vscode.html#vscode如何给当前project添加包含路径？", null ],
-      [ "vscode如何在系统级别添加包含路径？", "vscode.html#vscode如何在系统级别添加包含路径？", null ],
+      [ "vscode如何在系统级别添加包含路径？", "vscode.html#vscode如何在系统级别添加包含路径？", null ]
+    ] ],
+    [ "Python篇", "vscode.html#Python篇", [
       [ "python调试设置", "vscode.html#python调试设置", null ],
       [ "如何生成c_cpp_properties.json文件？", "vscode.html#vscode_create_c_cpp_prop", null ]
     ] ],

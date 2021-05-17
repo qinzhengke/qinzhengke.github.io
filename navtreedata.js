@@ -20,7 +20,7 @@ var NAVTREEINDEX =
 "aerospace_probe.html",
 "cpp11_constexpr.html#如何在类中声明constexpr常量？",
 "cpp_suggestion.html#少用全局变量。",
-"pcl.html#vtkMapper"
+"overfitting.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

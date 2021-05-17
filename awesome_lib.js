@@ -62,11 +62,20 @@ var awesome_lib =
     [ "Date：一个基于chrono的日历库", "cpp_lib_date.html", null ],
     [ "Point Cloud Library（PCL）", "pcl.html", [
       [ "Trouble Shooting", "pcl.html#pcl_trouble_shooting", [
-        [ "1.11编译出现ContextRenderingOpenGL not found", "pcl.html#pcl_context_render", null ],
+        [ "1.11版本编译出现ContextRenderingOpenGL not found", "pcl.html#pcl_context_render", null ],
         [ "‘class vtkMapper’ has no member named ‘ImmediateModeRenderingOn’", "pcl.html#vtkMapper", null ],
         [ "编译1.8版本 no matching function for call to random_generator_pure", "pcl.html#pcl_random_gen", null ],
         [ "内存溢出导致编译报错", "pcl.html#内存溢出导致编译报错", null ],
         [ "编译好后的PCLConfig.cmake在哪里？", "pcl.html#pcl_cmake_location", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "numpy", "numpy.html", [
+      [ "常用方法", "numpy.html#常用方法", null ],
+      [ ".concatenate", "numpy.html#numpy", [
+        [ "\"a[x:y,z]\"操作符", "numpy.html#colon_comma", null ]
+      ] ]
+    ] ],
+    [ "numba", "numba.html", null ],
+    [ "filterpy", "filterpy.html", null ],
+    [ "Linear Disciminative Analysis（LDA）", "lda.html", null ]
 ];

@@ -15,8 +15,8 @@ var python =
       [ "优雅的读取csv文件", "python_syntax.html#优雅的读取csv文件", null ],
       [ "文件名冲突", "python_syntax.html#文件名冲突", null ],
       [ "module的导入", "python_syntax.html#module的导入", null ],
-      [ ".append和numpy.delete", "python_syntax.html#numpy", null ],
-      [ "一个坑点", "python_syntax.html#一个坑点", null ]
+      [ "一个坑点", "python_syntax.html#一个坑点", null ],
+      [ "list、tuple、np.array的区别", "python_syntax.html#list_tuple_array", null ]
     ] ],
     [ "import", "python_import.html", null ],
     [ "Python画图库：matplotlib", "matplotlib.html", [
@@ -31,5 +31,6 @@ var python =
     ] ],
     [ "反射（reflection）", "python_reflection.html", [
       [ "如何遍历类中的成员变量？", "python_reflection.html#如何遍历类中的成员变量？", null ]
-    ] ]
+    ] ],
+    [ "Python面试题", "python_questions.html", null ]
 ];

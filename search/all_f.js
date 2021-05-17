@@ -1,17 +1,7 @@
 var searchData=
 [
-  ['std_3a_3acommon_5ftype',['std::common_type',['../cpp11_common_type.html',1,'cpp_template']]],
-  ['std_3a_3aref_28_29函数',['std::ref()函数',['../cpp11_std_ref.html',1,'cpp11']]],
-  ['std_3a_3adeque',['std::deque',['../cpp_deque.html',1,'cpp_container']]],
-  ['std_3a_3alist',['std::list',['../cpp_list.html',1,'cpp_container']]],
-  ['std_3a_3amap',['std::map',['../cpp_map.html',1,'cpp_container']]],
-  ['std_3a_3aqueue',['std::queue',['../cpp_queue.html',1,'cpp_container']]],
-  ['std_3a_3astring',['std::string',['../cpp_string.html',1,'cpp_std']]],
-  ['symbol（符号）',['Symbol（符号）',['../cpp_symbol.html',1,'cpp']]],
-  ['std_3a_3amap',['std::map',['../cpp_unordered_map.html',1,'cpp_container']]],
-  ['std_3a_3avector',['std::vector',['../cpp_vector.html',1,'cpp_container']]],
-  ['settings',['Settings',['../classSettings.html',1,'']]],
-  ['semi_2dglobal_20blocking_20matching_28sgbm_29',['Semi-Global Blocking Matching(SGBM)',['../sgbm.html',1,'computer_vision']]],
-  ['sift特征',['SIFT特征',['../sift_feature.html',1,'feature_entry']]],
-  ['surf特征',['SURF特征',['../surf_feature.html',1,'feature_entry']]]
+  ['raii：资源获取即初始化',['RAII：资源获取即初始化',['../cpp_raii.html',1,'cpp_idioms']]],
+  ['rfid',['RFID',['../rfid.html',1,'other_technologies']]],
+  ['ros：机器人操作系统',['ROS：机器人操作系统',['../ros.html',1,'programming']]],
+  ['rust：超严格静态类型语言（精神小伙）',['Rust：超严格静态类型语言（精神小伙）',['../rust.html',1,'programming']]]
 ];
