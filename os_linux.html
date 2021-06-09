@@ -106,6 +106,26 @@ ls输出的绿色背景文件是什么意思？</h2>
 <img src="./figures/../../../figures/linux_ls_green.png"/>
 </div>
 <p>表示除了owner和group之外，其他人员也拥有写的权限，是不合理的，保持其他人仅可读是多用户共享文件的合理设置。</p>
+<h2><a class="anchor" id="如何递归设置所有文件夹权限为770？"></a>
+如何递归设置所有文件夹权限为770？</h2>
+<p>设置770的原因是，既要保证自己和用户组能够读、写、进入，又不能让其他用户读、写、进入（否则bash下文件夹背景为绿色，很烦）。</p>
+<div class="fragment"><div class="line">sudo find home -type d -exec chmod 770 {} +</div></div><!-- fragment --><h2><a class="anchor" id="如何递归设置所有文件权限为665？"></a>
+如何递归设置所有文件权限为665？</h2>
+<p>设置665的原因是，从安全角度讲，一般的文件都不应该能够执行，在bash环境下，可执行文件绿色，就很烦。</p>
+<div class="fragment"><div class="line">sudo find home -type f -exec chmod 770 {} +</div></div><!-- fragment --><h2><a class="anchor" id="如何在启动阶段挂载磁盘？"></a>
+如何在启动阶段挂载磁盘？</h2>
+<ol type="1">
+<li>查看要挂载的磁盘UUID</li>
+</ol>
+<div class="fragment"><div class="line">sudo blkid</div></div><!-- fragment --><ol type="1">
+<li>新建一个想要挂载的目录</li>
+</ol>
+<div class="fragment"><div class="line">mkdir /home/qzk/disk2</div></div><!-- fragment --><ol type="1">
+<li>打开“/etc/fstab”文件，并追加</li>
+</ol>
+<div class="fragment"><div class="line">UUID=xxxxxxx-xxxxx-xxxxx /home/qzk/disk2 auto defaults 0 2</div></div><!-- fragment --><ol type="1">
+<li>重启即可。</li>
+</ol>
 <h2><a class="anchor" id="如何非阻塞运行gui程序？"></a>
 如何非阻塞运行gui程序？</h2>
 <p>问题：如果直接在终端运行某个gui程序，终端会阻塞直到gui关闭，例如运行gitk。 那么如何运行程序，并且不阻塞终端呢？ 解法：</p>

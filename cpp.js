@@ -3,6 +3,7 @@ var cpp =
     [ "C++构建报错合集", "cpp_build_errors.html", [
       [ "编译篇", "cpp_build_errors.html#编译篇", [
         [ "No rule to make xxx.cpp 或者 xxx.so", "cpp_build_errors.html#no_rule_to_make", null ],
+        [ "error: no matching function for call to xxx", "cpp_build_errors.html#no_matching_function", null ],
         [ "passing ‘const xxx’ as ‘this’ argument discards qualifiers", "cpp_build_errors.html#discards_qualifiers", null ]
       ] ],
       [ "will always overflow destination buffer.", "cpp_build_errors.html#memcpy_overflow", null ],
@@ -22,7 +23,10 @@ var cpp =
         [ "error: lvalue required as left operand of assignment", "cpp_build_errors.html#lvalue_operand", null ],
         [ "cannot bind non-const lvalue reference of type ‘int&’ to an rvalue of type ‘int’", "cpp_build_errors.html#lvalue_bind", null ],
         [ "error: ‘setX’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]", "cpp_build_errors.html#no_declar", null ],
-        [ "capture of non-variable <name>", "cpp_build_errors.html#cap_non_var", null ]
+        [ "capture of non-variable <name>", "cpp_build_errors.html#cap_non_var", null ],
+        [ "cannot dynamic_cast xxx source type is not polymorphic", "cpp_build_errors.html#cannot_dynamic_cast", null ],
+        [ "error: ‘this’ was not captured for this lambda function", "cpp_build_errors.html#this_not_captured", null ],
+        [ "use of deleted function ‘ha::driveable::ViewPort::ViewPort(ha::driveable::ViewPort&&)’", "cpp_build_errors.html#use_deleted_function", null ]
       ] ],
       [ "链接篇", "cpp_build_errors.html#链接篇", [
         [ "undefined reference to `xxx'", "cpp_build_errors.html#cpp_undefined_reference", null ],

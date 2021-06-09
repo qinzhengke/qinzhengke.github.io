@@ -54,5 +54,8 @@ var cpp11 =
       [ "代替 typedef", "cpp11_others.html#using", null ],
       [ "使用constexpr作为类的成员变量", "cpp11_others.html#使用constexpr作为类的成员变量", null ]
     ] ],
-    [ "std::ref()函数", "cpp11_std_ref.html", null ]
+    [ "std::ref()函数", "cpp11_std_ref.html", null ],
+    [ "右值", "rvalue.html", [
+      [ "移动构造函数", "rvalue.html#move_constructor", null ]
+    ] ]
 ];

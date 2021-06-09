@@ -56,7 +56,10 @@ var awesome_lib =
         [ "解决方法：", "cpp_lib_evpp.html#解决方法：", null ],
         [ "如何获取sockect_fd？", "cpp_lib_evpp.html#如何获取sockect_fd？", null ],
         [ "find_package寻找gtest", "gtest.html#find_package寻找gtest", null ],
-        [ "X11_Xt_LIB could not be found.", "cpp_lib_vtk.html#vtk_x11_not_found", null ]
+        [ "Could NOT find OpenGL (missing: OPENGL_opengl_LIBRARY OPENGL_glx_LIBRARY", "cpp_lib_vtk.html#vtk_opengl_not_found", null ],
+        [ "X11_Xt_LIB could not be found.", "cpp_lib_vtk.html#vtk_x11_not_found", null ],
+        [ "vtk_no_member_TupleValue", "cpp_lib_vtk.html#vtk_no_member_TupleValue", null ],
+        [ "vtk_incomplete_type", "cpp_lib_vtk.html#vtk_incomplete_type", null ]
       ] ]
     ] ],
     [ "Date：一个基于chrono的日历库", "cpp_lib_date.html", null ],

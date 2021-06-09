@@ -99,6 +99,13 @@ No rule to make xxx.cpp 或者 xxx.so</h2>
 <li>如果提示无法make cpp源文件，那么一般情况是找不到在CMakeLists.txt中列出的文件，检查一下路径和文件名即可。</li>
 <li>如果提示无法make xxx.so文件，特别是找不到第三方库，例如/usr/lib/xxx.so之类的，一般都是cmake缓存出现了问题，清空cmake缓存（删除CMakeCache.txt,CMakeFiles,MakeFile,cmake_install.cmake这几个文件）。</li>
 </ul>
+<h2><a class="anchor" id="no_matching_function"></a>
+error: no matching function for call to xxx</h2>
+<p>字面意思是找不到匹配的函数（声明），可能的原因有</p>
+<ul>
+<li>明显的函数调用方式出错，例如参数类型和数量不匹配</li>
+<li>一种不太明显的调用出错，函数形参只接受const引用，但是调用出提供了右值，例如new出来的，后者函数返回值。</li>
+</ul>
 <h2><a class="anchor" id="discards_qualifiers"></a>
 passing ‘const xxx’ as ‘this’ argument discards qualifiers</h2>
 <p>首先确认一点，什么是“qualifiers”？ 注意，通常来说，使用英文来表达的对象，含义都很明确 “qualifiers”表示类型的修饰符，它目前只包含这三种：</p>
@@ -197,7 +204,23 @@ error: new types may not be defined in a return type</h2>
 <h2><a class="anchor" id="extra_qualification"></a>
 extra qualification</h2>
 <p>qualification是指双冒号符“::”，而“extra qualification”则一般出现在类中函数定义的时候重复用“类名::函数名”进行时声明，如下代码所示：</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span>A{</div><div class="line">    A::func(){</div><div class="line"></div><div class="line">    }</div><div class="line">};</div></div><!-- fragment --><p>`</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>A{</div><div class="line">    A::func(){</div><div class="line"></div><div class="line">    }</div><div class="line">};</div></div><!-- fragment --><h2><a class="anchor" id="cannot_dynamic_cast"></a>
+cannot dynamic_cast xxx source type is not polymorphic</h2>
+<p>类型不是polymorphic，即类并非是多态的，一般来说问题是没有把基类定义成虚类。</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>A {};</div><div class="line"></div><div class="line"><span class="keyword">struct </span>B : A {};</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    A* a = <span class="keyword">new</span> B();</div><div class="line"></div><div class="line">    B* b = <span class="keyword">dynamic_cast&lt;</span>B*<span class="keyword">&gt;</span>(a);</div><div class="line">}</div></div><!-- fragment --><p>解决办法很简单，给基类加一个虚的析构函数即可。</p>
+<h2><a class="anchor" id="this_not_captured"></a>
+error: ‘this’ was not captured for this lambda function</h2>
+<p>在类成员函数中使用lamda表达式，而lambda表达式中包含类内的其他成员函数，就需要先捕获this指针。</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">struct </span>A{</div><div class="line">    <span class="keywordtype">void</span> funcA(){</div><div class="line">        <span class="keyword">auto</span> lambda = [<span class="keyword">this</span>]{   <span class="comment">// 捕获this指针，获取调用成员函数能力</span></div><div class="line">            funcB();</div><div class="line">        };</div><div class="line">        lambda();</div><div class="line">    }</div><div class="line">    <span class="keywordtype">void</span> funcB(){</div><div class="line">        printf(<span class="stringliteral">&quot;funcB()\n&quot;</span>);</div><div class="line">    }</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    A a;</div><div class="line">    a.funcA();</div><div class="line">}</div></div><!-- fragment --><h2><a class="anchor" id="use_deleted_function"></a>
+use of deleted function ‘ha::driveable::ViewPort::ViewPort(ha::driveable::ViewPort&amp;&amp;)’</h2>
+<p>使用右值作为实参，那么系统会优先调用移动构造函数。但是如果移动构造函数被删除了，那么就会出现这个错误。</p>
+<p>第一种是显式删除，如下代码所示，一般人都能看出来。</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keyword">struct </span>A{</div><div class="line">    A(array&lt;int,3&gt; x){</div><div class="line">        printf(<span class="stringliteral">&quot;%d\n&quot;</span>,x[0]);</div><div class="line">    }</div><div class="line">    A(A &amp;&amp;) = <span class="keyword">delete</span>;   <span class="comment">// use of deleted function</span></div><div class="line">};</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    vector&lt;A&gt; as;</div><div class="line">    as.push_back(A({0,1,2}));</div><div class="line">}</div></div><!-- fragment --><p>但是除了显式删除，造成困扰的更多是隐式的删除，参见 move_constructor。</p>
+<p>如下示例，虽然A本身没有把移动构造函数给delete掉，但是它的非静态成员B，把移动构造函数给delete了，所以A也是无法被移动构造的。 通常来说，B有可能是别人代码提供的类，不能修改。</p>
+<p>解决方法是，显示定义拷贝构造函数，因为常量引用是万能引用，可以接受右值作为输入。 </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keyword">struct </span>B{</div><div class="line">    B(){}</div><div class="line">    B(B&amp;&amp;) = <span class="keyword">delete</span>;</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">struct </span>A{</div><div class="line">    B b;</div><div class="line">    A(array&lt;int,3&gt; x){</div><div class="line">        printf(<span class="stringliteral">&quot;%d\n&quot;</span>,x[0]);</div><div class="line">    }</div><div class="line"></div><div class="line">    A(<span class="keyword">const</span> A&amp; a){} <span class="comment">// 加入拷贝构造函数就可以了。</span></div><div class="line">};</div><div class="line"></div><div class="line">\subsection cpp_incomplete_type has incomplete type and cannot be defined</div><div class="line"></div><div class="line">另一种报错形式：</div><div class="line">```</div><div class="line">invalid use of incomplete type ‘xxx’</div><div class="line">```</div><div class="line"></div><div class="line">incomplete type是指只声明，但是没有具体定义的类，在C++中，可以先声明一个类但是不具体定义，其指针是完全可以使用的。</div><div class="line">但是一旦设计到指针的解引用操作，就必须知道类型的具体定义，否则会提示incomplete type。</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    vector&lt;A&gt; as;   <span class="comment">// 不报错</span></div><div class="line">    as.push_back(A({0,1,2}));   <span class="comment">//报错</span></div><div class="line">}</div></div><!-- fragment --><p>#include &lt;cstdio&gt;</p>
+<p>class A;</p>
+<p>int main() { A *a; A b; }</p>
+<p>class A{ void func(){ printf("func()\n"); } };</p>
 <h1><a class="anchor" id="链接篇"></a>
 链接篇</h1>
 <h2><a class="anchor" id="cpp_undefined_reference"></a>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: 拓扑空间</title>
+<title>一个普通的笔记本: 右值</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('topology_space.html','');});
+$(document).ready(function(){initNavTree('rvalue.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,26 +88,31 @@ $(document).ready(function(){initNavTree('topology_space.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">拓扑空间 </div>  </div>
+<div class="title">右值 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="topology_structure"></a>
-集合上的拓扑</h1>
-<p>对于集合 \( X \)，　则 \( X \)的子集簇（子集的集合） \( \mathscr{T} \) 称为 \( X \)上的拓扑，也称为拓扑结构，若：</p>
-<ol type="1">
-<li>\( \emptyset, X \in \mathscr{T} \)</li>
-<li>任意个 \( \mathscr{T} \)的元素的并集属于 \( \mathscr{T} \)</li>
-<li>有限个 \( \mathscr{T} \)的元素的的交集属于 \( \mathscr{T} \)</li>
-</ol>
-<p>该定义来自于<b>[liangcanbin2007]</b> 和 <b>[wiki:topologyspace]</b></p>
-<p>有一点需要注意，一般来说，我们不太会提＂元素和元素的并集或者交集＂这种概念，但是因为这里的元素恰好也是集合，所以他们有了并集和交集的概念．</p>
-<p>例：下图所示了4个拓扑结构和2个非拓扑结构，其中，第一行和第二行４个子图均表示拓扑结构． 第三行的两个子图表示的不是拓扑结构，左图是因为 \({2} \cap {3} = {2,3} \not\in \mathscr{T} \)，违反了定义2， 右图是因为 \( {1,2} \cup {2,3} = {2} \not\in \mathscr{T} \)，违反了定义3． </p><div class="image">
-<object type="image/svg+xml" data="./figures/Topological_space_examples.svg"></object>
-</div>
-<p>直观的说，对于一个集合，其满足一些条件的子集的集合就是拓扑结构，定义只给出了必要条件，实际上拓扑结构的选取方式可以有多种．</p>
-<h1><a class="anchor" id="拓扑空间　"></a>
-拓扑空间　</h1>
-<p>拓扑空间是一种 <a class="el" href="math_structure.html">数学结构(Mathematical Structure)</a> ，对于一个集合 \( X \)，若在其上定义一种拓扑结构 \( \mathscr{T} \)，则二元组 ( \( X,\mathscr{T}) \)称为拓扑空间， \( X \)的元素 \( \)通常称为拓扑空间 \( (X, \mathscr{T}) \)的点. </p>
+<div class="textblock"><h1><a class="anchor" id="move_constructor"></a>
+移动构造函数</h1>
+<p>The move constructor is typically called when an object is initialized (by direct-initialization or copy-initialization) from rvalue (xvalue or prvalue) (until C++17)xvalue (since C++17) of the same type, including</p>
+<ul>
+<li>initialization: T a = std::move(b); or T a(std::move(b));, where b is of type T;</li>
+<li>function argument passing: f(std::move(a));, where a is of type T and f is void f(T t);</li>
+<li>function return: return a; inside a function such as T f(), where a is of type T which has a move constructor.</li>
+</ul>
+<p>以下几种情况，移动构造函数会被隐式删除</p>
+<ul>
+<li>类中存在非静态的不可被移动的成员，包括被删除、无法访问（私有）、存在歧义。</li>
+<li>类的基类是不可移动的，包括被删除、无法访问（私有）、存在歧义的移动构造函数。</li>
+<li>类的基类存在被删除的或者是无法访问（私有）的析构函数。</li>
+<li>T is a union-like class and has a variant member with non-trivial move constructor.</li>
+</ul>
+<p>Deleted implicitly-declared move constructor The implicitly-declared or defaulted move constructor for class T is defined as deleted if any of the following is true:</p>
+<ul>
+<li>T has non-static data members that cannot be moved (have deleted, inaccessible, or ambiguous move constructors);</li>
+<li>T has direct or virtual base class that cannot be moved (has deleted, inaccessible, or ambiguous move constructors);</li>
+<li>T has direct or virtual base class with a deleted or inaccessible destructor;</li>
+<li>T is a union-like class and has a variant member with non-trivial move constructor. </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -115,7 +120,7 @@ $(document).ready(function(){initNavTree('topology_space.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="math.html">数学基础（Mathematics Fundamental）</a></li><li class="navelem"><a class="el" href="topology_entry.html">拓扑学(topology)</a></li>
+    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp11.html">C++11</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

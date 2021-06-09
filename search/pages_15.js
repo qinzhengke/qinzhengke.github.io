@@ -21,6 +21,7 @@ var searchData=
   ['反射（reflection）',['反射（reflection）',['../python_reflection.html',1,'python']]],
   ['四元数的插值',['四元数的插值',['../quat_interpolation.html',1,'quaternion']]],
   ['四元数_28quaternion_29',['四元数(Quaternion)',['../quaternion.html',1,'geometry3d_entry']]],
+  ['右值',['右值',['../rvalue.html',1,'cpp11']]],
   ['基于unordered_5fmap的稀疏矩阵的实现',['基于unordered_map的稀疏矩阵的实现',['../sparse_matrix.html',1,'cpp']]],
   ['常用工具列表',['常用工具列表',['../tool_list.html',1,'tools']]],
   ['工具笔记（tools_20note）',['工具笔记（Tools Note）',['../tools.html',1,'zk_note']]],

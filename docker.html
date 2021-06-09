@@ -91,14 +91,37 @@ $(document).ready(function(){initNavTree('docker.html','');});
 <div class="title">Docker：开源容器工具 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="基于Docker的开发"></a>
-基于Docker的开发</h1>
-<h2><a class="anchor" id="Docker容器和宿主机之间共享文件"></a>
-Docker容器和宿主机之间共享文件</h2>
+<div class="textblock"><h1><a class="anchor" id="常用操作"></a>
+常用操作</h1>
+<h2><a class="anchor" id="基于镜像创建新的容器并且运行"></a>
+基于镜像创建新的容器并且运行</h2>
+<div class="fragment"><div class="line">docker run -i -t -d ubuntu:18.04</div></div><!-- fragment --><h2><a class="anchor" id="启动已创建但停止运行的容器"></a>
+启动已创建但停止运行的容器</h2>
+<div class="fragment"><div class="line">docker start -i -t -d 3af41afdf9ee</div></div><!-- fragment --><h2><a class="anchor" id="登录已经启动的容器"></a>
+登录已经启动的容器</h2>
+<div class="fragment"><div class="line">docker attach 3af41afdf9ee</div></div><!-- fragment --><h2><a class="anchor" id="停止容器的运行"></a>
+停止容器的运行</h2>
+<div class="fragment"><div class="line">docker stop 3af41afdf9ee</div></div><!-- fragment --><h2><a class="anchor" id="容器和宿主机之间共享文件"></a>
+容器和宿主机之间共享文件</h2>
 <p>有些比较依赖环境的库会以docker镜像的形式提供给开发者，例如GPU版本的Tensorflow，这意味这我们必须要其对应的容器中进行开发。 那就会涉及到代码文件在哪里保存，以及怎么编辑，怎么传送到容器中的问题了。</p>
 <p>容器和宿主机之间共享文件的方式很简单，只需要在启动的时候挂载宿主目录，即使用“-v”选项。</p>
-<div class="fragment"><div class="line">docker run -it -v /home/haha/下载:/share microsoft/dotnet:latest /bin/bash</div></div><!-- fragment --><p>上述代码把宿主机的“/home/haha/下载”目录挂载到docker中的“/share”目录。 </p>
-</div></div><!-- contents -->
+<div class="fragment"><div class="line">docker run -it -v /home/haha/下载:/share microsoft/dotnet:latest /bin/bash</div></div><!-- fragment --><p>上述代码把宿主机的“/home/haha/下载”目录挂载到docker中的“/share”目录。</p>
+<h2><a class="anchor" id="不使用sudo的docker运行方法"></a>
+不使用sudo的docker运行方法</h2>
+<p>默认情况下，若不使用sudo，那么docker无法运行，因为docker要绑定unix socket，但如果使用sudo，则所有相关的操作都需要sudo，包括vscode连接容器里的代码时，vscode也得使用sudo启动。很麻烦也不安全。</p>
+<p>下面是不使用sudo的运行方法</p>
+<div class="fragment"><div class="line">sudo groupadd docker</div><div class="line">sudo usermod -aG docker $USER</div><div class="line">#完成后记得注销再重新登录</div></div><!-- fragment --><h2><a class="anchor" id="查看当前所有镜像和容器"></a>
+查看当前所有镜像和容器</h2>
+<div class="fragment"><div class="line">docker images</div><div class="line">docker container ps -a</div></div><!-- fragment --><h2><a class="anchor" id="保存并迁移容器"></a>
+保存并迁移容器</h2>
+<div class="fragment"><div class="line">docker commit 3af41afdf9ee qzk/my_env</div><div class="line">docker save qzk/my_env &gt; my_env.tar</div></div><!-- fragment --> <h1><a class="anchor" id="常用模板"></a>
+常用模板</h1>
+<h2><a class="anchor" id="可运行基于Nvidia硬件、OpenGL组件的GUI程序的容器"></a>
+可运行基于Nvidia硬件、OpenGL组件的GUI程序的容器</h2>
+<p>Dockerfile</p>
+<div class="fragment"><div class="line">FROM ubuntu:18.04</div><div class="line"># Dependencies for glvnd and X11.</div><div class="line">RUN apt-get update \</div><div class="line">  &amp;&amp; apt-get install -y -qq --no-install-recommends \</div><div class="line">    libglvnd0 \</div><div class="line">    libgl1 \</div><div class="line">    libglx0 \</div><div class="line">    libegl1 \</div><div class="line">    libxext6 \</div><div class="line">    libx11-6 \</div><div class="line">  &amp;&amp; rm -rf /var/lib/apt/lists/*</div><div class="line"># Env vars for the nvidia-container-runtime.</div><div class="line">ENV NVIDIA_VISIBLE_DEVICES all</div><div class="line">ENV NVIDIA_DRIVER_CAPABILITIES graphics,utility,compute</div></div><!-- fragment --><p>运行参数：</p>
+<div class="fragment"><div class="line">#!/bin/bash</div><div class="line"></div><div class="line"># Expose the X server on the host.</div><div class="line">sudo xhost +local:root</div><div class="line"># --rm: Make the container ephemeral (delete on exit).</div><div class="line"># -it: Interactive TTY.</div><div class="line"># --gpus all: Expose all GPUs to the container.</div><div class="line">docker run \</div><div class="line">  --rm \</div><div class="line">  -it \</div><div class="line">  --gpus all \</div><div class="line">  -v /tmp/.X11-unix:/tmp/.X11-unix \</div><div class="line">  -e DISPLAY=$DISPLAY \</div><div class="line">  -e QT_X11_NO_MITSHM=1 \</div><div class="line">  glvnd-x \</div><div class="line">  bash</div></div><!-- fragment --><p>在容器中测试：</p>
+<div class="fragment"><div class="line">apt-get update</div><div class="line">apt-get install -y -qq glmark2</div><div class="line">glmark2</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->

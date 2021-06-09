@@ -25,7 +25,8 @@ var vscode =
     ] ],
     [ "Python篇", "vscode.html#Python篇", [
       [ "python调试设置", "vscode.html#python调试设置", null ],
-      [ "如何生成c_cpp_properties.json文件？", "vscode.html#vscode_create_c_cpp_prop", null ]
+      [ "如何生成c_cpp_properties.json文件？", "vscode.html#vscode_create_c_cpp_prop", null ],
+      [ "#include errors detected. Please update your includePath.", "vscode.html#include_error_detected", null ]
     ] ],
     [ "vscode中的markdown相关的代码片", "vscode_markdown_snippet.html", null ]
 ];
