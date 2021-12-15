@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: CMakeLists.txt模板</title>
+<title>DX3906: CMakeLists.txt模板</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,10 +101,10 @@ set(MINOR_VER 0)
 set(PATCH_VER 0)
 set(FULL_VERSION "${MAJOR_VER}.${MINOR_VER}.${PATCH_VER}")</code></pre><pre><code class="CMake"># 设置默认版本为debug
 if(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
-message("=&gt; cmake ${PROJECT_NAME} in Debug mode")
-add_compile_options(-O0 -g -ggdb)
+    message("[${PROJECT_NAME}]: cmake in Debug mode")
+    add_compile_options(-O0 -g -ggdb)
 else()
-message("=&gt; cmake ${PROJECT_NAME} in Release mode")
+    message("[${PROJECT_NAME}] in Release mode")
 endif()</code></pre><pre><code class="CMake"># 构建example开关
 option(BUILD_WITH_EXAMPLE ON)
 if(BUILD_WITH_EXAMPLE)
@@ -133,7 +133,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cmake.html">cmake：C和C++的跨平台构建工具</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cmake.html">cmake：C和C++的跨平台构建工具</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

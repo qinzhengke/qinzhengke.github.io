@@ -9,6 +9,7 @@ var programming_debug =
     ] ],
     [ "C++ debug教训", "cpp_debug.html", [
       [ "企图通过memcpy对象进行拷贝操作。", "cpp_debug.html#企图通过memcpy对象进行拷贝操作。", null ],
+      [ "在main函数之前提示段错误？", "cpp_debug.html#在main函数之前提示段错误？", null ],
       [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
       [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],
       [ "dynamic_pointer_cast模板类要正确", "cpp_debug.html#dynamic_poiner_cast_debug", null ],

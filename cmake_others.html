@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: 现代cmake</title>
+<title>DX3906: 现代cmake</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,7 +91,15 @@ $(document).ready(function(){initNavTree('cmake_others.html','');});
 <div class="title">现代cmake </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>cmake是一个历史悠久的工具，一直在反复迭代，很多特性已经被丢弃，甚至认为是不好的。 cmake近几年也在倡导更优雅的使用方式，即诞生了“现代cmake”，所以我们在使用cmake的时候，同一个目的往往有多种实现方法，每种方法多多少少有些不用，非常地混乱。 所以选择现代cmake使用方法成为了必要，一些非现代写法，就不再记录，以免带来记忆负担。</p>
+<div class="textblock"><h1><a class="anchor" id="编译cmake"></a>
+编译cmake</h1>
+<p>一般来说，下载编译好的包，然后建立软连接即可，但是有的库仍，例如spconv，仍然需要一些类似“CMAKE_ROOT”的配置，必须要安装才行。</p>
+<p>Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR)</p>
+<div class="fragment"><div class="line">apt install build-essential libssl-dev</div><div class="line">./bootstrap</div><div class="line">make -j8</div><div class="line">sudo make install</div></div><!-- fragment --><h1><a class="anchor" id="现代cmake"></a>
+现代cmake</h1>
+<p>cmake是一个历史悠久的工具，一直在反复迭代，很多特性被认为是不好的，甚至已经被丢弃。</p>
+<p>cmake近几年也在倡导更优雅的使用方式，即诞生了“现代cmake”，所以我们在使用cmake的时候，同一个目的往往有多种实现方法，每种方法多多少少有些不用，非常地混乱。</p>
+<p>所以选择现代cmake使用方法成为了必要，一些非现代写法，就不再使用，以免带来记忆负担。</p>
 <p>下面这篇文章详细说明了现代写法的细节。 <a href="https://ukabuer.me/blog/more-modern-cmake">https://ukabuer.me/blog/more-modern-cmake</a></p>
 <h1><a class="anchor" id="现代cmake的版本"></a>
 现代cmake的版本</h1>
@@ -196,7 +204,7 @@ IDE能编，terminal却找不到头文件？</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cmake.html">cmake：C和C++的跨平台构建工具</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cmake.html">cmake：C和C++的跨平台构建工具</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

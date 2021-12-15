@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: C++ debug教训</title>
+<title>DX3906: C++ debug教训</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('cpp_debug.html','');});
 <div class="textblock"><h1><a class="anchor" id="企图通过memcpy对象进行拷贝操作。"></a>
 企图通过memcpy对象进行拷贝操作。</h1>
 <p>类成员对象里面如果有容器类型，就会出现coredump，具体原因待研究。</p>
+<h1><a class="anchor" id="在main函数之前提示段错误？"></a>
+在main函数之前提示段错误？</h1>
+<p>可能的原因是main函数里定义了太大的对象，导致栈溢出，大对象需要定义在堆上。</p>
 <h1><a class="anchor" id="企图通过memcpy对象进行拷贝操作。"></a>
 企图通过memcpy对象进行拷贝操作。</h1>
 <p>类成员对象里面如果有容器类型，就会出现coredump，具体原因待研究。</p>
@@ -124,7 +127,7 @@ dynamic_pointer_cast模板类要正确</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="programming_debug.html">编程debug：吃一堑长一智</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="programming_debug.html">编程debug：吃一堑长一智</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

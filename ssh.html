@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: 学习笔记</title>
+<title>DX3906: SSH</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('zk_note.html','');});
+$(document).ready(function(){initNavTree('ssh.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,24 +88,33 @@ $(document).ready(function(){initNavTree('zk_note.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">学习笔记 </div>  </div>
+<div class="title">SSH </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="el" href="math.html">数学基础（Mathematics Fundamental）</a></p>
-<p><a class="el" href="ds_algorithm.html">数据结构与算法（Data Structures and Algorightms）</a></p>
-<p><a class="el" href="estimation_theory_entry.html">估计理论（Estimation Theory）</a></p>
-<p><a class="el" href="data_association.html">数据关联（Data Association）</a></p>
-<p><a class="el" href="computer_vision.html">计算机视觉（Computer Vision）</a></p>
-<p><a class="el" href="point_cloud.html">点云相关算法（Point Cloud based Algorithms）</a></p>
-<p><a class="el" href="msif_intro.html">多传感器信息融合（Multiple Sensor Information Fusion）</a></p>
-<p><a class="el" href="ml_entry.html">机器学习（Machine Learning）</a></p>
-<p><a class="el" href="programming.html">编程（Programming）</a></p>
-<p><a class="el" href="operating_system.html">操作系统（Operating System）</a></p>
-<p><a class="el" href="block_chain.html">区块链（Block Chain）</a></p>
-<p><a class="el" href="astronomy_entry.html">天文与航天（Astronomy and Aerospace）</a></p>
-<p><a class="el" href="other_technologies.html">其他技术（Other Technologies）</a></p>
-<p><a class="el" href="tools.html">工具笔记（Tools Note）</a></p>
-<p><a class="el" href="online_tools.html">在线工具笔记（Online Tools Note）</a> </p>
+<div class="textblock"><p>三、中间人攻击</p>
+<p>SSH之所以能够保证安全，原因在于它采用了公钥加密。</p>
+<p>整个过程是这样的：（1）远程主机收到用户的登录请求，把自己的公钥发给用户。（2）用户使用这个公钥，将登录密码加密后，发送回来。（3）远程主机用自己的私钥，解密登录密码，如果密码正确，就同意用户登录。</p>
+<p>这个过程本身是安全的，但是实施的时候存在一个风险：如果有人截获了登录请求，然后冒充远程主机，将伪造的公钥发给用户，那么用户很难辨别真伪。因为不像https协议，SSH协议的公钥是没有证书中心（CA）公证的，也就是说，都是自己签发的。</p>
+<p>可以设想，如果攻击者插在用户与远程主机之间（比如在公共的wifi区域），用伪造的公钥，获取用户的登录密码。再用这个密码登录远程主机，那么SSH的安全机制就荡然无存了。这种风险就是著名的"中间人攻击"（Man-in-the-middle attack）。</p>
+<p>SSH协议是如何应对的呢？</p>
+<p>四、口令登录</p>
+<p>如果你是第一次登录对方主机，系统会出现下面的提示：</p>
+<p>　　$ ssh user</p>
+<p>　　The authenticity of host 'host (12.18.429.21)' can't be established.</p>
+<p>　　RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</p>
+<p>　　Are you sure you want to continue connecting (yes/no)?</p>
+<p>这段话的意思是，无法确认host主机的真实性，只知道它的公钥指纹，问你还想继续连接吗？</p>
+<p>所谓"公钥指纹"，是指公钥长度较长（这里采用RSA算法，长达1024位），很难比对，所以对其进行MD5计算，将它变成一个128位的指纹。上例中是98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d，再进行比较，就容易多了。</p>
+<p>很自然的一个问题就是，用户怎么知道远程主机的公钥指纹应该是多少？回答是没有好办法，远程主机必须在自己的网站上贴出公钥指纹，以便用户自行核对。</p>
+<p>假定经过风险衡量以后，用户决定接受这个远程主机的公钥。</p>
+<p>　　Are you sure you want to continue connecting (yes/no)? yes</p>
+<p>系统会出现一句提示，表示host主机已经得到认可。</p>
+<p>　　Warning: Permanently added 'host,12.18.429.21' (RSA) to the list of known hosts.</p>
+<p>然后，会要求输入密码。</p>
+<p>　　Password: (enter password)</p>
+<p>如果密码正确，就可以登录了。</p>
+<p>当远程主机的公钥被接受以后，它就会被保存在文件$HOME/.ssh/known_hosts之中。下次再连接这台主机，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。</p>
+<p>每个SSH用户都有自己的known_hosts文件，此外系统也有一个这样的文件，通常是/etc/ssh/ssh_known_hosts，保存一些对所有用户都可信赖的远程主机的公钥。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

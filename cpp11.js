@@ -6,7 +6,8 @@ var cpp11 =
     ] ],
     [ "C++的lambda表达式", "cpp11_lambda.html", [
       [ "lambda表达式在什么地方使用？", "cpp11_lambda.html#lambda表达式在什么地方使用？", null ],
-      [ "如何将lambda表达式传入template函数？", "cpp11_lambda.html#如何将lambda表达式传入template函数？", null ]
+      [ "如何将lambda表达式传入template函数？", "cpp11_lambda.html#如何将lambda表达式传入template函数？", null ],
+      [ "多线程中的lambda表达式捕获", "cpp11_lambda.html#多线程中的lambda表达式捕获", null ]
     ] ],
     [ "C++11中的std::function和std::bind", "cpp11_bind.html", [
       [ "std::function是什么？", "cpp11_bind.html#std_function", null ],
@@ -54,5 +55,8 @@ var cpp11 =
       [ "代替 typedef", "cpp11_others.html#using", null ],
       [ "使用constexpr作为类的成员变量", "cpp11_others.html#使用constexpr作为类的成员变量", null ]
     ] ],
-    [ "std::ref()函数", "cpp11_std_ref.html", null ]
+    [ "std::ref()函数", "cpp11_std_ref.html", null ],
+    [ "右值", "rvalue.html", [
+      [ "移动构造函数", "rvalue.html#move_constructor", null ]
+    ] ]
 ];

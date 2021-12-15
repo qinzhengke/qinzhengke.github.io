@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: 强大的代码编辑器：Visual Studio Code</title>
+<title>DX3906: 强大的代码编辑器：Visual Studio Code</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -138,7 +138,7 @@ c_cpp_properties.json</h2>
 在vscode中单步调试</h2>
 <p>Step 1: 在CMakeLists.txt中添加以下debug设置</p>
 <div class="fragment"><div class="line">set(DEFAULT_BUILD_TYPE &quot;Debug&quot;)</div><div class="line">set(CMAKE_CXX_FLAGS_DEBUG &quot;{CMAKE_CXX_FLAGS} -o0 -ggbd&quot;)</div><div class="line">add_compile_options(-g)</div></div><!-- fragment --><p>Step 2: 在.vscode目录中按照如下设置</p>
-<div class="fragment"><div class="line">{</div><div class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</div><div class="line">    &quot;configurations&quot;: [</div><div class="line"></div><div class="line">        {</div><div class="line">            &quot;name&quot;: &quot;(gdb) Launch&quot;,</div><div class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;program&quot;: &quot;${workspaceFolder}/build/msft&quot;,</div><div class="line">            &quot;args&quot;: [],</div><div class="line">            &quot;stopAtEntry&quot;: false,</div><div class="line">            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,</div><div class="line">            &quot;environment&quot;: [],</div><div class="line">            &quot;externalConsole&quot;: false,</div><div class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,</div><div class="line">            &quot;setupCommands&quot;: [</div><div class="line">                {</div><div class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</div><div class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</div><div class="line">                    &quot;ignoreFailures&quot;: true</div><div class="line">                }</div><div class="line">            ]</div><div class="line">        },</div><div class="line">        {</div><div class="line">            &quot;name&quot;: &quot;test_intersection&quot;,</div><div class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;program&quot;: &quot;${workspaceFolder}/3rd-party/ha_math/unit_test/build/test_intersection&quot;,</div><div class="line">            &quot;args&quot;: [],</div><div class="line">            &quot;stopAtEntry&quot;: false,</div><div class="line">            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,</div><div class="line">            &quot;environment&quot;: [],</div><div class="line">            &quot;externalConsole&quot;: false,</div><div class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,</div><div class="line">            &quot;setupCommands&quot;: [</div><div class="line">                {</div><div class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</div><div class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</div><div class="line">                    &quot;ignoreFailures&quot;: true</div><div class="line">                }</div><div class="line">            ]</div><div class="line">        },</div><div class="line">    ]</div><div class="line">}</div></div><!-- fragment --><p>其中，program设置为目标可执行文件。</p>
+<div class="fragment"><div class="line">{</div><div class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</div><div class="line">    &quot;configurations&quot;: [</div><div class="line"></div><div class="line">        {</div><div class="line">            &quot;name&quot;: &quot;(gdb) Launch&quot;,</div><div class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;program&quot;: &quot;${workspaceFolder}/build/msft&quot;,</div><div class="line">            &quot;args&quot;: [],</div><div class="line">            &quot;stopAtEntry&quot;: false,</div><div class="line">            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,</div><div class="line">            &quot;environment&quot;: [</div><div class="line">                {&quot;name&quot;:&quot;LD_LIBRARY_PATH&quot;, &quot;value&quot;:&quot;/usr/local/lib&quot;}</div><div class="line">            ],</div><div class="line">            &quot;externalConsole&quot;: false,</div><div class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,</div><div class="line">            &quot;setupCommands&quot;: [</div><div class="line">                {</div><div class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</div><div class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</div><div class="line">                    &quot;ignoreFailures&quot;: true</div><div class="line">                }</div><div class="line">            ]</div><div class="line">        },</div><div class="line">        {</div><div class="line">            &quot;name&quot;: &quot;test_intersection&quot;,</div><div class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;program&quot;: &quot;${workspaceFolder}/3rd-party/ha_math/unit_test/build/test_intersection&quot;,</div><div class="line">            &quot;args&quot;: [],</div><div class="line">            &quot;stopAtEntry&quot;: false,</div><div class="line">            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,</div><div class="line">            &quot;environment&quot;: [],</div><div class="line">            &quot;externalConsole&quot;: false,</div><div class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,</div><div class="line">            &quot;setupCommands&quot;: [</div><div class="line">                {</div><div class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</div><div class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</div><div class="line">                    &quot;ignoreFailures&quot;: true</div><div class="line">                }</div><div class="line">            ]</div><div class="line">        },</div><div class="line">    ]</div><div class="line">}</div></div><!-- fragment --><p>其中，program设置为目标可执行文件。</p>
 <p>Step 3: 按F5进行调试，F10单步（跳过函数），F11单步（跳入函数）。</p>
 <h2><a class="anchor" id="vscode单步调试会先自动跳到末尾"></a>
 vscode单步调试会先自动跳到末尾</h2>
@@ -146,8 +146,8 @@ vscode单步调试会先自动跳到末尾</h2>
 <p>很奇怪，原因还未知道。</p>
 <h2><a class="anchor" id="如何使用clang-format进行代码格式化？"></a>
 如何使用clang-format进行代码格式化？</h2>
-<p>步骤1：<code>File</code>-&gt;<code>Preference</code>-&gt;<code><a class="el" href="classSettings.html">Settings</a></code>-&gt;搜索“format”，选择“Editor:Format On Save”。</p>
-<p>步骤2：同样在<code><a class="el" href="classSettings.html">Settings</a></code>界面，搜索“C_Cpp”，在“C_Cpp:Clang_format_style”下方的编辑框中填入“file”，即使用工作空间的“.clang-format”文件作为style，工作空间就是vscode打开的目录，例如打开目录的时候使用“code .”，那么工作空间就是“.”，记住不是.vscode目录！</p>
+<p>步骤1：<code>File</code>-&gt;<code>Preference</code>-&gt;<code>Settings</code>-&gt;搜索“format”，选择“Editor:Format On Save”。</p>
+<p>步骤2：同样在<code>Settings</code>界面，搜索“C_Cpp”，在“C_Cpp:Clang_format_style”下方的编辑框中填入“file”，即使用工作空间的“.clang-format”文件作为style，工作空间就是vscode打开的目录，例如打开目录的时候使用“code .”，那么工作空间就是“.”，记住不是.vscode目录！</p>
 <h2><a class="anchor" id="vscode如何给当前project添加包含路径？"></a>
 vscode如何给当前project添加包含路径？</h2>
 <p>在c_cpp_properties.json中按照如下方法添加。</p>
@@ -167,7 +167,17 @@ python调试设置</h2>
 <p>指定python版本：键入“ctrl+p” -&gt; 输入“&gt; Python: select intepreter”，然后选择期望的版本，3.6或者2.7。</p>
 <h2><a class="anchor" id="vscode_create_c_cpp_prop"></a>
 如何生成c_cpp_properties.json文件？</h2>
-<p>ctrl+shift+P，输入“C/C++:Edit configurations”，一般来说输入前面几个字符vscode就会自动弹出目标了。 </p>
+<p>ctrl+shift+P，输入“C/C++:Edit configurations”，一般来说输入前面几个字符vscode就会自动弹出目标了。</p>
+<h2><a class="anchor" id="include_error_detected"></a>
+#include errors detected. Please update your includePath.</h2>
+<p>IntelliSense features for this translation unit (/path/to/project/file.cpp) will be provided by the Tag Parser.</p>
+<p>当存在多个版本的代码时，vscode无法抉择，需要用户指定特定的版本，点击灯泡图标并且选择合适版本即可。</p>
+<div class="image">
+<img src="./figures/vscode_include_error.png"/>
+</div>
+<h1><a class="anchor" id="cpp17"></a>
+c++ 17 语法支持</h1>
+<p>namespace "std" has no member "string_view" </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -175,7 +185,7 @@ python调试设置</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="tools.html">工具笔记（Tools Note）</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="tools.html">工具笔记（Tools Note）</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

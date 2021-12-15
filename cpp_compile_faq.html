@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: C++构建常见问题</title>
+<title>DX3906: C++构建常见问题</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,7 +91,11 @@ $(document).ready(function(){initNavTree('cpp_compile_faq.html','');});
 <div class="title">C++构建常见问题 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="系统limit文件报错？"></a>
+<div class="textblock"><h1><a class="anchor" id="找不到“string_view”"></a>
+找不到“string_view”</h1>
+<p>namespace "std" has no member "string_view"</p>
+<p>C++标准设置为C++17</p>
+<h1><a class="anchor" id="系统limit文件报错？"></a>
 系统limit文件报错？</h1>
 <p>有的时候系统源文件报错会让人摸不着头脑，开发者根本不知道哪里出错。这里列举一个遇到的问题。</p>
 <p>有可能是定义了和已有库重名函数或者变量，例如有一个案例，不知道谁多此一举，定义了min和max函数，虽然自定义的max函数有ifndef防止重复定义， 但是已有库的函数不一定会这样定义啊，所以如果先编译了自定义的max，然后在编译已有库max之间如果有其他系统函数调用了这个max，就会直接报错了。 所以不要随便定义和已有库重名的东西。</p>
@@ -161,7 +165,11 @@ passing ... as 'this' argument ...  discards qualifiers</h1>
 <p>这样的做法会编译报错，具体原因待了解。 正确的做法是只在声名处用static修饰。</p>
 <h1><a class="anchor" id="类成员函数声明和定义同时使用默认参数"></a>
 类成员函数声明和定义同时使用默认参数</h1>
-<p>这样的做法会导致编译报错，具体原因待了解。 正确的做法是只在声明处使用默认参数。 </p>
+<p>这样的做法会导致编译报错，具体原因待了解。 正确的做法是只在声明处使用默认参数。</p>
+<h1><a class="anchor" id="debug_vs_release"></a>
+debug和release的区别</h1>
+<p>其中一个区别是，对于定义了变量但是没初始化的语句，Debug版本程序会默认自动初始化，例如Eigen::Matrix，会在自动初始化为0矩阵， 但是Release就不会。矩阵中的内容大概率是nan。</p>
+<p>所以当发现debug和release运行表现不一致的时候，可以怀疑是不是有些变量没有正确的初始化。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -169,7 +177,7 @@ passing ... as 'this' argument ...  discards qualifiers</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

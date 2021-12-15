@@ -10,8 +10,8 @@ var searchData=
   ['symbol（符号）',['Symbol（符号）',['../cpp_symbol.html',1,'cpp']]],
   ['std_3a_3amap',['std::map',['../cpp_unordered_map.html',1,'cpp_container']]],
   ['std_3a_3avector',['std::vector',['../cpp_vector.html',1,'cpp_container']]],
-  ['settings',['Settings',['../classSettings.html',1,'']]],
   ['semi_2dglobal_20blocking_20matching_28sgbm_29',['Semi-Global Blocking Matching(SGBM)',['../sgbm.html',1,'computer_vision']]],
   ['sift特征',['SIFT特征',['../sift_feature.html',1,'feature_entry']]],
+  ['ssh',['SSH',['../ssh.html',1,'']]],
   ['surf特征',['SURF特征',['../surf_feature.html',1,'feature_entry']]]
 ];

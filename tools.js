@@ -6,7 +6,8 @@ var tools =
       [ "安装gnome插件", "gnome.html#安装gnome插件", null ]
     ] ],
     [ "版本管理工具：git", "git.html", [
-      [ "如何删除submodule", "git.html#如何删除submodule", null ]
+      [ "如何删除submodule", "git.html#如何删除submodule", null ],
+      [ "git配置代理", "git.html#git配置代理", null ]
     ] ],
     [ "文档框架：doxygen", "doxygen.html", [
       [ "include和snippet", "doxygen.html#include和snippet", null ],
@@ -88,5 +89,8 @@ var tools =
       [ "使用GOOGLEFINANCE", "google_sheets.html#使用GOOGLEFINANCE", null ],
       [ "使用CRYPTOFINANCE", "google_sheets.html#使用CRYPTOFINANCE", null ],
       [ "在html中引入谷歌表格", "google_sheets.html#在html中引入谷歌表格", null ]
+    ] ],
+    [ "Google Chrome", "google_chrome.html", [
+      [ "如何以不同的profile来运行chrome？", "google_chrome.html#如何以不同的profile来运行chrome？", null ]
     ] ]
 ];

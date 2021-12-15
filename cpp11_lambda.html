@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: C++的lambda表达式</title>
+<title>DX3906: C++的lambda表达式</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,14 +99,17 @@ lambda表达式在什么地方使用？</h1>
 <p>这里举一个稍微没那么简单的例子，一个由结构体组成的vector,现在要打印所有元素成员a的值。</p>
 <p>首先，在模板定义的地方，函数对象类型也要定义成模板类型，而不是std::function&lt;&gt;类型。</p>
 <p>其次，在实例化的时候，lambda表达式的传参直接用auto即可，不需要再写一遍类型，（前面的模板函数实例化时已经写了）。</p>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div><div class="line">lib_func(std::vector&lt;T&gt; t, F usr_func){</div><div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> a : t){</div><div class="line">        usr_func(t);</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">struct </span>tuple_t{ <span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b};</div><div class="line"></div><div class="line">vector&lt;tuple_t&gt; v;</div><div class="line"></div><div class="line">lib_func&lt;tuple_t&gt;(v, [](<span class="keyword">auto</span> x){printf(<span class="stringliteral">&quot;%d,&quot;</span>,x.a);});</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div><div class="line">lib_func(std::vector&lt;T&gt; t, F usr_func){</div><div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> a : t){</div><div class="line">        usr_func(t);</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">struct </span>tuple_t{ <span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b};</div><div class="line"></div><div class="line">vector&lt;tuple_t&gt; v;</div><div class="line"></div><div class="line">lib_func&lt;tuple_t&gt;(v, [](<span class="keyword">auto</span> x){printf(<span class="stringliteral">&quot;%d,&quot;</span>,x.a);});</div></div><!-- fragment --><h1><a class="anchor" id="多线程中的lambda表达式捕获"></a>
+多线程中的lambda表达式捕获</h1>
+<p>在以值传递方式捕获父函数变量时，注意lambda表达式运行所在的线程，如果是另外一个线程，那么捕获的那些局部变量在函数退出的时候已经丢失，此时的引用为非法引用。</p>
+<div class="fragment"><div class="line">int x =10;</div><div class="line">thread th([&amp;](){</div><div class="line">    printf(&quot;%d\n&quot;,x);</div><div class="line"></div><div class="line">})</div><div class="line">th.detach();</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp11.html">C++11</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li><li class="navelem"><a class="el" href="cpp11.html">C++11</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

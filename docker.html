@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: Docker：开源容器工具</title>
+<title>DX3906: Docker：开源容器工具</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,7 +97,13 @@ $(document).ready(function(){initNavTree('docker.html','');});
 Docker容器和宿主机之间共享文件</h2>
 <p>有些比较依赖环境的库会以docker镜像的形式提供给开发者，例如GPU版本的Tensorflow，这意味这我们必须要其对应的容器中进行开发。 那就会涉及到代码文件在哪里保存，以及怎么编辑，怎么传送到容器中的问题了。</p>
 <p>容器和宿主机之间共享文件的方式很简单，只需要在启动的时候挂载宿主目录，即使用“-v”选项。</p>
-<div class="fragment"><div class="line">docker run -it -v /home/haha/下载:/share microsoft/dotnet:latest /bin/bash</div></div><!-- fragment --><p>上述代码把宿主机的“/home/haha/下载”目录挂载到docker中的“/share”目录。 </p>
+<div class="fragment"><div class="line">docker run -it -v /home/haha/下载:/share microsoft/dotnet:latest /bin/bash</div></div><!-- fragment --><p>上述代码把宿主机的“/home/haha/下载”目录挂载到docker中的“/share”目录。</p>
+<h2><a class="anchor" id="docker里的开发工具"></a>
+docker里的开发工具</h2>
+<p>通过apt安装：</p>
+<div class="fragment"><div class="line">apt install vim git tig autoconf automake libtool build-essential libfontconfig gdb</div></div><!-- fragment --><p>libfontconfig，cmake-gui的依赖。</p>
+<p>通过其他方式安装。</p>
+<p>cmake </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -105,7 +111,7 @@ Docker容器和宿主机之间共享文件</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="operating_system.html">操作系统（Operating System）</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="operating_system.html">操作系统（Operating System）</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

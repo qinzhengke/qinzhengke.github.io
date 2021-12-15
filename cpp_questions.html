@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: C++面试题</title>
+<title>DX3906: C++面试题</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -155,7 +155,11 @@ hashmap一种实现结构？</h2>
 为什么会出现死锁问题，如何避免？</h2>
 <p>在临界区域等待其他的锁。</p>
 <p>避免方法：消费者不要在临界区域等待其他的锁，如果是小变量，临界区可以直接执行拷贝操作，如果是大内存，则拷贝指针。 不要把等待各个数据这种行为放到临界区域。</p>
-<h2><a class="anchor" id="有那些智能指针，有何作用？"></a>
+<h2><a class="anchor" id="下面的代码会有什么问题？"></a>
+下面的代码会有什么问题？</h2>
+<div class="fragment"><div class="line">#include &lt;thread&gt;</div><div class="line">#include &lt;unistd.h&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">void func(){</div><div class="line">    int a = 1;</div><div class="line">    thread th([&amp;a]{</div><div class="line">        for(int i=0; i&lt;10; i++){</div><div class="line">            printf(&quot;%d\n&quot;, a++);</div><div class="line">        }</div><div class="line">    });</div><div class="line">    th.detach();</div><div class="line">}</div><div class="line"></div><div class="line">int main(void){</div><div class="line"></div><div class="line">    func();</div><div class="line">    usleep(1000000);</div><div class="line"></div><div class="line">    return 0;</div><div class="line">}</div></div><!-- fragment --><p>回答：捕获局部变量，但是主函数立马会结束，局部变量会被销毁，线程入口函数会捕获到非法的变量。</p>
+<p>cpp.sh 实际运行结果</p>
+<div class="fragment"><div class="line">27517</div><div class="line">27518</div><div class="line">27519</div><div class="line">27520</div><div class="line">27521</div><div class="line">27522</div><div class="line">27523</div><div class="line">27524</div><div class="line">27525</div><div class="line">27526</div></div><!-- fragment --><h2><a class="anchor" id="有那些智能指针，有何作用？"></a>
 有那些智能指针，有何作用？</h2>
 <p>shared_ptr，普通的智能指针，</p>
 <p>unique_ptr，只允许有一个引用者的智能指针</p>
@@ -174,7 +178,7 @@ hashmap一种实现结构？</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="cpp.html">C++：青出于蓝，我斑愿称之为最强！</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

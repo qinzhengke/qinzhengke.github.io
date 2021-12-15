@@ -2,6 +2,8 @@ var cmake =
 [
     [ "CMakeLists.txt模板", "cmake_template.html", null ],
     [ "现代cmake", "cmake_others.html", [
+      [ "编译cmake", "cmake_others.html#编译cmake", null ],
+      [ "现代cmake", "cmake_others.html#现代cmake", null ],
       [ "现代cmake的版本", "cmake_others.html#现代cmake的版本", null ],
       [ "添加目录里所有源文件", "cmake_others.html#添加目录里所有源文件", null ],
       [ "C++11标准的引用", "cmake_others.html#cmake_cpp11", null ],

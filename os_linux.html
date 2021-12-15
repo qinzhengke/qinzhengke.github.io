@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: Linux</title>
+<title>DX3906: Linux</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,7 +109,9 @@ ls输出的绿色背景文件是什么意思？</h2>
 <h2><a class="anchor" id="如何非阻塞运行gui程序？"></a>
 如何非阻塞运行gui程序？</h2>
 <p>问题：如果直接在终端运行某个gui程序，终端会阻塞直到gui关闭，例如运行gitk。 那么如何运行程序，并且不阻塞终端呢？ 解法：</p>
-<div class="fragment"><div class="line">gitk &amp;</div></div><!-- fragment --><h2><a class="anchor" id="如何查看目录和文件占用磁盘大小？"></a>
+<div class="fragment"><div class="line">gitk &amp;</div></div><!-- fragment --><h2><a class="anchor" id="开机自启动"></a>
+开机自启动</h2>
+<h2><a class="anchor" id="如何查看目录和文件占用磁盘大小？"></a>
 如何查看目录和文件占用磁盘大小？</h2>
 <div class="fragment"><div class="line">du -h -d 1 ./</div></div><!-- fragment --><p>du表示disk usage，-h参数表示使用人类可读的单位，即KB,MB,GB为单位，如果不设置这个参数，得到的数字很奇怪，也不是以byte为单位的。-d表示递归的深度，如果只看当前目录，选择1，后面./就是目录位置。</p>
 <p>这样的方式只会显示文件夹的大小，如果要显示文件的大小，用下面这个命令。</p>
@@ -292,7 +294,7 @@ flameshot-Ubuntu下一个超强截图工具</h2>
 <p>安装 </p><div class="fragment"><div class="line">sudo apt-get install flameshot</div></div><!-- fragment --><p>使用：</p><ol type="1">
 <li>windows键，输入keyboard，进入键盘设置</li>
 <li>将print(print screen)键解绑，然后添加新的print键快捷操作“flameshot gui”</li>
-<li>按print键，享受截图、涂鸦、注释的快感吧。</li>
+<li>按print键，即可截图。</li>
 </ol>
 <h1><a class="anchor" id="搜狗输入法切换全角半角以及中英标点符号"></a>
 搜狗输入法切换全角半角以及中英标点符号</h1>
@@ -311,7 +313,17 @@ flameshot-Ubuntu下一个超强截图工具</h2>
 <div class="fragment"><div class="line">pid=$(top -n 1 -b | grep -e &#39;node&#39; | grep -e &#39;[0-9]*&#39; -o | head -1)</div><div class="line">if [ ! -z &quot;$pid&quot; ]</div><div class="line">then</div><div class="line">kill $pid</div><div class="line">echo &quot;node stopped&quot;</div><div class="line">fi</div></div><!-- fragment --><p>其中：</p>
 <p>(1) <code>top -n 1 -b</code> 表示显示所有进程，并且不进入交互界面，直接printf所有进程。</p>
 <p>(2) <code>grep -o</code> 表示把所有匹配出来的结果列出来，列出时每一个match的内容会占一行。</p>
-<p>(3) <code>head -1</code> 表示取第一行的内容。 </p>
+<p>(3) <code>head -1</code> 表示取第一行的内容。</p>
+<h2><a class="anchor" id="磁盘开机自动挂"></a>
+磁盘开机自动挂</h2>
+<p>磁盘开机挂载问题，Linux开机后，除了“/”目录和swap，其他的分区是不会自动挂载的，就像如果开机后第一次点击原Windows下的D盘，那么打开的时间会稍微久一些，而且文档管理的图标上会有一个小三角（Ubuntu）表示已经挂载。 我将log和stuffs分别做了快捷链接，但是由于这两个文件处于我的Work分区，开机没有挂载，所以开机后直接在terminal里输入快捷链接，还不能打开log和sutffs文件，所以现在必须试试开机挂载了。打开etc/fstab这个文件</p>
+<p>Step 1: 查看磁盘的UUID</p>
+<p>方法一：Ubuntu下使用“Disks”工具，Windows键+“disks”，可以查看某个磁盘的UUID</p>
+<p>方法二：使用gparted查看磁盘UUID</p>
+<p>Step 2: 编辑fstab文件</p>
+<div class="fragment"><div class="line">sudo vim /etc/fstab</div></div><!-- fragment --><p>在最后一行加入如下配置：</p>
+<div class="fragment"><div class="line">UUID=xxxxxxx       /media/Work/    auto    defaults 0       2</div></div><!-- fragment --><p>【注意】“defaults”值不要拼错了，有“s”，最后一个参数要填“2”，表示普通分区，并非Linux启动分区，这两设置不对，有可能无法开机。</p>
+<p>【注意】如果错误设置无法开，不用惊慌，只要在Ubuntu启动界面，进入recovery模式，然后进入root模式，使用vim编辑/etc/fstab文件即可。 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
@@ -319,7 +331,7 @@ flameshot-Ubuntu下一个超强截图工具</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="operating_system.html">操作系统（Operating System）</a></li><li class="navelem"><a class="el" href="os_ubuntu.html">Ubuntu操作系统</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="operating_system.html">操作系统（Operating System）</a></li><li class="navelem"><a class="el" href="os_ubuntu.html">Ubuntu18.04</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

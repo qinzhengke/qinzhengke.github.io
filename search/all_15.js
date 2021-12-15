@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['天文与航天（astronomy_20and_20aerospace）',['天文与航天（Astronomy and Aerospace）',['../astronomy_entry.html',1,'zk_note']]],
+  ['天文与航天（astronomy_20and_20aerospace）',['天文与航天（Astronomy and Aerospace）',['../astronomy_entry.html',1,'index']]],
   ['常用代码库',['常用代码库',['../awesome_lib.html',1,'programming']]],
   ['带有偏差矫正的卡尔曼滤波',['带有偏差矫正的卡尔曼滤波',['../biased_kmf.html',1,'estimation_theory_entry']]],
-  ['区块链（block_20chain）',['区块链（Block Chain）',['../block_chain.html',1,'zk_note']]],
+  ['区块链（block_20chain）',['区块链（Block Chain）',['../block_chain.html',1,'index']]],
   ['关于c语言的一些提问',['关于C语言的一些提问',['../c_questions.html',1,'c']]],
   ['内参标定',['内参标定',['../cali_intrinsic.html',1,'calibration']]],
   ['古典概率',['古典概率',['../classic_probabiilty.html',1,'probability_entry']]],
@@ -14,17 +14,18 @@ var searchData=
   ['卡尔曼滤波_28kalman_20filter_29',['卡尔曼滤波(Kalman Filter)',['../kalman_filter.html',1,'estimation_theory_entry']]],
   ['开源办公软件：libre_20office',['开源办公软件：Libre Office',['../libre_office.html',1,'tools']]],
   ['基本数学概念',['基本数学概念',['../math_fundarmental.html',1,'math']]],
-  ['多传感器信息融合（multiple_20sensor_20information_20fusion）',['多传感器信息融合（Multiple Sensor Information Fusion）',['../msif_intro.html',1,'zk_note']]],
-  ['在线工具笔记（online_20tools_20note）',['在线工具笔记（Online Tools Note）',['../online_tools.html',1,'zk_note']]],
-  ['其他技术（other_20technologies）',['其他技术（Other Technologies）',['../other_technologies.html',1,'zk_note']]],
+  ['多目标跟踪（multiple_20object_20tracking）',['多目标跟踪（Multiple Object Tracking）',['../mot.html',1,'index']]],
+  ['多传感器信息融合（multiple_20sensor_20information_20fusion）',['多传感器信息融合（Multiple Sensor Information Fusion）',['../msif_intro.html',1,'index']]],
+  ['在线工具笔记（online_20tools_20note）',['在线工具笔记（Online Tools Note）',['../online_tools.html',1,'index']]],
+  ['其他技术（other_20technologies）',['其他技术（Other Technologies）',['../other_technologies.html',1,'index']]],
   ['异常（exception）',['异常（Exception）',['../python_exception.html',1,'python']]],
   ['反射（reflection）',['反射（reflection）',['../python_reflection.html',1,'python']]],
   ['四元数的插值',['四元数的插值',['../quat_interpolation.html',1,'quaternion']]],
   ['四元数_28quaternion_29',['四元数(Quaternion)',['../quaternion.html',1,'geometry3d_entry']]],
+  ['右值',['右值',['../rvalue.html',1,'cpp11']]],
   ['基于unordered_5fmap的稀疏矩阵的实现',['基于unordered_map的稀疏矩阵的实现',['../sparse_matrix.html',1,'cpp']]],
   ['常用工具列表',['常用工具列表',['../tool_list.html',1,'tools']]],
-  ['工具笔记（tools_20note）',['工具笔记（Tools Note）',['../tools.html',1,'zk_note']]],
+  ['工具笔记（tools_20note）',['工具笔记（Tools Note）',['../tools.html',1,'index']]],
   ['其他有用的工具',['其他有用的工具',['../useful_tools.html',1,'tools']]],
-  ['强大的代码编辑器：visual_20studio_20code',['强大的代码编辑器：Visual Studio Code',['../vscode.html',1,'tools']]],
-  ['学习笔记',['学习笔记',['../zk_note.html',1,'']]]
+  ['强大的代码编辑器：visual_20studio_20code',['强大的代码编辑器：Visual Studio Code',['../vscode.html',1,'tools']]]
 ];

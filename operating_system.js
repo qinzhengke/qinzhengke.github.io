@@ -5,6 +5,7 @@ var operating_system =
         [ "文件权限", "os_linux.html#文件权限", null ],
         [ "ls输出的绿色背景文件是什么意思？", "os_linux.html#ls输出的绿色背景文件是什么意思？", null ],
         [ "如何非阻塞运行gui程序？", "os_linux.html#如何非阻塞运行gui程序？", null ],
+        [ "开机自启动", "os_linux.html#开机自启动", null ],
         [ "如何查看目录和文件占用磁盘大小？", "os_linux.html#如何查看目录和文件占用磁盘大小？", null ],
         [ "如何查看哪些端口号被监听？", "os_linux.html#如何查看哪些端口号被监听？", null ],
         [ "ls工具如何显示文件的全路径？", "os_linux.html#ls工具如何显示文件的全路径？", null ],
@@ -35,9 +36,11 @@ var operating_system =
       [ "搜狗输入法切换全角半角以及中英标点符号", "os_linux.html#搜狗输入法切换全角半角以及中英标点符号", null ],
       [ "启用ssh服务", "os_linux.html#启用ssh服务", null ],
       [ "使用scp发送文件", "os_linux.html#使用scp发送文件", null ],
-      [ "根据进程的名称来kill", "os_linux.html#根据进程的名称来kill", null ]
+      [ "根据进程的名称来kill", "os_linux.html#根据进程的名称来kill", [
+        [ "磁盘开机自动挂", "os_linux.html#磁盘开机自动挂", null ]
+      ] ]
     ] ],
-    [ "Ubuntu操作系统", "os_ubuntu.html", "os_ubuntu" ],
+    [ "Ubuntu18.04", "os_ubuntu.html", "os_ubuntu" ],
     [ "Lubuntu", "os_lubuntu.html", null ],
     [ "Windows", "os_windows.html", null ],
     [ "VMware：目前最好的虚拟机软件", "vmware.html", [
@@ -48,7 +51,8 @@ var operating_system =
         [ "安装Lubuntu注意事项", "os_lubuntu.html#安装Lubuntu注意事项", null ],
         [ "命令行拷贝文件夹？", "os_windows.html#命令行拷贝文件夹？", null ],
         [ "命令行删除文件夹", "os_windows.html#命令行删除文件夹", null ],
-        [ "Docker容器和宿主机之间共享文件", "docker.html#Docker容器和宿主机之间共享文件", null ]
+        [ "Docker容器和宿主机之间共享文件", "docker.html#Docker容器和宿主机之间共享文件", null ],
+        [ "docker里的开发工具", "docker.html#docker里的开发工具", null ]
       ] ]
     ] ]
 ];

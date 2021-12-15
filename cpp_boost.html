@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: 标准库的后备军：Boost</title>
+<title>DX3906: 标准库的后备军：Boost</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,14 +99,19 @@ $(document).ready(function(){initNavTree('cpp_boost.html','');});
 <div class="fragment"><div class="line">./bootstrap.sh --prefix=path/to/installation/prefix</div><div class="line">./b2</div><div class="line">sudo ./b2 install</div></div><!-- fragment --><p>默认安装在“/usr/local”目录，即头文件放在“/usr/local/include”，库文件和cmake文件放在“/usr/local/lib”。</p>
 <h1><a class="anchor" id="cmake中的使用方法"></a>
 cmake中的使用方法</h1>
-<div class="fragment"><div class="line">find_package(Boost REQUIRED COMPONENTS system thread regex)</div><div class="line"></div><div class="line">add_executable(my_exe main.cc)</div><div class="line"></div><div class="line">target_link_libraries(my_exe ${Boost_SYSTEM_LIBRARY} ${Boost_THREAD_LIBRARY} ${Boost_REGEX_LIBRARY})</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">find_package(Boost REQUIRED COMPONENTS system thread regex)</div><div class="line"></div><div class="line">add_executable(my_exe main.cc)</div><div class="line"></div><div class="line">target_link_libraries(my_exe ${Boost_SYSTEM_LIBRARY} ${Boost_THREAD_LIBRARY} ${Boost_REGEX_LIBRARY})</div></div><!-- fragment --><h1><a class="anchor" id="boost_filesystem"></a>
+boost filesystem 的链接</h1>
+<div class="fragment"><div class="line">target_link_libraries(mylib boost_system ${Boost_FILESYSTEM_LIBRARIES})</div></div><!-- fragment --><p>不知道为什么“boost_system”和“${Boost_FIELSYSTEM_LIBRARIES}”两者都必须添加。</p>
+<p>如果缺少“boost_system”，则当mylib被其他库引用的时候会报出类似错误</p>
+<div class="fragment"><div class="line">/usr/bin/ld: xxx/xxx.cc.o: undefined reference to symbol &#39;_ZN5boost6system15system_categoryEv&#39;</div><div class="line">//usr/lib/x86_64-linux-gnu/libboost_system.so.1.65.1: error adding symbols: DSO missing from command line</div><div class="line">collect2: error: ld returned 1 exit status</div></div><!-- fragment --><p>如果缺少“{Boost_FILESYSTEM_LIBRARIES}”，则同样mylib被其他库引用的时候，会报出另一个错误，</p>
+<div class="fragment"><div class="line">../mylib.so: undefined reference to `boost::filesystem::detail::dir_itr_close(void*&amp;, void*&amp;)&#39;</div><div class="line">../mylib.so: undefined reference to `boost::filesystem::detail::directory_iterator_construct(boost::filesystem::directory_iterator&amp;, boost::filesystem::path const&amp;, boost::system::error_code*)&#39;</div><div class="line">...</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="awesome_lib.html">常用代码库</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="awesome_lib.html">常用代码库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

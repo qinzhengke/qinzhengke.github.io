@@ -30,7 +30,8 @@ var qt =
     ] ],
     [ "Qt相关常见问题", "cpp_qt_faq.html", [
       [ "使用Creator创建的控制台程序无任何输出？", "cpp_qt_faq.html#使用Creator创建的控制台程序无任何输出？", null ],
-      [ "qtcreator中开启gcc的c99支持", "cpp_qt_faq.html#qtcreator中开启gcc的c99支持", null ]
+      [ "qtcreator中开启gcc的c99支持", "cpp_qt_faq.html#qtcreator中开启gcc的c99支持", null ],
+      [ "Ubuntu18.04下解决Qt出现qt.qpa.plugin:Could not load the Qt platform plugin “xcb“问题", "cpp_qt_faq.html#qt_xcb_issue", null ]
     ] ],
     [ "Qt提供的C++反射", "qt_reflection.html", [
       [ "MetaObject类", "qt_reflection.html#qt_meta_object", null ]

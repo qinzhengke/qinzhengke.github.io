@@ -3,7 +3,8 @@ var awesome_lib =
     [ "标准库的后备军：Boost", "cpp_boost.html", [
       [ "安装方法", "cpp_boost.html#安装方法", null ],
       [ "编译方法", "cpp_boost.html#编译方法", null ],
-      [ "cmake中的使用方法", "cpp_boost.html#cmake中的使用方法", null ]
+      [ "cmake中的使用方法", "cpp_boost.html#cmake中的使用方法", null ],
+      [ "boost filesystem 的链接", "cpp_boost.html#boost_filesystem", null ]
     ] ],
     [ "OpenCV：经典开源计算机视觉库", "cpp_lib_opencv.html", [
       [ "Linux离线环境编译opencv", "cpp_lib_opencv.html#Linux离线环境编译opencv", null ],
@@ -56,8 +57,12 @@ var awesome_lib =
         [ "解决方法：", "cpp_lib_evpp.html#解决方法：", null ],
         [ "如何获取sockect_fd？", "cpp_lib_evpp.html#如何获取sockect_fd？", null ],
         [ "find_package寻找gtest", "gtest.html#find_package寻找gtest", null ],
-        [ "X11_Xt_LIB could not be found.", "cpp_lib_vtk.html#vtk_x11_not_found", null ]
-      ] ]
+        [ "X11_Xt_LIB could not be found.", "cpp_lib_vtk.html#vtk_x11_not_found", null ],
+        [ "Could not find the VTK package with the following required components: RenderingContextOpenGL2", "cpp_lib_vtk.html#render_context", null ],
+        [ "vtk_no_member_TupleValue", "cpp_lib_vtk.html#vtk_no_member_TupleValue", null ],
+        [ "vtk_incomplete_type", "cpp_lib_vtk.html#vtk_incomplete_type", null ]
+      ] ],
+      [ "fault", "cpp_lib_vtk.html#加入textactor之后，render出现segment", null ]
     ] ],
     [ "Date：一个基于chrono的日历库", "cpp_lib_date.html", null ],
     [ "Point Cloud Library（PCL）", "pcl.html", [

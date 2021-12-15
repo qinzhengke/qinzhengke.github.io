@@ -26,6 +26,7 @@ var searchData=
   ['c_2b_2b11中的其他有用特性',['C++11中的其他有用特性',['../cpp11_others.html',1,'cpp11']]],
   ['c_2b_2b11的智能指针',['C++11的智能指针',['../cpp11_smart_pointer.html',1,'cpp11']]],
   ['c_2b_2b11中的多线程',['C++11中的多线程',['../cpp11_thread.html',1,'cpp11']]],
+  ['c_2b_2b_2017',['C++ 17',['../cpp17.html',1,'']]],
   ['c_2b_2b构建报错合集',['C++构建报错合集',['../cpp_build_errors.html',1,'cpp']]],
   ['c_2b_2b中的类和对象',['C++中的类和对象',['../cpp_class.html',1,'cpp_oop']]],
   ['c_2b_2b构建常见问题',['C++构建常见问题',['../cpp_compile_faq.html',1,'cpp']]],
@@ -40,10 +41,12 @@ var searchData=
   ['c_2b_2b中的多态',['C++中的多态',['../cpp_polymorphism.html',1,'cpp_oop']]],
   ['c_2b_2b中的修饰符_28qualifier_29',['C++中的修饰符(qualifier)',['../cpp_qualifier.html',1,'cpp']]],
   ['c_2b_2b面试题',['C++面试题',['../cpp_questions.html',1,'cpp']]],
+  ['c_2b_2b中的regex',['C++中的regex',['../cpp_regex.html',1,'cpp_std']]],
   ['c_2b_2b运行常见问题',['C++运行常见问题',['../cpp_run_faq.html',1,'cpp']]],
   ['c_2b_2b中的单例设计模式',['C++中的单例设计模式',['../cpp_singleton.html',1,'cpp_design_pattern']]],
   ['c_2b_2b的标准库',['C++的标准库',['../cpp_std.html',1,'cpp']]],
   ['c_2b_2b中的stl库',['C++中的STL库',['../cpp_stl.html',1,'cpp']]],
   ['c_2b_2b一些建议',['C++一些建议',['../cpp_suggestion.html',1,'cpp']]],
-  ['c_2b_2b模板',['C++模板',['../cpp_template.html',1,'cpp']]]
+  ['c_2b_2b模板',['C++模板',['../cpp_template.html',1,'cpp']]],
+  ['cuda',['cuda',['../cuda.html',1,'']]]
 ];

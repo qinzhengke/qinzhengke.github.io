@@ -12,5 +12,6 @@ var searchData=
   ['std_3a_3avector',['std::vector',['../cpp_vector.html',1,'cpp_container']]],
   ['semi_2dglobal_20blocking_20matching_28sgbm_29',['Semi-Global Blocking Matching(SGBM)',['../sgbm.html',1,'computer_vision']]],
   ['sift特征',['SIFT特征',['../sift_feature.html',1,'feature_entry']]],
+  ['ssh',['SSH',['../ssh.html',1,'']]],
   ['surf特征',['SURF特征',['../surf_feature.html',1,'feature_entry']]]
 ];

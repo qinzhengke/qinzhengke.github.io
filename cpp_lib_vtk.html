@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>一个普通的笔记本: VTK：3D可视化库</title>
+<title>DX3906: VTK：3D可视化库</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,14 +104,572 @@ Trouble Shooting</h1>
 <h2><a class="anchor" id="vtk_x11_not_found"></a>
 X11_Xt_LIB could not be found.</h2>
 <p>完整的问题： </p><div class="fragment"><div class="line">CMake Error at Rendering/OpenGL/CMakeLists.txt:304 (message):</div><div class="line">   X11_Xt_LIB could not be found.  Required for VTK X lib.</div></div><!-- fragment --><p>解决方法：</p>
-<div class="fragment"><div class="line">sudo apt install libxt-dev</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">sudo apt install libxt-dev</div></div><!-- fragment --><h2><a class="anchor" id="render_context"></a>
+Could not find the VTK package with the following required components: RenderingContextOpenGL2</h2>
+<p>前言：在运行vtk examples时出现这个问题，原因时example貌似使用的8.9版本的vtk，而我们安装的是最新的9.1。</p>
+<p>解决方法：移除CMakeLists.txt中，find_package中的vtkRenderingContextOpenGL2依赖，因为新版本9.1已经没有这个东西了。</p>
+<div class="fragment"><div class="line">#   vtkRenderingContextOpenGL2</div></div><!-- fragment --> <h2><a class="anchor" id="vtk_no_member_TupleValue"></a>
+vtk_no_member_TupleValue</h2>
+<p>完整问题：　 </p><div class="fragment"><div class="line">error: ‘class vtkUnsignedCharArray’ has no member named ‘InsertNextTupleValue’; did you mean ‘InsertNextTypedTuple’?</div></div><!-- fragment --><p>TupleValue在&gt;7.2版本后改名为TypedTuple，https://kitware.github.io/vtk-examples/site/Cxx上面的example，明明是8.2能编过，但是还是用了这个接口，是因为它的代码中做了宏定义，转到了最新的命名。</p>
+<h2><a class="anchor" id="vtk_incomplete_type"></a>
+vtk_incomplete_type</h2>
+<p>完整问题： </p><div class="fragment"><div class="line">error: invalid use of incomplete type ‘class vtkPointData’</div></div><!-- fragment --><p>原因是没有加入include&lt;vtkPointData.h&gt;，实际上vtkPointData只有class声明，没有具体的定义，拿指针没问题，但是对指针进行解引用，就会出错。</p>
+<h1><a class="anchor" id="加入textactor之后，render出现segment"></a>
+fault</h1>
+<p>解决方法，加入以下初始化设置</p>
+<p>VTK_MODULE_INIT(vtkRenderingOpenGL2) VTK_MODULE_INIT(vtkInteractionStyle) VTK_MODULE_INIT(vtkRenderingFreeType)</p>
+<h3>使用案例</h3>
+<p>cmake_minimum_required(VERSION 3.12)</p>
+<h1>使用文件夹名称作为project名称</h1>
+<p>get_filename_component(PROJECT_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME) string(REPLACE " " "_" PROJECT_NAME ${PROJECT_NAME}) project(${PROJECT_NAME})</p>
+<p>if(NOT CMAKE_BUILD_TYPE STREQUAL "Release") message("[${PROJECT_NAME}] cmake in Debug mode") add_compile_options(-O0 -g -ggdb) else() message("[${PROJECT_NAME}] in Release mode") endif()</p>
+<p>find_package(VTK 8.2 REQUIRED COMPONENTS vtkCommonColor vtkCommonCore vtkFiltersGeneral vtkFiltersCore vtkFiltersPoints vtkInteractionStyle vtkRenderingContextOpenGL2 vtkRenderingCore vtkRenderingFreeType vtkRenderingGL2PSOpenGL2 vtkRenderingOpenGL2 vtkIOImage vtkImagingSources )</p>
+<p>file(GLOB my_SRC "*.c*" )</p>
+<p>add_executable(${PROJECT_NAME} ${my_SRC} )</p>
+<p>target_include_directories(${PROJECT_NAME} PUBLIC ../../include ../../3rd-party/ha_tracking/include ../../3rd-party/ha_tracking/3rd-party/ha_math/include ../../3rd-party/ha_tracking/3rd-party/ha_math/3rd-party/eigen-3.3.9 ../../3rd-party/ha_tracking/3rd-party/ha_math/3rd-party/ha_util/include ${CMAKE_CURRENT_BINARY_DIR}/../../3rd-party # include *.pb.h ${VTK_INCLUDE_DIRS} )</p>
+<p>target_link_libraries(${PROJECT_NAME} ${VTK_LIBRARIES} pthread ha_util ha_3dobj_tracking /usr/lib/x86_64-linux-gnu/libjpeg.so )</p>
+<h6></h6>
+<p>#pragma once</p>
+<p>#include &lt;ha_3dobj_tracking/types.hh&gt;</p>
+<p>#include &lt;map&gt; #include &lt;mutex&gt; #include &lt;deque&gt;</p>
+<p>#include &lt;vtkActor.h&gt; #include &lt;vtkNamedColors.h&gt; #include &lt;vtkNew.h&gt; #include &lt;vtkPoints.h&gt; #include &lt;vtkRenderWindow.h&gt; #include &lt;vtkRenderWindowInteractor.h&gt; #include &lt;vtkRenderer.h&gt; #include &lt;vtkAutoInit.h&gt; #include &lt;vtkPolyData.h&gt; #include &lt;vtkVertexGlyphFilter.h&gt; #include &lt;vtkPolyDataMapper.h&gt; #include &lt;vtkCommand.h&gt; #include &lt;vtkImageData.h&gt; #include &lt;vtkHexahedron.h&gt; #include &lt;vtkUnstructuredGrid.h&gt; #include &lt;vtkDataSetMapper.h&gt; #include &lt;vtkLookupTable.h&gt; #include &lt;vtkFloatArray.h&gt; #include &lt;vtkCallbackCommand.h&gt; #include &lt;vtkVectorText.h&gt; #include &lt;vtkFollower.h&gt; #include &lt;vtkImageActor.h&gt; #include &lt;vtkImageImport.h&gt; #include &lt;vtkImageCanvasSource2D.h&gt; #include &lt;vtkInteractorStyleTerrain.h&gt; VTK_MODULE_INIT(vtkRenderingOpenGL2) VTK_MODULE_INIT(vtkInteractionStyle) VTK_MODULE_INIT(vtkFreeType)</p>
+<p>using namespace std; using namespace ha::_3dobj_tracking; // using namespace cimg_library;</p>
+<p>struct frame_t{ vector&lt;Object&lt;double&gt;&gt; dt_objs; vector&lt;Object&lt;double&gt;&gt; objs; PointCloudPtr&lt;float&gt; cloud; shared_ptr&lt;uint8_t&gt; img; // CImg&lt;uint8_t&gt; *img; // vtkNew&lt;vtkJPEGReader&gt; *img; };</p>
+<p>struct ViewPort{ </p><pre class="fragment">vtkNew&lt;vtkRenderer&gt; renderer_;
+std::array&lt;double,3&gt; pos_;
+std::array&lt;double,3&gt; focal_point_;
+int prallel_projection_;
+double view_angle_;
+// Camera settings
+vtkNew&lt;vtkCamera&gt; camera_;
+
+ViewPort(
+        std::array&lt;double,4&gt; range,    // x_min, y_min, x_max, y_max
+        std::array&lt;double,3&gt; position,  // x, y, z
+        std::array&lt;double,3&gt; focal_point,    // x, y, z
+        int prallel_projection,
+        double view_angle
+    );
+
+void resetCamera();
+</pre><p> };</p>
+<p>class ObjectGroup{ public: </p><pre class="fragment">static constexpr size_t kBoxCapacity = 200;
+array&lt;array&lt;array&lt;double,3&gt;,8&gt;,kBoxCapacity&gt; box_points_coord_;
+array&lt;array&lt;vtkIdType,8&gt;,kBoxCapacity&gt; box_idxs_;
+size_t box_cnt_ = 0;
+vtkNew&lt;vtkHexahedron&gt; box_hexas_[kBoxCapacity];
+vtkNew&lt;vtkPoints&gt; box_points_;
+vtkNew&lt;vtkUnstructuredGrid&gt; box_ugrids_;
+vtkNew&lt;vtkDataSetMapper&gt; box_mapper_;
+vtkNew&lt;vtkActor&gt; box_actor_;
+
+vtkNew&lt;vtkPolyDataMapper&gt; label_mappers_[kBoxCapacity];
+vtkNew&lt;vtkVectorText&gt; label_vtexts_[kBoxCapacity];
+vtkNew&lt;vtkFollower&gt; label_actors_[kBoxCapacity];
+
+ObjectGroup();
+
+bool visibility_ = true;
+bool score_visibility_ = false;
+
+void update(vector&lt;Object&lt;double&gt;&gt; &amp;frame);
+
+void setVisibility(bool flag);
+</pre><p>};</p>
+<p>class Viewer{ public: </p><pre class="fragment">enum PlayStatus{
+    STEP_FORWARD=0,
+    CONTINUOUS_FORWARD,
+    CONTINUOUS_FORWARDX2,
+    CONTINUOUS_FORWARDX4,
+    CONTINUOUS_FORWARDX8,
+
+    STEP_BACKWARD,
+    CONTINUOUS_BACKWARD,
+    CONTINUOUS_BACKWARDX2,
+    CONTINUOUS_BACKWARDX4,
+    CONTINUOUS_BACKWARDX8,
+    PLAY_STATUS_SIZE
+};
+
+enum ObjDisplayMode{
+    TRACK_ONLY=0,
+    DETECTION_ONLY,
+    TRACK_AND_DETECTION
+};
+
+enum LabelMode{
+    ID = 0,
+    ID_SCORE
+};
+
+deque&lt;frame_t&gt; stream_;
+int data_pos_ = 0;
+mutex data_mtx_;
+
+map&lt;uint64_t, PointCloudPtr&lt;float&gt;&gt; clouds_;
+
+vtkNew&lt;vtkNamedColors&gt; colors_;
+
+// Points =&gt; PolyData =&gt; VertexGlyphFilter =&gt; PolyDataMapper =&gt; Actor
+vtkNew&lt;vtkPoints&gt; cloud_points_;
+vtkNew&lt;vtkPolyData&gt; cloud_poly_;
+vtkNew&lt;vtkVertexGlyphFilter&gt; cloud_filter_;
+vtkNew&lt;vtkFloatArray&gt; cloud_colors_;
+vtkNew&lt;vtkPolyDataMapper&gt; cloud_mapper_;
+vtkNew&lt;vtkActor&gt; cloud_actor_;
+vtkNew&lt;vtkLookupTable&gt; cloud_lut_;
+
+ObjectGroup track_obj_group_;
+
+ObjectGroup detection_obj_group_;
+
+vtkNew&lt;vtkImageActor&gt; img_actor_;
+vtkNew&lt;vtkImageImport&gt; img_import_;
+vtkNew&lt;vtkImageCanvasSource2D&gt; img_boxes_;
+
+vtkNew&lt;vtkCallbackCommand&gt; keypressCallback;
+std::vector&lt;ViewPort*&gt; views_;
+vtkNew&lt;vtkRenderWindow&gt; render_window_;
+vtkNew&lt;vtkRenderWindowInteractor&gt; interactor_;
+vtkNew&lt;vtkInteractorStyleTerrain&gt; interactor_style_;
+
+PlayStatus play_status_ = CONTINUOUS_FORWARD;
+
+ObjDisplayMode obj_disp_mode_ = TRACK_ONLY;
+
+LabelMode label_mode_ = ID;
+
+Viewer();
+
+// Load input from file in another thread.
+void startLoadInput(string track_folder, string detect_folder, string img_folder);
+
+// Listen input from network in antoher thread.
+void startListenInput(string folder);
+
+void run();
+
+void update();
+</pre><p>private: void startLoadInputs(vector&lt;string&gt; box_paths, vector&lt;string&gt; pose_folders);</p>
+<p>vector&lt;Object&lt;double&gt;&gt; loadObjectsOfAFrame(string fpath);</p>
+<p>shared_ptr&lt;uint8_t&gt; loadAnImage(string fpath);</p>
+<p>std::vector&lt;string&gt; getDetectionBoxFpaths(string folder);</p>
+<p>std::vector&lt;string&gt; getImageFpaths(string folder);</p>
+<p>static void KeypressCallbackFunction( vtkObject* caller, long unsigned int eventId, void* clientData, void* callData);</p>
+<p>void drawImgBoxes(frame_t * frame);</p>
+<p>};</p>
+<p>class TimerHandler : public vtkCommand{ public: int timer_cnt_; Viewer * viewer_ = nullptr; TimerHandler() = default;</p>
+<p>static TimerHandler* New();</p>
+<p>virtual void Execute( vtkObject* caller, unsigned long eventId, void *vtkNotUsed(callData));</p>
+<p>void setViewer(Viewer *viewer); };</p>
+<h6></h6>
+<p>#include "viewer.hh" #include &lt;regex&gt; #include &lt;thread&gt; #include &lt;Eigen/Dense&gt; #include &lt;ha_util/core.h&gt; #include &lt;jpeglib.h&gt;</p>
+<p>#include &lt;vtkProperty.h&gt; #include &lt;vtkPointData.h&gt; #include &lt;vtkCamera.h&gt; #include &lt;vtkViewport.h&gt; #include &lt;vtkImageMapper3D.h&gt; #include &lt;vtkImageFlip.h&gt; #include &lt;vtkImageBlend.h&gt;</p>
+<p>using namespace ha; using namespace ha::_3dobj_tracking; using namespace std; using namespace Eigen; namespace fs = boost::filesystem;</p>
+<p>ViewPort::ViewPort( std::array&lt;double,4&gt; range, std::array&lt;double,3&gt; pos, std::array&lt;double,3&gt; focal_point, int prallel_projection, double view_angle){</p>
+<p>this-&gt;pos_ = pos; this-&gt;focal_point_ = focal_point; this-&gt;prallel_projection_ = prallel_projection; this-&gt;view_angle_ = view_angle;</p>
+<p>vtkNew&lt;vtkNamedColors&gt; colors; renderer_-&gt;SetViewport(range.data()); renderer_-&gt;SetBackground(colors-&gt;GetColor3d("Black").GetData()); resetCamera(); }</p>
+<p>void ViewPort::resetCamera(){ </p><pre class="fragment">camera_-&gt;SetPosition(pos_.data());
+camera_-&gt;SetFocalPoint(focal_point_.data());
+camera_-&gt;SetParallelProjection(prallel_projection_);
+if(prallel_projection_){
+    camera_-&gt;SetParallelScale(view_angle_);
+    camera_-&gt;SetRoll(180);
+}
+else{
+    camera_-&gt;SetViewAngle(view_angle_);
+    camera_-&gt;SetViewUp(0,0,1);
+}
+renderer_-&gt;SetActiveCamera(camera_.Get());
+</pre><p> }</p>
+<p>TimerHandler* TimerHandler::New(){ TimerHandler *handler = new TimerHandler(); handler-&gt;timer_cnt_ = 0; return handler; }</p>
+<p>void TimerHandler::Execute( vtkObject* caller, unsigned long eventId, void *vtkNotUsed(callData)){</p>
+<p>if(viewer_-&gt;play_status_ != Viewer::STEP_FORWARD &amp;&amp; viewer_-&gt;play_status_ != Viewer::STEP_BACKWARD){ viewer_-&gt;update(); }</p>
+<p>timer_cnt_ ++; }</p>
+<p>void TimerHandler::setViewer(Viewer *viewer){ viewer_ = viewer; }</p>
+<p>ObjectGroup::ObjectGroup(){ </p><pre class="fragment">for(int i=0; i&lt;kBoxCapacity; i++){
+    for(int j=0; j&lt;8; j++){
+        box_idxs_[i][j] = i * 8 + j;
+    }
+}
+box_ugrids_-&gt;Allocate(kBoxCapacity);
+box_mapper_-&gt;SetInputData(box_ugrids_);
+box_actor_-&gt;SetMapper(box_mapper_);
+box_actor_-&gt;GetProperty()-&gt;EdgeVisibilityOn();
+box_actor_-&gt;GetProperty()-&gt;SetEdgeColor(255,255,100);
+box_actor_-&gt;GetProperty()-&gt;SetOpacity(0.3);
+
+for(int i=0; i&lt;kBoxCapacity; i++){
+    label_mappers_[i]-&gt;SetInputConnection(label_vtexts_[i]-&gt;GetOutputPort());
+    label_actors_[i]-&gt;SetMapper(label_mappers_[i]);
+    label_actors_[i]-&gt;SetScale(0.8,0.8,0.8);
+}
+</pre><p> }</p>
+<p>void ObjectGroup::update(vector&lt;Object&lt;double&gt;&gt; &amp;objs){ </p><pre class="fragment">box_points_-&gt;Reset();
+box_ugrids_-&gt;Reset();
+box_actor_-&gt;SetVisibility(visibility_);
+for(int i=0; i&lt;kBoxCapacity; i++){
+    label_actors_[i]-&gt;VisibilityOff();
+}
+for(int i=0; i&lt;objs.size(); i++){
+    auto l2 = objs[i].lwh.x()/2;
+    auto w2 = objs[i].lwh.y()/2;
+    auto h2 = objs[i].lwh.z()/2;
+    box_points_coord_[i][0] = {-l2,     -w2,    -h2};
+    box_points_coord_[i][1] = {l2,      -w2,    -h2};
+    box_points_coord_[i][2] = {l2,      w2,     -h2};
+    box_points_coord_[i][3] = {-l2,     w2,     -h2};
+    box_points_coord_[i][4] = {-l2,     -w2,    h2};
+    box_points_coord_[i][5] = {l2,      -w2,    h2};
+    box_points_coord_[i][6] = {l2,      w2,     h2};
+    box_points_coord_[i][7] = {-l2,     w2,     h2};
+
+    for(int j=0; j&lt;8; j++){
+        Matrix3d rot = objs[i].quat.toEigenQuat().toRotationMatrix();
+        Eigen::Vector3d coord(box_points_coord_[i][j].data());
+        coord = rot * coord + objs[i].pos.toEigen();
+        box_points_coord_[i][j] = {coord.x(), coord.y(), coord.z()};
+    }
+
+    for(int j=0; j&lt;8; j++){
+        box_points_-&gt;InsertPoint(i*8+j, box_points_coord_[i][j].data());
+    }
+    box_ugrids_-&gt;InsertNextCell(VTK_HEXAHEDRON, 8, box_idxs_[i].data());
+
+    string label_str = fmt2str("i%d",objs[i].id);
+    label_str += score_visibility_ ? fmt2str("s:%.2f", objs[i].score) : "";
+    label_vtexts_[i]-&gt;SetText(label_str.c_str());
+    label_vtexts_[i]-&gt;Update();
+    label_actors_[i]-&gt;SetPosition(box_points_coord_[i][0][0], box_points_coord_[i][0][1], box_points_coord_[i][0][2]);
+    if(visibility_){
+        label_actors_[i]-&gt;VisibilityOn();
+    }
+}
+box_ugrids_-&gt;SetPoints(box_points_);
+</pre><p> }</p>
+<p>void ObjectGroup::setVisibility(bool flag){ visibility_ = flag; }</p>
+<p>Viewer::Viewer(){ </p><pre class="fragment">LocalClock::init();
+
+// Point cloud renderring pipeline.
+cloud_lut_-&gt;SetNumberOfColors(256);
+cloud_lut_-&gt;SetHueRange(0.667,0);
+cloud_lut_-&gt;Build();
+cloud_filter_-&gt;SetInputData(cloud_poly_.Get());
+cloud_mapper_-&gt;SetInputConnection(cloud_filter_-&gt;GetOutputPort());
+cloud_mapper_-&gt;SetScalarRange(0,255);
+cloud_mapper_-&gt;SetLookupTable(cloud_lut_);
+cloud_actor_-&gt;SetMapper(cloud_mapper_.Get());
+
+track_obj_group_.box_actor_-&gt;GetProperty()-&gt;SetColor(10,10,0);
+detection_obj_group_.box_actor_-&gt;GetProperty()-&gt;SetColor(5,0,0);
+for(int i=0; i&lt;ObjectGroup::kBoxCapacity; i++){
+    track_obj_group_.label_actors_[i]-&gt;GetProperty()-&gt;SetColor(10,10,0);
+    detection_obj_group_.label_actors_[i]-&gt;GetProperty()-&gt;SetColor(10,1,0);
+}
+
+int cols = 960, rows = 540;
+img_import_-&gt;SetDataSpacing(1, 1, 1);
+img_import_-&gt;SetDataOrigin(0, 0, 0);
+img_import_-&gt;SetWholeExtent(0, cols-1, 0, rows-1, 0, 0);
+img_import_-&gt;SetDataExtentToWholeExtent();
+img_import_-&gt;SetDataScalarTypeToUnsignedChar();
+img_import_-&gt;SetNumberOfScalarComponents(3);
+vtkNew&lt;vtkImageFlip&gt; fliper;
+fliper-&gt;SetFilteredAxes(0);
+fliper-&gt;SetInputData(img_import_-&gt;GetOutput());
+fliper-&gt;Update();
+img_boxes_-&gt;SetNumberOfScalarComponents(3);
+img_boxes_-&gt;SetScalarTypeToUnsignedChar();
+img_boxes_-&gt;SetExtent(img_import_-&gt;GetDataExtent());
+vtkNew&lt;vtkImageBlend&gt; blend;
+blend-&gt;AddInputConnection(fliper-&gt;GetOutputPort());
+blend-&gt;AddInputConnection(img_boxes_-&gt;GetOutputPort());
+blend-&gt;SetOpacity(0, 0.6);
+blend-&gt;SetOpacity(1, 0.4);
+blend-&gt;SetBlendModeToCompound();
+img_actor_-&gt;GetMapper()-&gt;SetInputConnection(blend-&gt;GetOutputPort());
+
+// vtkNew&lt;vtkRenderer&gt; is noncopyable, so it's mother i.e., 
+// ViewPort is noncopyable too. We can only capture their pointers into
+// vector container.
+double b = 0;
+ViewPort *v0 = new ViewPort({0,0,0.5-b,1}, {0,0,5}, {0,0,0}, 1, 90);
+ViewPort *v1 = new ViewPort({0.5+b,0,1,0.5-b}, {0,5,5}, {0,-5,0}, 0, 60);
+ViewPort *v2 = new ViewPort({0.5+b,0.5+b,1,1}, {480,270,5}, {480,270,0}, 1, 275);
+// ViewPort v3({0.5+b,0.5+b,1,1}, {0,0,0}, {0,-1,0}, 0, 45, cloud_actor_, map_actor_);
+
+views_ = {v0, v1};
+for(auto &amp;v : views_){
+    v-&gt;renderer_-&gt;AddActor(track_obj_group_.box_actor_);
+    v-&gt;renderer_-&gt;AddActor(detection_obj_group_.box_actor_);
+    v-&gt;renderer_-&gt;AddActor(cloud_actor_);
+    for(int i=0; i&lt;ObjectGroup::kBoxCapacity; i++){
+        v-&gt;renderer_-&gt;AddViewProp(detection_obj_group_.label_actors_[i]);
+        v-&gt;renderer_-&gt;AddViewProp(track_obj_group_.label_actors_[i]);
+    }
+    render_window_-&gt;AddRenderer(v-&gt;renderer_); 
+}
+
+v2-&gt;renderer_-&gt;AddActor(img_actor_);
+
+render_window_-&gt;AddRenderer(v2-&gt;renderer_);
+
+keypressCallback-&gt;SetCallback(KeypressCallbackFunction);
+keypressCallback-&gt;SetClientData((void*)this);
+interactor_-&gt;AddObserver(vtkCommand::KeyPressEvent, keypressCallback);
+interactor_-&gt;SetRenderWindow(render_window_);
+interactor_-&gt;Initialize();
+interactor_-&gt;SetInteractorStyle(interactor_style_);
+render_window_-&gt;SetWindowName("Tracking");
+render_window_-&gt;SetSize(1920,1080);
+</pre><p>}</p>
+<p>void Viewer::run(){ </p><pre class="fragment">vtkNew&lt;TimerHandler&gt; cb;
+cb-&gt;setViewer(this);
+interactor_-&gt;AddObserver(vtkCommand::TimerEvent, cb);
+int timer_id = interactor_-&gt;CreateRepeatingTimer(50);
+interactor_-&gt;Start();
+</pre><p> }</p>
+<p>void Viewer::update(){ </p><pre class="fragment">frame_t frame;
+data_mtx_.lock();
+constexpr int kPlaySteps[PLAY_STATUS_SIZE] = {1,1,2,4,8,1,1,2,4,8};
+if(!stream_.empty()){
+    frame = stream_[data_pos_];
+    int step = kPlaySteps[play_status_];
+    if(play_status_ &gt;= STEP_FORWARD &amp;&amp; play_status_ &lt;= CONTINUOUS_FORWARDX8){
+        if(data_pos_ + step &gt; stream_.size()-1){
+            data_pos_ = stream_.size()-1;
+        }
+        else{
+            data_pos_ += step;
+        }
+    }
+    else if(play_status_ &gt;= STEP_BACKWARD &amp;&amp; play_status_ &lt;= CONTINUOUS_BACKWARDX8){
+        if(data_pos_ - step &lt; 0){
+            data_pos_ = 0;
+        }
+        else{
+            data_pos_ -= step;
+        }
+    }
+}
+data_mtx_.unlock();
+
+auto t_beg = LocalClock::getTimestampUS();
+track_obj_group_.update(frame.objs);
+detection_obj_group_.update(frame.dt_objs);
+auto t_end = LocalClock::getTimestampUS();
+// printf("Inserting data cost: %lu ms\n", (t_end-t_beg)/1000);
+
+vtkNew&lt;vtkNamedColors&gt; named_colors;
+cloud_colors_-&gt;Reset();
+cloud_colors_-&gt;SetNumberOfComponents(1);
+cloud_colors_-&gt;SetName("colors");
+cloud_points_-&gt;Reset();
+frame.cloud-&gt;iterate([this,&amp;named_colors](size_t idx, PointItf&lt;float&gt; pt){
+    cloud_points_-&gt;InsertNextPoint(pt.x(), pt.y(), pt.z());
+    cloud_colors_-&gt;InsertNextValue(pt.i());
+});
+cloud_poly_-&gt;SetPoints(cloud_points_);
+cloud_poly_-&gt;GetPointData()-&gt;SetScalars(cloud_colors_);
+cloud_filter_-&gt;Update();
+// printf("[vtkRenderer]: cloud cnt:%llu\n", cloud_points_-&gt;GetNumberOfPoints());
+
+drawImgBoxes(&amp;frame);
+img_import_-&gt;SetImportVoidPointer(frame.img.get());
+img_import_-&gt;Update();
+
+img_actor_-&gt;Update();
+
+render_window_-&gt;Render();
+</pre><p> }</p>
+<p>void Viewer::drawImgBoxes(frame_t * frame){ </p><pre class="fragment">uint32_t cols = img_import_-&gt;GetDataExtent()[1]+1;
+uint32_t rows = img_import_-&gt;GetDataExtent()[3]+1;
+img_boxes_-&gt;SetDrawColor(0,0,0);
+img_boxes_-&gt;FillBox(img_import_-&gt;GetDataExtent()[0], img_import_-&gt;GetDataExtent()[1],
+                img_import_-&gt;GetDataExtent()[2], img_import_-&gt;GetDataExtent()[3]);
+
+Eigen::Quaterniond q_l2c(0.016213200031258722, 0.0030578899383849464, 0.7114721800418571,-0.7025205466606356);
+
+Matrix3d rot_l2c = q_l2c.toRotationMatrix().block&lt;3,3&gt;(0,0);
+Eigen::Vector3d p_l2c;
+p_l2c &lt;&lt; 0.0002585796504896516, -0.03907777167811011, -0.0440125762408362;
+
+Matrix&lt;double,2,3&gt; K;
+K &lt;&lt; 1970.0131/2, 0, 970.0002/2, 0, 1970.0091/2, 483.2988/2;
+
+img_boxes_-&gt;SetDrawColor(1000,1000,0);
+int idxes[12][2] = {{0,1},{1,2},{2,3},{3,0},{4,5},{5,6},{6,7},{7,4},{0,4},{1,5},{2,6},{3,7}};
+for(int i=0; i&lt;frame-&gt;objs.size(); i++){
+    auto l2 = frame-&gt;objs[i].lwh.x()/2;
+    auto w2 = frame-&gt;objs[i].lwh.y()/2;
+    auto h2 = frame-&gt;objs[i].lwh.z()/2;
+    array&lt;Eigen::Vector3d,8&gt; pts;
+    pts[0] = {-l2,     -w2,    -h2};
+    pts[1] = {l2,      -w2,    -h2};
+    pts[2] = {l2,      w2,     -h2};
+    pts[3] = {-l2,     w2,     -h2};
+    pts[4] = {-l2,     -w2,    h2};
+    pts[5] = {l2,      -w2,    h2};
+    pts[6] = {l2,      w2,     h2};
+    pts[7] = {-l2,     w2,     h2};
+
+    array&lt;Eigen::Vector2d,8&gt; m;
+    Matrix3d rot = frame-&gt;objs[i].quat.toEigenQuat().toRotationMatrix();
+    Vector3d p = frame-&gt;objs[i].pos.toEigen();
+    for(int j=0; j&lt;8; j++){
+        pts[j] = rot * pts[j] + p;
+        pts[j] = rot_l2c * pts[j] + p_l2c;
+        if(pts[j].z() &gt; 0){
+            m[j] = K * pts[j] / pts[j].z();
+            m[j].x() = cols - m[j].x();
+        }
+        else {
+            m[j] = {9999,9999};
+        }
+    }
+    for(int j=0; j&lt;12; j++){
+        img_boxes_-&gt;DrawSegment(m[idxes[j][0]].x(), m[idxes[j][0]].y(), m[idxes[j][1]].x(), m[idxes[j][1]].y());
+    }
+}
+</pre><p> }</p>
+<p>vector&lt;Object&lt;double&gt;&gt; Viewer::loadObjectsOfAFrame(string fpath){ ifstream ifs(fpath); if(!ifs.is_open()){ throw runtime_error("can't open file to read: "+ fpath); } ifs.seekg(0, ios::end); size_t len = ifs.tellg(); ifs.seekg(0, ios::beg); auto buf = shared_ptr&lt;char&gt;(new char[len]); ifs.read(buf.get(), len);</p>
+<p>auto frame = ha::_3dobj_tracking::Frame&lt;double&gt;::fromProtobuf(buf, len);</p>
+<p>return frame.objs_; }</p>
+<p>shared_ptr&lt;uint8_t&gt; Viewer::loadAnImage(string fpath){ struct jpeg_decompress_struct cinfo; struct jpeg_error_mgr jerr;</p>
+<p>JSAMPROW raw_line[1];</p>
+<p>FILE *infile = fopen( fpath.c_str(), "rb" ); unsigned long location = 0; int i = 0;</p>
+<p>if ( !infile ) { throw runtime_error("Can't open file to read: "+fpath); }</p>
+<p>cinfo.err = jpeg_std_error( &amp;jerr ); jpeg_create_decompress( &amp;cinfo ); jpeg_stdio_src( &amp;cinfo, infile ); jpeg_read_header( &amp;cinfo, TRUE );</p>
+<p>jpeg_start_decompress( &amp;cinfo );</p>
+<p>uint32_t cols = cinfo.output_width / 2; uint32_t rows = cinfo.output_height / 2; uint32_t channel = cinfo.num_components; auto image = shared_ptr&lt;uint8_t&gt;(new uint8_t[cols*rows*cinfo.num_components] );</p>
+<p>raw_line[0] = (uint8_t *)malloc( cinfo.output_width*cinfo.num_components );</p>
+<p>for(int r=0; r&lt;rows; r++){ uint8_t * line = image.get() + r * cols * channel; jpeg_read_scanlines(&amp;cinfo, raw_line, 1);</p>
+<p>for(int c=0; c&lt;cols; c++){ memcpy(line+c*channel, raw_line[0]+c*channel*2, channel); } jpeg_skip_scanlines(&amp;cinfo, 1); }</p>
+<p>jpeg_finish_decompress( &amp;cinfo ); jpeg_destroy_decompress( &amp;cinfo ); free( raw_line[0] ); fclose( infile );</p>
+<p>return image; }</p>
+<p>std::vector&lt;string&gt; Viewer::getDetectionBoxFpaths(string folder){ </p><pre class="fragment">std::vector&lt;std::string&gt; fpaths;
+std::set&lt;int&gt; idxs;
+for(auto &amp;p : fs::directory_iterator(folder)){
+    if(boost::filesystem::is_directory(p)){
+        continue;
+    }
+    smatch m_idx;
+    if(regex_search(p.path().string(), m_idx, regex("/([0-9]+).bin"))){
+        idxs.insert(atoi(m_idx[1].str().c_str()));
+    }
+}
+for(auto i : idxs){
+    fpaths.push_back(fmt2str("%s/%d.bin",folder.c_str(),i));
+}
+
+return fpaths;
+</pre><p> }</p>
+<p>vector&lt;string&gt; Viewer::getImageFpaths(string folder){ auto sub_folders = list_ordered_folders(folder); vector&lt;string&gt; fpaths; for(auto sub_folder : sub_folders){ auto files = list_ordered_files(sub_folder); for(auto file : files){ smatch match_res; if(regex_search(file, match_res, regex(".+.jpg"))){ string path = match_res[0].str(); fpaths.push_back(path); } } } return fpaths; }</p>
+<p>void Viewer::startLoadInput(string track_folder, string detect_folder, string img_folder){ auto dt_box_fpaths = getDetectionBoxFpaths(detect_folder); auto box_fpaths = list_ordered_files(track_folder+"/box"); auto cloud_fpaths = list_ordered_files(track_folder+"/cloud"); auto img_fpaths = getImageFpaths(img_folder); thread th([dt_box_fpaths, box_fpaths,cloud_fpaths, img_fpaths,this](){ for(size_t i=0; i&lt;box_fpaths.size(); i++){ </p><pre class="fragment">// Load detections of a frame.
+auto objs = loadObjectsOfAFrame(box_fpaths[i]);
+
+auto dt_objs = loadObjectsOfAFrame(dt_box_fpaths[i]);
+
+// Load point cloud of a frame.
+auto cld = make_shared&lt;PointCloud&lt;float&gt;&gt;();
+cld-&gt;load(cloud_fpaths[i]);
+
+auto img = loadAnImage(img_fpaths[i]);
+
+frame_t d = {dt_objs, objs, cld, img};
+
+data_mtx_.lock();
+stream_.push_back(d);
+data_mtx_.unlock();
+
+// printf("[LD] complete a frame, total:%lu\n", i+1);
+</pre><p>} }); th.detach(); }</p>
+<p>void Viewer::KeypressCallbackFunction(vtkObject* caller, long unsigned int vtkNotUsed(eventId), void* clientData, void* vtkNotUsed(callData)) { // std::cout &lt;&lt; "Keypress callback" &lt;&lt; std::endl; </p><pre class="fragment">Viewer * me = (Viewer*)clientData;
+
+vtkRenderWindowInteractor* iren =
+  static_cast&lt;vtkRenderWindowInteractor*&gt;(caller);
+
+if(iren-&gt;GetKeyCode() == 100){              // "d"
+}
+else if(iren-&gt;GetKeyCode() == 102){         // "f"
+    if(me-&gt;play_status_ == CONTINUOUS_FORWARD){
+        me-&gt;play_status_ = CONTINUOUS_FORWARDX2;
+    }
+    else if(me-&gt;play_status_ == CONTINUOUS_FORWARDX2){
+        me-&gt;play_status_ = CONTINUOUS_FORWARDX4;
+    }
+    else if(me-&gt;play_status_ == CONTINUOUS_FORWARDX4 ||
+            me-&gt;play_status_ == CONTINUOUS_FORWARDX8){
+        me-&gt;play_status_ = CONTINUOUS_FORWARDX8;
+    }
+    else{
+        me-&gt;play_status_ = CONTINUOUS_FORWARD;
+    }
+}
+else if(iren-&gt;GetKeyCode() == 115){         // "s"
+    me-&gt;play_status_ = STEP_BACKWARD;
+}
+else if(iren-&gt;GetKeyCode() == 97){          // "a"
+    if(me-&gt;play_status_ == CONTINUOUS_BACKWARD){
+        me-&gt;play_status_ = CONTINUOUS_BACKWARDX2;
+    }
+    else if(me-&gt;play_status_ == CONTINUOUS_BACKWARDX2){
+        me-&gt;play_status_ = CONTINUOUS_BACKWARDX4;
+    }
+    else if(me-&gt;play_status_ == CONTINUOUS_BACKWARDX4 ||
+            me-&gt;play_status_ == CONTINUOUS_BACKWARDX8){
+        me-&gt;play_status_ = CONTINUOUS_BACKWARDX8;
+    }
+    else{
+        me-&gt;play_status_ = CONTINUOUS_BACKWARD;
+    }
+}
+else if(iren-&gt;GetKeyCode() == 103){     // "g"
+    for(auto v: me-&gt;views_){
+        v-&gt;resetCamera();
+    }
+}
+else if(iren-&gt;GetKeyCode() == 104)  {   // "h"
+    if(me-&gt;obj_disp_mode_ == TRACK_ONLY){
+        me-&gt;obj_disp_mode_ = DETECTION_ONLY;
+        me-&gt;track_obj_group_.setVisibility(false);
+        me-&gt;detection_obj_group_.setVisibility(true);
+    }
+    else if(me-&gt;obj_disp_mode_ == DETECTION_ONLY){
+        me-&gt;obj_disp_mode_ = TRACK_AND_DETECTION;
+        me-&gt;track_obj_group_.setVisibility(true);
+        me-&gt;detection_obj_group_.setVisibility(true);
+    }
+    else{ // me-&gt;obj_disp_mode_ == TRACK_AND_DETECTION
+        me-&gt;obj_disp_mode_ = TRACK_ONLY;
+        me-&gt;track_obj_group_.setVisibility(true);
+        me-&gt;detection_obj_group_.setVisibility(false);
+    }
+}
+else if(iren-&gt;GetKeyCode() == 106)  {   // "j"
+    if(me-&gt;label_mode_ == ID){
+        me-&gt;label_mode_ = ID_SCORE;
+        me-&gt;track_obj_group_.score_visibility_ = true;
+        me-&gt;detection_obj_group_.score_visibility_ = true;
+    }
+    else{
+        me-&gt;label_mode_ = ID;
+        me-&gt;track_obj_group_.score_visibility_ = false;
+        me-&gt;detection_obj_group_.score_visibility_ = false;
+    }
+}
+me-&gt;update();
+
+// std::cout &lt;&lt; "Pressed: " &lt;&lt; iren-&gt;GetKeySym() &lt;&lt; std::endl;
+</pre><p> } </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <ul>
-    <li class="navelem"><a class="el" href="zk_note.html">学习笔记</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="awesome_lib.html">常用代码库</a></li>
+    <li class="navelem"><a class="el" href="index.html">DX3906</a></li><li class="navelem"><a class="el" href="programming.html">编程（Programming）</a></li><li class="navelem"><a class="el" href="awesome_lib.html">常用代码库</a></li>
     <li class="footer">
       <span id="busuanzi_container_site_pv">
         本站总访问量<span id="busuanzi_value_site_pv"></span>次

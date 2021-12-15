@@ -1481,8 +1481,9 @@ tr.heading h2 {
 
 
 body {
-counter-reset : h1;
-	}
+	align-content: center;
+	counter-reset : h1;
+}
 
 
 h1 {
@@ -1524,9 +1525,9 @@ ul{
 	font-size: 100%;
 }
 
-.formulaDsp{
-	font-size: 150%;
-}
+/* .formulaDsp{
+	font-size: 250%;
+} */
 
 .fragment{
 	box-shadow: 2px 2px 5px #505050;
@@ -1544,3 +1545,20 @@ counter-increment : h1;
 h2:before {
 content : counter(h1,decimal) "." counter(h2,decimal) ". ";
 	}
+
+#side-nav {
+	width: 25%;
+}
+
+/* #top {
+	width: 50%;
+	margin: auto; */
+	/* align-content: center; */
+	/* align-self: center; */
+/* } */
+
+/* #doc-content {
+	width: 50%;
+	margin: 0 auto;
+	align-self: center;
+} */

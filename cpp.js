@@ -3,6 +3,7 @@ var cpp =
     [ "C++构建报错合集", "cpp_build_errors.html", [
       [ "编译篇", "cpp_build_errors.html#编译篇", [
         [ "No rule to make xxx.cpp 或者 xxx.so", "cpp_build_errors.html#no_rule_to_make", null ],
+        [ "error: no matching function for call to xxx", "cpp_build_errors.html#no_matching_function", null ],
         [ "passing ‘const xxx’ as ‘this’ argument discards qualifiers", "cpp_build_errors.html#discards_qualifiers", null ]
       ] ],
       [ "will always overflow destination buffer.", "cpp_build_errors.html#memcpy_overflow", null ],
@@ -22,7 +23,10 @@ var cpp =
         [ "error: lvalue required as left operand of assignment", "cpp_build_errors.html#lvalue_operand", null ],
         [ "cannot bind non-const lvalue reference of type ‘int&’ to an rvalue of type ‘int’", "cpp_build_errors.html#lvalue_bind", null ],
         [ "error: ‘setX’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]", "cpp_build_errors.html#no_declar", null ],
-        [ "capture of non-variable <name>", "cpp_build_errors.html#cap_non_var", null ]
+        [ "capture of non-variable <name>", "cpp_build_errors.html#cap_non_var", null ],
+        [ "cannot dynamic_cast xxx source type is not polymorphic", "cpp_build_errors.html#cannot_dynamic_cast", null ],
+        [ "error: ‘this’ was not captured for this lambda function", "cpp_build_errors.html#this_not_captured", null ],
+        [ "use of deleted function ‘ha::driveable::ViewPort::ViewPort(ha::driveable::ViewPort&&)’", "cpp_build_errors.html#use_deleted_function", null ]
       ] ],
       [ "链接篇", "cpp_build_errors.html#链接篇", [
         [ "undefined reference to `xxx'", "cpp_build_errors.html#cpp_undefined_reference", null ],
@@ -31,7 +35,8 @@ var cpp =
         [ "libpthread.so.0: error adding symbols: DSO missing from command line", "cpp_build_errors.html#pthread_dso_missing", null ],
         [ "error 'thread' is not a member of 'boost'", "cpp_build_errors.html#thread_not_member_boost", null ],
         [ "undefined reference to `类名::count'", "cpp_build_errors.html#undefined_static", null ],
-        [ "libboost_system.so.1.xx.0: error adding symbols: DSO missing from command line", "cpp_build_errors.html#boost_fs_dso_missing", null ]
+        [ "libboost_system.so.1.xx.0: error adding symbols: DSO missing from command line", "cpp_build_errors.html#boost_fs_dso_missing", null ],
+        [ "DSO missing from command line", "cpp_build_errors.html#dso_missing", null ]
       ] ],
       [ "运行篇", "cpp_build_errors.html#运行篇", [
         [ "terminate called after throwing an instance of 'std::bad_alloc'", "cpp_build_errors.html#bad_alloc", null ]
@@ -51,6 +56,7 @@ var cpp =
     [ "设计模式（Design Pattern）", "cpp_design_pattern.html", "cpp_design_pattern" ],
     [ "C++的一些技巧（Idioms）", "cpp_idioms.html", "cpp_idioms" ],
     [ "C++构建常见问题", "cpp_compile_faq.html", [
+      [ "找不到“string_view”", "cpp_compile_faq.html#找不到“string_view”", null ],
       [ "系统limit文件报错？", "cpp_compile_faq.html#系统limit文件报错？", null ],
       [ "添加标准头文件就会报错？", "cpp_compile_faq.html#添加标准头文件就会报错？", null ],
       [ "namespace语法错误？", "cpp_compile_faq.html#namespace语法错误？", null ],
@@ -64,10 +70,12 @@ var cpp =
       [ "临时变量无法引用", "cpp_compile_faq.html#临时变量无法引用", null ],
       [ "passing ... as 'this' argument ...  discards qualifiers", "cpp_compile_faq.html#const_issue", null ],
       [ "类成员函数声明和定义处同时使用static修饰", "cpp_compile_faq.html#类成员函数声明和定义处同时使用static修饰", null ],
-      [ "类成员函数声明和定义同时使用默认参数", "cpp_compile_faq.html#类成员函数声明和定义同时使用默认参数", null ]
+      [ "类成员函数声明和定义同时使用默认参数", "cpp_compile_faq.html#类成员函数声明和定义同时使用默认参数", null ],
+      [ "debug和release的区别", "cpp_compile_faq.html#debug_vs_release", null ]
     ] ],
     [ "C++与C语言混合编程", "cpp_mix_with_c.html", null ],
     [ "C++运行常见问题", "cpp_run_faq.html", [
+      [ "fault的地方出现了segmen fault？", "cpp_run_faq.html#不可能segment", null ],
       [ "::push_back函数中会执行析构函数", "cpp_run_faq.html#vector", null ],
       [ "system()函数工作路径？", "cpp_run_faq.html#system_work_dir", null ],
       [ "设置工作路径", "cpp_run_faq.html#设置工作路径", null ],
@@ -99,6 +107,7 @@ var cpp =
     ] ],
     [ "C++ debug教训", "cpp_debug.html", [
       [ "企图通过memcpy对象进行拷贝操作。", "cpp_debug.html#企图通过memcpy对象进行拷贝操作。", null ],
+      [ "在main函数之前提示段错误？", "cpp_debug.html#在main函数之前提示段错误？", null ],
       [ "模板定义中的typename和int不要搞混", "cpp_debug.html#模板定义中的typename和int不要搞混", null ],
       [ "cannot bind non-const lvalue reference of type xxx to an rvalue of type xxx.", "cpp_debug.html#lvalue_bind_rvalue", null ],
       [ "dynamic_pointer_cast模板类要正确", "cpp_debug.html#dynamic_poiner_cast_debug", null ],
@@ -138,6 +147,7 @@ var cpp =
         [ "hashmap一种实现结构？", "cpp_questions.html#hashmap一种实现结构？", null ],
         [ "多线程要注意什么，要怎么做？", "cpp_questions.html#多线程要注意什么，要怎么做？", null ],
         [ "为什么会出现死锁问题，如何避免？", "cpp_questions.html#为什么会出现死锁问题，如何避免？", null ],
+        [ "下面的代码会有什么问题？", "cpp_questions.html#下面的代码会有什么问题？", null ],
         [ "有那些智能指针，有何作用？", "cpp_questions.html#有那些智能指针，有何作用？", null ],
         [ "智能指针如何实现？", "cpp_questions.html#智能指针如何实现？", null ],
         [ "进程和线程的区别？", "cpp_questions.html#进程和线程的区别？", null ]

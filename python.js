@@ -16,7 +16,9 @@ var python =
       [ "文件名冲突", "python_syntax.html#文件名冲突", null ],
       [ "module的导入", "python_syntax.html#module的导入", null ],
       [ "一个坑点", "python_syntax.html#一个坑点", null ],
-      [ "list、tuple、np.array的区别", "python_syntax.html#list_tuple_array", null ]
+      [ "list、tuple、np.array的区别", "python_syntax.html#list_tuple_array", null ],
+      [ "*”和双星号“**”的用法", "python_syntax.html#python中单星号“", null ],
+      [ "“__call__”函数", "python_syntax.html#“__call__”函数", null ]
     ] ],
     [ "import", "python_import.html", null ],
     [ "Python画图库：matplotlib", "matplotlib.html", [
